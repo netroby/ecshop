@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+	<head>
+		<title>文章描述</title>
+		<meta charset="GBK" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+		<link href="../templates/static/styles/reset.css" rel="stylesheet" />
+		<link href="../templates/static/styles/common.css" rel="stylesheet" />
+		<link href="../templates/static/styles/index.css" rel="stylesheet" />
+
+	</head>
+
+   <!-- #BeginLibraryItem "/library/page_common_header.lbi" --><!-- #EndLibraryItem -->
+
+
+	<body>
+		<div class="wrap">
+                    {$article_data.content}
+		</div>
+	</body>
+</html>

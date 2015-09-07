@@ -1,0 +1,22 @@
+						<div class="footer-service pt10 pb10">
+							<div class="footer-service-link pb10">
+								<a href="index.php?access=computer" class="bb6">电脑版</a>
+								<a href="#">返回顶部</a>
+							</div>
+
+							<p class="pt5">
+								当前版本号: ECSHOP v3.0.0 beta1	
+							</p>
+
+							<p>
+								Copyright 2014 ecshop.com
+							</p>
+
+						</div>
+
+					</section>
+				</div>
+			<!-- 首页 end -->
+		</div>
+	</body>
+</html>

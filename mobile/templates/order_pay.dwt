@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+	<head>
+		<title>订单支付</title>
+		<meta charset="GBK" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+		<link href="../templates/static/styles/reset.css" rel="stylesheet" />
+		<link href="../templates/static/styles/common.css" rel="stylesheet" />
+		<link href="../templates/static/styles/shop-list.css" rel="stylesheet" />
+		<link href="../templates/static/styles/order.css" rel="stylesheet" />
+	</head>
+	<body>
+		<div class="wrap">
+
+            <!-- #BeginLibraryItem "/library/page_common_header.lbi" --><!-- #EndLibraryItem -->
+			
+			<!--订单详情 start-->
+				<div class="order">
+					<ul>
+						<li class="clearfix bortop">
+							<div class="item mt12 mb12">
+								<p class="borbottom">付款方式:{$order.pay_name}</p>
+							</div>
+						</li>
+
+						<li class="clearfix">
+							<div class="item address mt12 mb12 ml8">
+								<div class="explain fl">
+									<span class="txt">订单号:</span>
+								</div>
+								<div class="info">
+									<div class="desc">
+										<span class="date">{$order.order_sn}</span>
+									</div>
+								</div>
+							</div>							
+						</li>
+
+						<li class="clearfix">
+							<div class="item address mt12 mb12 ml8">
+								<div class="explain fl">
+									<span class="txt">总金额:</span>
+								</div>
+								<div class="info">
+									<div class="desc">
+										<span class="date cf00">{$order.order_amount}</span>
+									</div>
+								</div>
+							</div>							
+						</li>
+					</ul>
+					<div class="item mt12 mb12">
+								<a href="flow.php?act=to_pay&order_sn={$order.order_sn}" class="buy">
+									<span>确认付款</span>
+								</a>
+							</div>	
+				</div>
+			<!--订单详情 end -->
+		</div>
+	</body>
+</html>

@@ -1,0 +1,41 @@
+.shop-list {
+  background: #FFF;
+  color: #000;
+  padding: 10px 18px 10px 15px; }
+
+.shop-list .item {
+  display: block;
+  margin: 15px 0; }
+
+.item .title {
+  color: #000;
+  display: block; }
+
+.img {
+  float: left;
+  border: 1px solid #EEE; }
+
+.info {
+  font-size: 14px;
+  padding-left: 100px}
+
+.img a {
+  border: 1px solid #EEE;
+  display: block; }
+
+.info .price {
+  left: 0;
+  bottom: 0; }
+
+.info .buy {
+  background: -webkit-linear-gradient(top, #EB8622, #D67923);
+  border: 1px solid #D47823;
+  border-radius: 4px;
+  color: #FFF;
+  display: block;
+  font-weight: 700;
+  font-size: 14px;
+  text-align: center;
+  height: 25px;
+  line-height: 25px;
+  width: 98px; }

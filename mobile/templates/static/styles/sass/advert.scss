@@ -1,0 +1,6 @@
+//@descrip: 广告信息样式
+
+//= 引入货品模块
+@import "../lib/mixin/_advert.scss";
+
+@include advert;

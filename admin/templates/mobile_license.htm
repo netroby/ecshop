@@ -1,0 +1,69 @@
+<!-- $Id: sitemap.htm 14216 2008-03-10 02:27:21Z testyang $ -->
+{include file="pageheader.htm"}
+<div class="main-div">
+<p style="padding: 0 10px">{$lang.license_notice}</p>
+</div>
+
+<div class="main-div">
+<table width="100%">
+<form method="POST" action="license.php?act=download" name="theForm">
+<tr>
+    <td class="label"></td>
+    <td></td>
+</tr>
+<tr>
+    <td class="label">{$lang.label_license_key}</td>
+    <td>{$certificate_id}</td>
+    <td >{if $cert_license.flag=='login_succ' && $cert_license.request.info.service.ecshop_b2c.cert_auth.service_time.etime>0} {$lang.commercial_license}{else}{$lang.commonly_license}{/if}</td>
+</tr>
+
+<tr>
+    <td></td>
+    <td></td>
+</tr>
+</form>
+</table>
+</div>
+
+
+
+<div class="main-div">
+<table width="100%">
+<form method="POST" action="mobile_license.php?act=del" name="theForm" onsubmit="return del_check();">
+<tr>
+    <td class="label">{$lang.label_delete_license}</td>
+    <td></td>
+</tr>
+<tr>
+    <td colspan="2">{$lang.delete_license_notice}</td>
+</tr>
+<tr>
+    <td></td>
+    <td><input type="submit" value="{$lang.drop}" class="button" /></td>
+</tr>
+</form>
+</table>
+</div>
+{literal}
+<script type="text/javascript" language="JavaScript">
+<!--
+onload = function()
+{
+
+}
+
+function del_check()
+{
+  if (confirm(del_confirm))
+  {
+    return true;
+  }
+  else
+  {
+    return false;
+  }
+}
+//-->
+</script>
+{/literal}
+{include file="pagefooter.htm"}

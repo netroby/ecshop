@@ -1,0 +1,364 @@
+<!doctype html>
+<html>
+	<head>
+		<title>找回密码</title>
+		<meta charset="GBK" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+		<link href="../templates/static/styles/reset.css" rel="stylesheet" />
+		<link href="../templates/static/styles/common.css" rel="stylesheet" />
+		<link href="../templates/static/styles/input.css" rel="stylesheet" />
+		<link href="../templates/static/styles/user.css" rel="stylesheet" />
+		<link href="../templates/static/styles/style.css" rel="stylesheet" />
+	</head>
+	<body>
+		<div class="wrap">
+
+   <!-- #BeginLibraryItem "/library/page_common_header.lbi" --><!-- #EndLibraryItem -->
+
+			<!--登陆成功模板 start-->
+				<script type="text/x-jquery-tmpl", id="dialog-user-success">
+					<div class="mt10 mb10 txtac f12" style="line-height: 8px">
+						<div style="width: 16px; height: 16px; background-color: #639E2B; display: inline-block; position: relative; top: -3px; border-radius: 100%;">
+							<span class="dire b-dire" style="border-color: #FFF; height: 3px; border-width: 1px 1px 0 0"></span>
+						</div>
+						<span class="ml5">找回密码中</span>
+					</div>
+					<div class="mt10 mb10 txtac f12"><span>正在为您跳转，请稍后...</span></div>
+				</script>
+			<!--登陆成功模板 end-->
+
+			<!--用户操作失败模板（带按钮） start-->
+				<script type="text/x-jquery-tmpl", id="dialog-user-fatol">
+					<div class="validate">
+							<div class="valid">
+								<div class="o-info pr" style="font-size: 14px;color: #FAA419; top: 2px">
+									<span class="icon-warning"></span>
+								</div>
+								<div class="o-info"><span class="ml5 c000">对不起！</span></div>		
+							</div>		
+							<div class="mt10 mb10 txtac f12"><span>{prompt}</span></div>
+					</div>
+				</script>
+			<!--用户操作失败模板 end-->
+
+			<!--手机已经注册模板 start-->
+				<script type="text/x-jquery-tmpl", id="dialog-user-fatol2">
+					<div class="validate">
+							<div class="valid">
+								<div class="o-info pr" style="font-size: 14px;color: #FAA419; top: 2px">
+									<span class="icon-warning"></span>
+								</div>
+								<div class="o-info"><span class="ml8 c000">对不起！</span></div>		
+							</div>		
+							<div class="mt10 mb10 txtac f12"><span>未找到该手机号的用户</span></div>
+							<a href="#" style="background: -webkit-linear-gradient(top, #989898, #696969); border-color: #989898" class="btn"><span>去登陆</span></a>
+					</div>
+				</script>
+			<!--手机已经注册模板 end-->
+
+
+			<!--用户注册 start-->
+				<div class="user">
+					<form action="user.php?act=do_find_pwd" class="form" method="post">
+						<div class="reg">
+							<ul>
+								<li class="mt15 mb15">
+									<div class="inputbox clearfix">
+										<div class="proc lab-phone pr pl14">
+											<input type="text" name="phone" id="phone" placeholder="请输入手机号码" />
+										</div>						
+									</div>
+								</li>
+
+								<li class="mt15 mb15">
+									<div class="inputbox pr clearfix">
+										<div class="icode pa">
+											<img src="user.php?act=captcha" width="80" height="38" />
+										</div>					
+										<div class="proc lab-code pr pl14 pr90">
+											<div class="pr">
+												<div class="tipicon pa t-s">
+													<span class="dire b-dire"></span>
+												</div>
+												<div class="tipicon pa t-e">
+													<span>!</span>
+												</div>			
+											</div>	
+											<input data-verity="1234" type="text" name="code" class="code" id="code" placeholder="请输入验证码"/>								
+										</div>						
+									</div>
+								</li>
+
+								<li class="mt15 mb15">
+									<div class="inputbox pr clearfix">			
+
+										<div class="tip-box pa pcode-pa">短信获取验证码</div>
+										
+										<div class="proc pr pl14 pr110">
+											<div class="pr lab-pcode">
+												<div class="tipicon pa t-s">
+													<span class="dire b-dire"></span>
+												</div>
+												<div class="tipicon pa t-e">
+													<span>!</span>
+												</div>
+												<input type="text" name="phone-code" id="pcode" class="ppcode" placeholder="请输入手机收到的验证码" />
+											</div>										
+										</div>						
+									</div>
+								</li>
+
+								<li class="mt15 mb15">
+									<div class="inputbox clearfix">			
+										<div class="proc pl14 pr pr110 lab-pwd">
+											<input type="password" name="password" id="pwd" placeholder="请输入登录密码" />
+											<div class="tip-box pa crypto-pwd">显示</div>
+										</div>						
+									</div>
+								</li>
+
+								<li>
+									<button class="btn register" type="submit">确定</button>
+								</li>
+
+							</ul>
+						</div>
+					</form>
+				</div>
+			<!--用户注册 end-->
+
+		</div>
+
+		<script type="text/javascript" src="../templates/static/scripts/lib/shop.min.js" charset="utf-8"></script>
+		<script type="text/javascript" src="../templates/static/scripts/lib/event.js" charset="utf-8"></script>
+		<script type="text/javascript" src="../templates/static/scripts/lib/formValid.js" charset="utf-8"></script>
+		<script type="text/javascript">
+
+			document.addEventListener('DOMContentLoaded', function () {
+				var isCrypto = 0; //判断是否密码明文和密文
+				var phoneCode = false; //手机号是否存在
+				var verifyCode = false; //验证码是否存在
+				var pCode = false; //短信验证码是否存在
+
+
+				/*表单验证*/
+				$('.form').readyValid({
+					'fields': {
+						'#phone': {
+							required: {
+								isSure: true,
+								errTemplate: $('#dialog-user-fatol').html(),
+								data: {prompt: '手机号不能为空！'},
+								exec: function (obj) {
+									new Dialog(obj.get(0), {type: 'confirm'});
+									closeDialog();
+								}
+							},
+							format: [
+							{
+								sign: /^(13[0-9]|15[0-9]|18[0-9])\d{8}$/,
+								test: function (sign, val) {
+									return sign.test(val);
+								},
+								errTemplate: $('#dialog-user-fatol').html(),
+								data: {prompt: '手机格式错误！'},
+								exec: function (obj) {
+									new Dialog(obj.get(0), {type: 'confirm'});
+									closeDialog();
+								}
+
+							},
+
+							{
+								test: function (sign, val) {
+									$.get('user.php?act=find_phone', {phone: val}, function (success) {
+										if (success === 'success') {								
+											phoneCode = true;
+										} else {
+											new Dialog($('#dialog-user-fatol2').html(), {type: 'confirm'});
+											closeDialog();
+											phoneCode = false;
+										}
+									});
+									return true;
+								}
+							}
+						]
+					},
+
+					'#code': {
+						required: {
+							isSure: true,
+							errTemplate: $('#dialog-user-fatol').html(),
+							data: {prompt: '验证码不能为空！'},
+							exec: function (obj) {
+								new Dialog(obj.get(0), {type: 'confirm'});
+								closeDialog();
+							}
+						},
+						format: [
+							{
+								test: function (sign, val) {
+								var t_phone = $("#phone").val();
+									$.get('user.php?act=check_code', {code: val,sds:t_phone}, function (success) {
+										if (success === 'success') {
+											$('#code').parents('.inputbox').removeClass('error').addClass('success');
+											verifyCode = true;
+										} else {
+											$('#code').parents('.inputbox').removeClass('success').addClass('error');
+											verifyCode = false;
+										}
+									});
+									return true;
+								}
+							}
+						]
+					},
+
+					'#pcode': {
+						required: {
+								isSure: true,
+								errTemplate: $('#dialog-user-fatol').html(),
+								data: {prompt: '短信验证码不能为空！'},
+								exec: function (obj) {
+									new Dialog(obj.get(0), {type: 'confirm'});
+									closeDialog();
+							}
+						},
+						format: [
+							{
+								test: function (sign, val) {
+					        var t_phone = $("#phone").val();
+									$.get('user.php?act=check_phone-code', {pcode: val,phone:t_phone}, function (success) {
+										if (success === 'success') {
+											$('#pcode').parents('.inputbox').removeClass('error').addClass('success');
+											pCode = true;
+										} else {
+											$('#pcode').parents('.inputbox').removeClass('success').addClass('error');
+											pCode = false;
+										}
+									});
+									return true;
+								}
+							}
+						]
+
+					},
+
+					'#pwd': {
+						required: {
+							isSure: true,
+							errTemplate: $('#dialog-user-fatol').html(),
+							data: {prompt: '密码不能为空！'},
+							exec: function (obj) {
+								new Dialog(obj.get(0), {type: 'confirm'});
+								closeDialog();
+							}
+						},
+						format: [
+							{
+								sign: /^.{6,22}$/,
+								test: function (sign, val) {
+									return sign.test(val);
+								},
+								errTemplate: $('#dialog-user-fatol').html(),
+								data: {prompt: '请输入6-22位密码！'},
+								exec: function (obj) {
+									new Dialog(obj.get(0), {type: 'confirm'});
+									closeDialog();
+								}
+							}
+						]
+
+					}
+
+				},
+				'success': function () {
+					if (verifyCode && pCode && phoneCode) {
+						new Dialog($('#dialog-user-success').html(), {type: 'confirm'});
+						return true;	
+					}
+					return false;
+				}
+						
+				});
+
+
+				//定时关闭对话框
+				function closeDialog () {
+					var dialog = $('.dialog'),
+							mask = $('#J_mask'),
+							dialog_hide = $('#J_dialog_hide');
+
+					function close () {
+						dialog.remove();
+						mask.hide();
+						dialog_hide.hide();
+						clearTimeout(timer);
+					}
+					var timer = setTimeout(close, 1000);
+				}
+
+				
+				//初始化单击事件绑定
+				var events = new Events({			
+					
+					//显示和隐藏密码
+					'click crypto-pwd': function (e, el) {
+						var prevInputBox = el.previousElementSibling;
+						isCrypto = +!isCrypto;
+
+						if (isCrypto) {
+							prevInputBox.type = 'text';
+							el.innerHTML = '隐藏';
+						} else {
+							prevInputBox.type = 'password';
+							el.innerHTML = '显示';
+						}
+						e.preventDefault();
+					},
+
+					//验证码图片更新	
+					'click icode>img': function (e, el) {
+						el.src =  el.src + '&' + Math.random();
+					},
+
+					'click pcode-pa': function (e, el) {
+					        var t_phone = $("#phone").val();
+                                                var t_code = $("#code").val();
+
+						$.get('user.php?act=send_pwd_mobile', {phone: t_phone,code:t_code}, function (success) {
+							if (success === 'success' || success === 'successful') {
+
+                                                      alert('短信已经发送');
+							} else if(success ==='send_error')
+							{
+							     alert('商家未配置短信或者短信发送错误');
+							}
+							else
+							{                                                      alert('验证码或者手机号不正确');
+							}
+						});
+
+					}
+					
+
+
+
+
+				}).bind('click');
+
+
+
+	
+
+				
+
+
+			
+			});
+
+		</script>
+
+	<body>
+</html>

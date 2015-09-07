@@ -1,0 +1,130 @@
+.order {
+  background: #FFF;
+  color: #000; }
+
+.order .item {
+  color: #000;
+  display: block;
+  padding: 0 14px; }
+
+.order .item p {
+  padding: 32px 0 32px 10px;}
+
+.order .explain {
+  width: 60px;
+  text-align: right; }
+.order .info {
+  padding-left: 70px; }
+.order .buy {
+  background: -webkit-linear-gradient(top, #B20709, #A20709);
+  border: 1px solid #C60808;
+  border-radius: 4px;
+  color: #FFF;
+  display: block;
+  font-weight: 700;
+  font-size: 14px;
+  text-align: center;
+  height: 35px;
+  line-height: 35px;
+  width: 100%;
+  margin-top: 65px;}
+.order .cpay {
+  background: -webkit-linear-gradient(top, #EB8622, #D67923);
+  border: 1px solid #D47823;
+  border-radius: 4px;
+  color: #FFF;
+  display: block;
+  font-weight: 700;
+  font-size: 14px;
+  text-align: center;
+  height: 35px;
+  line-height: 35px;
+  width: 100%; }
+.order .dpay {
+  background: -webkit-linear-gradient(top, #EB8622, #D67923);
+  border: 1px solid #D47823;
+  border-radius: 4px;
+  color: #FFF;
+  display: block;
+  font-weight: 700;
+  font-size: 14px;
+  text-align: center;
+  height: 35px;
+  line-height: 35px;
+  width: 100%; }
+.order .confirm {
+  margin: 0 auto;
+  text-align: center;
+  width: 150px; }
+.order .payicon {
+  color: #FAA419;
+  font-size: 20px;
+  width: 30px;
+  height: 30px;
+  line-height: 20px;
+  text-align: center;
+  margin: 25px auto; }
+.order .paysuccess {
+  border-radius: 100%;
+  background-color: #639E2B; }
+/*.order .payerror {
+  width: 0;
+  height: 0;
+  border-left: 30px solid transparent;
+  border-right: 30px solid transparent;
+  border-top: 30px solid transparent;
+  border-bottom: 30px solid #fAA419; }*/
+.order .slide-bar {
+  top: 20px;
+  right: 20px; }
+.order .add {
+  background: -webkit-linear-gradient(top, #B20709, #A20709);
+  border: 1px solid #C60808;
+  border-radius: 4px;
+  color: #FFF;
+  display: block;
+  font-weight: 700;
+  font-size: 14px;
+  text-align: center;
+  height: 35px;
+  line-height: 35px;
+  width: 100%; }
+
+.paysuccess .dire {
+  border-color: #FFF;
+  font-size: 16px;
+  width: 10px;
+  height: 5px;}
+
+.order .payerror {
+  font-size: 38px;
+  font-weight: 700;
+}
+
+.confirm-btn,
+.cancel-btn {
+  border-radius: 4px;
+  color: #FFF;
+  display: inline-block;
+  font-weight: 700;
+  font-size: 14px;
+  text-align: center;
+  height: 25px;
+  line-height: 25px;
+  width: 55px;
+}
+
+.confirm-btn {
+  background: -webkit-linear-gradient(top, #B20709, #A20709);
+  border: 1px solid #C60808;
+}
+
+.cancel-btn {
+  background: -webkit-linear-gradient(top, #8E8E8E, #6E6E6E);
+  border: 1px solid #8E8E8E;
+}
+
+
+
+
+

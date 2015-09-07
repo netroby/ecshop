@@ -1,0 +1,6 @@
+//@descrip: 商品列表样式
+
+//= 引入商品列表模块
+@import "../lib/mixin/_shop-list.scss";
+
+@include shop-list;

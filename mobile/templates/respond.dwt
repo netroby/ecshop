@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+	<head>
+		<title>支付返回</title>
+		<meta charset="GBK" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+		<link href="../templates/static/styles/reset.css" rel="stylesheet" />
+		<link href="../templates/static/styles/common.css" rel="stylesheet" />
+		<link href="../templates/static/styles/order.css" rel="stylesheet" />
+		<script type="text/javascript" src="../static/scripts/lib/require.js" data-main="../templates/static/scripts/main"></script>
+	</head>
+	<body>
+		<div class="wrap">
+
+
+
+                               {if $msg ==pay_success}
+
+
+
+				<!--订单确定 start-->
+					<div class="order">
+						<div class="confirm">
+							<div class="payicon paysuccess">
+								<span class="dire b-dire cfff"></span>
+							</div>
+							<div class="title mt12 mb12 f14">
+								支付成功返回首页
+							</div>	
+							<div class="title mt12 mb12 f14">
+
+							</div>	
+						</div>
+					</div>
+				<!--订单确定 end-->
+
+                              {else}
+
+			      				<!--订单取消 start-->
+					<div class="order">
+						<div class="confirm">
+							<div class="payicon payerror">
+								<span>！</span>
+							</div>
+							<div class="title mt12 mb12 f14">
+								
+							</div>	
+							<div class="title mt12 mb12 f14">
+								付款未成功！
+							</div>	
+						</div>
+						<div class="pl12 pr14">
+							<div class="cpay">
+								<span>重新付款</span>
+							</div>
+						</div>
+									
+					</div>
+				<!--订单取消 end-->
+                               {/if}
+
+		</div>
+	</body>
+</html>

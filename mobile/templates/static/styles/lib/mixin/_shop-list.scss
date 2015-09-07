@@ -1,0 +1,53 @@
+//@descrip: 商品列表模块
+
+//= 引入按钮模块
+@import "_button.scss";
+
+@mixin shop-list {
+	.shop-list {
+		background: #FFF;
+		color: #000;
+		padding: 10px 18px 10px 15px;		
+	}
+
+	.shop-list {
+		.item {
+			display: block;
+			margin: 15px 0;
+		}
+	}
+
+	.item {
+		.title {
+			display: block;
+		}
+	}
+
+	.img {
+		float: left;
+		border: 1px solid #EEE;
+	}
+
+	.info {
+		font-size: 14px;
+		padding-left: 98px;
+	}
+	
+	
+	.img {
+		a {
+			border: 1px solid #EEE;
+			display: block;	
+		}
+	}
+
+	.info .price {
+		left: 0;
+		bottom: 0;
+	}
+
+	.info .buy {
+		@include button(98px);
+	}
+
+}

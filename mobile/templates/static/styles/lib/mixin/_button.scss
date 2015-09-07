@@ -1,0 +1,40 @@
+//@descrip: 按钮模块
+
+@mixin button ($width, $height: 25px, $gradientColor: -webkit-linear-gradient(top, #EB8622, #D67923), $borderColor: #D47823) {
+	background: $gradientColor;
+	border: 1px solid $borderColor;
+	border-radius: 4px;
+	color: #FFF;
+	display: block;
+	font-weight: 700;
+	font-size: 14px;
+	text-align: center;
+	height: $height;
+	line-height: $height;
+	width: $width;	
+}
+
+@mixin generalButton ($gradientColor: -webkit-linear-gradient(top, #DFDFDF, #C6C6C6)) {
+	border: 1px solid #939393;
+	background: $gradientColor;	
+	color: #000;
+	display: inline-block;
+	font-size: 12px;
+	text-align: center;
+	height: 20px;
+	width: 42px;
+}
+
+@mixin radiusButton ($backgroundColor: #639E2B) {
+	background-color: $backgroundColor;
+	border-radius: 100%;
+	color: #FFF;
+	display: inline-block;
+	font-size: 12px;
+	width: 16px;
+	height: 16px;
+	line-height: 16px;
+	text-align: center;
+}
+
+

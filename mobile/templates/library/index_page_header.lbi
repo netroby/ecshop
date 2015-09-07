@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+	<head>
+		<title>{$page_title}</title>
+		<meta charset="GBK" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+		<link href="../templates/static/styles/reset.css" rel="stylesheet" />
+		<link href="../templates/static/styles/common.css" rel="stylesheet" />
+		<link href="../templates/static/styles/index.css" rel="stylesheet" />
+		<script type="text/javascript" src="../templates/static/scripts/lib/require.js" data-main="../templates/static/scripts/index.js" charset="GBK"></script>
+	</head>
+	<body>
+		<div class="wrap">
+				<div class="guide">
+					<header class="top-nav clearfix">
+						<div class="logo fl"></div>
+						<div class="top-nav-info f14 fr pr">
+							<a href="user.php" class="mr8 bb6">用户中心</a>
+							
+							{foreach from=$mobile_navigator item=item }|
+							<a href="{$item.url}" class="ml8 bb6 {if $item.opennew eq 1 } {/if}">{$item.name}</a>
+							{/foreach}
+						</div>
+					</header>
+
+

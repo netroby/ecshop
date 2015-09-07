@@ -1,0 +1,131 @@
+<!doctype html>
+<html>
+
+	<head>
+		<title>收货地址列表</title>
+		<meta charset="GBK" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+		<link href="../templates/static/styles/reset.css" rel="stylesheet" />
+		<link href="../templates/static/styles/common.css" rel="stylesheet" />
+		<link href="../templates/static/styles/shop-list.css" rel="stylesheet" />
+		<link href="../templates/static/styles/good.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<div class="wrap">
+
+     <!-- #BeginLibraryItem "/library/page_common_header.lbi" --><!-- #EndLibraryItem -->
+
+			<!--是否删除模板 start-->
+			<script type="text/x-temp" id="ask-temp">
+				<div id="ask" class="ask">
+					<div class="head mt10 mb10 f12"><span>是否要删除？</span></div>
+					<div class="content mt10 mb10 clearfix">
+						<button class="yes-btn" ><span>是</span></button> 
+						<button class="no-btn ml10"><span>否</span></button> 
+					</div>
+				</div>
+				<script type="text/javascript"></script>
+			</script>
+			<!--是否删除模板 end-->
+
+
+			<!--收货地址 start-->
+				<div class="goods">
+					<ul>
+					{foreach from=$address_list item=address_list  }
+						<li class="item checkitem mb15 clearfix">
+							<div class="pr">
+								<div class="user mt5 mb5">
+									<span class="name">{$address_list.consignee}</span>,
+									<span class="phone">{$address_list.mobile}</span>
+								</div>
+								<div class="address mt5 mb5">
+									<span class="province">{$address_list.province}</span>,
+									<span class="city">{$address_list.city}</span>,
+									<span class="hnumber">{$address_list.district} &nbsp {$address_list.address}</span>,
+									<span class="zip">{$address_list.zipcode}</span>
+								</div>
+								<div class="cmd mt10">
+                                                                        {if $re_url}
+                                                                         <a href="user.php?act=edit_address&address_id={$address_list.address_id}&re_url={$re_url}" class="edit opt"><span>使用</span></a>
+									{else}
+									<a href="user.php?act=edit_address&address_id={$address_list.address_id}" class="edit opt"><span>编辑</span></a>
+									{/if}
+									<input class="del opt ml8" type="button" value="删除" onclick="if (confirm('你确认要删除该收货地址吗？'))location.href='user.php?act=drop_consignee&address_id={$address_list.address_id}'" name="button">
+								</div>
+
+							</div>
+						</li>
+                                          {/foreach}
+
+					</ul>
+                                        {if $re_url}
+					<a href="user.php?act=add_address&re_url={$re_url}" class="add"><span class="f18">＋</span> <span class="add-t pr">新增收货地址</span></a>
+					{else}
+					<a href="user.php?act=add_address" class="add"><span class="f18">＋</span> <span class="add-t pr">新增收货地址</span></a>
+					{/if}
+					
+				</div>	
+			</div>
+			<!--收货地址 end-->
+		</div>
+
+		<script type="text/javascript" src="../../static/scripts/lib/shop.min.js" charset="utf-8"></script>
+		<script type="text/javascript">
+
+			var selectIndex = 0,
+					itemEls, delBtns,	askTeml;
+
+			//删除dom元素集合的样式
+			function rmClassEls (els, classType) {
+				var eles = typeof els === 'object' ? Array.prototype.slice.call(els) : els;
+				eles.forEach(function (el) {
+					el.classList.remove(classType);
+				});
+			}
+
+			//取消事件
+			$('.no-btn').live('click', function (e) {
+				var self = this;
+				if (selectIndex < 0) {
+					new Dialog(askTeml.innerHTML, {type: 'confirm'});
+					return;
+				}
+				$(self).parents('.dialog').data('close')();
+				rmClassEls(itemEls, 'checkitem');
+			}, false);
+
+			//确定事件
+			$('.yes-btn').live('click', function (e) {
+				$('.item').eq(selectIndex).remove();
+				$('.no-btn').trigger('click');
+				selectIndex = -1;	
+			}, false);
+
+			document.addEventListener('DOMContentLoaded', function () {
+
+				itemEls = document.querySelectorAll('.goods .item'),
+				delBtns = document.querySelectorAll('.item .del'),
+				askTeml = document.querySelector('#ask-temp');
+									
+				Array.prototype.slice.call(itemEls).forEach(function (el) {
+					el.addEventListener('click', function () {
+					
+						selectIndex = $(this).index();
+						rmClassEls(itemEls, 'checkitem');
+						this.classList.add('checkitem');
+					}, false);
+				});
+
+				Array.prototype.slice.call(delBtns).forEach(function (el) {
+					el.addEventListener('click', function (e) {
+						new Dialog(askTeml.innerHTML, {type: 'confirm'});
+						e.stopPropagation();
+					});
+				});
+			}, false);
+		</script>
+
+	</body>
+</html>	

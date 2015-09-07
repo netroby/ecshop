@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+	<head>
+		<title>用户中心</title>
+		<meta charset="GBK" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+		<link href="../templates/static/styles/reset.css" rel="stylesheet" />
+		<link href="../templates/static/styles/common.css" rel="stylesheet" />
+		<link href="../templates/static/styles/shop-list.css" rel="stylesheet" />
+		<link href="../templates/static/styles/user.css" rel="stylesheet" />
+		<script type="text/javascript" src="../static/scripts/lib/require.js" data-main="../static/scripts/main"></script>
+	</head>
+	<body>
+		<div class="wrap">
+   <!-- #BeginLibraryItem "/library/page_common_header.lbi" --><!-- #EndLibraryItem -->
+			<!--用户中心 start-->
+			<div class="user">
+				<ul>
+					<li class="clearfix borbottom">
+						<div class="mt18 mb18">
+							<div class="img">
+								<img src="../../static/images/shopimgsmall.jpg" width="60" />
+							</div>
+							<div class="info pl76">
+								<div class="title mt4">亲爱的<span>{$user_name}</span>，欢迎您！</div>
+								<div class="title mt12">
+									<a href="user.php?act=address_list" class="manage f12">
+										<span>收货地址管理</span>
+									</a>
+								</div>
+							</div>
+						</div>
+							
+					</li>
+
+{foreach from=$orders item=orders key=key}
+					<li class="clearfix">
+						<div class="mt18 mb18 pr">
+							<a href="user.php?act=order_info&id={$orders.order_id}" class="part c00">
+								<div class="img">
+									<img src="../../{$orders.goods_thumb}" width="60" />
+								</div>
+								<div class="info pl76">
+									<div class="title">
+										<span class="txt">订单号：</span>
+										<span class="rs">{$orders.order_sn}</span>
+									</div>
+									<div class="title">
+										<span class="txt">订单金额：</span>
+										<span class="rs">{$orders.total_fee}</span>
+									</div>
+									<div class="title">
+										<span class="txt">下单时间：</span>
+										<span class="rs">{$orders.order_time}</span>
+									</div>
+								</div>
+								<div class="pa dire f20 c00 l-dire"></div>
+							</a>
+							
+						</div>
+							
+					</li>
+{/foreach}
+
+{if $pagebar}
+    {$pagebar}<br/>
+{/if}
+
+				</ul>
+			</div>	
+			<!--用户中心 end-->
+
+		</div>
+	</body>
+</html>

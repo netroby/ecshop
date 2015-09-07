@@ -1,0 +1,122 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<div class="copy block">
+<!-- {foreach name=nav_bottom_list from=$navigator_list.bottom item=nav} 页尾导航-->
+<a href="{$nav.url}" <!-- {if $nav.opennew eq 1} --> target="_blank" <!-- {/if} -->>{$nav.name}</a>
+<!-- {if !$smarty.foreach.nav_bottom_list.last} -->
+ <font style=" font-weight:100;">--</font>
+<!-- {/if} -->
+<!-- {/foreach} -->
+<br />
+{$copyright}<br />
+{$shop_address} {$shop_postcode}<br />
+
+      <!-- 客服电话{if $service_phone} -->
+      Tel: {$service_phone}&nbsp;&nbsp;
+      <!-- 结束客服电话{/if} -->
+            <!-- 邮件{if $service_email} -->
+      E-mail: {$service_email}<br>
+      <!-- 邮件{/if} -->
+      <!-- QQ 号码 {foreach from=$qq item=im} -->
+      <!-- {if $im} -->
+      <a href="http://wpa.qq.com/msgrd?V=1&amp;Uin={$im}&amp;Site={$shop_name}&amp;Menu=yes" target="_blank"><img src="http://wpa.qq.com/pa?p=1:{$im}:4" height="16" border="0" alt="QQ" /> {$im}</a>
+      <!-- {/if} -->
+      <!-- {/foreach} 结束QQ号码 -->
+      <!-- 淘宝旺旺 {foreach from=$ww item=im} -->
+      <!-- {if $im} -->
+      <a href="http://amos1.taobao.com/msg.ww?v=2&uid={$im|escape:url}&s=2" target="_blank"><img src="http://amos1.taobao.com/online.ww?v=2&uid={$im|escape:url}&s=2" width="16" height="16" border="0" alt="淘宝旺旺" /> {$im}</a>
+      <!-- {/if} -->
+      <!--{/foreach} 结束淘宝旺旺 -->
+      <!-- Yahoo Messenger {foreach from=$ym item=im} -->
+      <!-- {if $im} -->
+      <a href="http://edit.yahoo.com/config/send_webmesg?.target={$im}n&.src=pg" target="_blank"><img src="../images/yahoo.gif" width="18" height="17" border="0" alt="Yahoo Messenger" /> {$im}</a>
+      <!-- {/if} -->
+      <!-- {/foreach} 结束Yahoo Messenger -->
+      <!-- MSN Messenger {foreach from=$msn item=im} -->
+      <!-- {if $im} -->
+      <img src="../images/msn.gif" width="18" height="17" border="0" alt="MSN" /> <a href="msnim:chat?contact={$im}">{$im}</a>
+      <!-- {/if} -->
+      <!-- {/foreach} 结束MSN Messenger -->
+      <!-- Skype {foreach from=$skype item=im} -->
+      <!-- {if $im} -->
+      <img src="http://mystatus.skype.com/smallclassic/{$im|escape:url}" alt="Skype" /><a href="skype:{$im|escape:url}?call">{$im}</a>
+      <!-- {/if} -->
+      <!-- {/foreach} -->
+
+            <!-- ICP 证书{if $icp_number} -->
+      {$lang.icp_number}:<a href="http://www.miitbeian.gov.cn/" target="_blank">{$icp_number}</a>
+      <!-- 结束ICP 证书{/if} -->
+            <br>
+{insert name='query_info'}<br>          
+ {foreach from=$lang.p_y item=pv}{$pv}{/foreach}
+</div>
+
+{if $stats_code}
+<div align="center">{$stats_code}</div>
+{/if}
+<!--在线客服开始-->
+<!-- {if $enable_kefu }-->
+<link type="text/css" rel="stylesheet" href="kfstyles/{$kfstyle}/style.css">
+<div class="KeFu_Positon2013">
+    <div class="KeFuShmall2013"  id="min" style="display:none"><a href="javascript:void(0)" onclick="document.getElementById('min').style.display='none'; document.getElementById('full').style.display='block';">在线客服</a></div>
+    <div class="KeFu_Conant2013" id='full'>
+        <div class="KeFuTit2013">
+            <div class="close2013"><a href="javascript:void(0)" onclick="document.getElementById('full').style.display='none'; document.getElementById('min').style.display='block';">
+             关闭</a></div>
+        </div>
+        <div class="KeFuBody2013">
+            <ul class="clearfix">
+                 <!-- {if $kefuqq} -->
+                 <li>
+                    <dl class="clearfix">
+                        <dt>{$lang.kefu_qq}</dt>
+                            <!-- QQ 号码 {foreach name=kf_qq from=$kefuqq item=im} -->
+                            <!-- {if $im} -->
+                            <dd class="clearfix">
+                                <span><a target=_blank href="http://wpa.qq.com/msgrd?v=3&amp;uin={$im[0]}&amp;Site={$shop_name}&amp;menu=yes" rel="nofollow"><img border="0" src="http://wpa.qq.com/pa?p=1:{$im[0]}:4" align="absmiddle" /></a></span>
+                                <span><a target=_blank href="http://wpa.qq.com/msgrd?v=3&amp;uin={$im[0]}&amp;Site={$shop_name}&amp;menu=yes" rel="nofollow">{$im[1]}</a></span>
+                            </dd>
+                            <!-- {/if} -->
+                            <!-- {/foreach} 结束QQ号码 -->
+                     </dl>
+                 </li>
+                 <!-- {/if} -->
+                 <!-- {if $kefuww} -->
+                 <li>
+                    <dl class="clearfix">
+                        <dt>{$lang.kefu_ww}</dt>
+                            <!-- 旺旺 号码 {foreach name=kf_ww from=$kefuww item=im} -->
+                            <!-- {if $im} -->
+                            <dd class="clearfix">
+                                <span><a target=_blank href="http://amos.im.alisoft.com/msg.aw?v=2&uid={$im[0]}&site=cnwdwd&s=4"><img border="0" src="http://amos1.taobao.com/online.ww?v=2&uid={$im[0]|escape:u8_url}&s=2" align="absmiddle" /></a></span>
+                                <span><a target=_blank href="http://amos.im.alisoft.com/msg.aw?v=2&uid={$im[0]}&site=cnwdwd&s=4" rel="nofollow">{$im[1]}</a></span>
+                            </dd>
+                            <!-- {/if} -->
+                            <!-- {/foreach} 结束旺旺号码 -->
+                     </dl>
+                 </li>
+                 <!-- {/if} -->
+                 <!-- {if $kefumsn} -->
+                 <li>
+                    <dl class="clearfix">
+                        <dt>{$lang.kefu_msn}</dt>
+                            <!-- msn 号码 {foreach name=kf_msn from=$kefumsn item=im} -->
+                            <!-- {if $im} -->
+                            <dd class="clearfix">
+                                <span><a target=_blank href="msnim:chat?contact={$im[0]}" rel="nofollow"><img border="0" src="themes/default/images/msn.gif" align="absmiddle" /></a></span>
+                                <span><a target=_blank href="msnim:chat?contact={$im[0]}" rel="nofollow">{$im[1]}</a></span>
+                            </dd>
+                            <!-- {/if} -->
+                            <!-- {/foreach} 结束msn号码 -->
+                     </dl>
+                 </li>
+                 <!-- {/if} -->
+      
+              </ul>
+              <div class="KeFuTime2013">{$lang.kefu_time}</div>
+           </div>
+        <div class="KeFuBottom2013"></div>
+    </div>
+</div>
+{/if}
+<!--在线客服结束-->
+

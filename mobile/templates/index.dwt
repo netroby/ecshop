@@ -1,0 +1,239 @@
+<!doctype html>
+<html>
+	<head>
+		<title>首页</title>
+		<meta charset="GBK" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+		<link href="../templates/static/styles/reset.css" rel="stylesheet" />
+		<link href="../templates/static/styles/common.css" rel="stylesheet" />
+		<link href="../templates/static/styles/index.css" rel="stylesheet" />
+	</head>
+	<body>
+		<div class="wrap">
+			
+			<!-- 首页 start -->
+				<div class="guide">
+					<header class="top-nav clearfix">
+						<div class="logo fl"><img src="../{$wap_logo}" /></div>
+						<div class="top-nav-info f14 fr pr">
+							<a href="user.php" class="mr8 bb6">用户中心</a>
+							{foreach from=$mobile_navigator item=item }|
+							<a href="{$item.url}" class="ml8 bb6 {if $item.opennew eq 1 } {/if}">{$item.name}</a>
+							{/foreach}
+						</div>
+					</header>
+
+					<section class="main pl15 pr15">						
+						<div class="sp-nav mt15 mb20">
+							<div class="sliderwrap pr">
+								<div class="pr" style="height: 119px; overflow: hidden; width: 100%">
+									<ul style="height: 119px" class="pr slider-list">
+
+
+
+									{foreach from=$playerdb item=item key=key }
+
+                                                                       {if $key==0}
+                                                                        
+								<li class="slider-item" style="left: 0"><a href="{$item.http_url}"><img src="../../{$item.image_url}" width="100%" 
+/></a></li>        
+                                                                        {else}
+	<li class="slider-item" style="left: {$key}00%"><a href="{$item.http_url}"><img src="../../{$item.image_url}" width="100%" 
+/></a></li>        
+                                                                      {/if}
+
+
+									{/foreach}
+
+
+									</ul>	
+
+								</div>	
+								
+								<div class="bar pa">
+									<ol class="indicator">
+								       {foreach from=$playerdb item=item key=key}
+                                                                          {if $key==0}
+										<li class="dot active">{$key}</li>
+									  {else}
+									  <li class="dot">{$key}</li>
+									  {/if}
+									{/foreach}
+									</ol>								
+								</div>
+							</div>
+						</div>
+
+						<div class="hot pr">
+							<p class="more-link pa">
+								<a href="goods_list.php?type=hot" class="f14 bb6">更多<span class="dire l-dire c00"></span></a>
+							</p>
+							<h2 class="pb5 f14">
+								<span><strong>热卖商品</strong></span>
+							</h2>		
+						</div>
+
+						<div class="hot-shop pt20 pb20">
+							<div class="shop-list">
+								<div class="item clearfix">
+
+
+                                         {foreach from=$hot_goods item=hot_data key=key}
+                                                           {if $key <3}
+									<a href="goods.php?id={$hot_data.id}">
+										<div class="item-o">
+												<div><img src="../../{$hot_data.goods_img}"/></div>
+												
+												<span class="title">
+													{$hot_data.name}
+												</span>
+												<span class="price">
+													<strong>
+														<span class="cf00">{$hot_data.shop_price}</span>
+													</strong>
+												</span>
+										</div>				
+									</a>
+						         {/if}
+
+                                        {/foreach}
+
+						</div>
+
+
+								
+								<div class="item clearfix">
+
+                                         {foreach from=$hot_goods item=hot_data key=key}
+                                                           {if $key >=3 && $key <6}
+									<a href="goods.php?id={$hot_data.id}">
+										<div class="item-o">
+												<div><img src="../../{$hot_data.goods_img}"/></div>
+												
+												<span class="title">
+													{$hot_data.name}
+												</span>
+												<span class="price">
+													<strong>
+														<span class="cf00">{$hot_data.shop_price}</span>
+													</strong>
+												</span>
+										</div>				
+									</a>
+						         {/if}
+
+                                        {/foreach}
+									
+
+								</div>
+
+
+
+								<div class="item clearfix">
+
+                                         {foreach from=$hot_goods item=hot_data key=key}
+                                                           {if $key >=6 && $key <9}
+									<a href="goods.php?id={$hot_data.id}">
+										<div class="item-o">
+												<div><img src="../../{$hot_data.goods_img}"/></div>
+												
+												<span class="title">
+													{$hot_data.name}
+												</span>
+												<span class="price">
+													<strong>
+														<span class="cf00">{$hot_data.shop_price}</span>
+													</strong>
+												</span>
+										</div>				
+									</a>
+						         {/if}
+
+                                        {/foreach}
+									
+
+								</div>
+
+
+							</div>
+						</div>
+
+
+						<div class="footer-service pt10 pb10">
+							<div class="footer-service-link pb10">
+
+								<a href="index.php?access=computer" class="bb6">电脑版</a>
+								<a href="#" class="r-top">返回顶部<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAMCAIAAAA7y9DJAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6QjhBMjNGREVGMUUwMTFFMzg4OUFBM0ZBQThEOUVGRUIiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6QjhBMjNGREZGMUUwMTFFMzg4OUFBM0ZBQThEOUVGRUIiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpCOEEyM0ZEQ0YxRTAxMUUzODg5QUEzRkFBOEQ5RUZFQiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpCOEEyM0ZEREYxRTAxMUUzODg5QUEzRkFBOEQ5RUZFQiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PhW4+XQAAACkSURBVHjalI+xDcMgEEVJlCFYgAloWYYJGIDe9PYYpjc1pmcAGMADkD7fIiEERZHyqn///unuyL1Da805t9b25pW82LbNOQcxz3NKqfnPBCw0qsacMaaU8k6ggIVGm8s5t4EzMU0TLPIJNq7reiawPoRAvrEsy3EcN0qplBI1CqRrrzqVS1sfY1RKVe29H3/5wT8JxtggxjvAvu94WwjRhx4CDAAPEWYaTMLsuAAAAABJRU5ErkJggg==" /></a>
+								
+							</div>
+
+							<p>
+								Copyright 2014 ecshop.cn
+							</p>
+
+						</div>
+
+					</section>
+				</div>
+			<!-- 首页 end -->
+		</div>
+	<script type="text/javascript" src="../templates/static/scripts/lib/shop.min.js" charset="utf-8"></script>
+		<script type="text/javascript" charset="utf-8">
+
+			document.addEventListener('DOMContentLoaded', function () {
+				/*图片滚动*/
+			var adSlider = $('.sliderwrap');
+			var inner= adSlider.find('.slider-list');
+			var sl = inner.find('.slider-item').size();
+			var sw = inner.find('.slider-item').width();
+			var speed = 200;
+			var act = 0;
+			var x1,x2, direct;
+
+			function transformBox(obj,value,time){
+			    var time=time?time:0;
+			    transl="translate3d("+value+"px,0,0)";
+			    obj.css({'-webkit-transform':transl,'-webkit-transition':time+'ms linear'});
+			}
+
+			//inner.css({'width':sl * 100 + '%'});
+			adSlider.on('touchstart', function(e) {
+			    if(x2) x2 = undefined;
+			    x1 = e.touches[0].pageX;
+			})
+			.on('touchmove', function(e){
+			    e.preventDefault();
+			    x2 = e.touches[0].pageX;
+			    var offset= x2-x1+act*sw;
+			    transformBox(inner,offset,0);
+			})
+			.on('touchend', function(e) {
+			    if(x1 > x2) direct = 'left';
+			    else direct = 'right';
+			    if(Math.abs(x1 - x2) < 30) 
+			    transformBox(inner,act * sw,100);
+			})
+			.swipe(function(e){
+			    var offset;
+			    if(direct == 'left') {
+			        --act;
+			    }
+			    else {
+			        ++act;
+			    }
+			    if(act == 1){
+			        act = 0;
+			    }
+			    else if(act == -sl){
+			        act = - sl + 1;
+			    }
+			    offset=act*sw;
+			    transformBox(inner, offset,speed);
+			    $(this).find('.indicator').children().eq(Math.abs(act)).addClass('active').siblings('.dot').removeClass('active');
+			});
+			/*图片滚动end*/
+
+		}, false);
+		</script>
+	</body>
+</html>

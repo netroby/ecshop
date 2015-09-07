@@ -1,0 +1,274 @@
+<!doctype html>
+<html>
+	<head>
+		<title>用户登录</title>
+		<meta charset="GBK" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+		<link href="../templates/static/styles/reset.css" rel="stylesheet" />
+		<link href="../templates/static/styles/common.css" rel="stylesheet" />
+		<link href="../templates/static/styles/input.css" rel="stylesheet" />
+		<link href="../templates/static/styles/user.css" rel="stylesheet" />
+	</head>
+	<body>
+		<div class="wrap">
+
+                <!-- #BeginLibraryItem "/library/page_common_header.lbi" --><!-- #EndLibraryItem -->
+
+
+			<!--用户操作成功模板 start-->
+				<script type="text/x-jquery-tmpl", id="dialog-user-success">
+					<div class="mt10 mb10 txtac f12">
+						<span class="success-btn">√</span><span class="ml10">注册成功！</span>
+					</div>
+					<div class="mt10 mb10 txtac f12"><span>正在为您跳转，请稍后...</span></div>
+				</script>
+			<!--用户操作成功模板 end-->
+
+			<!--用户操作失败模板（带按钮） start-->
+				<script type="text/x-jquery-tmpl", id="dialog-user-fatol">
+					<div class="validate">
+							<div class="valid">
+								<div class="o-info pr" style="font-size: 14px;color: #FAA419; top: 2px">
+									<span class="icon-warning"></span>
+								</div>
+								<div class="o-info"><span class="ml5 c000">对不起！</span></div>		
+							</div>		
+							<div class="mt10 mb10 txtac f12"><span>{prompt}</span></div>
+					</div>
+				</script>
+			<!--用户操作失败模板 end-->
+
+
+			<!--用户操作失败模板（带按钮） start-->
+				<script type="text/x-jquery-tmpl", id="dialog-user-fatol1">
+					<div class="mt10 mb10 txtac f12">
+						<span class="success-btn">√</span><span class="ml10">对不起！</span>
+					</div>
+					<div class="mt10 mb10 txtac f12"><span>该手机号码已注册</span></div>
+					<div class="mt10 mb10 txtac f12">
+						<a href="#" class="login-btn post-btn ml10"><span>去登录</span></a>
+					</div>
+				</script>
+			<!--用户操作失败模板 end-->
+
+			<!--用户操作失败模板 start-->
+				<script type="text/x-jquery-tmpl", id="dialog-user-fatol2">
+					<div class="mt10 mb10 txtac f12">
+						<span class="success-btn">√</span><span class="ml10">对不起！</span>
+					</div>
+					<div class="mt10 mb10 txtac f12"><span>请输入6-22位密码！</span></div>
+				</script>
+			<!--用户操作失败模板 end-->
+
+			<!--用户登录 start-->
+				<div class="user">
+					<form action="user.php?act=do_login" method="post" class="form">
+						<div class="reg">
+							<ul>
+								<li class="mt15 mb15">
+									<div class="inputbox clearfix">
+										<div class="proc pl14">
+											<input  name="phone" placeholder="请输入手机号码或用户名" required="required" />
+										</div>						
+									</div>
+								</li>
+
+								<li class="mt15 mb15">
+									<div class="inputbox clearfix">			
+										<div class="proc pl14 pr pr110">
+											<input type="password" name="password" placeholder="请输入登录密码" required="required" />
+											<div class="tip-box pa crypto-pwd">显示</div>
+										</div>						
+									</div>
+								</li>
+
+                                                             {if $login_captcha==1}
+								<li class="mt15 mb15">
+									<div class="inputbox pr clearfix">
+										<div class="icode pa">
+											<img src="user.php?act=captcha" width="80" height="38" />
+										</div>					
+										<div class="proc lab-code pr pl14 pr90">
+											<div class="pr">
+												<div class="tipicon pa t-s">
+													<span class="dire b-dire"></span>
+												</div>
+												<div class="tipicon pa t-e">
+													<span>!</span>
+												</div>			
+											</div>	
+											<input data-verity="1234" type="text" name="code" class="code" id="code" placeholder="请输入验证码"/>								
+										</div>						
+									</div>
+								</li>
+							     {/if}
+
+
+
+
+
+
+								<li class="mt15 mb15 clearfix">
+									<div class="forgetpwd fl">
+										<a href="user.php?act=find_pwd"><span class="bb6">忘记密码?</span></a>
+									</div>
+
+									<div class="toreg fr">
+										<a href="user.php?act=register"><span class="bb6">没有账号? 去注册<span class="f12">&nbsp;&gt;</span></span></a>
+									</div>
+								</li>
+
+
+								<li>
+									<button class="btn login" type="submit"><span>登录</span></button>	
+								</li>
+							</ul>
+						</div>
+					</form>
+				</div>
+			<!-- 用户登录 end -->
+		</div>
+
+		<script type="text/javascript" src="../templates/static/scripts/lib/shop.min.js" charset="utf-8"></script>
+		<script type="text/javascript" src="../templates/static/scripts/lib/event.js" charset="utf-8"></script>
+		<script type="text/javascript" src="../templates/static/scripts/lib/formValid.js" charset="utf-8"></script>
+
+		<script type="text/javascript">
+
+			document.addEventListener('DOMContentLoaded', function () {
+				var isCrypto = 0; //判断是否密码明文和密文
+				var phoneCode = false; //手机号是否存在
+				var verifyCode = false; //验证码是否存在
+				var pCode = false; //短信验证码是否存在
+
+
+				/*表单验证*/
+				$('.form').readyValid({
+					'fields': {
+						'#phone': {
+							required: {
+								isSure: true,
+								errTemplate: $('#dialog-user-fatol').html(),
+								data: {prompt: '用户名不能为空！'},
+								exec: function (obj) {
+									new Dialog(obj.get(0), {type: 'confirm'});
+									closeDialog();
+								}
+							}
+					},
+
+					'#code': {
+						required: {
+							isSure: true,
+							errTemplate: $('#dialog-user-fatol').html(),
+							data: {prompt: '验证码不能为空！'},
+							exec: function (obj) {
+								new Dialog(obj.get(0), {type: 'confirm'});
+								closeDialog();
+							}
+						},
+						format: [
+							{
+								test: function (sign, val) {
+								var t_phone = $("#phone").val();
+									$.get('user.php?act=check_code', {code: val,sds:t_phone}, function (success) {
+										if (success === 'success') {
+											$('#code').parents('.inputbox').removeClass('error').addClass('success');
+											verifyCode = true;
+										} else {
+											$('#code').parents('.inputbox').removeClass('success').addClass('error');
+											verifyCode = false;
+										}
+									});
+									return true;
+								}
+							}
+						]
+
+					},
+
+
+					'#pwd': {
+						required: {
+							isSure: true,
+							errTemplate: $('#dialog-user-fatol').html(),
+							data: {prompt: '密码不能为空！'},
+							exec: function (obj) {
+								new Dialog(obj.get(0), {type: 'confirm'});
+								closeDialog();
+							}
+						},
+						format: [
+							{
+								sign: /^.{6,22}$/,
+								test: function (sign, val) {
+									return sign.test(val);
+								},
+								errTemplate: $('#dialog-user-fatol').html(),
+								data: {prompt: '请输入6-22位密码！'},
+								exec: function (obj) {
+									new Dialog(obj.get(0), {type: 'confirm'});
+									closeDialog();
+								}
+							}
+						]
+
+					}
+
+				}
+	
+						
+				});
+
+
+				//定时关闭对话框
+				function closeDialog () {
+					var dialog = $('.dialog'),
+							mask = $('#J_mask'),
+							dialog_hide = $('#J_dialog_hide');
+
+					function close () {
+						dialog.remove();
+						mask.hide();
+						dialog_hide.hide();
+						clearTimeout(timer);
+					}
+					var timer = setTimeout(close, 1000);
+				}
+
+				
+				//初始化单击事件绑定
+				var events = new Events({			
+					
+					//显示和隐藏密码
+					'click crypto-pwd': function (e, el) {
+						var prevInputBox = el.previousElementSibling;
+						isCrypto = +!isCrypto;
+
+						if (isCrypto) {
+							prevInputBox.type = 'text';
+							el.innerHTML = '隐藏';
+						} else {
+							prevInputBox.type = 'password';
+							el.innerHTML = '显示';
+						}
+						e.preventDefault();
+					},
+
+					//验证码图片更新	
+					'click icode>img': function (e, el) {
+						el.src =  el.src + '&' + Math.random();
+					}
+
+					
+
+
+
+
+				}).bind('click');
+			});
+
+		</script>
+
+	</body>
+</html>

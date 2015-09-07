@@ -1,0 +1,33 @@
+//@descrip: 广告信息模块
+
+//= 引入按钮模块
+@import "_button.scss";
+
+@mixin advert { 
+	.advert {
+		background: #FFF;
+		color: #000;
+		padding:0 15px;
+	}
+
+	.advert {
+		.head {
+			border: 1px solid #CCC;
+			padding: 5px 26px 5px 10px;
+			margin: 20px 0 18px;
+		}
+
+		.ban-row a {
+			display: block;
+		}
+
+		.ban-row-txt {
+			border-bottom: 2px solid #DDD;
+		}
+	}
+
+	.view-btn {
+		@include button(100px, 35px, -webkit-linear-gradient(top, #B20709, #A20709), #C60808);
+	}
+
+}

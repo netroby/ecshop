@@ -1,0 +1,6 @@
+//@descrip: 货品样式
+
+//= 引入货品模块
+@import "../lib/mixin/_goods.scss";
+
+@include goods;

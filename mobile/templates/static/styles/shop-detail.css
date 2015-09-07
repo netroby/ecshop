@@ -1,0 +1,76 @@
+.shop-detail {
+  background: #FFF;
+  color: #000;
+  padding: 12px 0; }
+
+.shop-detail .title {
+  margin-top: 35px;
+  font-size: 14px; }
+.shop-detail .price {
+  left: 0;
+  bottom: 0;
+  font-size: 14px; }
+.shop-detail .info {
+  background: #F2F2F2; }
+.shop-detail .buy {
+  background: -webkit-linear-gradient(top, #EB8622, #D67923);
+  border: 1px solid #D47823;
+  border-radius: 4px;
+  color: #FFF;
+  display: block;
+  font-weight: 700;
+  font-size: 14px;
+  text-align: center;
+  height: 35px;
+  line-height: 35px;
+  width: 100%; }
+
+.info .item {
+  background-color: #F2F2F2;
+  border-top: 1px solid #D7D7D7;
+  padding: 15px 16px 15px 12px; }
+.info .borbom {
+  border-bottom: 1px solid #D7D7D7; }
+
+.img li {
+  display: block;
+  position: relative;
+  top: 0;
+  width: 100%; }
+.img a {
+  display: block;
+  /*margin: 0 auto;*/
+  height: 125px;
+  /*width: 79px;*/ }
+.img .bar {
+  bottom: 0;
+  left: 50%;
+  margin-left: -30px; }
+
+.num button {
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  line-height: 28px;
+  text-align: center;
+  border: 1px solid #DDD;
+  overflow: hidden;
+  background-color: #FFF;
+  font-weight: 700;
+  font-size: 18px;
+  vertical-align: top; }
+
+.num .dia-subtract {
+  color: #999;
+  background-color: #EEE; }
+
+.num input {
+  display: inline-block;
+  width: 38px;
+  height: 26px;
+  line-height: 26px;
+  text-align: center;
+  border: 1px solid #DDD;
+  overflow: hidden;
+  background-color: #FFF;
+  font-weight: 700; }

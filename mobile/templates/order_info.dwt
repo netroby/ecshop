@@ -1,0 +1,288 @@
+<!doctype html>
+<html>
+	<head>
+		<title>提交订单</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+		<link href="../templates/static/styles/reset.css" rel="stylesheet" />
+		<link href="../templates/static/styles/common.css" rel="stylesheet" />
+		<link href="../templates/static/styles/order.css" rel="stylesheet" />
+		<script type="text/javascript" src="../templates/static/scripts/lib/event.js" charset="utf-8"></script>
+		<script type="text/javascript">
+
+			document.addEventListener('DOMContentLoaded', function () {
+				var freight = document.querySelector('.freight');
+
+				var events = new Events({
+
+					'click .express-type .desc': function (e, el) {
+						var target = e.target;
+						if (target.dataset['type'] === 'pick-up') {
+							freight.style.display = 'none';
+						} else if (target.dataset['type'] === 'express') {
+							freight.style.display = 'block';
+						}
+					}
+				}).bind('click');
+			
+			}, false);
+
+
+
+		</script>
+	</head>
+	<body>
+		<div class="wrap">
+
+
+   <!-- #BeginLibraryItem "/library/page_common_header.lbi" --><!-- #EndLibraryItem -->
+
+
+<form id="theForm"  name="theForm" method="post" action="flow.php">
+			<!--订单信息 start-->
+
+				<div class="order">
+					<ul>
+						<li class="clearfix borbottom">
+
+							<a href="#" class="item address mt22 mb20 pr">
+								<div class="explain fl">
+									<span class="txt c959">收货地址 :</span>
+								</div>
+								<div class="info">
+									<div class="desc">
+										<span class="contacts">{if $consignee.address_id}{$consignee.consignee},{/if}</span>
+										<span class="phone">{if $consignee.address_id}{$consignee.mobile}{/if}</span>
+									</div>
+									<div class="desc">
+										<span class="detail">{if $consignee.address_id}{$consignee.address}{else}您未设置收货地址{/if}</span>
+									</div>
+									<div class="desc">
+										<span class="zip">{if $consignee.address_id}{$consignee.zip}{/if}</span>
+									</div>
+								</div>
+
+								<div class="slide-bar pa">
+									<span class="dire l-dire fr"></span>
+								</div>
+
+							</a>
+
+							<div class="item address mt22 mb20 pr">
+								<a href="user.php?act=address_list&re_url=flow" class="add"><span class="f18">＋</span> <span class="add-t pr">使用新收货地址</span></a>	
+							</div>	
+
+						</li>	
+
+						<li class="clearfix">
+							<div class="item mt22 mb20">
+								<div class="explain fl">
+									<span class="txt c959">订单详情 :</span>
+								</div>
+								<div class="info">
+									<div class="desc">
+										<span>{$cart_goods.0.goods_name}</span>
+									</div>
+								</div>
+							</div>							
+						</li>	
+
+						<li class="clearfix">
+							<div class="item mt22 mb20">
+								<div class="explain fl">
+									<span class="txt c959">购买数量 :</span>
+								</div>
+								<div class="info">
+									<div class="desc">
+										<span>{$cart_goods.0.goods_number}</span>
+									</div>
+								</div>
+							</div>							
+						</li>	
+
+
+						<li class="clearfix">
+							<div class="item mt22 mb20 express-type">
+								<div class="explain fl">
+									<span class="txt c959">配送方式 :</span>
+								</div>
+								<div class="info">
+									<div class="desc">
+                                                                               {foreach from=$shipping_list item=shipping}
+										<span><input type="radio" value="{$shipping.shipping_id}" data-type="express" name='shipping' {if $shipping.shipping_id==$default_shipping_id} checked="true" {/if}  /></span>
+										<label for="express">{$shipping.shipping_name}</span>
+                                                                                 {/foreach}
+
+									</div>
+								</div>
+							</div>							
+						</li>		
+
+						<li class="clearfix">
+							<div class="item mt22 mb20">
+								<div class="explain fl">
+									<span class="txt c959">支付方式 :</span>
+								</div>
+								<div class="info">
+									<div class="desc">
+
+
+                                                                                {foreach from=$payment_list item=payment}
+
+								<span><input type="radio" name="payment" value="{$payment.pay_id}"  {if $payment.pay_id==$default_payment_id} checked="true" {/if} /></span>
+										<span>{$payment.pay_name}</span>
+
+                                                                                 {/foreach}
+
+									</div>
+								</div>
+							</div>							
+						</li>
+
+						<li class="clearfix">
+							<div class="item mt22 mb20 money">
+								<div class="explain fl">
+									<span class="txt c959">订单金额 :</span>
+								</div>
+								<div class="info">
+									<div class="desc cf00">
+										<span></span><span class="ml2">{$cart_goods.0.formated_subtotal}</span>
+									</div>
+								</div>
+
+
+                                                               <br/>
+                                                      <!-- {if $discount gt 0} -->{$your_discount}<br /><!-- {/if} -->
+
+
+
+							</div>							
+						</li>
+
+						<li class="clearfix">
+							<div class="item mt22 mb20 freight">
+								<div class="explain fl">
+									<span class="txt c959">运费 :</span>
+								</div>
+								<div class="info">
+									<div class="desc cf00">
+										<span></span><span class="ml2" id="freightMonEl">{$total.shipping_fee}</span>
+									</div>
+								</div>
+							</div>							
+						</li>
+
+
+						<li class="clearfix">
+							<div class="item mt22 mb20 freight">
+								<div class="explain fl">
+									<span class="txt c959">应付款金额 :</span>
+								</div>
+								<div class="info">
+									<div class="desc cf00">
+										<span></span><span class="ml2" id="orderMonEl">{$total.amount_formated}</span>
+									</div>
+								</div>
+							</div>							
+						</li>
+
+
+						<li>
+							<div class="item mt22 mb20">
+                                                       <input type="hidden" value="done" name="act">
+								<button href="#" class="buy"><span>提交订单</span></button>
+							</div>
+						</li>
+					</ul>
+				</div> 
+			<!--订单信息 end -->
+    </form>
+		</div>
+
+
+		<script type="text/javascript" src="../templates/static/scripts/lib/shop.min.js" charset="utf-8"></script>
+		<script type="text/javascript" src="../templates/static/scripts/lib/event.js" charset="utf-8"></script>
+		<script type="text/javascript">
+
+		//定时关闭对话框
+			function closeDialog () {
+				var dialog = $('.dialog'),
+						mask = $('#J_mask'),
+						dialog_hide = $('#J_dialog_hide');
+
+				function close () {
+					dialog.remove();
+					mask.hide();
+					dialog_hide.hide();
+					clearTimeout(timer);
+				}
+				var timer = setTimeout(close, 1000);
+			}	
+
+			//改变订单金额和运费
+			function changeMoney (type, orderMonEl, freightMonEl) {
+				 	$.getJSON('flow.php?act=select_shipping', {shopping_id: type}, function (data) {
+
+
+                                                var orderMonEl = document.getElementById("orderMonEl");
+                                                var freightMonEl = document.getElementById("freightMonEl");
+
+				 		orderMonEl.innerHTML = data.ordermon;
+				 		freightMonEl.innerHTML = data.freightmon;
+				 	})
+			}
+
+			document.addEventListener('DOMContentLoaded', function () {
+				var freight = document.querySelector('.freight'),
+						data = {type: '1'}; //类别1、配送方式 2、支付方式  属于哪个方式的哪一项 
+
+				var orderMoneyEl = document.querySelector('#order-money'),
+						freightMoneyEl = document.querySelector('#freight-money');		
+						
+			  /*$('input[type=radio]').bind('click', function (e) {
+			  	var self = $(e.target);
+
+			  	if (self.attr('name') === 'express') {
+			  		data.type = 1;
+			  	} else if ($(this).attr('name') === 'pay') {
+			  		data.type = 2;
+			  	}
+			  	
+			  	data.val = self.data('val');
+			  	changeMoney(data.type, orderMoneyEl, freightMoneyEl);
+			  })*/
+
+				var events = new Events({
+
+					'click .express-type .desc': function (e, el) {
+						var target = e.target;
+						if (target.dataset['type'] === 'pick-up') {
+							freight.style.display = 'none';
+							changeMoney(target.value, orderMoneyEl, freightMoneyEl);
+						} else if (target.dataset['type'] === 'express') {
+							freight.style.display = 'block';
+							changeMoney(target.value, orderMoneyEl, freightMoneyEl);
+						}				
+					},
+
+					'click .buy': function () {
+						$.getJSON('/lkgoods', data, function (data) {
+				  		if (data.num <= 0) {
+				  			new Dialog($('#num').html(), {type: 'confirm'});
+				  			closeDialog();
+				  		}
+				  	})
+					}
+
+				}).bind('click');
+			
+			}, false);
+			
+		</script>
+
+
+
+
+
+	</body>
+<html>	

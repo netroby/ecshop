@@ -1,0 +1,85 @@
+//@descrip: 用户信息模块
+
+//= 引入按钮模块
+@import "_button.scss";
+
+@mixin user {
+	.user {
+		background: #FFF;
+		color: #000;
+		padding:0 15px 0 14px;
+	}
+
+	.user {
+		.manage {
+			@include button(90px, 25px, -webkit-linear-gradient(top, #B20709, #A20709), #C60808)
+		}
+
+		.dire {
+			right: 0;
+			bottom: 14px;
+		}
+
+		.icode {
+			right: 0;
+			top: 0;
+			width: 80px;
+			height: 100%;
+		}
+
+		.pcode {
+			border: 1px solid #FFBB2F;
+			background-color: #FFFFE0;
+			color: #FF6600;
+			text-align: center;
+			right: -1px;
+			top: -1px;
+			width: 100px;
+			height: 38px;
+			line-height: 38px;
+		}
+
+		.part {
+			display: block;
+		}
+
+		.btn {
+			@include button(100%, 35px, -webkit-linear-gradient(top, #B20709, #A20709), #C60808);
+		}
+	}
+
+	.tipicon {
+			@include radiusButton();
+			/*display: none;*/
+			right: 0;
+			top: 7px;
+			text-align: center;
+		}
+
+		.success {
+			.tipicon {
+				display: block;
+			}
+		}
+
+		.error {
+			border: 1px solid #FF9999;
+
+			.tipicon {
+				display: block;
+				background-color: #FF9999;	
+			}	
+		}
+
+		.tip-box {
+			background: #FFFFE0;
+			border: 1px solid #FFD989;
+			color: #FF791B;
+			text-align: center;
+			width: 55px;
+			height: 28px;
+			line-height: 28px;
+			right: 6px;
+			top: 0;
+		}
+}

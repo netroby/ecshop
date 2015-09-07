@@ -1,0 +1,28 @@
+//@descrip: 输入框容器模块
+
+.inputbox {
+			border: 1px solid #BFBFBF;
+			padding: 4px 0;
+			line-height: 27px;
+			
+			.explain {
+				width: 89px;
+
+				span {
+					border-right: 1px solid #BFBFBF;
+					display: block;
+					height: 27px;
+					text-align: right;
+				}
+			}
+
+			.proc {
+				select, input {
+					border: 0 none;
+					display: block;
+					height: 30px;
+					line-height: 30px;
+					width: 100%;
+				}
+			}			
+		}

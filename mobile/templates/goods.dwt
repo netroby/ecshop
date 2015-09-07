@@ -1,0 +1,251 @@
+<!doctype html>
+<html>
+	<head>
+		<title>商品详情</title>
+		<meta charset="GBk" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+		<link href="../templates/static/styles/reset.css" rel="stylesheet" />
+		<link href="../templates/static/styles/common.css" rel="stylesheet" />
+		<link href="../templates/static/styles/shop-detail.css" rel="stylesheet" />
+		<script type="text/javascript" src="../templates/static/scripts/lib/shop.min.js" charset="utf-8"></script>
+		<script type="text/javascript" src="../templates/static/scripts/lib/event.js" charset="utf-8"></script>
+		<!--script type="text/javascript" src="../templates/static/scripts/lib/scroll-image.js" charset="utf-8"></script-->
+		<script type="text/javascript">
+
+			document.addEventListener('DOMContentLoaded', function () {
+
+				var num = document.querySelector('.num>.count'),
+					term = document.querySelector('.term'),
+					dire = document.querySelector('.s-shop .dire'),
+					isSlide = 0; //表示当前收状态
+
+				var events = new Events({
+					'click .num button': function (e, el) {
+						var target = e.target;
+						if (target.dataset['type'] === 'subtract') { 					
+						  num.value = +num.value - 1;
+						  if (+num.value === 1) {
+								num.previousElementSibling.disabled = 'disabled';
+								num.previousElementSibling.classList.add('dia-subtract');
+								num.value = '1';
+								return;
+							}
+					  }
+					  else if (target.dataset['type'] === 'add') {
+					  	num.value = +num.value + 1;  
+					  	if (+num.value > 1) {
+					  		num.previousElementSibling.removeAttribute('disabled');
+					  		num.previousElementSibling.classList.remove('dia-subtract');
+					  	}
+								
+						}
+					},
+
+				  'input .count': function () {
+				  	var lastChar = num.value.slice(-1);
+				  	if (isNaN(lastChar)) {
+				  		num.value = num.value.slice(0, -1);
+				  	} 
+				  },
+
+				  'click .s-shop .dire': function (e, el) {
+				  	isSlide = +!isSlide;
+				  	if (isSlide) {
+				  		dire.classList.remove('b-dire');
+				  		dire.classList.add('t-dire');
+				  		term.style.display = 'block';
+				  	} else {
+				  		dire.classList.remove('t-dire');
+				  		dire.classList.add('b-dire');
+				  		term.style.display = 'none';
+				  	}
+				  }
+
+				}).bind('click').bind('input');
+
+
+				/*图片滚动*/
+			var adSlider = $('.shop-detail>.img');
+			var inner= adSlider.find('.slider-list');
+			var sl = inner.find('.slider-item').size();
+			var sw = 180;
+			var speed = 200;
+			var act = 0;
+			var x1,x2, direct;
+
+			function transformBox(obj,value,time){
+			    var time=time?time:0;
+			    transl="translate3d("+value+"px,0,0)";
+			    obj.css({'-webkit-transform':transl,'-webkit-transition':time+'ms linear'});
+			}
+
+			/*inner.css({'width':sl * 100 + '%'});*/
+			adSlider.on('touchstart', function(e) {
+			    if(x2) x2 = undefined;
+			    x1 = e.touches[0].pageX;
+			})
+			.on('touchmove', function(e){
+			    e.preventDefault();
+			    x2 = e.touches[0].pageX;
+			    var offset= x2-x1+act*sw;
+			    transformBox(inner,offset,0);
+			})
+			.on('touchend', function(e) {
+			    if(x1 > x2) direct = 'left';
+			    else direct = 'right';
+			    if(Math.abs(x1 - x2) < 30) 
+			    transformBox(inner,act * sw,100);
+			})
+			.swipe(function(e){
+			    var offset;
+			    if(direct == 'left') {
+			        --act;
+			    }
+			    else {
+			        ++act;
+			    }
+			    if(act == 1){
+			        act = 0;
+			    }
+			    else if(act == -sl){
+			        act = - sl + 1;
+			    }
+			    offset=act*sw;
+			    transformBox(inner, offset,speed);
+			    $(this).find('.indicator').children().eq(Math.abs(act)).addClass('active').siblings('.dot').removeClass('active');
+			});
+			/*图片滚动end*/
+
+		}, false);
+
+
+		</script>
+	</head>
+	<body>
+		<div class="wrap">
+
+       <!-- #BeginLibraryItem "/library/page_common_header.lbi" --><!-- #EndLibraryItem -->
+
+			<!--购买商品库存不足模板 start-->
+				<script type="text/x-jquery-tmpl", id="dialog-goods-short">
+					<div class="mt10 mb10 txtac f12">
+						<span class="success-btn">√</span><span class="ml10">您所买的商品库存不足，</span>
+					</div>
+					<div class="mt10 mb10 txtac f12"><span>请您重新选择。</span></div>
+				</script>
+			<!--购买商品库存不足模板 end-->
+
+
+			<!-- 商品详情 start -->
+				<div class="shop-detail pr">
+					<div class="img">
+						<div class="pr" style="height: 180px; overflow: hidden; width: 180px; margin: 0 auto;border: 1px solid #EEE; z-index: 999">
+							<ul style="width: 900px; height: 180px; z-index: 888" class="slider-list pr">
+
+								<li class="slider-item"><a href="goods.php?id={$goods_info.goods_id}"><img src="../../{$goods_info.goods_thumb}" width="180" /></a></li>
+
+							</ul>
+						</div>
+							
+							
+					<div class="bar" style="position: absolute; top: 195px; left: 50%; margin-left: -30px; height: 20px; overflow: hidden">
+						<ol class="indicator mt10">
+							<li class="dot active">1</li>
+						</ol>
+					</div>
+					
+					</div>	
+					
+					<div class="title mb10 pl14 pr12"> 
+						{$goods_info.goods_name}
+					</div>
+					<div class="bar clearfix mb13 pl14 pr12">
+						<p class="price cf00 fl">
+							<span></span><span class="ml2">{$goods_info.shop_price_formated}</span>
+						</p>
+						<div class="fr">
+							<a href="#"><img src="../../static/images/direicon.jpg" width="23" /></a>	
+						</div>
+					</div>
+
+					<div class="info">
+						<div class="items mb13">
+							<a href="goods.php?act=goods_desc&id={$goods_info.goods_id}" class="item clearfix">
+  							<span class="txt fl c00">
+									<strong>查看商品详细介绍</strong>
+								</span>
+								<span class="dire l-dire fr"> </span>
+							</a>	
+
+							<div class="item borbom">
+								<div class="s-shop clearfix">
+									<span class="txt fl">
+										<strong>选择货品</strong>
+									</span>
+									<div class="dire b-dire fr"></div>
+								</div>
+								
+								<!--购买条件 start-->
+								<div class="term" style="display: none">
+
+
+
+<form method="post" action="flow.php">
+									<div class="colour pt15 pb15">
+
+
+					{foreach from=$specification item=spec key=spec_key}
+					<span class="c959">{$spec.name}:</span>
+					  {if $spec.attr_type eq 1}
+					    {foreach from=$spec.values item=value key=key}
+					    <span> <input type="radio" name="spec_{$spec_key}" value="{$value.id}" id="spec_value_{$value.id}" {if $key eq 0}checked{/if}/>
+
+					    {$value.label} [{if $value.price gt 0}{$lang.plus}{elseif $value.price lt 0}{$lang.minus}{/if} {$value.format_price|abs}]<br />
+					    </span>
+					    {/foreach}
+					    <input type="hidden" name="spec_list" value="{$key}" />
+					   {/if}
+					{/foreach}
+
+
+									</div>
+
+
+
+
+
+									<div class="num">
+										<span class="c959">购买数量：</span>
+										<button href="#" class="subtract c00 dia-subtract" data-type="subtract" disabled="disabled" type="button" >-</button>
+										<input type="text" maxlength="4" title="请输入购买数量" class="count" value="1" name="number" />
+											<button href="#" class="add c00" data-type="add" type="button">+</button>
+
+										<span class="c959 ml10">{if $goods_info.goods_number neq ""}
+										{if $goods_info.goods_number eq 0}
+										商品库存：已售完
+										{else}
+										商品库存：{$goods_info.goods_number}
+										{/if}<br />
+										{/if}</span>
+									</div>
+
+                                                                        <input type="hidden" value="{$goods_info.goods_id}" name="goods_id">
+                                                                        <input type="hidden" value="add_goods" name="act">
+
+								</div>
+								<!--购买条件 end-->
+							
+							</div>
+						</div>
+					</div>
+
+					<div class="pl14 pr12">
+						<button class="buy"><span>立刻购买</span></button>
+					</div>
+</form>
+				</div>
+			<!-- 商品详情 end -->
+
+		</div>
+	</body>
+</html>

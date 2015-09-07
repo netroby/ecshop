@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+	<head>
+		<title>订单支付</title>
+		<meta charset="GBK" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+		<link href="../templates/static/styles/reset.css" rel="stylesheet" />
+		<link href="../templates/static/styles/common.css" rel="stylesheet" />
+		<link href="../templates/static/styles/order.css" rel="stylesheet" />
+		<script type="text/javascript" src="../static/scripts/lib/require.js" data-main="../templates/static/scripts/main"></script>
+	</head>
+	<body>
+		<div class="wrap">
+
+				<!--订单确定 start-->
+					<div class="order">
+						<div class="confirm">
+							<div class="payicon paysuccess">
+								<span class="dire b-dire cfff"></span>
+							</div>
+							<div class="title mt12 mb12 f14">
+							</div>	
+							<div class="title mt12 mb12 f14">
+								{$pay_online}
+							</div>	
+						</div>
+					</div>
+				<!--订单确定 end-->
+
+		</div>
+	</body>
+</html>

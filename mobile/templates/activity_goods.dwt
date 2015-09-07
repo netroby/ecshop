@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+	<head>
+		<title>{$common_header_title}</title>
+		<meta charset="GBK" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+		<link href="../templates/static/styles/reset.css" rel="stylesheet" />
+		<link href="../templates/static/styles/common.css" rel="stylesheet" />
+		<link href="../templates/static/styles/shop-list.css" rel="stylesheet" />
+		<link href="../templates/static/styles/advert.css" rel="stylesheet" />
+	</head>
+	<body>
+		<div class="wrap">
+
+            <!-- #BeginLibraryItem "/library/page_common_header.lbi" --><!-- #EndLibraryItem -->
+
+			<!-- 广告促销内容页 start -->
+				<div class="advert">
+					<div class="head">
+						<span class="f14">{$activity.content}</span>
+					</div>
+
+					<ul>
+
+					 {foreach from=$goods_list item=goods}
+						<li class="item mt15 mb15">
+							<div class="img">
+								<a href="goods.php?id={$goods.goods_id}"><img src="../../{$goods.goods_thumb}" width="79" /></a>
+							</div>
+							<div class="info">
+								<div class="title">{$goods.goods_name}</div>
+								<div class="bar pr clearfix">
+									<div class="number"><span class="c959 f12">编号:{$goods.goods_sn}</span></div>
+									<div class="norm"><span class="c959 f12">&nbsp&nbsp&nbsp</span></div>
+									<p class="price cf00">
+										<span></span><span class="ml2">{$goods.shop_price}</span>
+									</p>
+								</div>
+							</div>	
+						</li>
+                                          {/foreach}
+					</ul>
+				</div>
+			<!-- 广告促销内容页 start -->
+		</div>
+	</body>
+</html>

@@ -1,0 +1,57 @@
+//@descrip: 收货地址模块
+
+//= 引入按钮模块
+@import "_button.scss";
+
+@mixin goods {
+	.goods {
+		background: #FFF;
+		color: #000;
+		padding:10px 15px;
+	}
+
+	.goods {
+		.item {
+			border: 1px solid #DDD;
+			background-color: #EAEAEA;
+			padding: 7px 11px;			
+		}
+
+		.item {
+			.tipicon {
+				@include radiusButton();
+				display: none;
+				right: 5px;
+				top: 7px;
+			}
+		}
+
+		.checkitem {
+			border: 1px solid #FFD989;
+			background-color: #FFFFE0;
+
+			.tipicon {
+				display: block;
+			}
+		}
+
+		.save {
+				@include button(100%, 35px, -webkit-linear-gradient(top, #B20709, #A20709), #C60808);
+		}
+
+		.add {
+				@include button(100%, 35px, -webkit-linear-gradient(top, #B20709, #A20709), #C60808);
+		}	
+
+		.add-t {
+			top: -2px;
+		}
+	}
+
+	.cmd {
+		.opt {
+			@include generalButton();
+			vertical-align: middle;
+		}
+	}
+}

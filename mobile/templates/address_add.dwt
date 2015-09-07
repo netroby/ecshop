@@ -1,0 +1,151 @@
+<!doctype html>
+<html>
+	<head>
+		<title>收货地址</title>
+		<meta charset="GBK" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+		<link href="../templates/static/styles/reset.css" rel="stylesheet" />
+		<link href="../templates/static/styles/common.css" rel="stylesheet" />
+		<link href="../templates/static/styles/input.css" rel="stylesheet" />
+		<link href="../templates/static/styles/good.css" rel="stylesheet" />
+		<script type="text/javascript" src="../templates/static/scripts/lib/transport.js" ></script>
+		<script type="text/javascript" src="../templates/static/scripts/lib/region.js" ></script>
+		<script type="text/javascript" src="../templates/static/scripts/lib/shopping_flow.js" ></script>
+		<script type="text/javascript" src="../templates/static/scripts/lib/sutils.js" ></script>
+
+        <script type="text/javascript">
+          region.isAdmin = false;
+          {foreach from=$lang.flow_js item=item key=key}
+          var {$key} = "{$item}";
+          {/foreach}
+
+          {literal}
+          onload = function() {
+            if (!document.all)
+            {
+              document.forms['theForm'].reset();
+            }
+          }
+          {/literal}
+        </script>
+
+
+		
+	</head>
+	<body>
+		<div class="wrap">
+
+             <!-- #BeginLibraryItem "/library/page_common_header.lbi" --><!-- #EndLibraryItem -->
+			
+			<!--添加收货地址 start-->
+				<div class="goods">
+					<form action="user.php?act=act_edit_address" method="post" onsubmit="return checkConsignee(this)"  name="theForm" id="theForm">
+						<ul>
+
+
+
+
+
+
+
+            <table width="100%" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
+                <tr>
+                  <td align="right" bgcolor="#ffffff">{$lang.country_province}：</td>
+                  <td colspan="3" align="left" bgcolor="#ffffff"><select name="country" id="selCountries_{$sn}" onchange="region.changed(this, 1, 'selProvinces_{$sn}')">
+                      <option value="0">{$lang.please_select}{$name_of_region[0]}</option>
+                      <!-- {foreach from=$country_list item=country} -->
+                      <option value="{$country.region_id}" {if $consignee.country eq $country.region_id}selected{/if}>{$country.region_name}</option>
+                      <!-- {/foreach} -->
+                    </select>
+                    <select name="province" id="selProvinces_{$sn}" onchange="region.changed(this, 2, 'selCities_{$sn}')">
+                      <option value="0">{$lang.please_select}{$name_of_region[1]}</option>
+                      <!-- {foreach from=$province_list.$sn item=province} -->
+                      <option value="{$province.region_id}" {if $consignee.province eq $province.region_id}selected{/if}>{$province.region_name}</option>
+                      <!-- {/foreach} -->
+                    </select>
+                    <select name="city" id="selCities_{$sn}" onchange="region.changed(this, 3, 'selDistricts_{$sn}')">
+                      <option value="0">{$lang.please_select}{$name_of_region[2]}</option>
+                      <!-- {foreach from=$city_list.$sn item=city} -->
+                      <option value="{$city.region_id}" {if $consignee.city eq $city.region_id}selected{/if}>{$city.region_name}</option>
+                      <!-- {/foreach} -->
+                    </select>
+                    <select name="district" id="selDistricts_{$sn}" {if !$district_list.$sn}style="display:none"{/if}>
+                      <option value="0">{$lang.please_select}{$name_of_region[3]}</option>
+                      <!-- {foreach from=$district_list.$sn item=district} -->
+                      <option value="{$district.region_id}" {if $consignee.district eq $district.region_id}selected{/if}>{$district.region_name}</option>
+                      <!-- {/foreach} -->
+                    </select>
+                  {$lang.require_field} </td>
+                </tr>
+              </table>
+
+               <input type="hidden" name="address_id" value="{$address_id}">
+
+
+
+
+
+
+
+						<li class="additem mt12 mb12">
+							<div class="inputbox clearfix">
+								<div class="explain fl">
+									<span class="pr7">收货地址</span>
+								</div>
+								<div class="proc pl100">
+									<input type="text" name="address" value="{$consignee.address}" />
+								</div>
+							</div>
+						</li>
+
+						<li class="additem mt12 mb12">
+							<div class="inputbox clearfix">
+								<div class="explain fl">
+									<span class="pr7">收货人姓名</span>
+								</div>
+								<div class="proc pl100">
+									<input type="text" name="consignee"  value="{$consignee.consignee}" />
+								</div>
+							</div>
+						</li>
+
+						<li class="additem mt12 mb12">
+							<div class="inputbox clearfix">
+								<div class="explain fl">
+									<span class="pr7">手机号码</span>
+								</div>
+								<div class="proc pl100">
+									<input type="tel" maxlength="11" name="mobile" value="{$consignee.mobile}" />				
+								</div>
+							</div>
+						</li>
+
+						<li class="additem mt12 mb12">
+							<div class="inputbox clearfix">
+								<div class="explain fl">
+									<span class="pr7">邮编</span>
+								</div>
+								<div class="proc pl100">
+									<input type="number"  name="zipcode"  value="{$consignee.zipcode}" />				
+								</div>
+							</div>
+						</li>
+
+                                                 <input type="hidden" value="{$re_url}" name="re_url">
+
+						<li class="additem mt12 mb12">
+							<div class="clearfix">
+								<button class="save" type="submit">
+									<span>保存</span>
+								</button>	
+							</div>	
+						</li>
+
+					</ul>
+					</form>				
+				</div>
+			<!--添加收货地址 end-->
+
+		</div>
+	</body>
+</html>

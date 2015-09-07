@@ -1,0 +1,10 @@
+//@descrip: 重置样式
+
+// 引入reset mixin库
+@import "../lib/mixin/_reset";
+
+/***********重置浏览器属性***********/
+@include reset();
+
+
+

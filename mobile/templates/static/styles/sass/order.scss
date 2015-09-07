@@ -1,0 +1,6 @@
+//@descrip: 订单样式
+
+//= 引入订单模块
+@import "../lib/mixin/_order.scss";
+
+@include order;

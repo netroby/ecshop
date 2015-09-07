@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+	<head>
+		<title>商品列表</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+		<link href="../templates/static/styles/reset.css" rel="stylesheet" />
+		<link href="../templates/static/styles/common.css" rel="stylesheet" />
+		<link href="../templates/static/styles/shop-list.css" rel="stylesheet" />
+		<script type="text/javascript" src="../templates/static/scripts/lib/require.js" data-main="../templates/static/scripts/main"></script>
+	</head>
+	<body>
+		<div class="wrap">
+
+              <!-- #BeginLibraryItem "/library/page_common_header.lbi" --><!-- #EndLibraryItem -->
+
+
+			<!-- 商品列表 start -->
+				<div class="shop-list">
+					<ul class="items">
+{foreach from=$goods_data item=goods}
+						<li class="item">
+							<div class="img">
+							<a href="goods.php?id={$goods.id}"><img src="../../{$goods.thumb}" width="79" /></a>
+							</div>
+							<div class="info">
+								<div class="title">{$goods.name}</div>
+								<div class="bar mt20 pr clearfix">
+									<p class="price cf00 pa">
+										<span></span><span class="ml2">{$goods.price}</span>
+									</p>
+									<div class="fr">
+											<a href="goods.php?id={$goods.id}" class="buy">立即购买</a>	
+									</div>
+								</div>
+							</div>	
+						</li>
+{/foreach}
+					</ul>	
+				</div>
+			<!-- 商品列表 end -->
+
+		</div>
+	</body>
+</html>

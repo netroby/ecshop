@@ -1,0 +1,136 @@
+﻿<!doctype html>
+<html>
+	<head>
+		<title>首页</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+		<link href="../../static/styles/reset.css" rel="stylesheet" />
+		<link href="../../static/styles/common.css" rel="stylesheet" />
+		<link href="../../static/styles/shop-list.css" rel="stylesheet" />
+		<link href="../../static/styles/advert.css" rel="stylesheet" />
+		<script type="text/javascript" src="../../static/scripts/lib/shop.min.js" charset="utf-8"></script>
+		<script type="text/javascript" charset="utf-8">
+			document.addEventListener('DOMContentLoaded', function () {
+				var shareObj = document.querySelector('.a-right a');
+				shareObj.addEventListener('click', function () {
+					new Dialog($('#dialog-share-to').html(), {type: 'confirm', width: 300});	
+				}, false);
+			},false);
+		</script>
+	</head>
+	<body>
+
+		<!--对话框分享成功模板 start-->
+		<script type="text/x-jquery-tmpl", id="dialog-share-success">
+			<div class="mt10 mb10 txtac f12">
+				<span class="success-btn">√</span><span class="ml10">分享成功！</span>
+			</div>
+			<div class="mt10 mb10 txtac f12">正在为您跳转，请稍后...</div>
+		</script>
+		<!--对话框对话框分享成功模板 end-->
+
+		<!--对话框至模板 start-->
+		<script type="text/x-jquery-tmpl", id="dialog-share-to">
+			<div class="share-to f12">
+				<div class="share-to-head f14">
+					<span>分享至</span>
+				</div>
+				<div class="share-to-info">
+					<div class="inner clearfix">
+
+						<a href="#" class="inner-b">
+							<span class='img'>
+								<img src="../../static/images/icon/weixin.gif" width="50" height="50" />
+							</span>
+							<span class="txt c00 f14">微信好友</span>
+						</a>	
+						<a href="#" class="inner-b m">
+							<span class='img'>
+								<img src="../../static/images/icon/weixinpengyou.gif" width="50" height="50" />
+							</span>
+							<span class="txt c00 f14">朋友圈</span>
+						</a>
+						<a href="#" class="inner-b r">
+							<span class='img'>
+								<img src="../../static/images/icon/qzone.gif" width="50" height="50" />
+							</span>
+							<span class="txt c00 f14">QQ空间</span>
+						</a>
+
+					</div>
+					<div class="inner clearfix">
+
+						<a href="#" class="inner-b">
+							<span class='img'>
+								<img src="../../static/images/icon/qqim.gif" width="50" height="50" />
+							</span>
+							<span class="txt c00 f14">QQ好友</span>
+						</a>	
+						<a href="#" class="inner-b m">
+							<span class='img img-r'>
+								<img src="../../static/images/icon/sinaminiblog.gif" width="50" height="50" />
+							</span>
+							<span class="txt c00 f14">新浪微博</span>
+						</a>
+						<a href="#" class="inner-b r">
+							<span class='img img-r'>
+								<img src="../../static/images/icon/renren.gif" width="50" height="50" />
+							</span>
+							<span class="txt c00 f14">人人网</span>
+						</a>
+
+					</div>
+					<div class="inner clearfix">
+						<a href="#" class="inner-b">
+							<span class='img'>
+								<img src="../../static/images/icon/qqmb.gif" width="50" height="50" />
+							</span>
+							<span class="txt c00 f14">腾讯微博</span>
+						</a>	
+					</div>
+				</div>
+				
+			</div>
+		</script>
+		<!--对话框至模板 end-->
+
+		<div class="wrap">
+
+			<!--公共导航头部 start-->
+			<header>
+				<div class="a-bar pr clearfix">
+					<a href="javascript:history.back()" class="a-back pa" title="上一页"><span class="dire r-dire"></span></a>
+					<div class="a-name">
+						<span>迎五一</span>	
+					</div>
+					<div class="a-right pa">
+						<a href="#" title="分享"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAASCAIAAAA/hdJEAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDozMzEzRENCREU2RTZFMzExQTA0Q0MyN0NDRUY5NEFFNyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo4MUZENEQzREU3QzUxMUUzQTU2NTg5NzQxNDBFNDM2QyIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo4MUZENEQzQ0U3QzUxMUUzQTU2NTg5NzQxNDBFNDM2QyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M2IChXaW5kb3dzKSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjMzMTNEQ0JERTZFNkUzMTFBMDRDQzI3Q0NFRjk0QUU3IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjMzMTNEQ0JERTZFNkUzMTFBMDRDQzI3Q0NFRjk0QUU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+3qtOZgAAARFJREFUeNrclMERREAQRa1yJAACkIAEJCANaeBOALgTAAFwx50ACIC7/btdNWV3zKyt2tP+Q9fUDK9/dw83x3GUy+q6rizLLMvWdT3u3/Z9l7w2TVNRFPM8D8NAFMRlWcIw7Pv+hdI/xSOQEJlpbRiGbdtpmrLTtm3BIlMPSvbUqRfLsnzfR9WmafKn27YB1DSNJinH87wgCCQP6Loex3Fd10KK67pyBAldy/NcSIFVtkZ3YRv+Ud1xM4oiaqgmMgK3NKMkSVjvGeWtlUIKYlVVyMbPHjYRj5uaaDQogUfAC10c6j1lQlRPKeM48giIISD0no3/3At6oXwjVfmF/o/y4c8gF7t7muhrviJ2p+8CDAAYsZigYj1X5QAAAABJRU5ErkJggg==" /></a>		
+					</div>
+				</div>
+			</header>
+			<!--公共导航头部 start-->
+
+			<!-- 广告分享内容页 start -->
+				<div class="advert">
+					<div class="ban-row pt15 pb15">
+						<a href="#">
+							<img src="../../static/images/banner.jpg" width="290" />
+						</a>
+					</div>
+
+					<div class="ban-row-txt">
+						<p class="mb15 f14">
+							由于天山百盛店装修，全场秒杀，回馈新老客户。一楼化妆品专柜，二楼女装，三楼运动服装，全场1折起，限时优惠。
+						</p>	
+					</div>
+
+					<div class="mt10 clearfix">
+						<div class="fr"><a href="#" class="view-btn"><span>查看交通信息</span></a></div>
+					</div>
+
+				</div>
+			<!-- 广告分享内容页 end -->
+
+		</div>
+	</body>
+</html>

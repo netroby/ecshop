@@ -1,0 +1,78 @@
+//@descrip: 订单信息模块
+
+//= 引入按钮模块
+@import "_button.scss";
+
+@mixin order {
+	.order {
+		background: #FFF;
+		color: #000;
+	}
+
+	.order {
+		.item {
+			padding: 0 14px;
+		}
+
+		.explain {
+			width: 60px;
+			text-align: right;
+		}
+
+		.info {
+			padding-left: 70px;
+		}
+
+		.buy {
+			@include button(100%, 35px, -webkit-linear-gradient(top, #B20709, #A20709), #C60808);
+		}
+
+		.cpay {
+			@include button(100%, 25px);
+		}
+
+		.dpay {
+			@include button(100%, 35px);
+		}
+
+		.confirm {
+			margin: 0 auto;
+			text-align: center;
+			width: 150px;
+		}
+
+		.payicon {
+			color: #FFF;
+			font-size: 20px;
+			width: 30px;
+			height: 30px;
+			line-height: 30px;
+			text-align: center;
+			margin: 25px auto;
+		}
+
+		.paysuccess {
+			border-radius: 100%;
+			background-color: #639E2B;
+		}
+
+		.payerror {
+			width: 0;
+			height: 0;
+		    border-left: 30px solid transparent; border-right: 30px solid transparent; border-top: 30px solid #fAA419; border-bottom: 30px solid transparent;
+			background-color: #fAA419;
+		}
+
+		.slide-bar {
+			top: 20px;
+			right: 20px;
+		}
+
+		.add {
+			@include button(100%, 35px, -webkit-linear-gradient(top, #B20709, #A20709), #C60808);
+		}	
+
+
+
+	}
+}
