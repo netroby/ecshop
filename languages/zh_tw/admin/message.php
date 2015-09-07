@@ -10,8 +10,8 @@
  * 使用；不允許對程序代碼以任何形式任何目的的再發佈。
  * ============================================================================
  * $Author: liubo $
- * $Id: message.php 17217 2011-01-19 06:29:08Z liubo $
-*/
+ * $Id: message.php 17217 2011-01-19 06:29:08Z liubo $.
+ */
 /* 這段信息 */
 $_LANG['sender_id'] = '留言者';
 $_LANG['receiver_id'] = '接收者';
@@ -52,5 +52,3 @@ $_LANG['drop_msg'] = '刪除選中';
 
 $_LANG['batch_drop_success'] = '成功刪除了 %d 個留言記錄';
 $_LANG['no_select_msg'] = '您現在沒有任何留言記錄';
-
-?>

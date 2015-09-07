@@ -10,9 +10,8 @@
  * 使用；不允許對程序代碼以任何形式任何目的的再發佈。
  * ============================================================================
  * $Author: liubo $
- * $Id: check_file_priv.php 17217 2011-01-19 06:29:08Z liubo $
-*/
-
+ * $Id: check_file_priv.php 17217 2011-01-19 06:29:08Z liubo $.
+ */
 $_LANG['item'] = '項目';
 $_LANG['read'] = '可讀權限';
 $_LANG['write'] = '可寫權限';
@@ -27,4 +26,3 @@ $_LANG['unwrite'] = '不可寫';
 $_LANG['unmodify'] = '不可修改';
 
 $_LANG['unrename'] = '目錄需要執行rename權限';
-?>

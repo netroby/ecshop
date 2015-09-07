@@ -12,12 +12,9 @@
  * commercial purposes.
  * ============================================================================
  * $Author: liubo $
- * $Id: cod.php 17217 2011-01-19 06:29:08Z liubo $
+ * $Id: cod.php 17217 2011-01-19 06:29:08Z liubo $.
  */
-
 global $_LANG;
 
-$_LANG['cod']      = 'Cash on shipping';
-$_LANG['cod_desc'] = 'City of COD:¡Á¡Á¡Á' . chr(13) . 'Region of COD:¡Á¡Á¡Á';
-
-?>
+$_LANG['cod'] = 'Cash on shipping';
+$_LANG['cod_desc'] = 'City of COD:¡Á¡Á¡Á'.chr(13).'Region of COD:¡Á¡Á¡Á';

@@ -10,12 +10,10 @@
  * 使用；不允許對程序代碼以任何形式任何目的的再發佈。
  * ============================================================================
  * $Author: liubo $
- * $Id: ems.php 17217 2011-01-19 06:29:08Z liubo $
-*/
-
-$_LANG['ems']                   = 'EMS 國內郵政特快專遞';
-$_LANG['ems_express_desc']      = 'EMS 國內郵政特快專遞描述內容';
-$_LANG['item_fee']              = '單件商品費用：';
-$_LANG['base_fee']              = '500克以內費用：';
-$_LANG['step_fee']              = '續重每500克或其零數：';
-?>
+ * $Id: ems.php 17217 2011-01-19 06:29:08Z liubo $.
+ */
+$_LANG['ems'] = 'EMS 國內郵政特快專遞';
+$_LANG['ems_express_desc'] = 'EMS 國內郵政特快專遞描述內容';
+$_LANG['item_fee'] = '單件商品費用：';
+$_LANG['base_fee'] = '500克以內費用：';
+$_LANG['step_fee'] = '續重每500克或其零數：';

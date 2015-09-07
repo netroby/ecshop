@@ -10,9 +10,8 @@
  * 使用；不允许对程序代码以任何形式任何目的的再发布。
  * ============================================================================
  * $Author: liubo $
- * $Id: shipping.php 17217 2011-01-19 06:29:08Z liubo $
-*/
-
+ * $Id: shipping.php 17217 2011-01-19 06:29:08Z liubo $.
+ */
 $_LANG['shipping_name'] = '配送方式名称';
 $_LANG['shipping_version'] = '插件版本';
 $_LANG['shipping_desc'] = '配送方式描述';
@@ -77,10 +76,9 @@ $_LANG['js_languages']['lang_removeconfirm'] = '您确定要卸载该配送方式吗？';
 $_LANG['js_languages']['shipping_area'] = '设置区域';
 $_LANG['js_languages']['upload_falid'] = '错误：文件类型不正确。请上传“%s”类型的文件！';
 $_LANG['js_languages']['upload_del_falid'] = '错误：删除失败！';
-$_LANG['js_languages']['upload_del_confirm'] = "提示：您确认删除打印单图片吗？";
-$_LANG['js_languages']['no_select_upload'] = "错误：您还没有选择打印单图片。请使用“浏览...”按钮选择！";
-$_LANG['js_languages']['no_select_lable'] = "操作终止！您未选择任何标签。";
-$_LANG['js_languages']['no_add_repeat_lable'] = "操作失败！不允许添加重复标签。";
-$_LANG['js_languages']['no_select_lable_del'] = "删除失败！您没有选中任何标签。";
-$_LANG['js_languages']['recovery_default_suer'] = "您确认恢复默认吗？恢复默认后将显示安装时的内容。";
-?>
+$_LANG['js_languages']['upload_del_confirm'] = '提示：您确认删除打印单图片吗？';
+$_LANG['js_languages']['no_select_upload'] = '错误：您还没有选择打印单图片。请使用“浏览...”按钮选择！';
+$_LANG['js_languages']['no_select_lable'] = '操作终止！您未选择任何标签。';
+$_LANG['js_languages']['no_add_repeat_lable'] = '操作失败！不允许添加重复标签。';
+$_LANG['js_languages']['no_select_lable_del'] = '删除失败！您没有选中任何标签。';
+$_LANG['js_languages']['recovery_default_suer'] = '您确认恢复默认吗？恢复默认后将显示安装时的内容。';

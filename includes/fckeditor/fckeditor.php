@@ -1,4 +1,5 @@
 <?php
+
 /*
  * FCKeditor - The text editor for Internet - http://www.fckeditor.net
  * Copyright (C) 2003-2008 Frederico Caldeira Knabben
@@ -25,7 +26,8 @@
  * strict error messages with PHP 5).
  */
 
-if ( !function_exists('version_compare') || version_compare( phpversion(), '5', '<' ) )
-    include_once( 'fckeditor_php4.php' ) ;
-else
-    include_once( 'fckeditor_php5.php' ) ;
+if (!function_exists('version_compare') || version_compare(phpversion(), '5', '<')) {
+    include_once 'fckeditor_php4.php';
+} else {
+    include_once 'fckeditor_php5.php';
+}

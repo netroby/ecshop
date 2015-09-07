@@ -10,7 +10,7 @@
  * 使用；不允許對程序代碼以任何形式任何目的的再發佈。
  * ============================================================================
  * $Author: liubo $
- * $Id: favourable.php 17217 2011-01-19 06:29:08Z liubo $
+ * $Id: favourable.php 17217 2011-01-19 06:29:08Z liubo $.
  */
 
 /* menu */
@@ -54,8 +54,8 @@ $_LANG['label_min_amount'] = '金額下限：';
 $_LANG['label_max_amount'] = '金額上限：';
 $_LANG['notice_max_amount'] = '0表示沒有上限';
 $_LANG['label_act_type'] = '優惠方式：';
-$_LANG['notice_act_type'] = '當優惠方式為「享受贈品（特惠品）」時，請輸入允許買家選擇贈品（特惠品）的最大數量，數量為0表示不限數量；' .
-        '當優惠方式為「享受現金減免」時，請輸入現金減免的金額；' .
+$_LANG['notice_act_type'] = '當優惠方式為「享受贈品（特惠品）」時，請輸入允許買家選擇贈品（特惠品）的最大數量，數量為0表示不限數量；'.
+        '當優惠方式為「享受現金減免」時，請輸入現金減免的金額；'.
         '當優惠方式為「享受價格折扣」時，請輸入折扣（1－99），如：打9折，就輸入90。';
 $_LANG['fat_goods'] = '享受贈品（特惠品）';
 $_LANG['fat_price'] = '享受現金減免';
@@ -83,6 +83,4 @@ $_LANG['act_name_exists'] = '該優惠活動名稱已存在，請您換一個';
 $_LANG['nolimit'] = '沒有限制';
 
 $_LANG['favourable_desc'] = '活動描述';
-$_LANG['favourable_image'] ='活動圖片';
-
-?>
+$_LANG['favourable_image'] = '活動圖片';

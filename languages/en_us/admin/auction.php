@@ -12,8 +12,8 @@
  * commercial purposes.
  * ============================================================================
  * $Author: liubo $
- * $Id: auction.php 17217 2011-01-19 06:29:08Z liubo $
-*/
+ * $Id: auction.php 17217 2011-01-19 06:29:08Z liubo $.
+ */
 
 /* menu */
 $_LANG['auction_list'] = 'Auction list';
@@ -89,5 +89,3 @@ $_LANG['bid_user'] = 'Buyer';
 $_LANG['bid_price'] = 'Bid';
 $_LANG['bid_time'] = 'Time';
 $_LANG['status'] = 'State';
-
-?>

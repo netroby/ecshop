@@ -10,7 +10,7 @@
  * 使用；不允許對程序代碼以任何形式任何目的的再發佈。
  * ============================================================================
  * $Author: liubo $
- * $Id: agency.php 17217 2011-01-19 06:29:08Z liubo $
+ * $Id: agency.php 17217 2011-01-19 06:29:08Z liubo $.
  */
 
 /* 菜單 */
@@ -49,5 +49,3 @@ $_LANG['back_agency_list'] = '返回辦事處列表';
 
 $_LANG['js_languages']['region_exists'] = '該地區已存在';
 $_LANG['js_languages']['no_agencyname'] = '沒有填辦事處名稱';
-
-?>

@@ -10,9 +10,7 @@
  * 使用；不允许对程序代码以任何形式任何目的的再发布。
  * ============================================================================
  * $Author: liubo $
- * $Id: presswork.php 17217 2011-01-19 06:29:08Z liubo $
-*/
-
-$_LANG['presswork']          = 'Postal presswork shipping packing.';
-$_LANG['presswork_desc']     = 'Postal presswork shipping packing description.。';
-?>
+ * $Id: presswork.php 17217 2011-01-19 06:29:08Z liubo $.
+ */
+$_LANG['presswork'] = 'Postal presswork shipping packing.';
+$_LANG['presswork_desc'] = 'Postal presswork shipping packing description.。';

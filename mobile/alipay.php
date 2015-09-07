@@ -10,50 +10,37 @@
  * 使用；不允许对程序代码以任何形式任何目的的再发布。
  * ============================================================================
  * $Author: liubo $
- * $Id: respond.php 17217 2011-01-19 06:29:08Z liubo $
+ * $Id: respond.php 17217 2011-01-19 06:29:08Z liubo $.
  */
-
 define('IN_ECS', true);
 
-require(dirname(__FILE__) . '/includes/init.php');
-require(ROOT_PATH . 'includes/lib_payment.php');
-require(ROOT_PATH . 'includes/lib_order.php');
+require dirname(__FILE__).'/includes/init.php';
+require ROOT_PATH.'includes/lib_payment.php';
+require ROOT_PATH.'includes/lib_order.php';
 /* 支付方式代码 */
 $pay_code = 'alipay';
 
 /* 参数是否为空 */
-if (empty($pay_code))
-{
-    mobile_error ('返回首页','index.php','未找到对应的支付方式');
-
-}
-
-else
-{    
+if (empty($pay_code)) {
+    mobile_error('返回首页', 'index.php', '未找到对应的支付方式');
+} else {
 
     /* 判断是否启用 */
-    $sql = "SELECT COUNT(*) FROM " . $ecs->table('mobile_payment') . " WHERE pay_code = '$pay_code' AND enabled = 1";
-    if ($db->getOne($sql) == 0)
-    {
-        mobile_error ('返回首页','index.php','未找到对应的支付方式');
-    }
-    else
-    {
-        $plugin_file = ROOT_PATH .'mobile/includes/modules/payment/' . $pay_code . '.php';
+    $sql = 'SELECT COUNT(*) FROM '.$ecs->table('mobile_payment')." WHERE pay_code = '$pay_code' AND enabled = 1";
+    if ($db->getOne($sql) == 0) {
+        mobile_error('返回首页', 'index.php', '未找到对应的支付方式');
+    } else {
+        $plugin_file = ROOT_PATH.'mobile/includes/modules/payment/'.$pay_code.'.php';
 
         /* 检查插件文件是否存在，如果存在则验证支付是否成功，否则则返回失败信息 */
-        if (file_exists($plugin_file))
-        {
+        if (file_exists($plugin_file)) {
             /* 根据支付方式代码创建支付类的对象并调用其响应操作方法 */
-            include_once($plugin_file);
-
+            include_once $plugin_file;
 
             $payment = new $pay_code();
-            $msg     = (@$payment->respond()) ? 'pay_success' : 'pay_fail';
-        }
-        else
-        {
-             mobile_error ('返回首页','index.php','未找到对应的支付方式');
+            $msg = (@$payment->respond()) ? 'pay_success' : 'pay_fail';
+        } else {
+            mobile_error('返回首页', 'index.php', '未找到对应的支付方式');
         }
     }
 }
@@ -72,5 +59,3 @@ $smarty->assign('msg',    $msg);
 //$smarty->assign('shop_url',   $ecs->url());
 
 $smarty->display('respond.dwt');
-
-?>

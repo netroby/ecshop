@@ -10,17 +10,14 @@
  * 使用；不允許對程序代碼以任何形式任何目的的再發佈。
  * ============================================================================
  * $Author: huiger
- * $Id: shopex48.php 17217 2011-01-19 06:29:08Z liubo $
+ * $Id: shopex48.php 17217 2011-01-19 06:29:08Z liubo $.
  */
-
-$_LANG['shopex48_desc']     = 'shopex Single V4.8（支持到4.8.4版本）';
-$_LANG['step_file']         = '正在複製文件...';
-$_LANG['step_cat']          = '正在轉換商品分類...';
-$_LANG['step_brand']        = '正在轉換商品品牌...';
-$_LANG['step_goods']        = '正在轉換商品...';
-$_LANG['step_users']        = '正在轉換會員...';
-$_LANG['step_article']      = '正在轉換文章...';
-$_LANG['step_order']        = '正在轉換訂單...';
-$_LANG['step_config']       = '正在轉換商店設置...';
-
-?>
+$_LANG['shopex48_desc'] = 'shopex Single V4.8（支持到4.8.4版本）';
+$_LANG['step_file'] = '正在複製文件...';
+$_LANG['step_cat'] = '正在轉換商品分類...';
+$_LANG['step_brand'] = '正在轉換商品品牌...';
+$_LANG['step_goods'] = '正在轉換商品...';
+$_LANG['step_users'] = '正在轉換會員...';
+$_LANG['step_article'] = '正在轉換文章...';
+$_LANG['step_order'] = '正在轉換訂單...';
+$_LANG['step_config'] = '正在轉換商店設置...';

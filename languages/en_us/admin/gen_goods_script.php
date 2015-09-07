@@ -1,4 +1,5 @@
 <?php
+
 /**
  * ECSHOP Create display product JS coding language file
  * ============================================================================
@@ -11,7 +12,7 @@
  * commercial purposes.
  * ============================================================================
  * $Author: liubo $
- * $Id: gen_goods_script.php 17217 2011-01-19 06:29:08Z liubo $
+ * $Id: gen_goods_script.php 17217 2011-01-19 06:29:08Z liubo $.
  */
 $_LANG['label_category'] = 'Category:';
 $_LANG['label_brand'] = 'Brand:';
@@ -43,4 +44,3 @@ $_LANG['js_languages']['goods_num_must_over_0'] = 'Product quantity should more 
 
 $_LANG['js_languages']['rows_num_must_be_int'] = 'With show entries should be rounded';
 $_LANG['js_languages']['rows_num_must_over_0'] = 'ith show entries should be greater than 0';
-?>

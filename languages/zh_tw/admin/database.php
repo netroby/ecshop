@@ -10,9 +10,8 @@
  * 使用；不允許對程序代碼以任何形式任何目的的再發佈。
  * ============================================================================
  * $Author: liubo $
- * $Id: database.php 17217 2011-01-19 06:29:08Z liubo $
-*/
-
+ * $Id: database.php 17217 2011-01-19 06:29:08Z liubo $.
+ */
 $_LANG['db_manage'] = '數據庫管理';
 $_LANG['start_backup'] = '開始備份';
 $_LANG['backup_name'] = '備份名稱';
@@ -34,15 +33,15 @@ $_LANG['chip_count'] = '總碎片數';
 $_LANG['charset'] = '字符集';
 $_LANG['status'] = '狀態';
 
-$_LANG['backup_type'] ='備份類型';
-$_LANG['full_backup'] ='全部備份';
-$_LANG['full_backup_note'] ='備份數據庫所有表';
-$_LANG['stand_backup'] ='標準備份(推薦)';
-$_LANG['stand_backup_note'] ='備份常用的數據表';
-$_LANG['min_backup'] ='最小備份';
-$_LANG['min_backup_note'] ='僅包括商品表，訂單表，用戶表';
-$_LANG['custom_backup'] ='自定義備份';
-$_LANG['custom_backup_note'] ='根據自行選擇備份數據表';
+$_LANG['backup_type'] = '備份類型';
+$_LANG['full_backup'] = '全部備份';
+$_LANG['full_backup_note'] = '備份數據庫所有表';
+$_LANG['stand_backup'] = '標準備份(推薦)';
+$_LANG['stand_backup_note'] = '備份常用的數據表';
+$_LANG['min_backup'] = '最小備份';
+$_LANG['min_backup_note'] = '僅包括商品表，訂單表，用戶表';
+$_LANG['custom_backup'] = '自定義備份';
+$_LANG['custom_backup_note'] = '根據自行選擇備份數據表';
 
 $_LANG['option'] = '其他選項';
 $_LANG['ext_insert'] = '使用擴展插入(Extended Insert)方式';
@@ -117,5 +116,3 @@ $_LANG['cannot_add'] = '追加數據';
 $_LANG['cannot_modify'] = '不能修改文件';
 
 $_LANG['confirm_remove'] = '你確定要刪除選中數據嗎？';
-
-?>

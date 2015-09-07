@@ -10,9 +10,8 @@
  * 使用；不允许对程序代码以任何形式任何目的的再发布。
  * ============================================================================
  * $Author: liubo $
- * $Id: brand.php 17217 2011-01-19 06:29:08Z liubo $
-*/
-
+ * $Id: brand.php 17217 2011-01-19 06:29:08Z liubo $.
+ */
 $_LANG['brand_name'] = '品牌名称';
 $_LANG['site_url'] = '品牌网址';
 $_LANG['brand_desc'] = '品牌描述';
@@ -47,13 +46,11 @@ $_LANG['enter_int'] = '请输入一个整数！';
 $_LANG['back_list'] = '返回品牌列表';
 $_LANG['continue_add'] = '继续添加新品牌';
 
-$_LANG['upfile_type_error'] = "只能上传jpg，gif，png类型的图片";
-$_LANG['upfile_error'] = "图片无法上传，请确保data目录下所有子目录的可写性！";
+$_LANG['upfile_type_error'] = '只能上传jpg，gif，png类型的图片';
+$_LANG['upfile_error'] = '图片无法上传，请确保data目录下所有子目录的可写性！';
 
 $_LANG['visibility_notes'] = '当品牌下还没有商品的时候，首页及分类页的品牌区将不会显示该品牌。';
 
 /*JS 语言项*/
 $_LANG['js_languages']['no_brandname'] = '您必须输入品牌名称！';
-$_LANG['js_languages']['require_num'] =  '排序序号必须是一个数字';
-
-?>
+$_LANG['js_languages']['require_num'] = '排序序号必须是一个数字';

@@ -10,10 +10,9 @@
  * 使用；不允许对程序代码以任何形式任何目的的再发布。
  * ============================================================================
  * $Author: testyang $
- * $Id: inc_goods_type_zh_cn.php 15103 2008-10-27 12:06:58Z testyang $
-*/
-
-$attributes['book'] = array("attr"=>"INSERT INTO `".$prefix."attribute` (`attr_id`, `cat_id`, `attr_name`, `attr_input_type`, `attr_type`, `attr_values`, `sort_order`) VALUES
+ * $Id: inc_goods_type_zh_cn.php 15103 2008-10-27 12:06:58Z testyang $.
+ */
+$attributes['book'] = array('attr' => 'INSERT INTO `'.$prefix."attribute` (`attr_id`, `cat_id`, `attr_name`, `attr_input_type`, `attr_type`, `attr_values`, `sort_order`) VALUES
                                 (NULL, {cat_id}, '作者', 0, 0, '', 0),
                                 (NULL, {cat_id}, '出版社', 0, 0, '', 0),
                                 (NULL, {cat_id}, '图书书号/ISBN', 0, 0, '', 0),
@@ -26,9 +25,9 @@ $attributes['book'] = array("attr"=>"INSERT INTO `".$prefix."attribute` (`attr_i
                                 (NULL, {cat_id}, '印张', 0, 0, '', 0),
                                 (NULL, {cat_id}, '字数', 0, 0, '', 0),
                                 (NULL, {cat_id}, '所属分类', 0, 0, '', 0)",
-                        "cat"=>"INSERT INTO `".$prefix."goods_type` (`cat_id`, `cat_name`, `enabled`) VALUES (NULL, '书', 1);");
+                        'cat' => 'INSERT INTO `'.$prefix."goods_type` (`cat_id`, `cat_name`, `enabled`) VALUES (NULL, '书', 1);", );
 
-$attributes['music'] = array("attr"=>"INSERT INTO `".$prefix."attribute` (`attr_id`, `cat_id`, `attr_name`, `attr_input_type`, `attr_type`, `attr_values`, `sort_order`) VALUES
+$attributes['music'] = array('attr' => 'INSERT INTO `'.$prefix."attribute` (`attr_id`, `cat_id`, `attr_name`, `attr_input_type`, `attr_type`, `attr_values`, `sort_order`) VALUES
                                 (NULL, {cat_id}, '中文片名', 0, 0, '', 0),
                                 (NULL, {cat_id}, '英文片名', 0, 0, '', 0),
                                 (NULL, {cat_id}, '商品别名', 0, 0, '', 0),
@@ -48,9 +47,9 @@ $attributes['music'] = array("attr"=>"INSERT INTO `".$prefix."attribute` (`attr_
                                 (NULL, {cat_id}, '出版号', 0, 0, '', 0),
                                 (NULL, {cat_id}, '引进号', 0, 0, '', 0),
                                 (NULL, {cat_id}, '版权号', 0, 0, '', 0);",
-                        "cat"=>"INSERT INTO `".$prefix."goods_type` (`cat_id`, `cat_name`, `enabled`) VALUES (NULL, '音乐', 1);");
+                        'cat' => 'INSERT INTO `'.$prefix."goods_type` (`cat_id`, `cat_name`, `enabled`) VALUES (NULL, '音乐', 1);", );
 
-$attributes['movie'] = array("attr"=>"INSERT INTO `".$prefix."attribute` (`attr_id`, `cat_id`, `attr_name`, `attr_input_type`, `attr_type`, `attr_values`, `sort_order`) VALUES
+$attributes['movie'] = array('attr' => 'INSERT INTO `'.$prefix."attribute` (`attr_id`, `cat_id`, `attr_name`, `attr_input_type`, `attr_type`, `attr_values`, `sort_order`) VALUES
                                 (NULL, {cat_id}, '中文片名', 0, 0, '', 0),
                                 (NULL, {cat_id}, '英文片名', 0, 0, '', 0),
                                 (NULL, {cat_id}, '商品别名', 0, 0, '', 0),
@@ -75,9 +74,9 @@ $attributes['movie'] = array("attr"=>"INSERT INTO `".$prefix."attribute` (`attr_
                                 (NULL, {cat_id}, '出版号', 0, 0, '', 0),
                                 (NULL, {cat_id}, '引进号', 0, 0, '', 0),
                                 (NULL, {cat_id}, '版权号', 0, 0, '', 0);",
-                        "cat"=>"INSERT INTO `".$prefix."goods_type` (`cat_id`, `cat_name`, `enabled`) VALUES (NULL, '电影', 1);");
+                        'cat' => 'INSERT INTO `'.$prefix."goods_type` (`cat_id`, `cat_name`, `enabled`) VALUES (NULL, '电影', 1);", );
 
-$attributes['mobile'] = array("attr"=>"INSERT INTO `".$prefix."attribute` (`attr_id`, `cat_id`, `attr_name`, `attr_input_type`, `attr_type`, `attr_values`, `sort_order`) VALUES
+$attributes['mobile'] = array('attr' => 'INSERT INTO `'.$prefix."attribute` (`attr_id`, `cat_id`, `attr_name`, `attr_input_type`, `attr_type`, `attr_values`, `sort_order`) VALUES
                                 (NULL, {cat_id}, '网络制式', 0, 0, '', 0),
                                 (NULL, {cat_id}, '支持频率/网络频率', 0, 0, '', 0),
                                 (NULL, {cat_id}, '尺寸体积', 1, 0, '   ', 0),
@@ -104,9 +103,9 @@ $attributes['mobile'] = array("attr"=>"INSERT INTO `".$prefix."attribute` (`attr
                                 (NULL, {cat_id}, '彩信/彩e', 1, 0, '支持\r\n不支持', 0),
                                 (NULL, {cat_id}, '红外/蓝牙', 0, 0, '', 0),
                                 (NULL, {cat_id}, '价格等级', 1, 0, '高价机\r\n中价机\r\n低价机', 0);",
-                        "cat"=>"INSERT INTO `".$prefix."goods_type` (`cat_id`, `cat_name`, `enabled`) VALUES (NULL, '手机', 1);");
+                        'cat' => 'INSERT INTO `'.$prefix."goods_type` (`cat_id`, `cat_name`, `enabled`) VALUES (NULL, '手机', 1);", );
 
-$attributes['notebook'] = array("attr"=>"INSERT INTO `".$prefix."attribute` (`attr_id`, `cat_id`, `attr_name`, `attr_input_type`, `attr_type`, `attr_values`, `sort_order`) VALUES
+$attributes['notebook'] = array('attr' => 'INSERT INTO `'.$prefix."attribute` (`attr_id`, `cat_id`, `attr_name`, `attr_input_type`, `attr_type`, `attr_values`, `sort_order`) VALUES
                                 (NULL, {cat_id}, '型号', 0, 0, '', 0),
                                 (NULL, {cat_id}, '详细规格', 0, 0, '', 0),
                                 (NULL, {cat_id}, '笔记本尺寸', 0, 0, '', 0),
@@ -126,9 +125,9 @@ $attributes['notebook'] = array("attr"=>"INSERT INTO `".$prefix."attribute` (`at
                                 (NULL, {cat_id}, '光驱类型', 0, 0, '', 0),
                                 (NULL, {cat_id}, '电池容量', 0, 0, '', 0),
                                 (NULL, {cat_id}, '其他配置', 0, 0, '', 0);",
-                        "cat"=>"INSERT INTO `".$prefix."goods_type` (`cat_id`, `cat_name`, `enabled`) VALUES (NULL, '笔记本电脑', 1);");
+                        'cat' => 'INSERT INTO `'.$prefix."goods_type` (`cat_id`, `cat_name`, `enabled`) VALUES (NULL, '笔记本电脑', 1);", );
 
-$attributes['dc'] = array("attr"=>"INSERT INTO `".$prefix."attribute` (`attr_id`, `cat_id`, `attr_name`, `attr_input_type`, `attr_type`, `attr_values`, `sort_order`) VALUES
+$attributes['dc'] = array('attr' => 'INSERT INTO `'.$prefix."attribute` (`attr_id`, `cat_id`, `attr_name`, `attr_input_type`, `attr_type`, `attr_values`, `sort_order`) VALUES
                                 (NULL, {cat_id}, '类型', 0, 0, '', 0),
                                 (NULL, {cat_id}, '最大像素/总像素  ', 0, 0, '', 0),
                                 (NULL, {cat_id}, '有效像素', 1, 0, '  ', 0),
@@ -170,9 +169,9 @@ $attributes['dc'] = array("attr"=>"INSERT INTO `".$prefix."attribute` (`attr_id`
                                 (NULL, {cat_id}, '标配软件', 0, 0, '', 0),
                                 (NULL, {cat_id}, '标准配件', 0, 0, '', 0),
                                 (NULL, {cat_id}, '兼容操作系统', 0, 0, '', 0);",
-                        "cat"=>"INSERT INTO `".$prefix."goods_type` (`cat_id`, `cat_name`, `enabled`) VALUES (NULL, '数码相机', 1);");
+                        'cat' => 'INSERT INTO `'.$prefix."goods_type` (`cat_id`, `cat_name`, `enabled`) VALUES (NULL, '数码相机', 1);", );
 
-$attributes['dv'] = array("attr"=>"INSERT INTO `".$prefix."attribute` (`attr_id`, `cat_id`, `attr_name`, `attr_input_type`, `attr_type`, `attr_values`, `sort_order`) VALUES
+$attributes['dv'] = array('attr' => 'INSERT INTO `'.$prefix."attribute` (`attr_id`, `cat_id`, `attr_name`, `attr_input_type`, `attr_type`, `attr_values`, `sort_order`) VALUES
                                 (NULL, {cat_id}, '编号', 0, 0, '', 0),
                                 (NULL, {cat_id}, '类型', 0, 0, '', 0),
                                 (NULL, {cat_id}, '外型尺寸', 0, 0, '', 0),
@@ -196,9 +195,9 @@ $attributes['dv'] = array("attr"=>"INSERT INTO `".$prefix."attribute` (`attr_id`
                                 (NULL, {cat_id}, '随机存储', 0, 0, '', 0),
                                 (NULL, {cat_id}, '电池类型', 0, 0, '', 0),
                                 (NULL, {cat_id}, '电池供电时间', 0, 0, '', 0);",
-                        "cat"=>"INSERT INTO `".$prefix."goods_type` (`cat_id`, `cat_name`, `enabled`) VALUES (NULL, '数码摄像机', 1);");
+                        'cat' => 'INSERT INTO `'.$prefix."goods_type` (`cat_id`, `cat_name`, `enabled`) VALUES (NULL, '数码摄像机', 1);", );
 
-$attributes['cosmetics'] = array("attr"=>"INSERT INTO `".$prefix."attribute` (`attr_id`, `cat_id`, `attr_name`, `attr_input_type`, `attr_type`, `attr_values`, `sort_order`) VALUES
+$attributes['cosmetics'] = array('attr' => 'INSERT INTO `'.$prefix."attribute` (`attr_id`, `cat_id`, `attr_name`, `attr_input_type`, `attr_type`, `attr_values`, `sort_order`) VALUES
                                 (NULL, {cat_id}, '产地', 0, 0, '', 0),
                                 (NULL, {cat_id}, '产品规格/容量', 0, 0, '', 0),
                                 (NULL, {cat_id}, '主要原料', 0, 0, '', 0),
@@ -206,9 +205,9 @@ $attributes['cosmetics'] = array("attr"=>"INSERT INTO `".$prefix."attribute` (`a
                                 (NULL, {cat_id}, '使用部位', 0, 0, '', 0),
                                 (NULL, {cat_id}, '适合肤质', 1, 0, '油性\r\n中性\r\n干性', 0),
                                 (NULL, {cat_id}, '适用人群', 1, 0, '女性\r\n男性', 0);",
-                        "cat"=>"INSERT INTO `".$prefix."goods_type` (`cat_id`, `cat_name`, `enabled`) VALUES (NULL, '化妆品', 1);");
+                        'cat' => 'INSERT INTO `'.$prefix."goods_type` (`cat_id`, `cat_name`, `enabled`) VALUES (NULL, '化妆品', 1);", );
 
-$attributes['mobile2'] = array("attr"=>"INSERT INTO `".$prefix."attribute` (`attr_id`, `cat_id`, `attr_name`, `attr_input_type`, `attr_type`, `attr_values`, `attr_index`, `sort_order`, `is_linked`, `attr_group`) VALUES
+$attributes['mobile2'] = array('attr' => 'INSERT INTO `'.$prefix."attribute` (`attr_id`, `cat_id`, `attr_name`, `attr_input_type`, `attr_type`, `attr_values`, `attr_index`, `sort_order`, `is_linked`, `attr_group`) VALUES
                                 (NULL, {cat_id}, '上市日期', 1, 0, '2008年01月\r\n2008年02月\r\n2008年03月\r\n2008年04月\r\n2008年05月\r\n2008年06月\r\n2008年07月\r\n2008年08月\r\n2008年09月\r\n2008年10月\r\n2008年11月\r\n2008年12月\r\n2007年01月\r\n2007年02月\r\n2007年03月\r\n2007年04月\r\n2007年05月\r\n2007年06月\r\n2007年07月\r\n2007年08月\r\n2007年09月\r\n2007年10月\r\n2007年11月\r\n2007年12月', 1, 0, 0, 0),
                                 (NULL, {cat_id}, '手机制式', 1, 0, 'GSM,850,900,1800,1900\r\nGSM,900,1800,1900,2100\r\nCDMA\r\n双模（GSM,900,1800,CDMA 1X）\r\n3G(GSM,900,1800,1900,TD-SCDMA )', 1, 1, 1, 0),
                                 (NULL, {cat_id}, '理论通话时间', 0, 0, '', 0, 2, 0, 0),
@@ -248,6 +247,4 @@ $attributes['mobile2'] = array("attr"=>"INSERT INTO `".$prefix."attribute` (`att
                                 (NULL, {cat_id}, '闪光灯', 0, 0, '', 0, 0, 0, 3),
                                 (NULL, {cat_id}, '浏览器', 0, 0, '', 0, 0, 0, 2),
                                 (NULL, {cat_id}, '配件', 1, 2, '线控耳机\r\n蓝牙耳机\r\n数据线', 0, 0, 0, 0);",
-                        "cat"=>"INSERT INTO `".$prefix."goods_type` (`cat_id`, `cat_name`, `enabled`) VALUES (NULL, '精品手机', 1);");
-
-?>
+                        'cat' => 'INSERT INTO `'.$prefix."goods_type` (`cat_id`, `cat_name`, `enabled`) VALUES (NULL, '精品手机', 1);", );

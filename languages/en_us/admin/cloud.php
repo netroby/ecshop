@@ -12,10 +12,8 @@
  * commercial purposes.
  * ============================================================================
  * $Author: liubo $
- * $Id: index.php 17217 2011-01-19 06:29:08Z liubo $
-*/
+ * $Id: index.php 17217 2011-01-19 06:29:08Z liubo $.
+ */
 
 /*ÔÆÌáÊ¾*/
 $_LANG['cloud_no_priv'] = 'You  don\'t have enough permissions';
-
-?>

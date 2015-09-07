@@ -1,4 +1,5 @@
 <?php
+
 /**
  * ECSHOP Short message module language file
  * ============================================================================
@@ -11,8 +12,8 @@
  * commercial purposes.
  * ============================================================================
  * $Author: liubo $
- * $Id: sms.php 17217 2011-01-19 06:29:08Z liubo $
-*/
+ * $Id: sms.php 17217 2011-01-19 06:29:08Z liubo $.
+ */
 
 /* Navigation */
 $_LANG['register_sms'] = 'Register Or Enable Sms Account.';
@@ -149,4 +150,3 @@ $_LANG['js_languages']['end_date_format_error'] = 'Deadline format is invalid.';
 //--Recharge
 $_LANG['js_languages']['money_empty_error'] = 'Please enter charge what you want to recharge.';
 $_LANG['js_languages']['money_format_error'] = 'Money format is invalid.';
-?>

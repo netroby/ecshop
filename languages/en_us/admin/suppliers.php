@@ -12,8 +12,8 @@
  * commercial purposes.
  * ============================================================================
  * $Author: zblikai $
- * $Id: statistic.php 15646 2009-02-23 08:33:00Z zblikai $
-*/
+ * $Id: statistic.php 15646 2009-02-23 08:33:00Z zblikai $.
+ */
 
 /* ²Ëµ¥ */
 $_LANG['add_suppliers'] = 'Add suppliers';
@@ -44,4 +44,3 @@ $_LANG['no_record_selected'] = 'no record selected';
 
 /* JSÌáÊ¾ */
 $_LANG['js_languages']['no_suppliers_name'] = 'no supplier name';
-?>

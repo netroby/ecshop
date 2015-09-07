@@ -12,8 +12,8 @@
  * commercial purposes.
  * ============================================================================
  * $Author: liubo $
- * $Id: friend_link.php 17217 2011-01-19 06:29:08Z liubo $
-*/
+ * $Id: friend_link.php 17217 2011-01-19 06:29:08Z liubo $.
+ */
 
 /* Links field information */
 $_LANG['link_id'] = 'ID';
@@ -56,5 +56,3 @@ $_LANG['enter_int'] = 'Display the order must be an integer!';
 /* Help information */
 $_LANG['url_logo_value'] = 'If appoint remote LOGO image, the beginning of LOGO\'s URL must be http:// or https://, and the format should be correctly!';
 $_LANG['link_name_desc'] = 'When you add a text link, the link LOGO will be your link name.';
-
-?>

@@ -12,15 +12,14 @@
  * commercial purposes.
  * ============================================================================
  * $Author: liubo $
- * $Id: sf_express.php 17217 2011-01-19 06:29:08Z liubo $
-*/
-
-$_LANG['sf_express']             = 'Shun Feng shipping';
-$_LANG['sf_express_desc']        = 'Cost of Jiang, Zhe, Hu region less than 1000g is less than 15 yuan/kg, more than 1000g is 2 yuan/kg, other region 20 yuan/kg';
-$_LANG['item_fee']               = 'Single commodity costs:';
-$_LANG['base_fee']               = 'Cost less than 1000g';
-$_LANG['step_fee']               = 'Every less than or equal to 1000g:';
-$_LANG['shipping_print']         = '<table style="width:18.8cm; height:3cm;" border="0" cellspacing="0" cellpadding="0">
+ * $Id: sf_express.php 17217 2011-01-19 06:29:08Z liubo $.
+ */
+$_LANG['sf_express'] = 'Shun Feng shipping';
+$_LANG['sf_express_desc'] = 'Cost of Jiang, Zhe, Hu region less than 1000g is less than 15 yuan/kg, more than 1000g is 2 yuan/kg, other region 20 yuan/kg';
+$_LANG['item_fee'] = 'Single commodity costs:';
+$_LANG['base_fee'] = 'Cost less than 1000g';
+$_LANG['step_fee'] = 'Every less than or equal to 1000g:';
+$_LANG['shipping_print'] = '<table style="width:18.8cm; height:3cm;" border="0" cellspacing="0" cellpadding="0">
   <tr>
     <td>&nbsp;</td>
   </tr>
@@ -164,5 +163,3 @@ $_LANG['shipping_print']         = '<table style="width:18.8cm; height:3cm;" bor
 <td valign="top" style="width:11.4cm;">&nbsp;</td>
   </tr>
 </table>';
-
-?>

@@ -10,26 +10,21 @@
  * 使用；不允许对程序代码以任何形式任何目的的再发布。
  * ============================================================================
  * $Author: liubo $
- * $Id: calendar.php 17217 2011-01-19 06:29:08Z liubo $
-*/
-
+ * $Id: calendar.php 17217 2011-01-19 06:29:08Z liubo $.
+ */
 $lang = (!empty($_GET['lang'])) ? trim($_GET['lang']) : 'zh_cn';
 
-if (!file_exists('../languages/' . $lang . '/calendar.php') || strrchr($lang,'.'))
-{
+if (!file_exists('../languages/'.$lang.'/calendar.php') || strrchr($lang, '.')) {
     $lang = 'zh_cn';
 }
 
-require(dirname(dirname(__FILE__)) . '/data/config.php');
-header('Content-type: application/x-javascript; charset=' . EC_CHARSET);
+require dirname(dirname(__FILE__)).'/data/config.php';
+header('Content-type: application/x-javascript; charset='.EC_CHARSET);
 
-include_once('../languages/' . $lang . '/calendar.php');
+include_once '../languages/'.$lang.'/calendar.php';
 
-foreach ($_LANG['calendar_lang'] AS $cal_key => $cal_data)
-{
-    echo 'var ' . $cal_key . " = \"" . $cal_data . "\";\r\n";
+foreach ($_LANG['calendar_lang'] as $cal_key => $cal_data) {
+    echo 'var '.$cal_key.' = "'.$cal_data."\";\r\n";
 }
 
-include_once('./calendar/calendar.js');
-
-?>
+include_once './calendar/calendar.js';

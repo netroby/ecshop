@@ -10,9 +10,8 @@
  * 使用；不允許對程序代碼以任何形式任何目的的再發佈。
  * ============================================================================
  * $Author: liubo $
- * $Id: convert.php 17217 2011-01-19 06:29:08Z liubo $
+ * $Id: convert.php 17217 2011-01-19 06:29:08Z liubo $.
  */
-
 $_LANG['confirm_convert'] = '注意：執行轉換程序將會使現有數據丟失，請您三思而行！！！';
 $_LANG['backup_data'] = '如果現有數據對您可能還有價值，請您先做好備份。';
 $_LANG['backup'] = '現在就去備份';
@@ -30,13 +29,13 @@ $_LANG['your_prefix'] = '數據庫表前綴：';
 $_LANG['your_path'] = '原商城根目錄：';
 $_LANG['convert'] = '轉換數據';
 $_LANG['remark'] = '備註：';
-$_LANG['remark_info'] = '<ul>' .
-        '<li>對於特價的商品，您需要編輯其原價（本店售價）和促銷期；</li>' .
-        '<li>請重新設置水印；</li>' .
-        '<li>請重新設置廣告；</li>' .
-        '<li>請重新設置配送方式；</li>' .
-        '<li>請重新設置支付方式；</li>' .
-        '<li>請把原來不屬於末級分類的商品轉移到末級分類；</li>' .
+$_LANG['remark_info'] = '<ul>'.
+        '<li>對於特價的商品，您需要編輯其原價（本店售價）和促銷期；</li>'.
+        '<li>請重新設置水印；</li>'.
+        '<li>請重新設置廣告；</li>'.
+        '<li>請重新設置配送方式；</li>'.
+        '<li>請重新設置支付方式；</li>'.
+        '<li>請把原來不屬於末級分類的商品轉移到末級分類；</li>'.
         '</ul>';
 
 $_LANG['connect_db_error'] = '無法連接數據庫，請檢查配置信息。';
@@ -53,4 +52,3 @@ $_LANG['js_languages']['host_not_null'] = '主機名稱或地址不能為空';
 $_LANG['js_languages']['db_not_null'] = '數據庫名稱不能為空';
 $_LANG['js_languages']['user_not_null'] = '登錄帳號不能為空';
 $_LANG['js_languages']['path_not_null'] = '原商城根目錄不能為空';
-?>

@@ -10,9 +10,8 @@
  * 使用；不允许对程序代码以任何形式任何目的的再发布。
  * ============================================================================
  * $Author: liubo $
- * $Id: repay.php 17217 2011-01-19 06:29:08Z liubo $
-*/
-
+ * $Id: repay.php 17217 2011-01-19 06:29:08Z liubo $.
+ */
 $_LANG['back_list'] = '返回列表';
 $_LANG['dispose_succed'] = '处理成功';
 
@@ -46,5 +45,3 @@ $_LANG['undispose_repay'] = '未处理的退款申请';
 $_LANG['list_all'] = '全部退款申请';
 
 $_LANG['js_languages']['no_action_note'] = '必须输入处理备注';
-
-?>

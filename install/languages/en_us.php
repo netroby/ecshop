@@ -12,14 +12,13 @@
  * commercial purposes.
  * ============================================================================
  * $Author: liubo $
- * $Id: en_us.php 17217 2011-01-19 06:29:08Z liubo $
+ * $Id: en_us.php 17217 2011-01-19 06:29:08Z liubo $.
  */
 
 /* Common language item */
 $_LANG['prev_step'] = 'Previous:';
 $_LANG['next_step'] = 'Next:';
 $_LANG['copyright'] = '&copy; 2005-2012 <a href="http://www.ecshop.com" target="_blank">Shanghai ShopEx Network Technology Co,.Ltd. </a> <br> All right reserved.';
-
 
 /* Welcome page */
 $_LANG['welcome_title'] = 'You are welcome to use the ECShop e-commerce management system!';
@@ -103,7 +102,7 @@ $_LANG['cosmetics'] = 'Cosmetics';
 $_LANG['install_at_once'] = 'Install at once';
 $_LANG['default_friend_link'] = 'ECSHOP e-commerce management system';
 $_LANG['maifou_friend_link'] = 'maifou';
-$_LANG['wdwd_friend_link']='Free independent online store';
+$_LANG['wdwd_friend_link'] = 'Free independent online store';
 $_LANG['monitor_title'] = 'Installer Monitor';
 $_LANG['admin_user'][] = 'Goods list|goods.php?act=list';
 $_LANG['admin_user'][] = 'Order list|order.php?act=list';
@@ -157,5 +156,3 @@ $_LANG['js_languages']['setup_ucenter'] = 'Register to UCenter............';
 $_LANG['js_languages']['password_invaild'] = 'Must contain numbers and letters!';
 $_LANG['js_languages']['password_short'] = 'Should not be less than 8!';
 $_LANG['js_languages']['password_not_eq'] = 'The two passwords did not match.';
-
-?>

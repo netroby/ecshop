@@ -12,9 +12,8 @@
  * commercial purposes.
  * ============================================================================
  * $Author: liubo $
- * $Id: edit_languages.php 17217 2011-01-19 06:29:08Z liubo $
+ * $Id: edit_languages.php 17217 2011-01-19 06:29:08Z liubo $.
  */
-
 $_LANG['edit_languages'] = 'Edit Language Item';
 $_LANG['enter_keywords'] = 'Enter language keywords';
 $_LANG['edit_button'] = 'Submit';
@@ -28,7 +27,7 @@ $_LANG['notice_edit'] = 'Notice: Language item will be not update if there is bl
 $_LANG['edit_languages_success'] = 'Congratulations! Edit language item successfully!';
 $_LANG['edit_languages_false'] = 'Sorry! Edit language item has failed!';
 
-$_LANG['js_languages']['keyword_empty_error'] = "Please enter keywords what you want to edit! \\nThe language item list related the keywords by search.";
+$_LANG['js_languages']['keyword_empty_error'] = 'Please enter keywords what you want to edit! \\nThe language item list related the keywords by search.';
 
 /* language item */
 $_LANG['language_files']['common'] = 'Common language files';
@@ -38,5 +37,3 @@ $_LANG['language_files']['user'] = 'Member center language files';
 /* Operate description */
 $_LANG['handle_tips'] = 'Please enter the language item keywords what you want to edit!';
 $_LANG['file_attribute'] = 'The language item can\'t be edit, because the current language files has no unreadability and unwritablility.';
-
-?>

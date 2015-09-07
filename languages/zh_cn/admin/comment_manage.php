@@ -10,8 +10,8 @@
  * 使用；不允许对程序代码以任何形式任何目的的再发布。
  * ============================================================================
  * $Author: liubo $
- * $Id: comment_manage.php 17217 2011-01-19 06:29:08Z liubo $
-*/
+ * $Id: comment_manage.php 17217 2011-01-19 06:29:08Z liubo $.
+ */
 $_LANG['comment_id'] = '编号';
 $_LANG['user_name'] = '用户名';
 $_LANG['from'] = '于';
@@ -68,11 +68,8 @@ $_LANG['back_list'] = '返回评论列表';
 $_LANG['js_languages']['no_content'] = '回复的评论内容不能为空!';
 $_LANG['have_reply_content'] = '提示: 此条评论已有回复, 如果继续回复将更新原来回复的内容!';
 
-
 $_LANG['cfm_allow'] = '你确定要允许显示所选评论吗？';
 $_LANG['cfm_remove'] = '你确定要删除所选评论吗？';
 $_LANG['cfm_deny'] = '你确定要禁止显示所选评论吗？';
 
 $_LANG['mail_send_fail'] = '邮件发送失败，请检查邮件服务器设置后重新发送邮件。';
-
-?>

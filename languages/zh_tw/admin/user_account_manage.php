@@ -10,9 +10,8 @@
  * 使用；不允许对程序代码以任何形式任何目的的再发布。
  * ============================================================================
  * $Author: sunxiaodong $
- * $Id: user_account_manage.php 15487 2008-12-22 09:32:06Z sunxiaodong $
-*/
-
+ * $Id: user_account_manage.php 15487 2008-12-22 09:32:06Z sunxiaodong $.
+ */
 $_LANG['user_account_manage'] = '資金管理';
  $_LANG['view_application'] = '查看申請記錄';
  $_LANG['surplus_pro_type'] = '類型';
@@ -43,5 +42,3 @@ $_LANG['user_account_manage'] = '資金管理';
  $_LANG['order_surplus'] = '交易使用餘額';
  $_LANG['integral_money'] = '積分使用餘額';
  $_LANG['view'] = '查看';
-
-?>

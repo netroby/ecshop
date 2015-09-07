@@ -10,9 +10,8 @@
  * 使用；不允許對程序代碼以任何形式任何目的的再發佈。
  * ============================================================================
  * $Author: liubo $
- * $Id: pack.php 17217 2011-01-19 06:29:08Z liubo $
-*/
-
+ * $Id: pack.php 17217 2011-01-19 06:29:08Z liubo $.
+ */
 $_LANG['pack_name'] = '商品包裝名稱';
 $_LANG['pack_fee'] = '費用';
 $_LANG['free_money'] = '免費額度';
@@ -35,20 +34,18 @@ $_LANG['notice_freemoney'] = '當用戶消費金額超過這個值時，將免費使用這個包裝。<b
 $_LANG['warn_packimg'] = '你已經上傳過圖片。再次上傳時將覆蓋原圖片';
 
 /*提示信息*/
-$_LANG['packname_exist'] ='包裝名 %s 已經存在';
-$_LANG['packadd_succed'] ='已成功添加';
-$_LANG['packedit_succed'] ='包裝 %s 修改成功';
-$_LANG['packedit_falure'] ='包裝 %s 修改失敗';
-$_LANG['packremove_falure'] ='刪除失敗';
-$_LANG['enter_num'] ='請輸入一個數字！';
-$_LANG['no_packname'] ='你輸入的包裝名稱為空！';
+$_LANG['packname_exist'] = '包裝名 %s 已經存在';
+$_LANG['packadd_succed'] = '已成功添加';
+$_LANG['packedit_succed'] = '包裝 %s 修改成功';
+$_LANG['packedit_falure'] = '包裝 %s 修改失敗';
+$_LANG['packremove_falure'] = '刪除失敗';
+$_LANG['enter_num'] = '請輸入一個數字！';
+$_LANG['no_packname'] = '你輸入的包裝名稱為空！';
 
-$_LANG['back_list'] ='返回包裝列表';
-$_LANG['continue_add'] ='繼續添加新包裝';
+$_LANG['back_list'] = '返回包裝列表';
+$_LANG['continue_add'] = '繼續添加新包裝';
 
 /*JS 語言項*/
 $_LANG['js_languages']['no_packname'] = '沒有輸入包裝名';
 $_LANG['js_languages']['packfee_un_num'] = '包裝費用為空或不是數字';
 $_LANG['js_languages']['packmoney_un_num'] = '包裝免費額度為空或不是數字';
-
-?>

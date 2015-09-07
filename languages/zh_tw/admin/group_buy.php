@@ -10,8 +10,8 @@
  * 使用；不允許對程序代碼以任何形式任何目的的再發佈。
  * ============================================================================
  * $Author: liubo $
- * $Id: group_buy.php 17217 2011-01-19 06:29:08Z liubo $
-*/
+ * $Id: group_buy.php 17217 2011-01-19 06:29:08Z liubo $.
+ */
 
 /* 當前頁面標題及可用鏈接名稱 */
 $_LANG['group_buy_list'] = '團購活動列表';
@@ -44,7 +44,7 @@ $_LANG['label_end_date'] = '活動結束時間：';
 $_LANG['notice_datetime'] = '（年月日－時）';
 $_LANG['label_deposit'] = '保證金：';
 $_LANG['label_restrict_amount'] = '限購數量：';
-$_LANG['notice_restrict_amount']= '達到此數量，團購活動自動結束。0表示沒有數量限制。';
+$_LANG['notice_restrict_amount'] = '達到此數量，團購活動自動結束。0表示沒有數量限制。';
 $_LANG['label_gift_integral'] = '贈送積分數：';
 $_LANG['label_price_ladder'] = '價格階梯：';
 $_LANG['notice_ladder_amount'] = '數量達到';
@@ -102,5 +102,3 @@ $_LANG['no_select_group_buy'] = '您現在沒有團購活動記錄！';
 
 /* 操作日誌 */
 $_LANG['log_action']['group_buy'] = '團購商品';
-
-?>

@@ -10,21 +10,19 @@
  * 使用；不允许对程序代码以任何形式任何目的的再发布。
  * ==========================================================
  * $Author: liubo $
- * $Id: navigator.php 17217 2011-01-19 06:29:08Z liubo $
+ * $Id: navigator.php 17217 2011-01-19 06:29:08Z liubo $.
  */
-
 define('IN_ECS', true);
-require(dirname(__FILE__) . '/includes/init.php');
+require dirname(__FILE__).'/includes/init.php';
 
 admin_priv('navigator');
 
-$exc = new exchange($ecs->table("mobile_nav"), $db, 'id', 'name');
+$exc = new exchange($ecs->table('mobile_nav'), $db, 'id', 'name');
 
 /*------------------------------------------------------ */
 //-- 自定义导航栏列表
 /*------------------------------------------------------ */
-if ($_REQUEST['act'] == 'list')
-{
+if ($_REQUEST['act'] == 'list') {
     $smarty->assign('ur_here', $_LANG['navigator']);
 
     $smarty->assign('action_link', array('text' => $_LANG['add_new'], 'href' => 'mobile_navigator.php?act=add'));
@@ -60,11 +58,9 @@ if ($_REQUEST['act'] == 'list')
 /*------------------------------------------------------ */
 //-- 自定义导航栏增加
 /*------------------------------------------------------ */
-elseif ($_REQUEST['act'] == 'add')
-{
-    if (empty($_REQUEST['step']))
-    {
-        $rt = array('act'=>'add');
+elseif ($_REQUEST['act'] == 'add') {
+    if (empty($_REQUEST['step'])) {
+        $rt = array('act' => 'add');
 
         //$sysmain = get_sysnav();
 
@@ -74,18 +70,15 @@ elseif ($_REQUEST['act'] == 'add')
         //$smarty->assign('sysmain',$sysmain);
         $smarty->assign('rt', $rt);
         $smarty->display('mobile_navigator_add.htm');
-    }
-    elseif ($_REQUEST['step'] == 2)
-    {
+    } elseif ($_REQUEST['step'] == 2) {
         $item_name = $_REQUEST['item_name'];
         $item_url = $_REQUEST['item_url'];
-        $item_ifshow = (int)$_REQUEST['item_ifshow'];
-        $item_opennew = (int)$_REQUEST['item_opennew'];
-        $item_vieworder = (int)$_REQUEST['item_vieworder'];
+        $item_ifshow = (int) $_REQUEST['item_ifshow'];
+        $item_opennew = (int) $_REQUEST['item_opennew'];
+        $item_vieworder = (int) $_REQUEST['item_vieworder'];
         //$item_type = $_REQUEST['item_type'];
 
-        $sql="INSERT INTO ".$ecs->table('mobile_nav') ."(`name`,`url`,`ifshow`,`opennew`,`vieworder`) VALUES('$item_name','$item_url','$item_ifshow','$item_opennew','$item_vieworder')";
-
+        $sql = 'INSERT INTO '.$ecs->table('mobile_nav')."(`name`,`url`,`ifshow`,`opennew`,`vieworder`) VALUES('$item_name','$item_url','$item_ifshow','$item_opennew','$item_vieworder')";
 
         $db->query($sql);
         clear_cache_files();
@@ -97,13 +90,11 @@ elseif ($_REQUEST['act'] == 'add')
 /*------------------------------------------------------ */
 //-- 自定义导航栏编辑
 /*------------------------------------------------------ */
-elseif ($_REQUEST['act'] == 'edit')
-{
+elseif ($_REQUEST['act'] == 'edit') {
     $id = $_REQUEST['id'];
-    if (empty($_REQUEST['step']))
-    {
-        $rt = array('act'=>'edit','id'=>$id);
-        $row = $db->getRow("SELECT * FROM " . $GLOBALS['ecs']->table('mobile_nav') . " WHERE id='$id'");
+    if (empty($_REQUEST['step'])) {
+        $rt = array('act' => 'edit','id' => $id);
+        $row = $db->getRow('SELECT * FROM '.$GLOBALS['ecs']->table('mobile_nav')." WHERE id='$id'");
         $rt['item_name'] = $row['name'];
         $rt['item_url'] = $row['url'];
         $rt['item_vieworder'] = $row['vieworder'];
@@ -116,21 +107,19 @@ elseif ($_REQUEST['act'] == 'edit')
         $smarty->assign('action_link', array('text' => $_LANG['go_list'], 'href' => 'mobile_navigator.php?act=list'));
         $smarty->assign('ur_here', $_LANG['navigator']);
         //assign_query_info();
-        $smarty->assign('sysmain',$sysmain);
+        $smarty->assign('sysmain', $sysmain);
         $smarty->assign('rt', $rt);
         $smarty->display('mobile_navigator_add.htm');
-    }
-    elseif ($_REQUEST['step'] == 2)
-    {
+    } elseif ($_REQUEST['step'] == 2) {
         $item_name = $_REQUEST['item_name'];
         $item_url = $_REQUEST['item_url'];
         $item_ifshow = $_REQUEST['item_ifshow'];
         $item_opennew = $_REQUEST['item_opennew'];
         $item_type = $_REQUEST['item_type'];
-        $item_vieworder = (int)$_REQUEST['item_vieworder'];
+        $item_vieworder = (int) $_REQUEST['item_vieworder'];
 
-        $sql = "UPDATE " . $GLOBALS['ecs']->table('mobile_nav') .
-                " SET name='$item_name',ctype='" . $arr['type'] . "',cid='" . $arr['id'] . "',ifshow='$item_ifshow',vieworder='$item_vieworder',opennew='$item_opennew',url='$item_url',type='$item_type' WHERE id='$id'";
+        $sql = 'UPDATE '.$GLOBALS['ecs']->table('mobile_nav').
+                " SET name='$item_name',ctype='".$arr['type']."',cid='".$arr['id']."',ifshow='$item_ifshow',vieworder='$item_vieworder',opennew='$item_opennew',url='$item_url',type='$item_type' WHERE id='$id'";
 
         $db->query($sql);
         clear_cache_files();
@@ -141,10 +130,9 @@ elseif ($_REQUEST['act'] == 'edit')
 /*------------------------------------------------------ */
 //-- 自定义导航栏删除
 /*------------------------------------------------------ */
-elseif ($_REQUEST['act'] == 'del')
-{
-    $id = (int)$_GET['id'];
-    $sql = " DELETE FROM " . $GLOBALS['ecs']->table('mobile_nav') . " WHERE id='$id' LIMIT 1";
+elseif ($_REQUEST['act'] == 'del') {
+    $id = (int) $_GET['id'];
+    $sql = ' DELETE FROM '.$GLOBALS['ecs']->table('mobile_nav')." WHERE id='$id' LIMIT 1";
     $db->query($sql);
     clear_cache_files();
     ecs_header("Location: mobile_navigator.php?act=list\n");
@@ -154,27 +142,20 @@ elseif ($_REQUEST['act'] == 'del')
 /*------------------------------------------------------ */
 //-- 编辑排序
 /*------------------------------------------------------ */
-elseif ($_REQUEST['act'] == 'edit_sort_order')
-{
+elseif ($_REQUEST['act'] == 'edit_sort_order') {
     check_authz_json('nav');
 
-    $id    = intval($_POST['id']);
+    $id = intval($_POST['id']);
     $order = json_str_iconv(trim($_POST['val']));
 
     /* 检查输入的值是否合法 */
-    if (!preg_match("/^[0-9]+$/", $order))
-    {
+    if (!preg_match('/^[0-9]+$/', $order)) {
         make_json_error(sprintf($_LANG['enter_int'], $order));
-    }
-    else
-    {
-        if ($exc->edit("vieworder = '$order'", $id))
-        {
+    } else {
+        if ($exc->edit("vieworder = '$order'", $id)) {
             clear_cache_files();
             make_json_result(stripslashes($order));
-        }
-        else
-        {
+        } else {
             make_json_error($db->error());
         }
     }
@@ -184,25 +165,20 @@ elseif ($_REQUEST['act'] == 'edit_sort_order')
 //-- 切换是否显示
 /*------------------------------------------------------ */
 
-if ($_REQUEST['act'] == 'toggle_ifshow')
-{
+if ($_REQUEST['act'] == 'toggle_ifshow') {
     $id = intval($_POST['id']);
     $val = intval($_POST['val']);
 
-    $row = $db->getRow("SELECT type,ctype,cid FROM " . $GLOBALS['ecs']->table('mobile_nav') . " WHERE id = '$id' LIMIT 1");
+    $row = $db->getRow('SELECT type,ctype,cid FROM '.$GLOBALS['ecs']->table('mobile_nav')." WHERE id = '$id' LIMIT 1");
 
-    if($row['type'] == 'middle' && $row['ctype'] && $row['cid'])
-    {
+    if ($row['type'] == 'middle' && $row['ctype'] && $row['cid']) {
         set_show_in_nav($row['ctype'], $row['cid'], $val);
     }
 
-    if (nav_update($id, array('ifshow' => $val)) != false)
-    {
+    if (nav_update($id, array('ifshow' => $val)) != false) {
         clear_cache_files();
         make_json_result($val);
-    }
-    else
-    {
+    } else {
         make_json_error($db->error());
     }
 }
@@ -211,37 +187,28 @@ if ($_REQUEST['act'] == 'toggle_ifshow')
 //-- 切换是否新窗口
 /*------------------------------------------------------ */
 
-if ($_REQUEST['act'] == 'toggle_opennew')
-{
+if ($_REQUEST['act'] == 'toggle_opennew') {
     $id = intval($_POST['id']);
     $val = intval($_POST['val']);
 
-    if (nav_update($id, array('opennew' => $val)) != false)
-    {
+    if (nav_update($id, array('opennew' => $val)) != false) {
         clear_cache_files();
         make_json_result($val);
-    }
-    else
-    {
+    } else {
         make_json_error($db->error());
     }
 }
 
-
-
 function get_nav()
 {
-
-    $sql=        $sql = "SELECT id, name, ifshow, vieworder, opennew, url, type".
-               " FROM ".$GLOBALS['ecs']->table('mobile_nav');
+    $sql = $sql = 'SELECT id, name, ifshow, vieworder, opennew, url, type'.
+               ' FROM '.$GLOBALS['ecs']->table('mobile_nav');
     $navdb = $GLOBALS['db']->getAll($sql);
 
-    $type = "";
+    $type = '';
     $navdb2 = array();
-    foreach($navdb as $k=>$v)
-    {
-        if(!empty($type) && $type != $v['type'])
-        {
+    foreach ($navdb as $k => $v) {
+        if (!empty($type) && $type != $v['type']) {
             $navdb2[] = array();
         }
         $navdb2[] = $v;
@@ -257,21 +224,14 @@ function get_nav()
 //-- 排序相关
 /*------------------------------------------------------ */
 
-
 /*------------------------------------------------------ */
 //-- 列表项修改
 /*------------------------------------------------------ */
 function nav_update($id, $args)
 {
-    if (empty($args) || empty($id))
-    {
+    if (empty($args) || empty($id)) {
         return false;
     }
 
     return $GLOBALS['db']->autoExecute($GLOBALS['ecs']->table('mobile_nav'), $args, 'update', "id='$id'");
 }
-
-
-
-
-?>

@@ -12,8 +12,8 @@
  * commercial purposes.
  * ============================================================================
  * $Author: liubo $
- * $Id: privilege.php 17217 2011-01-19 06:29:08Z liubo $
-*/
+ * $Id: privilege.php 17217 2011-01-19 06:29:08Z liubo $.
+ */
 
 /* Field information */
 $_LANG['user_id'] = 'ID';
@@ -94,4 +94,3 @@ $_LANG['label_captcha'] = 'Verification Code:';
 $_LANG['click_for_another'] = 'Invisibility? Replace an image.';
 $_LANG['signin_now'] = 'Enter';
 $_LANG['remember'] = 'Remember my login information.';
-?>

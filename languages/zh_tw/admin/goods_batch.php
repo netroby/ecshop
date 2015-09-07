@@ -10,9 +10,8 @@
  * 使用；不允許對程序代碼以任何形式任何目的的再發佈。
  * ============================================================================
  * $Author: liubo $
- * $Id: goods_batch.php 17217 2011-01-19 06:29:08Z liubo $
+ * $Id: goods_batch.php 17217 2011-01-19 06:29:08Z liubo $.
  */
-
 $_LANG['select_method'] = '選擇商品的方式：';
 $_LANG['by_cat'] = '根據商品分類、品牌';
 $_LANG['by_sn'] = '根據商品貨號';
@@ -55,16 +54,16 @@ $_LANG['csv_file'] = '上傳批量csv文件：';
 $_LANG['notice_file'] = '（CSV文件中一次上傳商品數量最好不要超過1000，CSV文件大小最好不要超過500K.）';
 $_LANG['file_charset'] = '文件編碼：';
 $_LANG['download_file'] = '下載批量CSV文件（%s）';
-$_LANG['use_help'] = '使用說明：' .
-        '<ol>' .
-          '<li>根據使用習慣，下載相應語言的csv文件，例如中國內地用戶下載簡體中文語言的文件，港台用戶下載繁體語言的文件；</li>' .
-          '<li>填寫csv文件，可以使用excel或文本編輯器打開csv文件；<br />' .
-              '碰到「是否精品」之類，填寫數字0或者1，0代表「否」，1代表「是」；<br />' .
-              '商品圖片和商品縮略圖請填寫帶路徑的圖片文件名，其中路徑是相對於 [根目錄]/images/ 的路徑，例如圖片路徑為[根目錄]/images/200610/abc.jpg，只要填寫 200610/abc.jpg 即可；<br />' .
-              '<font style="color:#FE596A;">如果是淘寶助理格式請確保cvs編碼為在網站的編碼，如編碼不正確，可以用編輯軟件轉換編碼。</font></li>' .
-          '<li>將填寫的商品圖片和商品縮略圖上傳到相應目錄，例如：[根目錄]/images/200610/；</li>' .
-              '<font style="color:#FE596A;">請首先上傳商品圖片和商品縮略圖再上傳csv文件，否則圖片無法處理。</font></li>' .
-          '<li>選擇所上傳商品的分類以及文件編碼，上傳csv文件</li>' .
+$_LANG['use_help'] = '使用說明：'.
+        '<ol>'.
+          '<li>根據使用習慣，下載相應語言的csv文件，例如中國內地用戶下載簡體中文語言的文件，港台用戶下載繁體語言的文件；</li>'.
+          '<li>填寫csv文件，可以使用excel或文本編輯器打開csv文件；<br />'.
+              '碰到「是否精品」之類，填寫數字0或者1，0代表「否」，1代表「是」；<br />'.
+              '商品圖片和商品縮略圖請填寫帶路徑的圖片文件名，其中路徑是相對於 [根目錄]/images/ 的路徑，例如圖片路徑為[根目錄]/images/200610/abc.jpg，只要填寫 200610/abc.jpg 即可；<br />'.
+              '<font style="color:#FE596A;">如果是淘寶助理格式請確保cvs編碼為在網站的編碼，如編碼不正確，可以用編輯軟件轉換編碼。</font></li>'.
+          '<li>將填寫的商品圖片和商品縮略圖上傳到相應目錄，例如：[根目錄]/images/200610/；</li>'.
+              '<font style="color:#FE596A;">請首先上傳商品圖片和商品縮略圖再上傳csv文件，否則圖片無法處理。</font></li>'.
+          '<li>選擇所上傳商品的分類以及文件編碼，上傳csv文件</li>'.
         '</ol>';
 
 $_LANG['js_languages']['please_select_goods'] = '請您選擇商品';
@@ -98,4 +97,3 @@ $_LANG['upload_goods']['is_real'] = '是否實體商品';
 
 $_LANG['batch_upload_ok'] = '批量上傳成功';
 $_LANG['goods_upload_confirm'] = '批量上傳確認';
-?>

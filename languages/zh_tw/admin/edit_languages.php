@@ -10,9 +10,8 @@
  * 使用；不允許對程序代碼以任何形式任何目的的再發佈。
  * ============================================================================
  * $Author: liubo $
- * $Id: edit_languages.php 17217 2011-01-19 06:29:08Z liubo $
+ * $Id: edit_languages.php 17217 2011-01-19 06:29:08Z liubo $.
  */
-
 $_LANG['edit_languages'] = '語言項編輯';
 $_LANG['enter_keywords'] = '輸入語言項關鍵字';
 $_LANG['edit_button'] = '確認修改';
@@ -36,5 +35,3 @@ $_LANG['language_files']['user'] = '會員中心語言包';
 /* 操作描述 */
 $_LANG['handle_tips'] = '請輸入您需要修改的語言關鍵字!';
 $_LANG['file_attribute'] = '當前語言包文件沒有可讀寫的權限！這樣您將不能進行語言項的編輯操作。';
-
-?>

@@ -10,9 +10,8 @@
  * 使用；不允许对程序代码以任何形式任何目的的再发布。
  * ============================================================================
  * $Author: testyang $
- * $Id: filecheck.php 15013 2008-10-23 09:31:42Z testyang $
-*/
-
+ * $Id: filecheck.php 15013 2008-10-23 09:31:42Z testyang $.
+ */
 $_LANG['filecheck_verifying'] = '正在进行文件校验，请稍候......';
 $_LANG['filecheck_tips_step1'] = '文件校验是针对 ECSHOP 官方发布的文件为基础进行核对，点击下面按钮开始进行校验。';
 $_LANG['filecheck_start'] = '开 始';
@@ -37,4 +36,3 @@ $_LANG['filename'] = '文件名';
 $_LANG['filesize'] = '文件大小';
 $_LANG['filemtime'] = '最后修改时间';
 $_LANG['filecheck_nofound_md5file'] = '不存在校验文件，无法进行此操作';
-?>

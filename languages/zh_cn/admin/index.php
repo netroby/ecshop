@@ -10,9 +10,8 @@
  * 使用；不允许对程序代码以任何形式任何目的的再发布。
  * ============================================================================
  * $Author: liubo $
- * $Id: index.php 17217 2011-01-19 06:29:08Z liubo $
-*/
-
+ * $Id: index.php 17217 2011-01-19 06:29:08Z liubo $.
+ */
 $_LANG['shop_guide'] = '开店向导';
 $_LANG['set_navigator'] = '设置导航栏';
 $_LANG['about'] = '关于 ECSHOP';
@@ -118,8 +117,8 @@ $_LANG['cardimg_cannt_write'] = '您将无法上传贺卡的图片文件。';
 $_LANG['feedbackimg_cannt_write'] = '用户将无法通过留言上传文件。';
 $_LANG['packimg_cannt_write'] = '您将无法上传包装的图片文件。';
 $_LANG['cert_cannt_write'] = '您将无法上传 ICP 备案证书文件。';
-$_LANG['images_cannt_write']= '您将无法上传任何商品图片。';
-$_LANG['imagesupload_cannt_write']= '您将无法通过编辑器上传任何图片。';
+$_LANG['images_cannt_write'] = '您将无法上传任何商品图片。';
+$_LANG['imagesupload_cannt_write'] = '您将无法通过编辑器上传任何图片。';
 $_LANG['tpl_cannt_write'] = '您的网站将无法浏览。';
 $_LANG['tpl_backup_cannt_write'] = '您就无法备份当前的模版文件。';
 $_LANG['order_print_canntwrite'] = 'data目录下的order_print.html文件属性为不可写，您将无法修改订单打印模板。';
@@ -183,9 +182,9 @@ $_LANG['skip'] = '完成向导';
 $_LANG['next_step'] = '下一步';
 $_LANG['ur_add'] = '开店向导－添加商品';
 $_LANG['ur_config'] = '开店向导－设置网店';
-$_LANG['shop_basic_first'] = "设置商店的一些基本信息<em>商店的名字、地址、配送方式、支付方式等</em>";
-$_LANG['shop_basic_second'] = "给商店添加一些商品<em>商品的名称、数量、分类、品牌、价格、描述等</em>";
-$_LANG['shop_basic_third'] = "恭喜您，您的网店可以使用了！<em>下面是一些常用功能的链接聚合。您关闭本页后，依然可以在左侧菜单相关项目中找到</em>";
+$_LANG['shop_basic_first'] = '设置商店的一些基本信息<em>商店的名字、地址、配送方式、支付方式等</em>';
+$_LANG['shop_basic_second'] = '给商店添加一些商品<em>商品的名称、数量、分类、品牌、价格、描述等</em>';
+$_LANG['shop_basic_third'] = '恭喜您，您的网店可以使用了！<em>下面是一些常用功能的链接聚合。您关闭本页后，依然可以在左侧菜单相关项目中找到</em>';
 $_LANG['add_good'] = '添加商品';
 $_LANG['add_category'] = '添加商品分类';
 $_LANG['add_type'] = '商品类型';
@@ -196,7 +195,6 @@ $_LANG['shop_back_in'] = '进入网店后台';
 $_LANG['goods_img_too_big'] = '商品图片文件太大了（最大值:%s），无法上传。';
 $_LANG['invalid_goods_img'] = '商品图片格式不正确！';
 
-
 //JS语言
 $_LANG['js_languages']['shop_name_not_null'] = '商店名称不能为空';
 $_LANG['js_languages']['good_name_not_null'] = '商品名称不能为空';
@@ -206,4 +204,3 @@ $_LANG['js_languages']['good_price_not_number'] = '商品价格不是数值';
 
 /*后台语言项*/
 $_LANG['send_mail_off'] = '自动发送邮件关闭';
-?>

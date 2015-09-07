@@ -10,15 +10,12 @@
  * 使用；不允許對程序代碼以任何形式任何目的的再發佈。
  * ============================================================================
  * $Author: liubo $
- * $Id: user.php 17217 2011-01-19 06:29:08Z liubo $
-*/
-
-
-
+ * $Id: user.php 17217 2011-01-19 06:29:08Z liubo $.
+ */
 $_LANG['require_login'] = '非法入口。<br />必須登錄才能完成操作。';
 
 $_LANG['no_records'] = '沒有記錄';
-$_LANG['shot_message'] = "短消息";
+$_LANG['shot_message'] = '短消息';
 
 /* 用戶菜單 */
 $_LANG['label_welcome'] = '歡迎頁';
@@ -274,7 +271,7 @@ $_LANG['confirm_cancel'] = '您確認要取消該訂單嗎？取消後此訂單將視為無效訂單';
 $_LANG['merge_ok'] = '訂單合併成功！';
 $_LANG['merge_invalid_order'] = '對不起，您選擇合併的訂單不允許進行合併的操作。';
 $_LANG['select'] = '請選擇...';
-$_LANG['order_not_pay'] = "你的訂單狀態為 %s ,不需要付款";
+$_LANG['order_not_pay'] = '你的訂單狀態為 %s ,不需要付款';
 $_LANG['order_sn_empty'] = '合併主訂單號不能為空';
 $_LANG['merge_order_notice'] = '訂單合併是在發貨前將相同狀態的訂單合併成一新的訂單。<br />收貨地址，送貨方式等以主定單為準。';
 $_LANG['order_exist'] = '該訂單不存在！';
@@ -316,13 +313,13 @@ $_LANG['confirm_received'] = '你確認已經收到貨物了嗎？';
 
 /* 合併訂單及訂單詳情 */
 $_LANG['merge_order_success'] = '合併的訂單的操作已成功！';
-$_LANG['merge_order_failed']  = '合併的訂單的操作失敗！請返回重試！';
+$_LANG['merge_order_failed'] = '合併的訂單的操作失敗！請返回重試！';
 $_LANG['order_sn_not_null'] = '請填寫要合併的訂單號';
 $_LANG['two_order_sn_same'] = '要合併的兩個訂單號不能相同';
-$_LANG['order_not_exist'] = "訂單 %s 不存在";
-$_LANG['os_not_unconfirmed_or_confirmed'] = " %s 的訂單狀態不是「未確認」或「已確認」";
-$_LANG['ps_not_unpayed'] = "訂單 %s 的付款狀態不是「未付款」";
-$_LANG['ss_not_unshipped'] = "訂單 %s 的發貨狀態不是「未發貨」";
+$_LANG['order_not_exist'] = '訂單 %s 不存在';
+$_LANG['os_not_unconfirmed_or_confirmed'] = ' %s 的訂單狀態不是「未確認」或「已確認」';
+$_LANG['ps_not_unpayed'] = '訂單 %s 的付款狀態不是「未付款」';
+$_LANG['ss_not_unshipped'] = '訂單 %s 的發貨狀態不是「未發貨」';
 $_LANG['order_user_not_same'] = '要合併的兩個訂單不是同一個用戶下的';
 $_LANG['from_order_sn'] = '第一個訂單號：';
 $_LANG['to_order_sn'] = '第二個訂單號：';
@@ -420,7 +417,7 @@ $_LANG['username_exist'] = '用戶名 %s 已經存在';
 $_LANG['username_not_allow'] = '用戶名 %s 不允許註冊';
 $_LANG['confirm_register'] = '確認註冊';
 
-$_LANG['agreement'] = "我已看過並接受《<a href=\"article.php?cat_id=-1\" style=\"color:blue\" target=\"_blank\">用戶協議</a>》";
+$_LANG['agreement'] = '我已看過並接受《<a href="article.php?cat_id=-1" style="color:blue" target="_blank">用戶協議</a>》';
 
 $_LANG['email_empty'] = 'email為空';
 $_LANG['email_invalid'] = '%s 不是合法的email地址';
@@ -506,7 +503,6 @@ $_LANG['passport_js']['msg_blank'] = '不能為空';
 $_LANG['passport_js']['no_select_question'] = '- 您還完成密碼提示問題的操作';
 $_LANG['passport_js']['passwd_balnk'] = '- 密碼中不能包含空格';
 
-
 /* user_clips.dwt js 語言文件 */
 $_LANG['clips_js']['msg_title_empty'] = '留言標題為空';
 $_LANG['clips_js']['msg_content_empty'] = '留言內容為空';
@@ -545,7 +541,7 @@ $_LANG['affiliate_mode'] = '分成模式';
 $_LANG['affiliate_detail'] = '分成明細';
 $_LANG['affiliate_member'] = '我推薦的會員';
 $_LANG['affiliate_code'] = '推薦代碼';
-$_LANG['firefox_copy_alert'] = "您的firefox安全限制限制您進行剪貼板操作，請打開』about:config』將signed.applets.codebase_principal_support』設置為true』之後重試";
+$_LANG['firefox_copy_alert'] = '您的firefox安全限制限制您進行剪貼板操作，請打開』about:config』將signed.applets.codebase_principal_support』設置為true』之後重試';
 $_LANG['affiliate_type'][0] = '推薦註冊分成';
 $_LANG['affiliate_type'][1] = '推薦訂單分成';
 $_LANG['affiliate_type'][-1] = '推薦註冊分成';
@@ -614,7 +610,6 @@ $_LANG['change_payment'] = '改用其他在線支付方式';
 
 $_LANG['copy_to_clipboard'] = '已拷貝至剪貼板。';
 
-
 $_LANG['expire_unit']['hour'] = '小時';
 $_LANG['expire_unit']['day'] = '天';
 $_LANG['expire_unit']['week'] = '周';
@@ -673,13 +668,11 @@ $_LANG['add_bonus'] = '添加紅包';
 
 /* 密碼找回問題 */
 $_LANG['passwd_questions']['friend_birthday'] = '我最好朋友的生日？';
-$_LANG['passwd_questions']['old_address']     = '我兒時居住地的地址？';
-$_LANG['passwd_questions']['motto']           = '我的座右銘是？';
-$_LANG['passwd_questions']['favorite_movie']  = '我最喜歡的電影？';
-$_LANG['passwd_questions']['favorite_song']   = '我最喜歡的歌曲？';
-$_LANG['passwd_questions']['favorite_food']   = '我最喜歡的食物？';
-$_LANG['passwd_questions']['interest']        = '我最大的愛好？';
-$_LANG['passwd_questions']['favorite_novel']  = '我最喜歡的小說？';
+$_LANG['passwd_questions']['old_address'] = '我兒時居住地的地址？';
+$_LANG['passwd_questions']['motto'] = '我的座右銘是？';
+$_LANG['passwd_questions']['favorite_movie'] = '我最喜歡的電影？';
+$_LANG['passwd_questions']['favorite_song'] = '我最喜歡的歌曲？';
+$_LANG['passwd_questions']['favorite_food'] = '我最喜歡的食物？';
+$_LANG['passwd_questions']['interest'] = '我最大的愛好？';
+$_LANG['passwd_questions']['favorite_novel'] = '我最喜歡的小說？';
 $_LANG['passwd_questions']['favorite_equipe'] = '我最喜歡的運動隊？';
-
-?>

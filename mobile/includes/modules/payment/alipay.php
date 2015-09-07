@@ -10,42 +10,38 @@
  * 使用；不允许对程序代码以任何形式任何目的的再发布。
  * ============================================================================
  * $Author: douqinghua $
- * $Id: alipay.php 17217 2011-01-19 06:29:08Z douqinghua $
+ * $Id: alipay.php 17217 2011-01-19 06:29:08Z douqinghua $.
  */
-
-if (!defined('IN_ECS'))
-{
+if (!defined('IN_ECS')) {
     die('Hacking attempt');
 }
 
-$payment_lang = ROOT_PATH . 'languages/' .$GLOBALS['_CFG']['lang']. '/payment/mobile/alipay.php';
+$payment_lang = ROOT_PATH.'languages/'.$GLOBALS['_CFG']['lang'].'/payment/mobile/alipay.php';
 
-if (file_exists($payment_lang))
-{
+if (file_exists($payment_lang)) {
     global $_LANG;
 
-    include_once($payment_lang);
+    include_once $payment_lang;
 }
 
 /* 模块的基本信息 */
-if (isset($set_modules) && $set_modules == TRUE)
-{
+if (isset($set_modules) && $set_modules == true) {
     $i = isset($modules) ? count($modules) : 0;
 
     /* 代码 */
-    $modules[$i]['code']    = basename(__FILE__, '.php');
+    $modules[$i]['code'] = basename(__FILE__, '.php');
 
     /* 描述对应的语言项 */
-    $modules[$i]['desc']    = 'alipay_desc';
+    $modules[$i]['desc'] = 'alipay_desc';
 
     /* 是否支持货到付款 */
-    $modules[$i]['is_cod']  = '0';
+    $modules[$i]['is_cod'] = '0';
 
     /* 是否支持在线支付 */
-    $modules[$i]['is_online']  = '1';
+    $modules[$i]['is_online'] = '1';
 
     /* 作者 */
-    $modules[$i]['author']  = 'ECSHOP TEAM';
+    $modules[$i]['author'] = 'ECSHOP TEAM';
 
     /* 网址 */
     $modules[$i]['website'] = 'http://www.alipay.com';
@@ -54,59 +50,53 @@ if (isset($set_modules) && $set_modules == TRUE)
     $modules[$i]['version'] = '1.0.2';
 
     /* 配置信息 */
-    $modules[$i]['config']  = array(
+    $modules[$i]['config'] = array(
         array('name' => 'alipay_account',           'type' => 'text',   'value' => ''),
         array('name' => 'alipay_key',               'type' => 'text',   'value' => ''),
-        array('name' => 'alipay_partner',           'type' => 'text',   'value' => '')
+        array('name' => 'alipay_partner',           'type' => 'text',   'value' => ''),
     );
 
     return;
 }
 
 /**
- * 类
+ * 类.
  */
 class alipay
 {
-
     /**
-     * 构造函数
+     * 构造函数.
      *
-     * @access  public
      * @param
-     *
-     * @return void
      */
-    function alipay()
+    public function alipay()
     {
     }
 
-    function __construct()
+    public function __construct()
     {
         $this->alipay();
     }
 
     /**
-     * 生成支付代码
-     * @param   array   $order      订单信息
-     * @param   array   $payment    支付方式信息
+     * 生成支付代码.
+     *
+     * @param array $order   订单信息
+     * @param array $payment 支付方式信息
      */
-    function get_code($order, $payment)
+    public function get_code($order, $payment)
     {
-        if (!defined('EC_CHARSET'))
-        {
+        if (!defined('EC_CHARSET')) {
             $charset = 'utf-8';
-        }
-        else
-        {
+        } else {
             $charset = EC_CHARSET;
         }
 
-    $alipay_config=array();
-    $alipay_config['partner']		= $payment['alipay_partner'];
+        $alipay_config = array();
+        $alipay_config['partner'] = $payment['alipay_partner'];
     //安全检验码，以数字和字母组成的32位字符
     //如果签名方式设置为“MD5”时，请设置该参数
-    $alipay_config['key']			= $payment['alipay_key'];
+    $alipay_config['key'] = $payment['alipay_key'];
     //商户的私钥（后缀是.pen）文件相对路径
     //如果签名方式设置为“0001”时，请设置该参数
     //$alipay_config['private_key_path']	= 'key/rsa_private_key.pem';
@@ -114,11 +104,11 @@ class alipay
     //如果签名方式设置为“0001”时，请设置该参数
    // $alipay_config['ali_public_key_path']= 'key/alipay_public_key.pem';
     //签名方式 不需修改
-    $alipay_config['sign_type']    = 'MD5';
+    $alipay_config['sign_type'] = 'MD5';
 
     //字符编码格式 目前支持 gbk 或 utf-8
-    $alipay_config['input_charset']= 'utf-8';
-    $alipay_config['cacert']='';
+    $alipay_config['input_charset'] = 'utf-8';
+        $alipay_config['cacert'] = '';
    // $alipay_config['cacert']    = ROOT_PATH .'mobile/includes/modules/cacert.pem';
 
     //ca证书路径地址，用于curl中ssl校验
@@ -126,16 +116,15 @@ class alipay
     //$alipay_config['cacert']    = getcwd().'\\cacert.pem';
 
     //访问模式,根据自己的服务器是否支持ssl访问，若支持请选择https；若不支持请选择http
-    $alipay_config['transport']    = 'http';
+    $alipay_config['transport'] = 'http';
 
-    require_once(ROOT_PATH ."mobile/includes/modules/lib/alipay_submit.class.php");
+        require_once ROOT_PATH.'mobile/includes/modules/lib/alipay_submit.class.php';
 
-
-$format = "xml";
+        $format = 'xml';
 //必填，不需要修改
 
 //返回格式
-$v = "2.0";
+$v = '2.0';
 //必填，不需要修改
 
 //请求号
@@ -144,13 +133,12 @@ $req_id = date('Ymdhis');
 
 //**req_data详细信息**
 //服务器异步通知页面路径
-$notify_url ='';
+$notify_url = '';
 //需http://格式的完整路径，不允许加?id=123这类自定义参数
 //页面跳转同步通知页面路径
 $call_back_url = $GLOBALS['ecs']->url().'alipay.php';
 
-
-$seller_email = $payment['alipay_account'];
+        $seller_email = $payment['alipay_account'];
 //必填
 //商户订单号
 $out_trade_no = $order['order_sn'];
@@ -165,23 +153,23 @@ $total_fee = $order['order_amount'];
 //必填
 
 //请求业务参数详细
-$req_data = '<direct_trade_create_req><notify_url>' . $notify_url . '</notify_url><call_back_url>' . $call_back_url . '</call_back_url><seller_account_name>' . $seller_email . '</seller_account_name><out_trade_no>' . $out_trade_no . '</out_trade_no><subject>' . $subject . '</subject><total_fee>' . $total_fee . '</total_fee></direct_trade_create_req>';
+$req_data = '<direct_trade_create_req><notify_url>'.$notify_url.'</notify_url><call_back_url>'.$call_back_url.'</call_back_url><seller_account_name>'.$seller_email.'</seller_account_name><out_trade_no>'.$out_trade_no.'</out_trade_no><subject>'.$subject.'</subject><total_fee>'.$total_fee.'</total_fee></direct_trade_create_req>';
 
 //构造要请求的参数数组，无需改动
 $para_token = array(
-		"service" => "alipay.wap.trade.create.direct",
-		"partner" => trim($alipay_config['partner']),
-		"sec_id" => trim($alipay_config['sign_type']),
-		"format"	=> $format,
-		"v"	=> $v,
-		"req_id"	=> $req_id,
-		"req_data"	=> $req_data,
-		"_input_charset"	=> trim(strtolower($alipay_config['input_charset']))
+        'service' => 'alipay.wap.trade.create.direct',
+        'partner' => trim($alipay_config['partner']),
+        'sec_id' => trim($alipay_config['sign_type']),
+        'format' => $format,
+        'v' => $v,
+        'req_id' => $req_id,
+        'req_data' => $req_data,
+        '_input_charset' => trim(strtolower($alipay_config['input_charset'])),
 );
 
 //建立请求
 $alipaySubmit = new AlipaySubmit($alipay_config);
-$html_text = $alipaySubmit->buildRequestHttp($para_token);
+        $html_text = $alipaySubmit->buildRequestHttp($para_token);
 
 //URLDECODE返回的信息
 $html_text = urldecode($html_text);
@@ -189,114 +177,100 @@ $html_text = urldecode($html_text);
 //解析远程模拟提交后返回的信息
 $para_html_text = $alipaySubmit->parseResponse($html_text);
 
-
 //获取request_token
 $request_token = $para_html_text['request_token'];
-
 
 /**************************根据授权码token调用交易接口alipay.wap.auth.authAndExecute**************************/
 
 //业务详细
-$req_data = '<auth_and_execute_req><request_token>' . $request_token . '</request_token></auth_and_execute_req>';
+$req_data = '<auth_and_execute_req><request_token>'.$request_token.'</request_token></auth_and_execute_req>';
 //必填
 
 //构造要请求的参数数组，无需改动
 $parameter = array(
-		"service" => "alipay.wap.auth.authAndExecute",
-		"partner" => trim($alipay_config['partner']),
-		"v"	=> $v,
-		"sec_id" => trim($alipay_config['sign_type']),
-		"format"	=> $format,
-		"req_id"	=> $req_id,
-		"req_data"	=> $req_data,
-		"_input_charset"	=> trim(strtolower($alipay_config['input_charset']))
+        'service' => 'alipay.wap.auth.authAndExecute',
+        'partner' => trim($alipay_config['partner']),
+        'v' => $v,
+        'sec_id' => trim($alipay_config['sign_type']),
+        'format' => $format,
+        'req_id' => $req_id,
+        'req_data' => $req_data,
+        '_input_charset' => trim(strtolower($alipay_config['input_charset'])),
 );
 
 //建立请求
 $alipaySubmit = new AlipaySubmit($alipay_config);
 
-$html_text = $alipaySubmit->buildRequestForm($parameter, 'get', '确认');
+        $html_text = $alipaySubmit->buildRequestForm($parameter, 'get', '确认');
 
 //var_dump($html_text);
-return $html_text; 
+return $html_text;
 
-
-        return $html_text; 
+        return $html_text;
     }
 
     /**
-     * 响应操作
+     * 响应操作.
      */
-    function respond()
+    public function respond()
     {
-        if (!empty($_POST))
-        {
-            foreach($_POST as $key => $data)
-            {
+        if (!empty($_POST)) {
+            foreach ($_POST as $key => $data) {
                 $_GET[$key] = $data;
             }
         }
 
-    $payment  = get_mobile_payment('alipay');
+        $payment = get_mobile_payment('alipay');
     //var_dump( $payment);exit;
 
 
-    $alipay_config=array();
-    $alipay_config['partner']		= $payment['alipay_partner'];
+    $alipay_config = array();
+        $alipay_config['partner'] = $payment['alipay_partner'];
     //安全检验码，以数字和字母组成的32位字符
     //如果签名方式设置为“MD5”时，请设置该参数
-    $alipay_config['key']			= $payment['alipay_key'];
+    $alipay_config['key'] = $payment['alipay_key'];
     //商户的私钥（后缀是.pen）文件相对路径
     //如果签名方式设置为“0001”时，请设置该参数
-    $alipay_config['private_key_path']	= '';
+    $alipay_config['private_key_path'] = '';
      //$alipay_config['private_key_path']	= 'key/rsa_private_key.pem';
     //支付宝公钥（后缀是.pen）文件相对路径
     //如果签名方式设置为“0001”时，请设置该参数
-    $alipay_config['ali_public_key_path']= '';   
+    $alipay_config['ali_public_key_path'] = '';
     //$alipay_config['ali_public_key_path']= 'key/alipay_public_key.pem';
     //签名方式 不需修改
-    $alipay_config['sign_type']    = 'MD5';
+    $alipay_config['sign_type'] = 'MD5';
 
     //字符编码格式 目前支持 gbk 或 utf-8
-    $alipay_config['input_charset']= 'utf-8';
+    $alipay_config['input_charset'] = 'utf-8';
     //$alipay_config['cacert']    = ROOT_PATH .'mobile/includes/modules/cacert.pem';
-     $alipay_config['cacert']    =''; 
+     $alipay_config['cacert'] = '';
     //ca证书路径地址，用于curl中ssl校验
     //请保证cacert.pem文件在当前文件夹目录中
     //$alipay_config['cacert']    = getcwd().'\\cacert.pem';
 
     //访问模式,根据自己的服务器是否支持ssl访问，若支持请选择https；若不支持请选择http
 
-      $alipay_config['transport']    = 'http';
+      $alipay_config['transport'] = 'http';
 
-      require_once(ROOT_PATH ."mobile/includes/modules/lib/alipay_notify.class.php");
+        require_once ROOT_PATH.'mobile/includes/modules/lib/alipay_notify.class.php';
 
+        $alipayNotify = new AlipayNotify($alipay_config);
 
+        $verify_result = $alipayNotify->verifyReturn();
 
-$alipayNotify = new AlipayNotify($alipay_config);
+        if ($verify_result) {
+            $order_sn = trim($_GET['out_trade_no']);
 
-$verify_result = $alipayNotify->verifyReturn();
+            $sql = 'SELECT l.`log_id` FROM '.$GLOBALS['ecs']->table('order_info').' as info LEFT JOIN '.$GLOBALS['ecs']->table('pay_log')." as l  ON l.order_id=info.order_id        WHERE info.order_sn = '$order_sn'";
+            $order_log_id = $GLOBALS['db']->getOne($sql);
 
+            order_paid($order_log_id, 2);
 
-if($verify_result)
-{
+            return true;
+        } else {
+            return false;
+        }
 
-    $order_sn = trim($_GET['out_trade_no']);
-
-    $sql = "SELECT l.`log_id` FROM " . $GLOBALS['ecs']->table('order_info')." as info LEFT JOIN ". $GLOBALS['ecs']->table('pay_log') ." as l  ON l.order_id=info.order_id        WHERE info.order_sn = '$order_sn'";
-    $order_log_id = $GLOBALS['db']->getOne($sql);
-
-    order_paid($order_log_id, 2);
-    return true;
-}
-else
-{
-    return false;
-}
-
-
-
-       
         $seller_email = rawurldecode($payment['alipay_account']);
 
         $order_sn = str_replace($_GET['subject'], '', $_GET['out_trade_no']);
@@ -307,53 +281,40 @@ else
         reset($_GET);
 
         $sign = '';
-        foreach ($_GET AS $key=>$val)
-        {
-            if ($key != 'sign' && $key != 'sign_type' && $key != 'code')
-            {
+        foreach ($_GET as $key => $val) {
+            if ($key != 'sign' && $key != 'sign_type' && $key != 'code') {
                 $sign .= "$key=$val&";
             }
         }
 
-        $sign = substr($sign, 0, -1) . $payment['alipay_key'];
+        $sign = substr($sign, 0, -1).$payment['alipay_key'];
         //$sign = substr($sign, 0, -1) . ALIPAY_AUTH;
-        if (md5($sign) != $_GET['sign'])
-        {
+        if (md5($sign) != $_GET['sign']) {
             return false;
         }
 
         /* 检查支付的金额是否相符 */
-        if (!check_money($order_sn, $_GET['total_fee']))
-        {
+        if (!check_money($order_sn, $_GET['total_fee'])) {
             return false;
         }
 
-        if ($_GET['trade_status'] == 'WAIT_SELLER_SEND_GOODS')
-        {
+        if ($_GET['trade_status'] == 'WAIT_SELLER_SEND_GOODS') {
             /* 改变订单状态 */
             order_paid($order_sn, 2);
 
             return true;
-        }
-        elseif ($_GET['trade_status'] == 'TRADE_FINISHED')
-        {
+        } elseif ($_GET['trade_status'] == 'TRADE_FINISHED') {
             /* 改变订单状态 */
             order_paid($order_sn);
 
             return true;
-        }
-        elseif ($_GET['trade_status'] == 'TRADE_SUCCESS')
-        {
+        } elseif ($_GET['trade_status'] == 'TRADE_SUCCESS') {
             /* 改变订单状态 */
             order_paid($order_sn, 2);
 
             return true;
-        }
-        else
-        {
+        } else {
             return false;
         }
     }
 }
-
-?>

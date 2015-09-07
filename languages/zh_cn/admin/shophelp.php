@@ -10,8 +10,8 @@
  * 使用；不允许对程序代码以任何形式任何目的的再发布。
  * ============================================================================
  * $Author: liubo $
- * $Id: shophelp.php 17217 2011-01-19 06:29:08Z liubo $
-*/
+ * $Id: shophelp.php 17217 2011-01-19 06:29:08Z liubo $.
+ */
 $_LANG['shophelp_add'] = '添加新帮助文章';
 $_LANG['cat_add'] = '添加新分类';
 $_LANG['cat_name'] = '分类名称';
@@ -51,11 +51,9 @@ $_LANG['not_emptycat'] = '分类下还有文章，不允许删除非空分类';
 $_LANG['js_languages']['no_catname'] = '没有输入分类名';
 $_LANG['js_languages']['lang_remove'] = '移除';
 $_LANG['js_languages']['lang_sort'] = '排序:';
-$_LANG['js_languages']['lang_article_add'] = '添加新帮助文章';;
-$_LANG['js_languages']['lang_article_list'] = '帮助文章列表';;
-$_LANG['js_languages']['remove_confirm'] = '你确认要删除该记录吗？';;
-$_LANG['js_languages']['no_title'] = '没有输入文章标题';;
+$_LANG['js_languages']['lang_article_add'] = '添加新帮助文章';
+$_LANG['js_languages']['lang_article_list'] = '帮助文章列表';
+$_LANG['js_languages']['remove_confirm'] = '你确认要删除该记录吗？';
+$_LANG['js_languages']['no_title'] = '没有输入文章标题';
 $_LANG['js_languages']['no_cat'] = '没有选择帮助文章分类';
 $_LANG['js_languages']['chap'] = '篇';
-
-?>

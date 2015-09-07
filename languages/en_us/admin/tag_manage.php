@@ -12,9 +12,8 @@
  * commercial purposes.
  * ============================================================================
  * $Author: liubo $
- * $Id: tag_manage.php 17217 2011-01-19 06:29:08Z liubo $
-*/
-
+ * $Id: tag_manage.php 17217 2011-01-19 06:29:08Z liubo $.
+ */
 $_LANG['tag_manage'] = 'Tag manage';
 $_LANG['tag_id'] = 'Tag ID';
 $_LANG['tag_words'] = 'Tag';
@@ -39,5 +38,3 @@ $_LANG['back_list'] = 'Return to tag list.';
 $_LANG['drop_confirm'] = 'Are you sure delete the record?';
 
 $_LANG['js_languages']['goods_name_not_empty'] = 'goods name can not empty';
-
-?>

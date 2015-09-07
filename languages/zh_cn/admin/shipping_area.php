@@ -10,9 +10,8 @@
  * 使用；不允许对程序代码以任何形式任何目的的再发布。
  * ============================================================================
  * $Author: liubo $
- * $Id: shipping_area.php 17217 2011-01-19 06:29:08Z liubo $
-*/
-
+ * $Id: shipping_area.php 17217 2011-01-19 06:29:08Z liubo $.
+ */
 $_LANG['shipping_area_name'] = '配送区域名称';
 $_LANG['shipping_area_districts'] = '地区列表';
 $_LANG['shipping_area_regions'] = '所辖地区';
@@ -61,4 +60,3 @@ $_LANG['js_languages']['lang_setup'] = '设置';
 $_LANG['js_languages']['lang_region'] = '地区';
 $_LANG['js_languages']['lang_shipping'] = '配送方式';
 $_LANG['js_languages']['region_exists'] = '选定的地区已经存在。';
-?>

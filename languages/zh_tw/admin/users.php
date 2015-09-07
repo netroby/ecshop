@@ -10,8 +10,8 @@
  * 使用；不允許對程序代碼以任何形式任何目的的再發佈。
  * ============================================================================
  * $Author: liubo $
- * $Id: users.php 17217 2011-01-19 06:29:08Z liubo $
-*/
+ * $Id: users.php 17217 2011-01-19 06:29:08Z liubo $.
+ */
 /* 列表頁面 */
 $_LANG['label_user_name'] = '會員名稱';
 $_LANG['label_pay_points_gt'] = '會員積分大於';
@@ -116,4 +116,3 @@ $_LANG['js_languages']['password_not_same'] = '輸入的密碼和確認密碼不一致。';
 $_LANG['js_languages']['invalid_pay_points'] = '消費積分數不是一個整數。';
 $_LANG['js_languages']['invalid_rank_points'] = '等級積分數不是一個整數。';
 $_LANG['js_languages']['password_len_err'] = '新密碼和確認密碼的長度不能小於6';
-?>

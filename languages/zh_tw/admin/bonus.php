@@ -10,8 +10,8 @@
  * 使用；不允許對程序代碼以任何形式任何目的的再發佈。
  * ============================================================================
  * $Author: liubo $
- * $Id: bonus.php 17217 2011-01-19 06:29:08Z liubo $
-*/
+ * $Id: bonus.php 17217 2011-01-19 06:29:08Z liubo $.
+ */
 /* 紅包類型字段信息 */
 $_LANG['bonus_type'] = '紅包類型';
 $_LANG['bonus_list'] = '紅包列表';
@@ -129,4 +129,3 @@ $_LANG['confirm_send_bonus'] = '確定發送紅包';
 $_LANG['bonus_not_exist'] = '該紅包不存在';
 $_LANG['success_send_mail'] = '%d 封郵件已被加入郵件列表';
 $_LANG['send_continue'] = '繼續發放紅包';
-?>

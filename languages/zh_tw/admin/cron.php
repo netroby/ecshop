@@ -10,9 +10,8 @@
  * 使用；不允許對程序代碼以任何形式任何目的的再發佈。
  * ==========================================================
  * $Author: liubo $
- * $Id: cron.php 17217 2011-01-19 06:29:08Z liubo $
+ * $Id: cron.php 17217 2011-01-19 06:29:08Z liubo $.
  */
-
 $_LANG['cron_name'] = '計劃任務名稱';
 $_LANG['cron_code'] = '此計劃任務';
 $_LANG['if_open'] = '開啟';
@@ -55,7 +54,6 @@ $_LANG['back_list'] = '返回計劃任務列表';
 $_LANG['name_is_null'] = '您沒有輸入計劃任務名稱！';
 $_LANG['js_languages']['lang_removeconfirm'] = '您確定要卸載此計劃任務嗎？';
 
-
 $_LANG['page']['index'] = '首頁';
 
 $_LANG['page']['user'] = '用戶中心';
@@ -71,5 +69,3 @@ $_LANG['page']['article_cat'] = '文章列表頁';
 $_LANG['page']['article'] = '文章頁';
 $_LANG['page']['brand'] = '品牌專區';
 $_LANG['page']['search'] = '搜索結果頁';
-
-?>

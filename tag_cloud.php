@@ -10,12 +10,11 @@
  * 使用；不允许对程序代码以任何形式任何目的的再发布。
  * ============================================================================
  * $Author: liubo $
- * $Id: tag_cloud.php 17217 2011-01-19 06:29:08Z liubo $
-*/
-
+ * $Id: tag_cloud.php 17217 2011-01-19 06:29:08Z liubo $.
+ */
 define('IN_ECS', true);
 
-require(dirname(__FILE__) . '/includes/init.php');
+require dirname(__FILE__).'/includes/init.php';
     assign_template();
     $position = assign_ur_here(0, $_LANG['tag_cloud']);
     $smarty->assign('page_title', $position['title']);    // 页面标题
@@ -27,8 +26,7 @@ require(dirname(__FILE__) . '/includes/init.php');
 
     /* 调查 */
     $vote = get_vote();
-    if (!empty($vote))
-    {
+    if (!empty($vote)) {
         $smarty->assign('vote_id', $vote['id']);
         $smarty->assign('vote',    $vote['content']);
     }
@@ -37,13 +35,11 @@ require(dirname(__FILE__) . '/includes/init.php');
 
     $tags = get_tags();
 
-    if (!empty($tags))
-    {
-        include_once(ROOT_PATH . 'includes/lib_clips.php');
+    if (!empty($tags)) {
+        include_once ROOT_PATH.'includes/lib_clips.php';
         color_tag($tags);
     }
 
     $smarty->assign('tags', $tags);
 
     $smarty->display('tag_cloud.dwt');
-?>

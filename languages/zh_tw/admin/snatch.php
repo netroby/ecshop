@@ -10,9 +10,8 @@
  * Ê¹ÓÃ£»²»ÔÊÔSŒ¦³ÌÐò´ú´aÒÔÈÎºÎÐÎÊ½ÈÎºÎÄ¿µÄµÄÔÙ°lÑ¡£
  * ============================================================================
  * $Author: liubo $
- * $Id: snatch.php 17217 2011-01-19 06:29:08Z liubo $
-*/
-
+ * $Id: snatch.php 17217 2011-01-19 06:29:08Z liubo $.
+ */
 $_LANG['snatch_id'] = '¾ŽÌ–';
 $_LANG['snatch_name'] = '»î„ÓÃû·Q';
 $_LANG['goodsid'] = '»î„ÓÉÌÆ·';
@@ -71,5 +70,3 @@ $_LANG['js_languages']['invalid_endtime'] = 'Ý”ÈëµÄ½YÊø•rég¸ñÊ½²»Œ¦£¬ÔÂ·Ý£¬•rég‘
 $_LANG['js_languages']['invalid_gt'] = 'Ý”ÈëµÄ½YÊø•rég‘ª´óì¶ÆðÊ¼ÈÕÆÚ';
 $_LANG['js_languages']['invalid_price'] = 'Ý”ÈëµÄƒr¸ñÉÏÏÞ‘ª´óì¶ƒr¸ñÏÂÏÞ¡£';
 $_LANG['js_languages']['search_is_null'] = '›]ÓÐËÑË÷µ½ÈÎºÎÉÌÆ·£¬ÕˆÖØÐÂËÑË÷';
-
-?>

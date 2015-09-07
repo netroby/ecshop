@@ -10,9 +10,8 @@
  * 使用；不允许对程序代码以任何形式任何目的的再发布。
  * ==========================================================
  * $Author: liubo $
- * $Id: article_auto.php 17217 2011-01-19 06:29:08Z liubo $
+ * $Id: article_auto.php 17217 2011-01-19 06:29:08Z liubo $.
  */
-
 $_LANG['id'] = 'No.';
 
 $_LANG['starttime'] = 'Published';
@@ -33,5 +32,3 @@ $_LANG['batch_end_succeed'] = 'Cancel Batch success';
 
 $_LANG['back_list'] = 'Published article automatically return';
 $_LANG['select_time'] = 'Please select the time';
-
-?>

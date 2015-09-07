@@ -10,9 +10,8 @@
  * 使用；不允许对程序代码以任何形式任何目的的再发布。
  * ============================================================================
  * $Author: liubo $
- * $Id: ebao_commend.php 17217 2011-01-19 06:29:08Z liubo $
-*/
-
+ * $Id: ebao_commend.php 17217 2011-01-19 06:29:08Z liubo $.
+ */
 $_LANG['select_method'] = 'Ways to choose merchandise:';
 $_LANG['by_cat'] = 'From the classification, under the choice of brand merchandise';
 $_LANG['by_sn'] = 'Classification, under the brand names of all merchandise';
@@ -68,5 +67,3 @@ $_LANG['not_new'] = 'Cancel New Products';
 $_LANG['hot'] = 'Hot';
 $_LANG['not_hot'] = 'The abolition of sales';
 $_LANG['move_to'] = 'Transferred to the classification';
-
-?>

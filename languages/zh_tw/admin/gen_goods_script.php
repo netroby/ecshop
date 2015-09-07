@@ -1,4 +1,5 @@
 <?php
+
 /**
  * ECSHOP 生成顯示商品的js代碼語言文件
  * ============================================================================
@@ -9,7 +10,7 @@
  * 使用；不允許對程序代碼以任何形式任何目的的再發佈。
  * ============================================================================
  * $Author: liubo $
- * $Id: gen_goods_script.php 17217 2011-01-19 06:29:08Z liubo $
+ * $Id: gen_goods_script.php 17217 2011-01-19 06:29:08Z liubo $.
  */
 $_LANG['label_category'] = '選擇商品分類：';
 $_LANG['label_brand'] = '選擇商品品牌：';
@@ -41,4 +42,3 @@ $_LANG['js_languages']['goods_num_must_over_0'] = '商品數量應該大於0';
 
 $_LANG['js_languages']['rows_num_must_be_int'] = '排列顯示條目數應該是整數';
 $_LANG['js_languages']['rows_num_must_over_0'] = '排列顯示條目數應該大於0';
-?>

@@ -12,9 +12,8 @@
  * commercial purposes.
  * ============================================================================
  * $Author: liubo $
- * $Id: pack.php 17217 2011-01-19 06:29:08Z liubo $
-*/
-
+ * $Id: pack.php 17217 2011-01-19 06:29:08Z liubo $.
+ */
 $_LANG['pack_name'] = 'Packing name';
 $_LANG['pack_fee'] = 'Money';
 $_LANG['free_money'] = 'Free allowance';
@@ -37,20 +36,18 @@ $_LANG['notice_freemoney'] = 'When the money more than this value, he(she) will 
 $_LANG['warn_packimg'] = 'You have upload an image, the old image will be covered upload again.';
 
 /* Prompting message */
-$_LANG['packname_exist'] ='Packing name %s has existed.';
-$_LANG['packadd_succed'] ='Add successfully';
-$_LANG['packedit_succed'] ='Edit packing %s successfully.';
-$_LANG['packedit_falure'] ='Edit packing %s has failed.';
-$_LANG['packremove_falure'] ='Delete successfully!';
-$_LANG['enter_num'] ='Please enter a figure!';
-$_LANG['no_packname'] ='Your entered packing name is blank!';
+$_LANG['packname_exist'] = 'Packing name %s has existed.';
+$_LANG['packadd_succed'] = 'Add successfully';
+$_LANG['packedit_succed'] = 'Edit packing %s successfully.';
+$_LANG['packedit_falure'] = 'Edit packing %s has failed.';
+$_LANG['packremove_falure'] = 'Delete successfully!';
+$_LANG['enter_num'] = 'Please enter a figure!';
+$_LANG['no_packname'] = 'Your entered packing name is blank!';
 
-$_LANG['back_list'] ='Return to packing list';
-$_LANG['continue_add'] ='Continue add new packing';
+$_LANG['back_list'] = 'Return to packing list';
+$_LANG['continue_add'] = 'Continue add new packing';
 
 /*JS language item*/
 $_LANG['js_languages']['no_packname'] = 'Please enter packing name.';
 $_LANG['js_languages']['packfee_un_num'] = 'Packing money is blank or isn\'t a figure.';
 $_LANG['js_languages']['packmoney_un_num'] = 'The packing free allowance is blank or isn\'t a figure.';
-
-?>

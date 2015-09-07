@@ -12,8 +12,8 @@
  * commercial purposes.
  * ============================================================================
  * $Author: liubo $
- * $Id: wholesale.php 17217 2011-01-19 06:29:08Z liubo $
-*/
+ * $Id: wholesale.php 17217 2011-01-19 06:29:08Z liubo $.
+ */
 
 /* menu */
 $_LANG['wholesale_list'] = 'Wholesale program list';
@@ -50,5 +50,3 @@ $_LANG['js_languages']['act_name_not_null'] = 'Please enter the name of the whol
 /* post */
 $_LANG['pls_set_user_rank'] = 'Please set up the Member Level';
 $_LANG['user_rank_exist'] = 'Already exists in the merchandise for you to choose the level of the wholesale membership package';
-
-?>

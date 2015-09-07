@@ -10,9 +10,8 @@
  * 使用；不允许对程序代码以任何形式任何目的的再发布。
  * ==========================================================
  * $Author: liubo $
- * $Id: affiliate.php 17217 2011-01-19 06:29:08Z liubo $
+ * $Id: affiliate.php 17217 2011-01-19 06:29:08Z liubo $.
  */
-
 $_LANG['on'] = 'Open';
 $_LANG['off'] = 'Close';
 
@@ -46,4 +45,3 @@ $_LANG['help_lpa'] = 'Orders integral part of this percentage as divided by Inte
 $_LANG['help_lma'] = 'The amount of orders as part of this percentage divided by the amount.';
 $_LANG['help_lra'] = 'Introduction of Member Registration, references available rating points.';
 $_LANG['help_lru'] = 'Integral to this level of the ceiling is no longer reward points introduce Register.';
-?>

@@ -10,11 +10,9 @@
  * 使用；不允许对程序代码以任何形式任何目的的再发布。
  * ============================================================================
  * $Author: liubo $
- * $Id: cls_ecshop.php 17217 2011-01-19 06:29:08Z liubo $
-*/
-
-if (!defined('IN_ECS'))
-{
+ * $Id: cls_ecshop.php 17217 2011-01-19 06:29:08Z liubo $.
+ */
+if (!defined('IN_ECS')) {
     die('Hacking attempt');
 }
 
@@ -24,180 +22,146 @@ define('RELEASE', '20140613');
 
 class ECS
 {
-    var $db_name = '';
-    var $prefix  = 'ecs_';
+    public $db_name = '';
+    public $prefix = 'ecs_';
 
     /**
-     * 构造函数
+     * 构造函数.
      *
-     * @access  public
-     * @param   string      $ver        版本号
-     *
-     * @return  void
+     * @param string $ver 版本号
      */
-    function ECS($db_name, $prefix)
+    public function ECS($db_name, $prefix)
     {
         $this->db_name = $db_name;
-        $this->prefix  = $prefix;
+        $this->prefix = $prefix;
     }
 
     /**
-     * 将指定的表名加上前缀后返回
+     * 将指定的表名加上前缀后返回.
      *
-     * @access  public
-     * @param   string      $str        表名
+     * @param string $str 表名
      *
-     * @return  string
+     * @return string
      */
-    function table($str)
+    public function table($str)
     {
-        return '`' . $this->db_name . '`.`' . $this->prefix . $str . '`';
+        return '`'.$this->db_name.'`.`'.$this->prefix.$str.'`';
     }
 
     /**
-     * ECSHOP 密码编译方法;
+     * ECSHOP 密码编译方法;.
      *
-     * @access  public
-     * @param   string      $pass       需要编译的原始密码
+     * @param string $pass 需要编译的原始密码
      *
-     * @return  string
+     * @return string
      */
-    function compile_password($pass)
+    public function compile_password($pass)
     {
         return md5($pass);
     }
 
     /**
-     * 取得当前的域名
+     * 取得当前的域名.
      *
-     * @access  public
      *
-     * @return  string      当前的域名
+     * @return string 当前的域名
      */
-    function get_domain()
+    public function get_domain()
     {
         /* 协议 */
         $protocol = $this->http();
 
         /* 域名或IP地址 */
-        if (isset($_SERVER['HTTP_X_FORWARDED_HOST']))
-        {
+        if (isset($_SERVER['HTTP_X_FORWARDED_HOST'])) {
             $host = $_SERVER['HTTP_X_FORWARDED_HOST'];
-        }
-        elseif (isset($_SERVER['HTTP_HOST']))
-        {
+        } elseif (isset($_SERVER['HTTP_HOST'])) {
             $host = $_SERVER['HTTP_HOST'];
-        }
-        else
-        {
+        } else {
             /* 端口 */
-            if (isset($_SERVER['SERVER_PORT']))
-            {
-                $port = ':' . $_SERVER['SERVER_PORT'];
+            if (isset($_SERVER['SERVER_PORT'])) {
+                $port = ':'.$_SERVER['SERVER_PORT'];
 
-                if ((':80' == $port && 'http://' == $protocol) || (':443' == $port && 'https://' == $protocol))
-                {
+                if ((':80' == $port && 'http://' == $protocol) || (':443' == $port && 'https://' == $protocol)) {
                     $port = '';
                 }
-            }
-            else
-            {
+            } else {
                 $port = '';
             }
 
-            if (isset($_SERVER['SERVER_NAME']))
-            {
-                $host = $_SERVER['SERVER_NAME'] . $port;
-            }
-            elseif (isset($_SERVER['SERVER_ADDR']))
-            {
-                $host = $_SERVER['SERVER_ADDR'] . $port;
+            if (isset($_SERVER['SERVER_NAME'])) {
+                $host = $_SERVER['SERVER_NAME'].$port;
+            } elseif (isset($_SERVER['SERVER_ADDR'])) {
+                $host = $_SERVER['SERVER_ADDR'].$port;
             }
         }
 
-        return $protocol . $host;
+        return $protocol.$host;
     }
 
     /**
-     * 获得 ECSHOP 当前环境的 URL 地址
-     *
-     * @access  public
-     *
-     * @return  void
+     * 获得 ECSHOP 当前环境的 URL 地址.
      */
-    function url()
+    public function url()
     {
-        $curr = strpos(PHP_SELF, ADMIN_PATH . '/') !== false ?
-                preg_replace('/(.*)(' . ADMIN_PATH . ')(\/?)(.)*/i', '\1', dirname(PHP_SELF)) :
+        $curr = strpos(PHP_SELF, ADMIN_PATH.'/') !== false ?
+                preg_replace('/(.*)('.ADMIN_PATH.')(\/?)(.)*/i', '\1', dirname(PHP_SELF)) :
                 dirname(PHP_SELF);
 
         $root = str_replace('\\', '/', $curr);
 
-        if (substr($root, -1) != '/')
-        {
+        if (substr($root, -1) != '/') {
             $root .= '/';
         }
 
-        return $this->get_domain() . $root;
+        return $this->get_domain().$root;
     }
 
     /**
-     * 获得 ECSHOP 当前环境的 HTTP 协议方式
-     *
-     * @access  public
-     *
-     * @return  void
+     * 获得 ECSHOP 当前环境的 HTTP 协议方式.
      */
-    function http()
+    public function http()
     {
         return (isset($_SERVER['HTTPS']) && (strtolower($_SERVER['HTTPS']) != 'off')) ? 'https://' : 'http://';
     }
 
     /**
-     * 获得数据目录的路径
+     * 获得数据目录的路径.
      *
      * @param int $sid
      *
      * @return string 路径
      */
-    function data_dir($sid = 0)
+    public function data_dir($sid = 0)
     {
-        if (empty($sid))
-        {
+        if (empty($sid)) {
             $s = 'data';
-        }
-        else
-        {
+        } else {
             $s = 'user_files/';
-            $s .= ceil($sid / 3000) . '/';
+            $s .= ceil($sid / 3000).'/';
             $s .= $sid % 3000;
         }
+
         return $s;
     }
 
     /**
-     * 获得图片的目录路径
+     * 获得图片的目录路径.
      *
      * @param int $sid
      *
      * @return string 路径
      */
-    function image_dir($sid = 0)
+    public function image_dir($sid = 0)
     {
-        if (empty($sid))
-        {
+        if (empty($sid)) {
             $s = 'images';
-        }
-        else
-        {
+        } else {
             $s = 'user_files/';
-            $s .= ceil($sid / 3000) . '/';
-            $s .= ($sid % 3000) . '/';
+            $s .= ceil($sid / 3000).'/';
+            $s .= ($sid % 3000).'/';
             $s .= 'images';
         }
+
         return $s;
     }
-
 }
-
-?>

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * ECSHOP 帮助信息接口
  * ============================================================================
@@ -9,12 +10,10 @@
  * 使用；不允许对程序代码以任何形式任何目的的再发布。
  * ============================================================================
  * $Author: liubo $
- * $Id: respond.php 16220 2009-06-12 02:08:59Z liubo $
+ * $Id: respond.php 16220 2009-06-12 02:08:59Z liubo $.
  */
-
 define('IN_ECS', true);
-require(dirname(__FILE__) . '/includes/init.php');
+require dirname(__FILE__).'/includes/init.php';
 
 $get_keyword = trim($_GET['al']); // 获取关键字
-header("location:http://help.ecshop.com/do.php?k=".$get_keyword."&v=".$_CFG['ecs_version']."&l=".$_CFG['lang']."&c=".EC_CHARSET);
-?>
+header('location:http://help.ecshop.com/do.php?k='.$get_keyword.'&v='.$_CFG['ecs_version'].'&l='.$_CFG['lang'].'&c='.EC_CHARSET);

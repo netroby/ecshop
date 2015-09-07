@@ -8,11 +8,12 @@
  * ----------------------------------------------------------------------------
  * 这不是一个自由软件！您只能在不用于商业目的的前提下对程序代码进行修改和
  * 使用；不允许对程序代码以任何形式任何目的的再发布。
- * ============================================================================
+ * ============================================================================.
+ *
  * @author:     webboy <laupeng@163.com>
  * @version:    v2.0
  * ---------------------------------------------
-*/
+ */
 $_LANG['tab_general'] = 'General information';
 $_LANG['tab_desc'] = 'Thematic Introduction';
 $_LANG['tab_goods'] = 'Topic merchandise';
@@ -69,4 +70,3 @@ $_LANG['top_html'] = 'Code';
 $_LANG['lable_upload'] = 'Upload';
 $_LANG['lable_from_web'] = 'Or remote URL address';
 $_LANG['lable_content'] = 'Content';
-?>

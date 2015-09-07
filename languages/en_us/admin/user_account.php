@@ -12,10 +12,8 @@
  * commercial purposes.
  * ============================================================================
  * $Author: liubo $
- * $Id: user_account.php 17217 2011-01-19 06:29:08Z liubo $
-
-*/
-
+ * $Id: user_account.php 17217 2011-01-19 06:29:08Z liubo $.
+ */
 $_LANG['user_surplus'] = 'Advanced payment';
 $_LANG['surplus_id'] = 'ID';
 $_LANG['user_id'] = 'Username';
@@ -50,7 +48,7 @@ $_LANG['attradd_succed'] = 'Successfully!';
 $_LANG['username_not_exist'] = 'The username is invalid!';
 $_LANG['cancel_surplus'] = 'Are you sure cancel this record?';
 $_LANG['surplus_amount_error'] = 'Wrong, the drawing money is more than your balance!';
-$_LANG['edit_surplus_notic']='The status is already complete now, if you want to modify, please config it as confirm.';
+$_LANG['edit_surplus_notic'] = 'The status is already complete now, if you want to modify, please config it as confirm.';
 $_LANG['back_list'] = 'Return to saving and drawing.';
 $_LANG['continue_add'] = 'Continue add application.';
 
@@ -62,5 +60,3 @@ $_LANG['js_languages']['deposit_amount_error'] = 'Please enter a valid format of
 $_LANG['js_languages']['deposit_type_empty'] = 'Please select a type!';
 $_LANG['js_languages']['deposit_notic_empty'] = 'Please enter remarks!';
 $_LANG['js_languages']['deposit_desc_empty'] = 'Please enter description of users!';
-
-?>

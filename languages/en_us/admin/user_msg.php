@@ -12,9 +12,8 @@
  * commercial purposes.
  * ============================================================================
  * $Author: liubo $
- * $Id: user_msg.php 17217 2011-01-19 06:29:08Z liubo $
-*/
-
+ * $Id: user_msg.php 17217 2011-01-19 06:29:08Z liubo $.
+ */
 $_LANG['msg_title'] = 'Title';
 $_LANG['list_all'] = 'View all messages';
 $_LANG['msg_id'] = 'ID';
@@ -68,4 +67,3 @@ $_LANG['js_languages']['no_title'] = 'The title can\'t be blank.';
 
 $_LANG['mail_send_fail'] = 'Mail sent failed, please check the e-mail server settings and try again.';
 $_LANG['remail'] = 'Re-issued e-mail';
-?>

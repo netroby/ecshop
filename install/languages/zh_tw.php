@@ -10,14 +10,13 @@
  * 使用；不允許對程序代碼以任何形式任何目的的再發佈。
  * ============================================================================
  * $Author: liubo $
- * $Id: zh_tw.php 17217 2011-01-19 06:29:08Z liubo $
+ * $Id: zh_tw.php 17217 2011-01-19 06:29:08Z liubo $.
  */
 
 /* 通用語言項 */
 $_LANG['prev_step'] = '上一步：';
 $_LANG['next_step'] = '下一步：';
 $_LANG['copyright'] = '&copy; 2005-2012 <a href="http://www.ecshop.com" target="_blank">上海商派网络科技有限公司</a>。保留所有權利。';
-
 
 /* 歡迎頁 */
 $_LANG['welcome_title'] = '歡迎您選用ECShop網上商店管理系統！';
@@ -37,7 +36,6 @@ $_LANG['ucapi'] = 'UCenter 的 URL';
 $_LANG['ucenter'] = '請填寫 UCenter 相關信息：';
 $_LANG['ucfounderpw'] = 'UCenter 創始人密碼：';
 $_LANG['uc_intro'] = 'UCenter 是 Comsenz 公司產品的核心服務程序，Discuz! Board 的安裝和運行依賴此程序。如果您已經安裝了 UCenter，請填寫以下信息。否則，請到 <a href="http://www.discuz.com" target="_blank">Comsenz 產品中心</a> 下載並且安裝，然後再繼續。<br /><br />';
-
 
 /* 環境檢測頁 */
 $_LANG['checking_title'] = 'ECShop安裝程序 第2步/共3步 環境檢測';
@@ -111,7 +109,7 @@ $_LANG['cosmetics'] = '化妝品';
 $_LANG['install_at_once'] = '立即安裝';
 $_LANG['default_friend_link'] = 'ECSHOP 網上商店管理系統';
 $_LANG['maifou_friend_link'] = '買否網';
-$_LANG['wdwd_friend_link']='免費開獨立網店';
+$_LANG['wdwd_friend_link'] = '免費開獨立網店';
 $_LANG['monitor_title'] = '安裝程序監視器';
 $_LANG['admin_user'][] = '商品列表|goods.php?act=list';
 $_LANG['admin_user'][] = '訂單列表|order.php?act=list';
@@ -181,4 +179,3 @@ $_LANG['ucenter_data_error'] = '安裝數據錯誤';
 $_LANG['ucenter_config_error'] = '配置文件寫入錯誤';
 $_LANG['ucenter_datadir_access'] = '請檢查data目錄是否可寫';
 $_LANG['ucenter_tmp_config_error'] = '臨時配置文件寫入錯誤';
-?>

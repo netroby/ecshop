@@ -10,9 +10,8 @@
  * 使用；不允许对程序代码以任何形式任何目的的再发布。
  * ============================================================================
  * $Author: liubo $
- * $Id: captcha_manage.php 17217 2011-01-19 06:29:08Z liubo $
-*/
-
+ * $Id: captcha_manage.php 17217 2011-01-19 06:29:08Z liubo $.
+ */
 $_LANG['captcha_manage'] = '验证码设置';
 $_LANG['captcha_note'] = '开启验证码需要服务GD库支持，而您的服务器不支持GD。';
 
@@ -37,5 +36,3 @@ $_LANG['js_languages']['proper_height'] = '图片高度要在15到50之间!';
 
 $_LANG['save_ok'] = '设置保存成功';
 $_LANG['captcha_message'] = '留言板留言';
-
-?>

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * ECSHOP 管理中心商店設置語言文件
  * ============================================================================
@@ -9,10 +10,9 @@
  * 使用；不允許對程序代碼以任何形式任何目的的再發佈。
  * ============================================================================
  * $Author: liubo $
- * $Id: shop_config.php 17217 2011-01-19 06:29:08Z liubo $
+ * $Id: shop_config.php 17217 2011-01-19 06:29:08Z liubo $.
  */
-
-require(ROOT_PATH.ADMIN_PATH.'/sms_url.php');
+require ROOT_PATH.ADMIN_PATH.'/sms_url.php';
 $_LANG['cfg_name']['basic'] = '基本設置';
 $_LANG['cfg_name']['display'] = '顯示設置';
 $_LANG['cfg_name']['shop_info'] = '網店信息';
@@ -119,7 +119,7 @@ $_LANG['cfg_name']['goods_name_length'] = '商品名稱的長度';
 $_LANG['cfg_name']['price_format'] = '商品價格顯示規則';
 $_LANG['cfg_name']['register_points'] = '會員註冊贈送積分';
 $_LANG['cfg_name']['shop_logo'] = '商店 Logo';
-$_LANG['cfg_name']['enable_gzip']     = '是否啟用Gzip模式';
+$_LANG['cfg_name']['enable_gzip'] = '是否啟用Gzip模式';
 $_LANG['cfg_name']['anonymous_buy'] = '是否允許未登錄用戶購物';
 $_LANG['cfg_name']['min_goods_amount'] = '最小購物金額';
 $_LANG['cfg_name']['one_step_buy'] = '是否一步購物';
@@ -130,13 +130,13 @@ $_LANG['cfg_name']['show_goodsnumber'] = '是否顯示庫存';
 $_LANG['cfg_name']['show_addtime'] = '是否顯示上架時間';
 $_LANG['cfg_name']['show_marketprice'] = '是否顯示市場價格';
 $_LANG['cfg_name']['goodsattr_style'] = '商品屬性顯示樣式';
-$_LANG['cfg_name']['test_mail_address']  = '郵件地址';
+$_LANG['cfg_name']['test_mail_address'] = '郵件地址';
 $_LANG['cfg_name']['send'] = '發送測試郵件';
 $_LANG['cfg_name']['send_service_email'] = '下訂單時是否給客服發郵件';
 $_LANG['cfg_name']['show_goods_in_cart'] = '購物車裡顯示商品方式';
 $_LANG['cfg_name']['show_attr_in_cart'] = '購物車裡是否顯示商品屬性';
 $_LANG['test_mail_title'] = '測試郵件';
-$_LANG['cfg_name']['email_content']  = '您好！這是一封檢測郵件服務器設置的測試郵件。收到此郵件，意味著您的郵件服務器設置正確！您可以進行其它郵件發送的操作了！';
+$_LANG['cfg_name']['email_content'] = '您好！這是一封檢測郵件服務器設置的測試郵件。收到此郵件，意味著您的郵件服務器設置正確！您可以進行其它郵件發送的操作了！';
 $_LANG['cfg_name']['sms'] = '短信設置';
 $_LANG['cfg_name']['sms_shop_mobile'] = '商家的手機號碼';
 $_LANG['cfg_name']['sms_order_placed'] = '客戶下訂單時是否給商家發短信';
@@ -389,10 +389,10 @@ $_LANG['cfg_range']['upload_size_limit']['4096'] = '4MB';
 $_LANG['cfg_range']['visit_stats']['on'] = '開啟';
 $_LANG['cfg_range']['visit_stats']['off'] = '關閉';
 
-$_LANG['rewrite_confirm_apache'] = "URL Rewrite 功能要求您的 Web Server 必須是 Apache，\\n並且起用了 rewrite 模塊。\\n同時請您確認是否已經將htaccess.txt文件重命名為.htaccess。\\n如果服務器上還有其他的重寫規則請去掉註釋,請將RewriteBase行的註釋去掉,並將路徑設置為服務器請求的絕對路徑";
-$_LANG['rewrite_confirm_iis'] = "URL Rewrite 功能要求您的 Web Server 必須安裝IIS，\\n並且起用了 ISAPI Rewrite 模組。\\n如果您使用的是ISAPI Rewrite商業版，請您確認是否已經將httpd.txt檔重命名為httpd.ini。如果您使用的是ISAPI Rewrite免費版，請您確認是否已經將httpd.txt檔內的內容複製到ISAPI Rewrite安裝目錄中httpd.ini裡。";
-$_LANG['gzip_confirm'] = "GZip 功能需要您的服務器支持 zlib 擴展庫。\\n如果您發現開啟Gzip後頁面出現亂碼，可能是您的服務器已經開啟了Gzip，您不需要在 ECSHOP 中再次開啟。";
-$_LANG['retain_original_confirm'] = "如果您不保留商品原圖，在「圖片批量處理」的時候，\\n將不會重新生成不包含原圖的商品圖片。請慎重使用該功能！";
+$_LANG['rewrite_confirm_apache'] = 'URL Rewrite 功能要求您的 Web Server 必須是 Apache，\\n並且起用了 rewrite 模塊。\\n同時請您確認是否已經將htaccess.txt文件重命名為.htaccess。\\n如果服務器上還有其他的重寫規則請去掉註釋,請將RewriteBase行的註釋去掉,並將路徑設置為服務器請求的絕對路徑';
+$_LANG['rewrite_confirm_iis'] = 'URL Rewrite 功能要求您的 Web Server 必須安裝IIS，\\n並且起用了 ISAPI Rewrite 模組。\\n如果您使用的是ISAPI Rewrite商業版，請您確認是否已經將httpd.txt檔重命名為httpd.ini。如果您使用的是ISAPI Rewrite免費版，請您確認是否已經將httpd.txt檔內的內容複製到ISAPI Rewrite安裝目錄中httpd.ini裡。';
+$_LANG['gzip_confirm'] = 'GZip 功能需要您的服務器支持 zlib 擴展庫。\\n如果您發現開啟Gzip後頁面出現亂碼，可能是您的服務器已經開啟了Gzip，您不需要在 ECSHOP 中再次開啟。';
+$_LANG['retain_original_confirm'] = '如果您不保留商品原圖，在「圖片批量處理」的時候，\\n將不會重新生成不包含原圖的商品圖片。請慎重使用該功能！';
 $_LANG['msg_invalid_file'] = '您上傳了一個非法的文件類型。該文件名為：%s';
 $_LANG['msg_upload_failed'] = '上傳文件 %s 失敗，請檢查 %s 目錄是否可寫。';
 $_LANG['smtp_ssl_confirm'] = '此功能要求您的php必須支持OpenSSL模塊,如果您要使用此功能，請聯繫您的空間商確認支持此模塊';
@@ -420,18 +420,18 @@ $_LANG['mail_save_success'] = '郵件服務器設置成功。';
 $_LANG['sendemail_success'] = '恭喜！測試郵件已成功發送到 ';
 $_LANG['sendemail_false'] = '郵件發送失敗，請檢查您的郵件服務器設置！';
 
-$_LANG['js_languages']['smtp_host_empty']   = '您沒有填寫郵件服務器地址!';
-$_LANG['js_languages']['smtp_port_empty']   = '您沒有填寫服務器端口!';
+$_LANG['js_languages']['smtp_host_empty'] = '您沒有填寫郵件服務器地址!';
+$_LANG['js_languages']['smtp_port_empty'] = '您沒有填寫服務器端口!';
 $_LANG['js_languages']['reply_email_empty'] = '您沒有填寫郵件回復地址!';
-$_LANG['js_languages']['test_email_empty']  = '您沒有填寫發送測試郵件的地址!';
-$_LANG['js_languages']['email_address_same']  = '郵件回復地址與發送測試郵件的地址不能相同!';
+$_LANG['js_languages']['test_email_empty'] = '您沒有填寫發送測試郵件的地址!';
+$_LANG['js_languages']['email_address_same'] = '郵件回復地址與發送測試郵件的地址不能相同!';
 
-$_LANG['cfg_name']['wap']   = 'WAP設置';
-$_LANG['cfg_name']['wap_config']    = '是否使用WAP功能';
+$_LANG['cfg_name']['wap'] = 'WAP設置';
+$_LANG['cfg_name']['wap_config'] = '是否使用WAP功能';
 $_LANG['cfg_range']['wap_config'][0] = '關閉';
 $_LANG['cfg_range']['wap_config'][1] = '開啟';
-$_LANG['cfg_name']['wap_logo']      = 'WAP LOGO上傳';
-$_LANG['cfg_desc']['wap_logo']      = '為了更好地兼容各種手機類型，LOGO 最好為png圖片';
+$_LANG['cfg_name']['wap_logo'] = 'WAP LOGO上傳';
+$_LANG['cfg_desc']['wap_logo'] = '為了更好地兼容各種手機類型，LOGO 最好為png圖片';
 
 $_LANG['cfg_desc']['wap_config'] = '此功能只支持簡體中文且只在中國大陸區有效';
 $_LANG['cfg_name']['recommend_order'] = '推薦商品排序';
@@ -445,4 +445,3 @@ $_LANG['back_mail_settings'] = '返回郵件服務器設置';
 $_LANG['mail_settings'] = '郵件服務器設置';
 
 $_LANG['sms_url'] = '<a href="'.$url.'" target="_blank">點此注冊手機短信服務</a>';
-?>

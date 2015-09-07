@@ -12,8 +12,8 @@
  * commercial purposes.
  * ============================================================================
  * $Author: liubo $
- * $Id: priv_action.php 17217 2011-01-19 06:29:08Z liubo $
-*/
+ * $Id: priv_action.php 17217 2011-01-19 06:29:08Z liubo $.
+ */
 /* Authorization management\'s the first grouping */
 $_LANG['goods'] = 'Product';
 $_LANG['cms_manage'] = 'Article';
@@ -62,7 +62,6 @@ $_LANG['user_rank'] = 'User rank management';
 $_LANG['feedback_priv'] = 'User message management';
 $_LANG['surplus_manage'] = 'User balance management';
 $_LANG['account_manage'] = 'Member Account Management';
-
 
 //Authority of Authority management
 $_LANG['admin_manage'] = 'Add/Edit administrator';
@@ -132,25 +131,22 @@ $_LANG['view_sendlist'] = 'Mail Queue Management';
 
 //Template management
 $_LANG['template_select'] = 'Template Chooser ';
-$_LANG['template_setup']  = ' Template Settings ';
-$_LANG['library_manage']  = ' Library Project Management ';
-$_LANG['lang_edit']       = ' Language of editing ';
-$_LANG['backup_setting']  = ' Template Settings backup ';
-$_LANG['mail_template']  = ' E-mail template management';
+$_LANG['template_setup'] = ' Template Settings ';
+$_LANG['library_manage'] = ' Library Project Management ';
+$_LANG['lang_edit'] = ' Language of editing ';
+$_LANG['backup_setting'] = ' Template Settings backup ';
+$_LANG['mail_template'] = ' E-mail template management';
 
 //Database Management
-$_LANG['db_backup']    = 'Data Backup ';
-$_LANG['db_renew']     = 'Data Recovery ';
-$_LANG['db_optimize']  = 'Data sheet optimization';
-$_LANG['sql_query']    = 'SQL query ';
-$_LANG['convert']      = ' Conversion data';
+$_LANG['db_backup'] = 'Data Backup ';
+$_LANG['db_renew'] = 'Data Recovery ';
+$_LANG['db_optimize'] = 'Data sheet optimization';
+$_LANG['sql_query'] = 'SQL query ';
+$_LANG['convert'] = ' Conversion data';
 
 //SMS Management
-$_LANG['my_info']         = 'Account Information ';
-$_LANG['sms_send']        = 'Send SMS ';
-$_LANG['sms_charge']      = 'SMS recharge ';
-$_LANG['send_history']    = 'Send record ';
-$_LANG['charge_history']  = 'Voucher record ';
-
-
-?>
+$_LANG['my_info'] = 'Account Information ';
+$_LANG['sms_send'] = 'Send SMS ';
+$_LANG['sms_charge'] = 'SMS recharge ';
+$_LANG['send_history'] = 'Send record ';
+$_LANG['charge_history'] = 'Voucher record ';

@@ -12,15 +12,14 @@
  * commercial purposes.
  * ============================================================================
  * $Author: liubo $
- * $Id: sto_express.php 17217 2011-01-19 06:29:08Z liubo $
-*/
-
-$_LANG['sto_express']            = 'Shen Tong shipping';
-$_LANG['sto_express_desc']       = 'Cost of Jiang, Zhe, Hu region less than 1000g is less than 15 yuan/kg, other region 18 yuan/kg, more than 1000g is 5-6 yuan/kg, Yun Nan region is 8 yuan.';
-$_LANG['item_fee']              = 'Single commodity costs:';
-$_LANG['base_fee']              = 'Cost less than 1000g';
-$_LANG['step_fee']               = 'Every less than or equal to 1000g:';
-$_LANG['shipping_print']         = '<table border="0" cellspacing="0" cellpadding="0" style="width:18.9cm;">
+ * $Id: sto_express.php 17217 2011-01-19 06:29:08Z liubo $.
+ */
+$_LANG['sto_express'] = 'Shen Tong shipping';
+$_LANG['sto_express_desc'] = 'Cost of Jiang, Zhe, Hu region less than 1000g is less than 15 yuan/kg, other region 18 yuan/kg, more than 1000g is 5-6 yuan/kg, Yun Nan region is 8 yuan.';
+$_LANG['item_fee'] = 'Single commodity costs:';
+$_LANG['base_fee'] = 'Cost less than 1000g';
+$_LANG['step_fee'] = 'Every less than or equal to 1000g:';
+$_LANG['shipping_print'] = '<table border="0" cellspacing="0" cellpadding="0" style="width:18.9cm;">
   <tr>
     <td colspan="3" style="height:2cm;">&nbsp;</td>
   </tr>
@@ -72,5 +71,3 @@ $_LANG['shipping_print']         = '<table border="0" cellspacing="0" cellpaddin
     <td colspan="2" style="height:3.5cm;">&nbsp;</td>
   </tr>
 </table>';
-
-?>

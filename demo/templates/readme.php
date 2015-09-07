@@ -11,7 +11,7 @@
 </head>
 
 <body>
-<?php include ROOT_PATH . 'demo/templates/header.php';?>
+<?php include ROOT_PATH.'demo/templates/header.php';?>
 
 <div id="wrapper" style="text-align:left;">
 
@@ -33,6 +33,6 @@
 
 </div>
 </div>
-<?php include ROOT_PATH . 'demo/templates/copyright.php';?>
+<?php include ROOT_PATH.'demo/templates/copyright.php';?>
 </body>
 </html>

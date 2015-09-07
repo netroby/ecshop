@@ -12,9 +12,8 @@
  * commercial purposes.
  * ============================================================================
  * $Author: liubo $
- * $Id: goods_booking.php 17217 2011-01-19 06:29:08Z liubo $
-*/
-
+ * $Id: goods_booking.php 17217 2011-01-19 06:29:08Z liubo $.
+ */
 $_LANG['list_all'] = 'Booking records';
 
 $_LANG['booking'] = 'Order information';
@@ -52,5 +51,3 @@ $_LANG['back_list_all'] = 'Return to stockout record list.';
 $_LANG['dispose_succeed'] = 'Successfully';
 $_LANG['mail_send_fail'] = 'Mail sent failed, please check the e-mail server settings and try again.';
 $_LANG['remail'] = 'Re-issued e-mail';
-
-?>

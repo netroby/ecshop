@@ -10,7 +10,7 @@
  * 使用；不允许对程序代码以任何形式任何目的的再发布。
  * ==========================================================
  * $Author: liubo $
- * $Id: email_list.php 17217 2011-01-19 06:29:08Z liubo $
+ * $Id: email_list.php 17217 2011-01-19 06:29:08Z liubo $.
  */
 $_LANG['email_val'] = 'E-mail address';
 $_LANG['stat']['name'] = 'State';
@@ -27,4 +27,3 @@ $_LANG['batch_remove_succeed'] = 'Has been successfully deleted %d E-mail Addres
 $_LANG['batch_unremove_succeed'] = 'Has been successfully confirmed %d E-mail Address';
 $_LANG['batch_exit_succeed'] = 'Has been successfully unsubscribe %d E-mail Address';
 $_LANG['back_list'] = 'Return mailing list';
-?>

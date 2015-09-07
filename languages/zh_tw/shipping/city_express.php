@@ -10,11 +10,9 @@
  * 使用；不允許對程序代碼以任何形式任何目的的再發佈。
  * ============================================================================
  * $Author: liubo $
- * $Id: city_express.php 17217 2011-01-19 06:29:08Z liubo $
-*/
-
-$_LANG['city_express']        = '城際快遞';
-$_LANG['city_express_desc']   = '配送的運費是固定的';
-$_LANG['base_fee']      = '基本費用：';
-$_LANG['item_fee']      = '單件商品費用：';
-?>
+ * $Id: city_express.php 17217 2011-01-19 06:29:08Z liubo $.
+ */
+$_LANG['city_express'] = '城際快遞';
+$_LANG['city_express_desc'] = '配送的運費是固定的';
+$_LANG['base_fee'] = '基本費用：';
+$_LANG['item_fee'] = '單件商品費用：';

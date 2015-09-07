@@ -12,9 +12,8 @@
  * commercial purposes.
  * ============================================================================
  * $Author: zblikai $
- * $Id: mail_template.php 15646 2009-02-23 08:33:00Z zblikai $
-*/
-
+ * $Id: mail_template.php 15646 2009-02-23 08:33:00Z zblikai $.
+ */
 $_LANG['field_name'] = 'The name of the uesr register options';
 $_LANG['field_order'] = 'Order';
 $_LANG['field_display'] = 'Display or not';
@@ -33,5 +32,3 @@ $_LANG['no_remove'] = 'System reserved can`t be removed';
 
 /* JS ÓïÑÔ */
 $_LANG['js_languages']['field_name_empty'] = 'You don\'t input the name of the user info option.';
-
-?>

@@ -12,7 +12,7 @@
  * commercial purposes.
  * ============================================================================
  * $Author: liubo $
- * $Id: order.php 17217 2011-01-19 06:29:08Z liubo $
+ * $Id: order.php 17217 2011-01-19 06:29:08Z liubo $.
  */
 
 /* Order search*/
@@ -96,7 +96,7 @@ $_LANG['group_buy'] = '(Associates)';
 $_LANG['error_get_goods_info'] = 'Orders for merchandise to obtain information error';
 $_LANG['exchange_goods'] = '(Points Exchange)';
 
-$_LANG['js_languages']['remove_confirm']='All informations will be deleted if you delete the order. Are you sure delete it?';
+$_LANG['js_languages']['remove_confirm'] = 'All informations will be deleted if you delete the order. Are you sure delete it?';
 
 /* The order search*/
 $_LANG['label_order_sn'] = 'Order NO.:';
@@ -157,7 +157,7 @@ $_LANG['label_shop_address'] = 'Address:';
 $_LANG['label_service_phone'] = 'Service phone:';
 $_LANG['label_print_time'] = 'Print time:';
 
-$_LANG['label_suppliers'] ='Choose suppliers:';
+$_LANG['label_suppliers'] = 'Choose suppliers:';
 $_LANG['label_agency'] = 'Agency:';
 $_LANG['suppliers_name'] = 'Suppliers';
 
@@ -176,78 +176,78 @@ $_LANG['subtotal'] = 'Subtotal';
 $_LANG['label_total'] = 'Total:';
 $_LANG['label_total_weight'] = 'Total products weight:';
 
-$_LANG['label_goods_amount'] ='Total products money:';
+$_LANG['label_goods_amount'] = 'Total products money:';
 $_LANG['label_discount'] = 'Discount:';
 $_LANG['label_tax'] = 'Tax invoice:';
-$_LANG['label_shipping_fee'] ='Shipping money:';
-$_LANG['label_insure_fee'] ='Insurance money:';
+$_LANG['label_shipping_fee'] = 'Shipping money:';
+$_LANG['label_insure_fee'] = 'Insurance money:';
 $_LANG['label_insure_yn'] = 'Insurance?(Y/N):';
-$_LANG['label_pay_fee'] ='Payment money:';
-$_LANG['label_pack_fee'] ='Packing money:';
-$_LANG['label_card_fee'] ='Greeting card money:';
-$_LANG['label_money_paid'] ='Paid money:';
-$_LANG['label_surplus'] ='Use balance:';
-$_LANG['label_integral'] ='Use points:';
-$_LANG['label_bonus'] ='Use bonus:';
-$_LANG['label_order_amount'] ='Total orders money:';
-$_LANG['label_money_dues'] ='Total payable money:';
-$_LANG['label_money_refund'] ='Refundable money:';
-$_LANG['label_to_buyer'] ='Shop message:';
-$_LANG['save_order'] ='Save order';
+$_LANG['label_pay_fee'] = 'Payment money:';
+$_LANG['label_pack_fee'] = 'Packing money:';
+$_LANG['label_card_fee'] = 'Greeting card money:';
+$_LANG['label_money_paid'] = 'Paid money:';
+$_LANG['label_surplus'] = 'Use balance:';
+$_LANG['label_integral'] = 'Use points:';
+$_LANG['label_bonus'] = 'Use bonus:';
+$_LANG['label_order_amount'] = 'Total orders money:';
+$_LANG['label_money_dues'] = 'Total payable money:';
+$_LANG['label_money_refund'] = 'Refundable money:';
+$_LANG['label_to_buyer'] = 'Shop message:';
+$_LANG['save_order'] = 'Save order';
 $_LANG['notice_gb_order_amount'] = '(Remarks: If associates with insurance, the insurance and corresponding pay need to be paid in first payment.)';
 
-$_LANG['action_user'] ='Customer';
-$_LANG['action_time'] ='Time';
-$_LANG['order_status'] ='Order status';
-$_LANG['pay_status'] ='Payment status';
-$_LANG['shipping_status'] ='Shipping status';
-$_LANG['action_note'] ='Remarks';
+$_LANG['action_user'] = 'Customer';
+$_LANG['action_time'] = 'Time';
+$_LANG['order_status'] = 'Order status';
+$_LANG['pay_status'] = 'Payment status';
+$_LANG['shipping_status'] = 'Shipping status';
+$_LANG['action_note'] = 'Remarks';
 $_LANG['pay_note'] = 'Pay remarks';
 
 $_LANG['sms_time_format'] = 'j/m G o\'clock';
-$_LANG['order_shipped_sms'] ='Your order %s hss already shipped in %s. [%s]';
+$_LANG['order_shipped_sms'] = 'Your order %s hss already shipped in %s. [%s]';
 $_LANG['order_splited_sms'] = 'Your order%s,%sIs%s [%s]';
-$_LANG['order_removed'] ='Delete order successfully.';
-$_LANG['return_list'] ='Return order list';
+$_LANG['order_removed'] = 'Delete order successfully.';
+$_LANG['return_list'] = 'Return order list';
 
 /* The order processing hint*/
-$_LANG['surplus_not_enough'] ='The order use %s balance to pay, now the customer balance shortage.';
-$_LANG['integral_not_enough']='The order use %s points to pay, now the customer points shortage.';
-$_LANG['bonus_not_available']='The order use bonus to pay, the bonus can\'t be used now.';
+$_LANG['surplus_not_enough'] = 'The order use %s balance to pay, now the customer balance shortage.';
+$_LANG['integral_not_enough'] = 'The order use %s points to pay, now the customer points shortage.';
+$_LANG['bonus_not_available'] = 'The order use bonus to pay, the bonus can\'t be used now.';
 
 /* Buy the goods person\'s information*/
-$_LANG['display_buyer'] ='Display buyer information';
-$_LANG['buyer_info'] ='Buyer information';
-$_LANG['pay_points'] ='Consumption points';
-$_LANG['rank_points'] ='Rank points';
-$_LANG['user_money'] ='Account balance';
-$_LANG['email'] ='E-mail';
-$_LANG['rank_name'] ='Member\'s rank';
-$_LANG['bonus_count'] ='Bonus quantity';
-$_LANG['zipcode'] ='Postal code';
-$_LANG['tel'] ='Telephone';
-$_LANG['mobile'] ='Backup telephone';
+$_LANG['display_buyer'] = 'Display buyer information';
+$_LANG['buyer_info'] = 'Buyer information';
+$_LANG['pay_points'] = 'Consumption points';
+$_LANG['rank_points'] = 'Rank points';
+$_LANG['user_money'] = 'Account balance';
+$_LANG['email'] = 'E-mail';
+$_LANG['rank_name'] = 'Member\'s rank';
+$_LANG['bonus_count'] = 'Bonus quantity';
+$_LANG['zipcode'] = 'Postal code';
+$_LANG['tel'] = 'Telephone';
+$_LANG['mobile'] = 'Backup telephone';
 
 /* Combine orders */
-$_LANG['order_sn_not_null'] ='Please fill in combine orders NO..';
-$_LANG['two_order_sn_same'] ='Combine orders\' NO. can\'t be same.';
-$_LANG['order_not_exist'] ='Order %s is nonexistent.';
-$_LANG['os_not_unconfirmed_or_confirmed']='% of the order status is not "Unconfirmed" or "Confirmed".';
-$_LANG['ps_not_unpayed'] ='Order the %s payment status is not "Unpaid".';
-$_LANG['ss_not_unshipped'] ='Order the %s shipping status is not "Unshipped".';
-$_LANG['order_user_not_same']='The two orders belong to different customers';
+$_LANG['order_sn_not_null'] = 'Please fill in combine orders NO..';
+$_LANG['two_order_sn_same'] = 'Combine orders\' NO. can\'t be same.';
+$_LANG['order_not_exist'] = 'Order %s is nonexistent.';
+$_LANG['os_not_unconfirmed_or_confirmed'] = '% of the order status is not "Unconfirmed" or "Confirmed".';
+$_LANG['ps_not_unpayed'] = 'Order the %s payment status is not "Unpaid".';
+$_LANG['ss_not_unshipped'] = 'Order the %s shipping status is not "Unshipped".';
+$_LANG['order_user_not_same'] = 'The two orders belong to different customers';
 $_LANG['merge_invalid_order'] = 'Sorry, the orders can\'t be allowed to combine that you have selected.';
 
-$_LANG['from_order_sn'] ='Master order:';
-$_LANG['to_order_sn'] ='Slave order:';
-$_LANG['merge'] ='Combine';
-$_LANG['notice_order_sn'] ='When two order inconformities, order information after merge with the master for standard(such as:Payment mothed, Shipping, Packing, Greeting card, Bonus...etc.).';
+$_LANG['from_order_sn'] = 'Master order:';
+$_LANG['to_order_sn'] = 'Slave order:';
+$_LANG['merge'] = 'Combine';
+$_LANG['notice_order_sn'] = 'When two order inconformities, order information after merge with the master for standard(such as:Payment mothed, Shipping, Packing, Greeting card, Bonus...etc.).';
 $_LANG['js_languages']['confirm_merge'] = 'Are you sure you want to merge these two order?';
 
 /* Criticize a processing*/
 $_LANG['pls_select_order'] = 'Please choose the operation you want to order';
-$_LANG['no_fulfilled_order'] ='There is no condition satisfy to operate the order.';
-$_LANG['updated_order'] ='More recent order:';
+$_LANG['no_fulfilled_order'] = 'There is no condition satisfy to operate the order.';
+$_LANG['updated_order'] = 'More recent order:';
 $_LANG['order'] = 'Order£º';
 $_LANG['confirm_order'] = 'Can not modify to confirm';
 $_LANG['invalid_order'] = 'Can not modify to invalid';
@@ -255,75 +255,75 @@ $_LANG['cancel_order'] = 'Can not modify to cancel';
 $_LANG['remove_order'] = 'Can not remove';
 
 /* Edit order to print template*/
-$_LANG['edit_order_templates']='Edit order print template';
-$_LANG['template_resetore'] ='Restore template';
-$_LANG['edit_template_success']='Edit order print template operation successfully!';
-$_LANG['remark_fittings'] ='(Accessories)';
-$_LANG['remark_gift'] ='(Gift)';
+$_LANG['edit_order_templates'] = 'Edit order print template';
+$_LANG['template_resetore'] = 'Restore template';
+$_LANG['edit_template_success'] = 'Edit order print template operation successfully!';
+$_LANG['remark_fittings'] = '(Accessories)';
+$_LANG['remark_gift'] = '(Gift)';
 $_LANG['remark_favourable'] = '(Preferential products)';
 $_LANG['remark_package'] = '£¨Preferential Packeage£©';
 
 /* The order source statistics*/
-$_LANG['from_order'] ='Order source:';
-$_LANG['from_ad_js'] ='Advertisement:';
-$_LANG['from_goods_js'] ='The product stand the outside JS throw in';
-$_LANG['from_self_site'] ='Come from this station';
-$_LANG['from'] ='Come from a station to order:';
+$_LANG['from_order'] = 'Order source:';
+$_LANG['from_ad_js'] = 'Advertisement:';
+$_LANG['from_goods_js'] = 'The product stand the outside JS throw in';
+$_LANG['from_self_site'] = 'Come from this station';
+$_LANG['from'] = 'Come from a station to order:';
 
 /* Add , edit order*/
-$_LANG['add_order'] ='Add order';
-$_LANG['edit_order'] ='Edit order';
-$_LANG['step']['user'] ='Please select which menber is you want to order.';
-$_LANG['step']['goods'] ='Select product';
-$_LANG['step']['consignee'] ='Config consignee information';
-$_LANG['step']['shipping'] ='Select shipping method';
-$_LANG['step']['payment'] ='Payment method';
-$_LANG['step']['other'] ='Create other informations';
-$_LANG['step']['money'] ='Setting money';
-$_LANG['anonymous'] ='Guest';
-$_LANG['by_useridname'] ='By member NO. or username to search';
-$_LANG['button_prev'] ='Prev';
-$_LANG['button_next'] ='Next';
-$_LANG['button_finish'] ='Completion';
-$_LANG['button_cancel'] ='Cancel';
-$_LANG['name'] ='Name';
-$_LANG['desc'] ='Description';
-$_LANG['shipping_fee'] ='Shipping money';
-$_LANG['free_money'] ='Free limit';
-$_LANG['insure'] ='Insrance money';
-$_LANG['pay_fee'] ='Poundage';
-$_LANG['pack_fee'] ='Packing expense';
-$_LANG['card_fee'] ='The greeting card money';
-$_LANG['no_pack'] ='Don\'t want a packing';
-$_LANG['no_card'] ='Don\'t want a greeting card';
-$_LANG['add_to_order'] ='Join order';
-$_LANG['calc_order_amount'] ='Calculate total orders money';
-$_LANG['available_surplus'] ='Can use balance:';
-$_LANG['available_integral'] ='Can use points:';
-$_LANG['available_bonus'] ='Can use bonus:';
-$_LANG['admin'] ='Addition by administrator';
-$_LANG['search_goods'] ='Search by product ID, name, NO..';
-$_LANG['category'] ='Category';
-$_LANG['brand'] ='Brand';
-$_LANG['user_money_not_enough']='Customer blance shortage';
-$_LANG['pay_points_not_enough']='Customer points shortage';
-$_LANG['money_paid_enough'] ='Paid money is more than product total of money and various cost, please refund.';
-$_LANG['price_note'] ='Notice:Have already included the attribute price markup in the product price.';
-$_LANG['select_pack'] ='Select packing';
-$_LANG['select_card'] ='Select greeting card';
-$_LANG['select_shipping'] ='Select shipping method';
-$_LANG['want_insure'] ='I want to insurance';
-$_LANG['update_goods'] ='Update product';
-$_LANG['notice_user'] ='<Strong>Attention:</Strong>Search result only display the first 20 records, if didn\'t find correlative member, please search accurately. Moreover, if the member registers from the forum and don\'t register in shop, can\'t also find out, need register in the shop first.';
-$_LANG['amount_increase'] ='Because you modified order, causing the total money of order increase, needing to be pay again.';
-$_LANG['amount_decrease'] ='Because you modified order, causing the total money of order reduce, needing to be refund.';
-$_LANG['continue_shipping'] ='Because you modified the consignee place region, causing to shipping method originally no longer can be used, please select shipping method again.';
-$_LANG['continue_payment'] ='Because you modified the shipping method, causing to payment method originally no longer can be used, please select shipping method again.';
+$_LANG['add_order'] = 'Add order';
+$_LANG['edit_order'] = 'Edit order';
+$_LANG['step']['user'] = 'Please select which menber is you want to order.';
+$_LANG['step']['goods'] = 'Select product';
+$_LANG['step']['consignee'] = 'Config consignee information';
+$_LANG['step']['shipping'] = 'Select shipping method';
+$_LANG['step']['payment'] = 'Payment method';
+$_LANG['step']['other'] = 'Create other informations';
+$_LANG['step']['money'] = 'Setting money';
+$_LANG['anonymous'] = 'Guest';
+$_LANG['by_useridname'] = 'By member NO. or username to search';
+$_LANG['button_prev'] = 'Prev';
+$_LANG['button_next'] = 'Next';
+$_LANG['button_finish'] = 'Completion';
+$_LANG['button_cancel'] = 'Cancel';
+$_LANG['name'] = 'Name';
+$_LANG['desc'] = 'Description';
+$_LANG['shipping_fee'] = 'Shipping money';
+$_LANG['free_money'] = 'Free limit';
+$_LANG['insure'] = 'Insrance money';
+$_LANG['pay_fee'] = 'Poundage';
+$_LANG['pack_fee'] = 'Packing expense';
+$_LANG['card_fee'] = 'The greeting card money';
+$_LANG['no_pack'] = 'Don\'t want a packing';
+$_LANG['no_card'] = 'Don\'t want a greeting card';
+$_LANG['add_to_order'] = 'Join order';
+$_LANG['calc_order_amount'] = 'Calculate total orders money';
+$_LANG['available_surplus'] = 'Can use balance:';
+$_LANG['available_integral'] = 'Can use points:';
+$_LANG['available_bonus'] = 'Can use bonus:';
+$_LANG['admin'] = 'Addition by administrator';
+$_LANG['search_goods'] = 'Search by product ID, name, NO..';
+$_LANG['category'] = 'Category';
+$_LANG['brand'] = 'Brand';
+$_LANG['user_money_not_enough'] = 'Customer blance shortage';
+$_LANG['pay_points_not_enough'] = 'Customer points shortage';
+$_LANG['money_paid_enough'] = 'Paid money is more than product total of money and various cost, please refund.';
+$_LANG['price_note'] = 'Notice:Have already included the attribute price markup in the product price.';
+$_LANG['select_pack'] = 'Select packing';
+$_LANG['select_card'] = 'Select greeting card';
+$_LANG['select_shipping'] = 'Select shipping method';
+$_LANG['want_insure'] = 'I want to insurance';
+$_LANG['update_goods'] = 'Update product';
+$_LANG['notice_user'] = '<Strong>Attention:</Strong>Search result only display the first 20 records, if didn\'t find correlative member, please search accurately. Moreover, if the member registers from the forum and don\'t register in shop, can\'t also find out, need register in the shop first.';
+$_LANG['amount_increase'] = 'Because you modified order, causing the total money of order increase, needing to be pay again.';
+$_LANG['amount_decrease'] = 'Because you modified order, causing the total money of order reduce, needing to be refund.';
+$_LANG['continue_shipping'] = 'Because you modified the consignee place region, causing to shipping method originally no longer can be used, please select shipping method again.';
+$_LANG['continue_payment'] = 'Because you modified the shipping method, causing to payment method originally no longer can be used, please select shipping method again.';
 $_LANG['refund'] = 'Refundment';
-$_LANG['cannot_edit_order_shipped']='You can\'t modify the shipped order.';
-$_LANG['address_list'] ='Select from existing consignee address:';
-$_LANG['order_amount_change'] ='Total orders money from %s change into %s.';
-$_LANG['shipping_note'] ='Notice: Because the order has already shipped products, modify shipping method wouldn\'t change shipping money and insurance.';
+$_LANG['cannot_edit_order_shipped'] = 'You can\'t modify the shipped order.';
+$_LANG['address_list'] = 'Select from existing consignee address:';
+$_LANG['order_amount_change'] = 'Total orders money from %s change into %s.';
+$_LANG['shipping_note'] = 'Notice: Because the order has already shipped products, modify shipping method wouldn\'t change shipping money and insurance.';
 $_LANG['change_use_surplus'] = 'Edit orders %s, change the use of the advance payment';
 $_LANG['change_use_integral'] = 'Edit orders %s, change the use of the number of points paid';
 $_LANG['return_order_surplus'] = 'Because of canceled, invalid or return operation, returned to pay for the use of orders %s advances';
@@ -333,15 +333,15 @@ $_LANG['return_order_gift_integral'] = 'Returns or because of shipping operation
 $_LANG['invoice_no_mall'] = '&nbsp;&nbsp;&nbsp;&nbsp;Divided a plurality of invoice No. by ","';
 
 $_LANG['js_languages']['input_price'] = 'Costom price';
-$_LANG['js_languages']['pls_search_user'] ='Please search and select a user.';
-$_LANG['js_languages']['confirm_drop'] ='Confirm and delete the product?';
-$_LANG['js_languages']['invalid_goods_number']='Product quantity inaccuracy';
-$_LANG['js_languages']['pls_search_goods'] ='Please search and select product.';
+$_LANG['js_languages']['pls_search_user'] = 'Please search and select a user.';
+$_LANG['js_languages']['confirm_drop'] = 'Confirm and delete the product?';
+$_LANG['js_languages']['invalid_goods_number'] = 'Product quantity inaccuracy';
+$_LANG['js_languages']['pls_search_goods'] = 'Please search and select product.';
 $_LANG['js_languages']['pls_select_area'] = 'Please select the area';
-$_LANG['js_languages']['pls_select_shipping']='Please select shipping method.';
-$_LANG['js_languages']['pls_select_payment'] ='Please select payment method.';
-$_LANG['js_languages']['pls_select_pack'] ='Please select packing.';
-$_LANG['js_languages']['pls_select_card'] ='Please select card.';
+$_LANG['js_languages']['pls_select_shipping'] = 'Please select shipping method.';
+$_LANG['js_languages']['pls_select_payment'] = 'Please select payment method.';
+$_LANG['js_languages']['pls_select_pack'] = 'Please select packing.';
+$_LANG['js_languages']['pls_select_card'] = 'Please select card.';
 $_LANG['js_languages']['pls_input_note'] = 'Please enter remarks.';
 $_LANG['js_languages']['pls_input_cancel'] = 'Please fill out the cancellation of the reasons!';
 $_LANG['js_languages']['pls_select_refund'] = 'Please select refundment method.';
@@ -400,4 +400,3 @@ $_LANG['label_return_time'] = 'Returned Time';
 $_LANG['tips_back_del'] = 'Return a single deletion of success!';
 
 $_LANG['goods_num_err'] = 'Stocks, please re-select!';
-?>

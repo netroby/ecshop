@@ -12,9 +12,8 @@
  * commercial purposes.
  * ============================================================================
  * $Author: liubo $
- * $Id: plugins.php 17217 2011-01-19 06:29:08Z liubo $
-*/
-
+ * $Id: plugins.php 17217 2011-01-19 06:29:08Z liubo $.
+ */
 $_LANG['plugin_name'] = 'Name';
 $_LANG['plugin_desc'] = 'Description';
 $_LANG['plugin_version'] = 'Version';
@@ -32,5 +31,3 @@ $_LANG['install_success'] = 'The appointed plug-in has installed successfully.';
 $_LANG['upgrade_success'] = 'The appointed plug-in has upgraded successfully.';
 $_LANG['plugin_not_exists'] = 'We havn\'t got the appoint plug-in file, please confirm the plug-in whether has existed.';
 $_LANG['class_not_exists'] = 'We havn\'t got the appoint plug-in class, the plug-in may be damaged.';
-
-?>

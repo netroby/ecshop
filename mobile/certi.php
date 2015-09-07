@@ -10,35 +10,25 @@
  * 使用；不允许对程序代码以任何形式任何目的的再发布。
  * ============================================================================
  * $Author: wangleisvn $
- * $Id: index.php 16075 2009-05-22 02:19:40Z wangleisvn $
-*/
-
+ * $Id: index.php 16075 2009-05-22 02:19:40Z wangleisvn $.
+ */
 define('IN_ECS', true);
 
-require(dirname(__FILE__) . '/includes/init.php');
+require dirname(__FILE__).'/includes/init.php';
 
 /*------------------------------------------------------ */
 //-- 证书反查
 /*------------------------------------------------------ */
 $session_id = empty($_POST['session_id']) ? '' : trim($_POST['session_id']);
 
-if (!empty($session_id))
-{
-
-    $sql = "SELECT sesskey FROM " . $ecs->table('sessions') . " WHERE sesskey = '" . $session_id . "' ";
+if (!empty($session_id)) {
+    $sql = 'SELECT sesskey FROM '.$ecs->table('sessions')." WHERE sesskey = '".$session_id."' ";
     $sesskey = $db->getOne($sql);
-    if ($sesskey != '')
-    {
+    if ($sesskey != '') {
         exit('{"res":"succ","msg":"","info":""}');
-    }
-    else
-    {
+    } else {
         exit('{"res":"fail","msg":"error:000002","info":""}');
     }
-}
-else
-{
+} else {
     exit('{"res":"fail","msg":"error:000001","info":""}');
 }
-
-?>

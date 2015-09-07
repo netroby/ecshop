@@ -12,8 +12,8 @@
  * commercial purposes.
  * ============================================================================
  * $Author: liubo $
- * $Id: get_password.php 17217 2011-01-19 06:29:08Z liubo $
-*/
+ * $Id: get_password.php 17217 2011-01-19 06:29:08Z liubo $.
+ */
 
 /* Field information */
 $_LANG['user_name'] = 'Administrator username';
@@ -41,5 +41,3 @@ $_LANG['code_param_error'] = 'Your request is invalid, please return!';
 $_LANG['send_success'] = 'Reset password mail has sent your mailbox:';
 $_LANG['update_pwd_success'] = 'Your new password has edited successfully!';
 $_LANG['update_pwd_failed'] = 'Edit new password failure!';
-
-?>

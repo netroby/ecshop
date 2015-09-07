@@ -12,9 +12,8 @@
  * commercial purposes.
  * ============================================================================
  * $Author: liubo $
- * $Id: shopinfo.php 17217 2011-01-19 06:29:08Z liubo $
-*/
-
+ * $Id: shopinfo.php 17217 2011-01-19 06:29:08Z liubo $.
+ */
 $_LANG['id'] = 'ID';
 $_LANG['title'] = 'Title';
 $_LANG['add_time'] = 'Add time';
@@ -23,7 +22,7 @@ $_LANG['shopinfo_list'] = 'Articles List';
 
 $_LANG['back_list'] = 'Return to list';
 $_LANG['continue_add'] = 'Continue';
-$_LANG['articleadd_succeed']= 'Succeed';
+$_LANG['articleadd_succeed'] = 'Succeed';
 
 /* Prompting message */
 $_LANG['title_exist'] = '%s already exists.';
@@ -36,5 +35,3 @@ $_LANG['title_empty'] = 'Title can\'t be blank!';
 /*JS language item*/
 $_LANG['js_languages']['no_title'] = 'Please enter a title.';
 $_LANG['js_languages']['remove_confirm'] = 'Are you sure delete the record?';
-
-?>

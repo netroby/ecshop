@@ -10,42 +10,33 @@
  * 使用；不允许对程序代码以任何形式任何目的的再发布。
  * ============================================================================
  * $Author: liubo $
- * $Id: receive.php 17217 2011-01-19 06:29:08Z liubo $
+ * $Id: receive.php 17217 2011-01-19 06:29:08Z liubo $.
  */
-
 define('IN_ECS', true);
 
-require(dirname(__FILE__) . '/includes/init.php');
+require dirname(__FILE__).'/includes/init.php';
 
 /* 取得参数 */
-$order_id  = !empty($_REQUEST['id'])  ? intval($_REQUEST['id'])              : 0;  // 订单号
+$order_id = !empty($_REQUEST['id'])  ? intval($_REQUEST['id'])              : 0;  // 订单号
 $consignee = !empty($_REQUEST['con']) ? rawurldecode(trim($_REQUEST['con'])) : ''; // 收货人
 
 /* 查询订单信息 */
-$sql   = 'SELECT * FROM ' . $ecs->table('order_info') . " WHERE order_id = '$order_id'";
+$sql = 'SELECT * FROM '.$ecs->table('order_info')." WHERE order_id = '$order_id'";
 $order = $db->getRow($sql);
 
-if (empty($order))
-{
+if (empty($order)) {
     $msg = $_LANG['order_not_exists'];
 }
 /* 检查订单 */
-elseif ($order['shipping_status'] == SS_RECEIVED)
-{
+elseif ($order['shipping_status'] == SS_RECEIVED) {
     $msg = $_LANG['order_already_received'];
-}
-elseif ($order['shipping_status'] != SS_SHIPPED)
-{
+} elseif ($order['shipping_status'] != SS_SHIPPED) {
     $msg = $_LANG['order_invalid'];
-}
-elseif ($order['consignee'] != $consignee)
-{
+} elseif ($order['consignee'] != $consignee) {
     $msg = $_LANG['order_invalid'];
-}
-else
-{
+} else {
     /* 修改订单发货状态为“确认收货” */
-    $sql = "UPDATE " . $ecs->table('order_info') . " SET shipping_status = '" . SS_RECEIVED . "' WHERE order_id = '$order_id'";
+    $sql = 'UPDATE '.$ecs->table('order_info')." SET shipping_status = '".SS_RECEIVED."' WHERE order_id = '$order_id'";
     $db->query($sql);
 
     /* 记录日志 */
@@ -67,5 +58,3 @@ assign_dynamic('receive');
 
 $smarty->assign('msg', $msg);
 $smarty->display('receive.dwt');
-
-?>

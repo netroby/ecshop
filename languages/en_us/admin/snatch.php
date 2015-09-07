@@ -12,9 +12,8 @@
  * commercial purposes.
  * ============================================================================
  * $Author: liubo $
- * $Id: snatch.php 17217 2011-01-19 06:29:08Z liubo $
-*/
-
+ * $Id: snatch.php 17217 2011-01-19 06:29:08Z liubo $.
+ */
 $_LANG['snatch_id'] = 'ID';
 $_LANG['snatch_name'] = 'Name';
 $_LANG['goodsid'] = 'Product ID';
@@ -73,5 +72,3 @@ $_LANG['js_languages']['invalid_endtime'] = 'The cut-off time format is invalid,
 $_LANG['js_languages']['invalid_gt'] = 'The cut-off time must be more than starting time.';
 $_LANG['js_languages']['invalid_price'] = 'The max price must be more than min price.';
 $_LANG['js_languages']['search_is_null'] = 'Please search again, because the result is blank.';
-
-?>

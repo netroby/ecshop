@@ -10,9 +10,8 @@
  * 使用；不允许对程序代码以任何形式任何目的的再发布。
  * ==========================================================
  * $Author: liubo $
- * $Id: cron.php 17217 2011-01-19 06:29:08Z liubo $
+ * $Id: cron.php 17217 2011-01-19 06:29:08Z liubo $.
  */
-
 $_LANG['cron_name'] = 'Name planned mission';
 $_LANG['cron_code'] = 'The program mission';
 $_LANG['if_open'] = 'Open';
@@ -55,7 +54,6 @@ $_LANG['back_list'] = 'Plans to return a list of mission';
 $_LANG['name_is_null'] = 'You do not have plans to enter the name of mission!';
 $_LANG['js_languages']['lang_removeconfirm'] = 'Are you sure you want to uninstall the program mission?';
 
-
 $_LANG['page']['index'] = 'Home';
 
 $_LANG['page']['user'] = 'User Center';
@@ -71,5 +69,3 @@ $_LANG['page']['article_cat'] = 'Article list page';
 $_LANG['page']['article'] = 'Article page';
 $_LANG['page']['brand'] = 'Brand Area';
 $_LANG['page']['search'] = 'Search results pages';
-
-?>

@@ -10,9 +10,8 @@
  * 使用；不允许对程序代码以任何形式任何目的的再发布。
  * ==========================================================
  * $Author: liubo $
- * $Id: view_sendlist.php 17217 2011-01-19 06:29:08Z liubo $
+ * $Id: view_sendlist.php 17217 2011-01-19 06:29:08Z liubo $.
  */
-
 $_LANG['email_val'] = '邮件地址';
 $_LANG['email_error'] = '错误次数';
 $_LANG['email_subject'] = '邮件标题';
@@ -33,4 +32,3 @@ $_LANG['all_send'] = '全部发送';
 $_LANG['mailsend_null'] = '邮件发送列表空!';
 $_LANG['mailsend_finished'] = '全部邮件发送完成!';
 $_LANG['send_end'] = '选择邮件发送完成!';
-?>

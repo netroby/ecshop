@@ -12,8 +12,8 @@
  * commercial purposes.
  * ============================================================================
  * $Author: liubo $
- * $Id: comment_manage.php 17217 2011-01-19 06:29:08Z liubo $
-*/
+ * $Id: comment_manage.php 17217 2011-01-19 06:29:08Z liubo $.
+ */
 $_LANG['comment_id'] = 'ID';
 $_LANG['user_name'] = 'Username';
 $_LANG['from'] = 'sent comment at ';
@@ -70,11 +70,8 @@ $_LANG['back_list'] = 'Return to comment list.';
 $_LANG['js_languages']['no_content'] = 'Please enter comment contents!';
 $_LANG['have_reply_content'] = 'TIP: The comment has replied, if you reply the message again, the old message will be losed!';
 
-
 $_LANG['cfm_allow'] = 'Are you sure you want to allow shows the selected comments?';
 $_LANG['cfm_remove'] = 'Are you sure you want to delete the selected comments?';
 $_LANG['cfm_deny'] = 'Are you sure you want to ban shows the selected comments?';
 
 $_LANG['mail_send_fail'] = 'Mail sent failed, please check the e-mail server settings and try again.';
-
-?>

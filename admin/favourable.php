@@ -10,12 +10,11 @@
  * 使用；不允许对程序代码以任何形式任何目的的再发布。
  * ============================================================================
  * $Author: liubo $
- * $Id: favourable.php 17217 2011-01-19 06:29:08Z liubo $
+ * $Id: favourable.php 17217 2011-01-19 06:29:08Z liubo $.
  */
-
 define('IN_ECS', true);
-require(dirname(__FILE__) . '/includes/init.php');
-require(ROOT_PATH . 'includes/lib_goods.php');
+require dirname(__FILE__).'/includes/init.php';
+require ROOT_PATH.'includes/lib_goods.php';
 
 $exc = new exchange($ecs->table('favourable_activity'), $db, 'act_id', 'act_name');
 
@@ -23,8 +22,7 @@ $exc = new exchange($ecs->table('favourable_activity'), $db, 'act_id', 'act_name
 //-- 活动列表页
 /*------------------------------------------------------ */
 
-if ($_REQUEST['act'] == 'list')
-{
+if ($_REQUEST['act'] == 'list') {
     admin_priv('favourable');
 
     /* 模板赋值 */
@@ -39,7 +37,7 @@ if ($_REQUEST['act'] == 'list')
     $smarty->assign('record_count',    $list['record_count']);
     $smarty->assign('page_count',      $list['page_count']);
 
-    $sort_flag  = sort_flag($list['filter']);
+    $sort_flag = sort_flag($list['filter']);
     $smarty->assign($sort_flag['tag'], $sort_flag['img']);
 
     /* 显示商品列表页面 */
@@ -51,8 +49,7 @@ if ($_REQUEST['act'] == 'list')
 //-- 分页、排序、查询
 /*------------------------------------------------------ */
 
-elseif ($_REQUEST['act'] == 'query')
-{
+elseif ($_REQUEST['act'] == 'query') {
     $list = favourable_list();
 
     $smarty->assign('favourable_list', $list['item']);
@@ -60,7 +57,7 @@ elseif ($_REQUEST['act'] == 'query')
     $smarty->assign('record_count',    $list['record_count']);
     $smarty->assign('page_count',      $list['page_count']);
 
-    $sort_flag  = sort_flag($list['filter']);
+    $sort_flag = sort_flag($list['filter']);
     $smarty->assign($sort_flag['tag'], $sort_flag['img']);
 
     make_json_result($smarty->fetch('favourable_list.htm'), '',
@@ -70,14 +67,12 @@ elseif ($_REQUEST['act'] == 'query')
 /*------------------------------------------------------ */
 //-- 删除
 /*------------------------------------------------------ */
-elseif ($_REQUEST['act'] == 'remove')
-{
+elseif ($_REQUEST['act'] == 'remove') {
     check_authz_json('favourable');
 
     $id = intval($_GET['id']);
     $favourable = favourable_info($id);
-    if (empty($favourable))
-    {
+    if (empty($favourable)) {
         make_json_error($_LANG['favourable_not_exist']);
     }
     $name = $favourable['act_name'];
@@ -89,7 +84,7 @@ elseif ($_REQUEST['act'] == 'remove')
     /* 清除缓存 */
     clear_cache_files();
 
-    $url = 'favourable.php?act=query&' . str_replace('act=remove', '', $_SERVER['QUERY_STRING']);
+    $url = 'favourable.php?act=query&'.str_replace('act=remove', '', $_SERVER['QUERY_STRING']);
 
     ecs_header("Location: $url\n");
     exit;
@@ -98,25 +93,20 @@ elseif ($_REQUEST['act'] == 'remove')
 /*------------------------------------------------------ */
 //-- 批量操作
 /*------------------------------------------------------ */
-elseif ($_REQUEST['act'] == 'batch')
-{
+elseif ($_REQUEST['act'] == 'batch') {
     /* 取得要操作的记录编号 */
-    if (empty($_POST['checkboxes']))
-    {
+    if (empty($_POST['checkboxes'])) {
         sys_msg($_LANG['no_record_selected']);
-    }
-    else
-    {
+    } else {
         /* 检查权限 */
         admin_priv('favourable');
 
         $ids = $_POST['checkboxes'];
 
-        if (isset($_POST['drop']))
-        {
+        if (isset($_POST['drop'])) {
             /* 删除记录 */
-            $sql = "DELETE FROM " . $ecs->table('favourable_activity') .
-                    " WHERE act_id " . db_create_in($ids);
+            $sql = 'DELETE FROM '.$ecs->table('favourable_activity').
+                    ' WHERE act_id '.db_create_in($ids);
             $db->query($sql);
 
             /* 记日志 */
@@ -125,7 +115,7 @@ elseif ($_REQUEST['act'] == 'batch')
             /* 清除缓存 */
             clear_cache_files();
 
-            $links[] = array('text' => $_LANG['back_favourable_list'], 'href' => 'favourable.php?act=list&' . list_link_postfix());
+            $links[] = array('text' => $_LANG['back_favourable_list'], 'href' => 'favourable.php?act=list&'.list_link_postfix());
             sys_msg($_LANG['batch_drop_ok']);
         }
     }
@@ -134,15 +124,14 @@ elseif ($_REQUEST['act'] == 'batch')
 /*------------------------------------------------------ */
 //-- 修改排序
 /*------------------------------------------------------ */
-elseif ($_REQUEST['act'] == 'edit_sort_order')
-{
+elseif ($_REQUEST['act'] == 'edit_sort_order') {
     check_authz_json('favourable');
 
-    $id  = intval($_POST['id']);
+    $id = intval($_POST['id']);
     $val = intval($_POST['val']);
 
-    $sql = "UPDATE " . $ecs->table('favourable_activity') .
-            " SET sort_order = '$val'" .
+    $sql = 'UPDATE '.$ecs->table('favourable_activity').
+            " SET sort_order = '$val'".
             " WHERE act_id = '$id' LIMIT 1";
     $db->query($sql);
 
@@ -153,8 +142,7 @@ elseif ($_REQUEST['act'] == 'edit_sort_order')
 //-- 添加、编辑
 /*------------------------------------------------------ */
 
-elseif ($_REQUEST['act'] == 'add' || $_REQUEST['act'] == 'edit')
-{
+elseif ($_REQUEST['act'] == 'add' || $_REQUEST['act'] == 'edit') {
     /* 检查权限 */
     admin_priv('favourable');
 
@@ -163,33 +151,28 @@ elseif ($_REQUEST['act'] == 'add' || $_REQUEST['act'] == 'edit')
     $smarty->assign('form_action', $is_add ? 'insert' : 'update');
 
     /* 初始化、取得优惠活动信息 */
-    if ($is_add)
-    {
+    if ($is_add) {
         $favourable = array(
-            'act_id'        => 0,
-            'act_name'      => '',
-            'start_time'    => date('Y-m-d', time() + 86400),
-            'end_time'      => date('Y-m-d', time() + 4 * 86400),
-            'user_rank'     => '',
-            'act_range'     => FAR_ALL,
+            'act_id' => 0,
+            'act_name' => '',
+            'start_time' => date('Y-m-d', time() + 86400),
+            'end_time' => date('Y-m-d', time() + 4 * 86400),
+            'user_rank' => '',
+            'act_range' => FAR_ALL,
             'act_range_ext' => '',
-            'min_amount'    => 0,
-            'max_amount'    => 0,
-            'act_type'      => FAT_GOODS,
-            'act_type_ext'  => 0,
-            'gift'          => array()
+            'min_amount' => 0,
+            'max_amount' => 0,
+            'act_type' => FAT_GOODS,
+            'act_type_ext' => 0,
+            'gift' => array(),
         );
-    }
-    else
-    {
-        if (empty($_GET['id']))
-        {
+    } else {
+        if (empty($_GET['id'])) {
             sys_msg('invalid param');
         }
         $id = intval($_GET['id']);
         $favourable = favourable_info($id);
-        if (empty($favourable))
-        {
+        if (empty($favourable)) {
             sys_msg($_LANG['favourable_not_exist']);
         }
     }
@@ -198,37 +181,30 @@ elseif ($_REQUEST['act'] == 'add' || $_REQUEST['act'] == 'edit')
     /* 取得用户等级 */
     $user_rank_list = array();
     $user_rank_list[] = array(
-        'rank_id'   => 0,
+        'rank_id' => 0,
         'rank_name' => $_LANG['not_user'],
-        'checked'   => strpos(',' . $favourable['user_rank'] . ',', ',0,') !== false
+        'checked' => strpos(','.$favourable['user_rank'].',', ',0,') !== false,
     );
-    $sql = "SELECT rank_id, rank_name FROM " . $ecs->table('user_rank');
+    $sql = 'SELECT rank_id, rank_name FROM '.$ecs->table('user_rank');
     $res = $db->query($sql);
-    while ($row = $db->fetchRow($res))
-    {
-        $row['checked'] = strpos(',' . $favourable['user_rank'] . ',', ',' . $row['rank_id']. ',') !== false;
+    while ($row = $db->fetchRow($res)) {
+        $row['checked'] = strpos(','.$favourable['user_rank'].',', ','.$row['rank_id'].',') !== false;
         $user_rank_list[] = $row;
     }
     $smarty->assign('user_rank_list', $user_rank_list);
 
     /* 取得优惠范围 */
     $act_range_ext = array();
-    if ($favourable['act_range'] != FAR_ALL && !empty($favourable['act_range_ext']))
-    {
-        if ($favourable['act_range'] == FAR_CATEGORY)
-        {
-            $sql = "SELECT cat_id AS id, cat_name AS name FROM " . $ecs->table('category') .
-                " WHERE cat_id " . db_create_in($favourable['act_range_ext']);
-        }
-        elseif ($favourable['act_range'] == FAR_BRAND)
-        {
-            $sql = "SELECT brand_id AS id, brand_name AS name FROM " . $ecs->table('brand') .
-                " WHERE brand_id " . db_create_in($favourable['act_range_ext']);
-        }
-        else
-        {
-            $sql = "SELECT goods_id AS id, goods_name AS name FROM " . $ecs->table('goods') .
-                " WHERE goods_id " . db_create_in($favourable['act_range_ext']);
+    if ($favourable['act_range'] != FAR_ALL && !empty($favourable['act_range_ext'])) {
+        if ($favourable['act_range'] == FAR_CATEGORY) {
+            $sql = 'SELECT cat_id AS id, cat_name AS name FROM '.$ecs->table('category').
+                ' WHERE cat_id '.db_create_in($favourable['act_range_ext']);
+        } elseif ($favourable['act_range'] == FAR_BRAND) {
+            $sql = 'SELECT brand_id AS id, brand_name AS name FROM '.$ecs->table('brand').
+                ' WHERE brand_id '.db_create_in($favourable['act_range_ext']);
+        } else {
+            $sql = 'SELECT goods_id AS id, goods_name AS name FROM '.$ecs->table('goods').
+                ' WHERE goods_id '.db_create_in($favourable['act_range_ext']);
         }
         $act_range_ext = $db->getAll($sql);
     }
@@ -238,18 +214,14 @@ elseif ($_REQUEST['act'] == 'add' || $_REQUEST['act'] == 'edit')
     $smarty->assign('cfg_lang', $_CFG['lang']);
 
     /* 显示模板 */
-    if ($is_add)
-    {
+    if ($is_add) {
         $smarty->assign('ur_here', $_LANG['add_favourable']);
-    }
-    else
-    {
+    } else {
         $smarty->assign('ur_here', $_LANG['edit_favourable']);
     }
     $href = 'favourable.php?act=list';
-    if (!$is_add)
-    {
-        $href .= '&' . list_link_postfix();
+    if (!$is_add) {
+        $href .= '&'.list_link_postfix();
     }
     $smarty->assign('action_link', array('href' => $href, 'text' => $_LANG['favourable_list']));
     assign_query_info();
@@ -260,118 +232,96 @@ elseif ($_REQUEST['act'] == 'add' || $_REQUEST['act'] == 'edit')
 //-- 添加、编辑后提交
 /*------------------------------------------------------ */
 
-elseif ($_REQUEST['act'] == 'insert' || $_REQUEST['act'] == 'update')
-{
+elseif ($_REQUEST['act'] == 'insert' || $_REQUEST['act'] == 'update') {
     /* 检查权限 */
     admin_priv('favourable');
     $allow_suffix = array('gif', 'jpg', 'png', 'jpeg', 'bmp');
-    $src='';
-    if (!empty($_FILES['img_file_src']['name']))
-    {
-        if(!get_file_suffix($_FILES['img_file_src']['name'], $allow_suffix))
-        {
+    $src = '';
+    if (!empty($_FILES['img_file_src']['name'])) {
+        if (!get_file_suffix($_FILES['img_file_src']['name'], $allow_suffix)) {
             sys_msg($_LANG['invalid_type']);
         }
         $name = date('Ymd');
-        for ($i = 0; $i < 6; $i++)
-        {
+        for ($i = 0; $i < 6; ++$i) {
             $name .= chr(mt_rand(97, 122));
         }
-        $name .= '.' . end(explode('.', $_FILES['img_file_src']['name']));
-        $target = ROOT_PATH . DATA_DIR . '/afficheimg/' . $name;
-        if (move_upload_file($_FILES['img_file_src']['tmp_name'], $target))
-        {
-            $src = DATA_DIR . '/afficheimg/' . $name;
+        $name .= '.'.end(explode('.', $_FILES['img_file_src']['name']));
+        $target = ROOT_PATH.DATA_DIR.'/afficheimg/'.$name;
+        if (move_upload_file($_FILES['img_file_src']['tmp_name'], $target)) {
+            $src = DATA_DIR.'/afficheimg/'.$name;
         }
     }
-
-
 
     /* 是否添加 */
     $is_add = $_REQUEST['act'] == 'insert';
 
     /* 检查名称是否重复 */
     $act_name = sub_str($_POST['act_name'], 255, false);
-    if (!$exc->is_only('act_name', $act_name, intval($_POST['id'])))
-    {
+    if (!$exc->is_only('act_name', $act_name, intval($_POST['id']))) {
         sys_msg($_LANG['act_name_exists']);
     }
 
     /* 检查享受优惠的会员等级 */
-    if (!isset($_POST['user_rank']))
-    {
+    if (!isset($_POST['user_rank'])) {
         sys_msg($_LANG['pls_set_user_rank']);
     }
 
     /* 检查优惠范围扩展信息 */
-    if (intval($_POST['act_range']) > 0 && !isset($_POST['act_range_ext']))
-    {
+    if (intval($_POST['act_range']) > 0 && !isset($_POST['act_range_ext'])) {
         sys_msg($_LANG['pls_set_act_range']);
     }
 
     /* 检查金额上下限 */
     $min_amount = floatval($_POST['min_amount']) >= 0 ? floatval($_POST['min_amount']) : 0;
     $max_amount = floatval($_POST['max_amount']) >= 0 ? floatval($_POST['max_amount']) : 0;
-    if ($max_amount > 0 && $min_amount > $max_amount)
-    {
+    if ($max_amount > 0 && $min_amount > $max_amount) {
         sys_msg($_LANG['amount_error']);
     }
 
     /* 取得赠品 */
     $gift = array();
-    if (intval($_POST['act_type']) == FAT_GOODS && isset($_POST['gift_id']))
-    {
-        foreach ($_POST['gift_id'] as $key => $id)
-        {
+    if (intval($_POST['act_type']) == FAT_GOODS && isset($_POST['gift_id'])) {
+        foreach ($_POST['gift_id'] as $key => $id) {
             $gift[] = array('id' => $id, 'name' => $_POST['gift_name'][$key], 'price' => $_POST['gift_price'][$key]);
         }
     }
 
     /* 提交值 */
     $favourable = array(
-        'act_id'        => intval($_POST['id']),
-        'act_name'      => $act_name,
-        'start_time'    => local_strtotime($_POST['start_time']),
-        'end_time'      => local_strtotime($_POST['end_time']),
-        'user_rank'     => isset($_POST['user_rank']) ? join(',', $_POST['user_rank']) : '0',
-        'act_range'     => intval($_POST['act_range']),
-        'act_range_ext' => intval($_POST['act_range']) == 0 ? '' : join(',', $_POST['act_range_ext']),
-        'min_amount'    => floatval($_POST['min_amount']),
-        'max_amount'    => floatval($_POST['max_amount']),
-        'act_type'      => intval($_POST['act_type']),
-        'act_type_ext'  => floatval($_POST['act_type_ext']),
-        'gift'          => serialize($gift),
-        'description'          => $_POST['act_desc'],
+        'act_id' => intval($_POST['id']),
+        'act_name' => $act_name,
+        'start_time' => local_strtotime($_POST['start_time']),
+        'end_time' => local_strtotime($_POST['end_time']),
+        'user_rank' => isset($_POST['user_rank']) ? implode(',', $_POST['user_rank']) : '0',
+        'act_range' => intval($_POST['act_range']),
+        'act_range_ext' => intval($_POST['act_range']) == 0 ? '' : implode(',', $_POST['act_range_ext']),
+        'min_amount' => floatval($_POST['min_amount']),
+        'max_amount' => floatval($_POST['max_amount']),
+        'act_type' => intval($_POST['act_type']),
+        'act_type_ext' => floatval($_POST['act_type_ext']),
+        'gift' => serialize($gift),
+        'description' => $_POST['act_desc'],
     );
-    if ($favourable['act_type'] == FAT_GOODS)
-    {
+    if ($favourable['act_type'] == FAT_GOODS) {
         $favourable['act_type_ext'] = round($favourable['act_type_ext']);
     }
 
-
-    if(!empty($src))
-    {
-       $favourable['image_url']=$src;
+    if (!empty($src)) {
+        $favourable['image_url'] = $src;
     }
 
     /* 保存数据 */
-    if ($is_add)
-    {
+    if ($is_add) {
         $db->autoExecute($ecs->table('favourable_activity'), $favourable, 'INSERT');
         $favourable['act_id'] = $db->insert_id();
-    }
-    else
-    {
+    } else {
         $db->autoExecute($ecs->table('favourable_activity'), $favourable, 'UPDATE', "act_id = '$favourable[act_id]'");
     }
 
     /* 记日志 */
-    if ($is_add)
-    {
+    if ($is_add) {
         admin_log($favourable['act_name'], 'add', 'favourable');
-    }
-    else
-    {
+    } else {
         admin_log($favourable['act_name'], 'edit', 'favourable');
     }
 
@@ -379,18 +329,15 @@ elseif ($_REQUEST['act'] == 'insert' || $_REQUEST['act'] == 'update')
     clear_cache_files();
 
     /* 提示信息 */
-    if ($is_add)
-    {
+    if ($is_add) {
         $links = array(
             array('href' => 'favourable.php?act=add', 'text' => $_LANG['continue_add_favourable']),
-            array('href' => 'favourable.php?act=list', 'text' => $_LANG['back_favourable_list'])
+            array('href' => 'favourable.php?act=list', 'text' => $_LANG['back_favourable_list']),
         );
         sys_msg($_LANG['add_favourable_ok'], 0, $links);
-    }
-    else
-    {
+    } else {
         $links = array(
-            array('href' => 'favourable.php?act=list&' . list_link_postfix(), 'text' => $_LANG['back_favourable_list'])
+            array('href' => 'favourable.php?act=list&'.list_link_postfix(), 'text' => $_LANG['back_favourable_list']),
         );
         sys_msg($_LANG['edit_favourable_ok'], 0, $links);
     }
@@ -400,47 +347,38 @@ elseif ($_REQUEST['act'] == 'insert' || $_REQUEST['act'] == 'update')
 //-- 搜索商品
 /*------------------------------------------------------ */
 
-elseif ($_REQUEST['act'] == 'search')
-{
+elseif ($_REQUEST['act'] == 'search') {
     /* 检查权限 */
     check_authz_json('favourable');
 
-    include_once(ROOT_PATH . 'includes/cls_json.php');
+    include_once ROOT_PATH.'includes/cls_json.php';
 
-    $json   = new JSON;
+    $json = new JSON();
     $filter = $json->decode($_GET['JSON']);
     $filter->keyword = json_str_iconv($filter->keyword);
-    if ($filter->act_range == FAR_ALL)
-    {
+    if ($filter->act_range == FAR_ALL) {
         $arr[0] = array(
-            'id'   => 0,
-            'name' => $_LANG['js_languages']['all_need_not_search']
+            'id' => 0,
+            'name' => $_LANG['js_languages']['all_need_not_search'],
         );
-    }
-    elseif ($filter->act_range == FAR_CATEGORY)
-    {
-        $sql = "SELECT cat_id AS id, cat_name AS name FROM " . $ecs->table('category') .
-            " WHERE cat_name LIKE '%" . mysql_like_quote($filter->keyword) . "%' LIMIT 50";
+    } elseif ($filter->act_range == FAR_CATEGORY) {
+        $sql = 'SELECT cat_id AS id, cat_name AS name FROM '.$ecs->table('category').
+            " WHERE cat_name LIKE '%".mysql_like_quote($filter->keyword)."%' LIMIT 50";
+        $arr = $db->getAll($sql);
+    } elseif ($filter->act_range == FAR_BRAND) {
+        $sql = 'SELECT brand_id AS id, brand_name AS name FROM '.$ecs->table('brand').
+            " WHERE brand_name LIKE '%".mysql_like_quote($filter->keyword)."%' LIMIT 50";
+        $arr = $db->getAll($sql);
+    } else {
+        $sql = 'SELECT goods_id AS id, goods_name AS name FROM '.$ecs->table('goods').
+            " WHERE goods_name LIKE '%".mysql_like_quote($filter->keyword)."%'".
+            " OR goods_sn LIKE '%".mysql_like_quote($filter->keyword)."%' LIMIT 50";
         $arr = $db->getAll($sql);
     }
-    elseif ($filter->act_range == FAR_BRAND)
-    {
-        $sql = "SELECT brand_id AS id, brand_name AS name FROM " . $ecs->table('brand') .
-            " WHERE brand_name LIKE '%" . mysql_like_quote($filter->keyword) . "%' LIMIT 50";
-        $arr = $db->getAll($sql);
-    }
-    else
-    {
-        $sql = "SELECT goods_id AS id, goods_name AS name FROM " . $ecs->table('goods') .
-            " WHERE goods_name LIKE '%" . mysql_like_quote($filter->keyword) . "%'" .
-            " OR goods_sn LIKE '%" . mysql_like_quote($filter->keyword) . "%' LIMIT 50";
-        $arr = $db->getAll($sql);
-    }
-    if (empty($arr))
-    {
+    if (empty($arr)) {
         $arr = array(0 => array(
-            'id'   => 0,
-            'name' => $_LANG['search_result_empty']
+            'id' => 0,
+            'name' => $_LANG['search_result_empty'],
         ));
     }
 
@@ -454,30 +392,26 @@ elseif ($_REQUEST['act'] == 'search')
 function favourable_list()
 {
     $result = get_filter();
-    if ($result === false)
-    {
+    if ($result === false) {
         /* 过滤条件 */
-        $filter['keyword']    = empty($_REQUEST['keyword']) ? '' : trim($_REQUEST['keyword']);
-        if (isset($_REQUEST['is_ajax']) && $_REQUEST['is_ajax'] == 1)
-        {
+        $filter['keyword'] = empty($_REQUEST['keyword']) ? '' : trim($_REQUEST['keyword']);
+        if (isset($_REQUEST['is_ajax']) && $_REQUEST['is_ajax'] == 1) {
             $filter['keyword'] = json_str_iconv($filter['keyword']);
         }
-        $filter['is_going']   = empty($_REQUEST['is_going']) ? 0 : 1;
-        $filter['sort_by']    = empty($_REQUEST['sort_by']) ? 'act_id' : trim($_REQUEST['sort_by']);
+        $filter['is_going'] = empty($_REQUEST['is_going']) ? 0 : 1;
+        $filter['sort_by'] = empty($_REQUEST['sort_by']) ? 'act_id' : trim($_REQUEST['sort_by']);
         $filter['sort_order'] = empty($_REQUEST['sort_order']) ? 'DESC' : trim($_REQUEST['sort_order']);
 
-        $where = "";
-        if (!empty($filter['keyword']))
-        {
-            $where .= " AND act_name LIKE '%" . mysql_like_quote($filter['keyword']) . "%'";
+        $where = '';
+        if (!empty($filter['keyword'])) {
+            $where .= " AND act_name LIKE '%".mysql_like_quote($filter['keyword'])."%'";
         }
-        if ($filter['is_going'])
-        {
+        if ($filter['is_going']) {
             $now = gmtime();
             $where .= " AND start_time <= '$now' AND end_time >= '$now' ";
         }
 
-        $sql = "SELECT COUNT(*) FROM " . $GLOBALS['ecs']->table('favourable_activity') .
+        $sql = 'SELECT COUNT(*) FROM '.$GLOBALS['ecs']->table('favourable_activity').
                 " WHERE 1 $where";
         $filter['record_count'] = $GLOBALS['db']->getOne($sql);
 
@@ -485,32 +419,27 @@ function favourable_list()
         $filter = page_and_size($filter);
 
         /* 查询 */
-        $sql = "SELECT * ".
-                "FROM " . $GLOBALS['ecs']->table('favourable_activity') .
+        $sql = 'SELECT * '.
+                'FROM '.$GLOBALS['ecs']->table('favourable_activity').
                 " WHERE 1 $where ".
                 " ORDER BY $filter[sort_by] $filter[sort_order] ".
-                " LIMIT ". $filter['start'] .", $filter[page_size]";
+                ' LIMIT '.$filter['start'].", $filter[page_size]";
 
         $filter['keyword'] = stripslashes($filter['keyword']);
         set_filter($filter, $sql);
-    }
-    else
-    {
-        $sql    = $result['sql'];
+    } else {
+        $sql = $result['sql'];
         $filter = $result['filter'];
     }
     $res = $GLOBALS['db']->query($sql);
 
     $list = array();
-    while ($row = $GLOBALS['db']->fetchRow($res))
-    {
-        $row['start_time']  = local_date('Y-m-d H:i', $row['start_time']);
-        $row['end_time']    = local_date('Y-m-d H:i', $row['end_time']);
+    while ($row = $GLOBALS['db']->fetchRow($res)) {
+        $row['start_time'] = local_date('Y-m-d H:i', $row['start_time']);
+        $row['end_time'] = local_date('Y-m-d H:i', $row['end_time']);
 
         $list[] = $row;
     }
 
     return array('item' => $list, 'filter' => $filter, 'page_count' => $filter['page_count'], 'record_count' => $filter['record_count']);
 }
-
-?>

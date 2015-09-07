@@ -10,7 +10,7 @@
  * 使用；不允許對程序代碼以任何形式任何目的的再發佈。
  * ============================================================================
  * $Author: liubo $
- * $Id: wholesale.php 17217 2011-01-19 06:29:08Z liubo $
+ * $Id: wholesale.php 17217 2011-01-19 06:29:08Z liubo $.
  */
 
 /* menu */
@@ -49,5 +49,3 @@ $_LANG['js_languages']['act_name_not_null'] = '請輸入批發方案名稱';
 /* post */
 $_LANG['pls_set_user_rank'] = '請設置會員等級';
 $_LANG['user_rank_exist'] = '已經存在該商品針對您選擇的會員等級的批發方案了';
-
-?>

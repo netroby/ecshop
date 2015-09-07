@@ -10,7 +10,7 @@
  * 使用；不允许对程序代码以任何形式任何目的的再发布。
  * ==========================================================
  * $Author: liubo $
- * $Id: goods_auto.php 17217 2011-01-19 06:29:08Z liubo $
+ * $Id: goods_auto.php 17217 2011-01-19 06:29:08Z liubo $.
  */
 $_LANG['id'] = 'id';
 
@@ -32,4 +32,3 @@ $_LANG['batch_start_succeed'] = 'Volume shelves success';
 $_LANG['batch_end_succeed'] = 'Volume under the plane success';
 
 $_LANG['back_list'] = 'Merchandise automatically back up and down plane';
-?>

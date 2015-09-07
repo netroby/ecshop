@@ -2,7 +2,7 @@
 
 /* 初始化变量定义 */
 $charset = 'utf-8';
-$tools_version = "v1.0";
+$tools_version = 'v1.0';
 $mysql_version = '';
 $ecshop_version = '';
 $mysql_charset = '';
@@ -15,11 +15,11 @@ $rpp = 500; // 每次处理的记录数
 define('ROOT_PATH', str_replace('\\', '/', substr(__FILE__, 0, -19)));
 define('IN_ECS', true);
 
-require(ROOT_PATH . 'data/config.php');
-require(ROOT_PATH . 'includes/cls_ecshop.php');
-require(ROOT_PATH . 'includes/cls_mysql.php');
-require(ROOT_PATH . 'includes/lib_common.php');
-require(ROOT_PATH . 'includes/lib_base.php');
+require ROOT_PATH.'data/config.php';
+require ROOT_PATH.'includes/cls_ecshop.php';
+require ROOT_PATH.'includes/cls_mysql.php';
+require ROOT_PATH.'includes/lib_common.php';
+require ROOT_PATH.'includes/lib_base.php';
 
 /* 未升级前，该常量不存在 */
 if (defined('EC_CHARSET')) {
@@ -45,28 +45,28 @@ instheader();
 if ($step == 1) {
     if (!empty($ecshop_charset) && !empty($mysql_charset) && $ecshop_charset == $mysql_charset) {
         $ext_msg = '<span style="color:red;font-size:14px;font-weight:bold">您的程序编码与数据库编码一致，无需进行转换。</span><br /><a href="index.php"><font size="2"><b>&gt;&gt;&nbsp;如果您需要执行升级程序，请点这里进行升级</b></font></a>';
-    } elseif(empty($ecshop_charset) && !empty($mysql_charset)) {
+    } elseif (empty($ecshop_charset) && !empty($mysql_charset)) {
         $ext_msg = '<form name="convert_form" method="post" action="?step=start"><b>由于未能确定您的程序编码，该编码由您手动确定。</b><br />
-                    <b>您的数据库编码为：<span style="color:blue">'. $mysql_charset .'</span> ，确认您的程序编码是：<span style="color:red">'. $convert_charset[$mysql_charset] .'</span> 才能进行转换</b><br /><br />
-        <a href="###" id="runturn"><font size="2"><b>&gt;&gt;&nbsp;如果您已确认完成上面的说明,请点这里进行转换</b></font></a><input type="hidden" name="ecshop_charset" value="'. $convert_charset[$mysql_charset] .'" />&nbsp;&nbsp;&nbsp;&nbsp;<a href="index.php"><font size="2">&gt;&gt;&nbsp;如果您确认程序与数据库的编码一致，请点这里进行升级</font></a></form>';
+                    <b>您的数据库编码为：<span style="color:blue">'.$mysql_charset.'</span> ，确认您的程序编码是：<span style="color:red">'.$convert_charset[$mysql_charset].'</span> 才能进行转换</b><br /><br />
+        <a href="###" id="runturn"><font size="2"><b>&gt;&gt;&nbsp;如果您已确认完成上面的说明,请点这里进行转换</b></font></a><input type="hidden" name="ecshop_charset" value="'.$convert_charset[$mysql_charset].'" />&nbsp;&nbsp;&nbsp;&nbsp;<a href="index.php"><font size="2">&gt;&gt;&nbsp;如果您确认程序与数据库的编码一致，请点这里进行升级</font></a></form>';
         $ecshop_charset = '<span style="color:red">未知</span>';
-    } elseif(empty($mysql_charset) && !empty($ecshop_charset)) {
+    } elseif (empty($mysql_charset) && !empty($ecshop_charset)) {
         $ext_msg = '<form name="convert_form" method="post" action="?step=start"><b>由于未能确定您的数据库编码，该编码由您手动确定。</b><br />
-                    <b>您的程序编码为：<span style="color:blue">'. $ecshop_charset .'</span> ，确认您的数据库编码是：<span style="color:red">'. $convert_charset[$ecshop_charset] .'</span> 才能进行转换</b><br /><br />
-        <a href="###" id="runturn"><font size="2"><b>&gt;&gt;&nbsp;如果您已确认完成上面的说明,请点这里进行转换</b></font></a><input type="hidden" name="mysql_charset" value="'. $convert_charset[$ecshop_charset] .'" />&nbsp;&nbsp;&nbsp;&nbsp;<a href="index.php"><font size="2">&gt;&gt;&nbsp;如果您确认程序与数据库的编码一致，请点这里进行升级</font></a></form>';
+                    <b>您的程序编码为：<span style="color:blue">'.$ecshop_charset.'</span> ，确认您的数据库编码是：<span style="color:red">'.$convert_charset[$ecshop_charset].'</span> 才能进行转换</b><br /><br />
+        <a href="###" id="runturn"><font size="2"><b>&gt;&gt;&nbsp;如果您已确认完成上面的说明,请点这里进行转换</b></font></a><input type="hidden" name="mysql_charset" value="'.$convert_charset[$ecshop_charset].'" />&nbsp;&nbsp;&nbsp;&nbsp;<a href="index.php"><font size="2">&gt;&gt;&nbsp;如果您确认程序与数据库的编码一致，请点这里进行升级</font></a></form>';
         $mysql_charset = '<span style="color:red">未知</span>';
-    } elseif(empty($ecshop_charset) && empty($mysql_charset)) {
+    } elseif (empty($ecshop_charset) && empty($mysql_charset)) {
         $charset_option = '';
-        foreach($convert_charset as $c_charset) {
+        foreach ($convert_charset as $c_charset) {
             $charset_option .= '<option value="'.$c_charset.'">'.$c_charset.'</option>';
         }
         $ext_msg = '<form name="convert_form" method="post" action="?step=start"><b>由于未能确定您的程序与数据库编码，该编码由您手动确定。</b><br />
-                    <b>您的程序编码为：<select name="ecshop_charset" id="ecshop_charset">'. $charset_option .'</select> ，您的数据库编码为：<select name="mysql_charset" id="mysql_charset">'. $charset_option .'</select></b><br /><b></b><br /><br />
+                    <b>您的程序编码为：<select name="ecshop_charset" id="ecshop_charset">'.$charset_option.'</select> ，您的数据库编码为：<select name="mysql_charset" id="mysql_charset">'.$charset_option.'</select></b><br /><b></b><br /><br />
         <a href="###" id="runturn"><font size="2"><b>&gt;&gt;&nbsp;如果您已确认完成上面的说明,请点这里进行转换</b></font></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="index.php"><font size="2"><b>&gt;&gt;&nbsp;如果您确认程序与数据库的编码一致，请点这里进行升级</font></a></form>';
         $mysql_charset = '<span style="color:red">未知</span>';
         $ecshop_charset = '<span style="color:red">未知</span>';
-    }else {
-        $ext_msg ='<a href="?step=start"><font size="2"><b>&gt;&gt;&nbsp;如果您已确认完成上面的说明,请点这里进行转换</b></font></a>';
+    } else {
+        $ext_msg = '<a href="?step=start"><font size="2"><b>&gt;&gt;&nbsp;如果您已确认完成上面的说明,请点这里进行转换</b></font></a>';
     }
     $ext_msg .= '
 <script type="text/javascript">
@@ -130,15 +130,15 @@ EOT;
 EOT;
     instfooter();
 } elseif ($step == 'start') {
-    $ecshop_charset = isset($_POST['ecshop_charset'])? $_POST['ecshop_charset'] : $ecshop_charset;
-    $mysql_charset = isset($_POST['mysql_charset'])? $_POST['mysql_charset'] : $mysql_charset;
+    $ecshop_charset = isset($_POST['ecshop_charset']) ? $_POST['ecshop_charset'] : $ecshop_charset;
+    $mysql_charset = isset($_POST['mysql_charset']) ? $_POST['mysql_charset'] : $mysql_charset;
     if ($ecshop_charset == $mysql_charset) {
         $ext_msg = '<span style="color:red;font-size:14px;font-weight:bold">您的程序编码与数据库编码一致，无需进行转换。</span><br /><a href="index.php"><font size="2"><b>&gt;&gt;&nbsp;如果您需要执行升级程序，请点这里进行升级</b></font></a>';
         showmessage($ext_msg);
     }
     $act = getgpc('act', 'P');
     if (init_convert_tables($convert_tables_file)) {
-        include( ROOT_PATH . $convert_tables_file);
+        include ROOT_PATH.$convert_tables_file;
     } else {
         showmessage('<span style="color:red;font-size:14px;font-weight:bold">没有数据表可以转换</span>');
     }
@@ -147,24 +147,25 @@ EOT;
     if (empty($act)) {
         $backup_count = backup_tables($tables_keys);
         $extra = '
-        <input type="hidden" name="ecshop_charset" value="'. $ecshop_charset .'" />
-        <input type="hidden" name="mysql_charset" value="'. $mysql_charset .'" />
+        <input type="hidden" name="ecshop_charset" value="'.$ecshop_charset.'" />
+        <input type="hidden" name="mysql_charset" value="'.$mysql_charset.'" />
         <input type="hidden" name="act" value="convert" />
         <input type="hidden" name="table_name" value="'.$tables_keys[0].'" />';
-        showmessage("数据库备份完成，".$backup_count." 个原数据表均重命名为以 _bak 为后缀！", '?step=start', 'form', $extra );
+        showmessage('数据库备份完成，'.$backup_count.' 个原数据表均重命名为以 _bak 为后缀！', '?step=start', 'form', $extra);
     } else {
         convert_table(getgpc('table_name', 'P'));
     }
 }
 ob_end_flush();
 
-function instheader() {
+function instheader()
+{
     global $charset, $tools_version;
 
-    echo "<html><head>".
+    echo '<html><head>'.
         "<meta http-equiv=\"Content-Type\" content=\"text/html; charset=$charset\">".
         "<title>ECShop 数据库编码转换工具$tools_version</title>".
-        "<style type=\"text/css\">
+        '<style type="text/css">
         a {
             color: #3A4273;
             text-decoration: none
@@ -239,7 +240,7 @@ function instheader() {
             height:30px;
         }
         </style>
-        <script type=\"text/javascript\">
+        <script type="text/javascript">
         function redirect(url) {
             window.location=url;
         }
@@ -247,37 +248,39 @@ function instheader() {
             return document.getElementById(id);
         }
         </script>
-        </head>".
-        "<body bgcolor=\"#298296\" text=\"#000000\"><div id=\"append_parent\"></div>".
-        "<table width=\"95%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" bgcolor=\"#FFFFFF\" align=\"center\"><tr><td>".
-              "<table width=\"98%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" align=\"center\"><tr>".
+        </head>'.
+        '<body bgcolor="#298296" text="#000000"><div id="append_parent"></div>'.
+        '<table width="95%" border="0" cellspacing="0" cellpadding="0" bgcolor="#FFFFFF" align="center"><tr><td>'.
+              '<table width="98%" border="0" cellspacing="0" cellpadding="0" align="center"><tr>'.
               "<td class=\"install\" height=\"30\" valign=\"bottom\"><font color=\"#FF0000\">&gt;&gt;</font> ECShop 数据库编码转换工具$tools_version".
-              "</td></tr><tr><td><hr noshade align=\"center\" width=\"100%\" size=\"1\"></td></tr><tr><td colspan=\"2\">";
+              '</td></tr><tr><td><hr noshade align="center" width="100%" size="1"></td></tr><tr><td colspan="2">';
 }
 
-function instfooter() {
-    echo "</td></tr><tr><td><hr noshade align=\"center\" width=\"100%\" size=\"1\"></td></tr>".
-            "<tr><td align=\"center\">".
-                "<b style=\"font-size: 11px\">Powered by <a href=\"http://www.ecshop.com\" target=\"_blank\"><span style=\"color:#FF6100\">ECShop</span>".
-              "</a></b>&nbsp; &copy; 2005-2011 上海商派网络科技有限公司。<br /><br />".
-              "</td></tr></table></td></tr></table>".
-        "</body></html>";
+function instfooter()
+{
+    echo '</td></tr><tr><td><hr noshade align="center" width="100%" size="1"></td></tr>'.
+            '<tr><td align="center">'.
+                '<b style="font-size: 11px">Powered by <a href="http://www.ecshop.com" target="_blank"><span style="color:#FF6100">ECShop</span>'.
+              '</a></b>&nbsp; &copy; 2005-2011 上海商派网络科技有限公司。<br /><br />'.
+              '</td></tr></table></td></tr></table>'.
+        '</body></html>';
 }
 
-function showmessage($message, $url_forward = '', $msgtype = 'message', $extra = '', $delaymsec = 1000) {
+function showmessage($message, $url_forward = '', $msgtype = 'message', $extra = '', $delaymsec = 1000)
+{
     //以表单的形式显示信息
-    if($msgtype == 'form') {
+    if ($msgtype == 'form') {
         $message = "<form method=\"post\" action=\"$url_forward\" name=\"hidden_form\">".
         "<br><p class=\"p_indent\">$message</p>\n $extra</form><br>".
         '<script type="text/javascript">
-            setTimeout("document.forms[\'hidden_form\'].submit()", '. $delaymsec .');
+            setTimeout("document.forms[\'hidden_form\'].submit()", '.$delaymsec.');
         </script>';
     } else {
-        if($url_forward) {
+        if ($url_forward) {
             $message .= "<script>setTimeout(\"redirect('$url_forward');\", $delaymsec);</script>";
             $message .= "<br><div align=\"right\">[<a href=\"$script_name\" style=\"color:red\">停止运行</a>]<br><br><a href=\"$url_forward\">如果您的浏览器长时间没有自动跳转，请点击这里！</a></div>";
         } else {
-            $message .= "<br /><br /><br />";
+            $message .= '<br /><br /><br />';
         }
         $message = "<br>$message$extra<br><br>";
     }
@@ -287,18 +290,20 @@ function showmessage($message, $url_forward = '', $msgtype = 'message', $extra =
     exit;
 }
 
-function display($msg) {
+function display($msg)
+{
     echo '<div class="msg">'.$msg.'</div>';
 }
 
-function get_mysql_charset() {
+function get_mysql_charset()
+{
     global $db, $prefix;
     $tmp_charset = '';
     $query = $db->query("SHOW CREATE TABLE `{$prefix}users`", 'SILENT');
     if ($query) {
         $tablestruct = $db->fetch_array($query, MYSQL_NUM);
         preg_match("/CHARSET=(\w+)/", $tablestruct[1], $m);
-        if (!empty($m)){
+        if (!empty($m)) {
             if (strpos($m[1], 'utf') === 0) {
                 $tmp_charset = str_replace('utf', 'utf-', $m[1]);
             } else {
@@ -306,27 +311,31 @@ function get_mysql_charset() {
             }
         }
     }
+
     return $tmp_charset;
 }
 
-function getgpc($k, $var='G') {
-    switch($var) {
-        case 'G': $var = &$_GET; break;
+function getgpc($k, $var = 'G')
+{
+    switch ($var) {
+        case 'G' : $var = &$_GET; break;
         case 'P': $var = &$_POST; break;
         case 'C': $var = &$_COOKIE; break;
         case 'R': $var = &$_REQUEST; break;
     }
-    return isset($var[$k]) ? $var[$k] : NULL;
+
+    return isset($var[$k]) ? $var[$k] : null;
 }
 
-function init_convert_tables($file) {
-    if (is_file(ROOT_PATH . $file)) {
+function init_convert_tables($file)
+{
+    if (is_file(ROOT_PATH.$file)) {
         return true;
     }
     global $db, $prefix;
     $tables = array();
     $query = $db->query('SHOW TABLE STATUS');
-    while($result = $db->fetch_array($query)) {
+    while ($result = $db->fetch_array($query)) {
         if (empty($prefix) || (!empty($prefix) && strpos($result['Name'], $prefix) === 0)) {
             //检查不能有以 _bak 结尾的表
             if (preg_match('/_bak$/', $result['Name'])) {
@@ -337,50 +346,58 @@ function init_convert_tables($file) {
     }
     if (!empty($tables)) {
         $str = "<?php\n";
-        $str .= '$convert_tables = ' . var_export($tables, true) . ";\n";
+        $str .= '$convert_tables = '.var_export($tables, true).";\n";
         $str .= "\n?>";
         file_put_contents(ROOT_PATH.$file, $str);
+
         return true;
     }
+
     return false;
 }
 
-function write_tables($tables, $file, $var_name) {
+function write_tables($tables, $file, $var_name)
+{
     if (!empty($tables)) {
         $str = "<?php\n";
-        $str .= '$'.$var_name.' = ' . var_export($tables, true) . ";\n";
+        $str .= '$'.$var_name.' = '.var_export($tables, true).";\n";
         $str .= "\n?>";
         file_put_contents(ROOT_PATH.$file, $str);
+
         return true;
     }
 }
 
-function backup_tables($tables) {
+function backup_tables($tables)
+{
     global $db;
     global $convert_tables, $convert_tables_file;
     $suffix = '_bak';
     $backup_count = 0;
     display('正在进行备份数据表');
     if (!empty($tables)) {
-        foreach($tables as $tablename) {
+        foreach ($tables as $tablename) {
             $db->query("DROP TABLE IF EXISTS `{$tablename}{$suffix}`;", 'SILENT');
             $rename_sql = "RENAME TABLE `$tablename` TO `{$tablename}{$suffix}`;";
             if ($db->query($rename_sql, 'SILENT')) {
-                $backup_count++;
+                ++$backup_count;
                 $convert_tables[$tablename] = 1;
             }
         }
         write_tables($convert_tables, $convert_tables_file, 'convert_tables');
+
         return $backup_count;
     }
+
     return 0;
 }
 
-function convert_table($table) {
+function convert_table($table)
+{
     if (empty($table)) {
         showmessage('数据表名不能为空，转换中止，如需重新转换请先还原数据库后再此执行本程序！');
     }
-    display('正在转换 '. $table .' 数据表，请勿关闭本页面或刷新。');
+    display('正在转换 '.$table.' 数据表，请勿关闭本页面或刷新。');
     global $ecshop_charset, $mysql_charset, $mysql_version;
     global $db, $prefix;
     global $convert_tables, $convert_tables_file, $tables_keys, $rpp;
@@ -392,15 +409,15 @@ function convert_table($table) {
         if ($query) {
             $tablestruct = $db->fetch_array($query, MYSQL_NUM);
             $createtable = $tablestruct[1];
-            $createtable = preg_replace("/CREATE TABLE `{$table}_bak`/i", "CREATE TABLE `".$table."`", $createtable);
+            $createtable = preg_replace("/CREATE TABLE `{$table}_bak`/i", 'CREATE TABLE `'.$table.'`', $createtable);
             if ($mysql_version >= '4.1') {
-                $createtable = preg_replace("/CHARSET\=".$s_charset."/i", 'CHARSET='.$d_charset, $createtable);
+                $createtable = preg_replace("/CHARSET\=".$s_charset.'/i', 'CHARSET='.$d_charset, $createtable);
             }
             if ($db->query($createtable, 'SILENT')) {
                 $convert_tables[$table] = 2;
                 write_tables($convert_tables, $convert_tables_file, 'convert_tables');
             } else {
-                showmessage('创建表 ' . $table . ' 时失败！<br /> ' . $createtable . '<br /> ' . mysql_error($db->link_id));
+                showmessage('创建表 '.$table.' 时失败！<br /> '.$createtable.'<br /> '.mysql_error($db->link_id));
             }
         }
     }
@@ -409,17 +426,17 @@ function convert_table($table) {
         if ($mysql_version >= '4.1') {
             $db->query('SET NAMES '.$s_charset);
         }
-        $count = isset($_POST['count'])? intval($_POST['count']) : $db->getOne("SELECT COUNT(*) FROM `{$table}_bak`");
-        $start = isset($_POST['start'])? intval($_POST['start']) : 0;
+        $count = isset($_POST['count']) ? intval($_POST['count']) : $db->getOne("SELECT COUNT(*) FROM `{$table}_bak`");
+        $start = isset($_POST['start']) ? intval($_POST['start']) : 0;
         $query = $db->query("SELECT * FROM `{$table}_bak` LIMIT $start, $rpp");
-        while($row = $db->fetch_array($query)) {
+        while ($row = $db->fetch_array($query)) {
             $_key = $_value = array();
             $insert_query = "INSERT INTO `{$table}`(`";
-            foreach($row as $k => $v) {
+            foreach ($row as $k => $v) {
                 $_key[] = $k;
                 $_value[] = addslashes(ecs_iconv($mysql_charset, $ecshop_charset, $v));
             }
-            $_key = implode("`,`", $_key);
+            $_key = implode('`,`', $_key);
             $_value = implode("','", $_value);
             $insert_query .= $_key."`) VALUES ('".$_value."');";
             if ($mysql_version >= '4.1') {
@@ -427,7 +444,7 @@ function convert_table($table) {
                 $db->query("SET sql_mode=''");
             }
             if (!$db->query($insert_query, 'SILENT')) {
-                showmessage('插入 ' . $table . ' 表数据失败！<br /> ' . $insert_query . '<br /> ' . mysql_error($db->link_id));
+                showmessage('插入 '.$table.' 表数据失败！<br /> '.$insert_query.'<br /> '.mysql_error($db->link_id));
             }
         }
         if ($start + $rpp > $count) {
@@ -440,22 +457,22 @@ function convert_table($table) {
             } else {
                 array_shift($tables_keys);
                 $extra = '
-                <input type="hidden" name="ecshop_charset" value="'. $ecshop_charset .'" />
-                <input type="hidden" name="mysql_charset" value="'. $mysql_charset .'" />
+                <input type="hidden" name="ecshop_charset" value="'.$ecshop_charset.'" />
+                <input type="hidden" name="mysql_charset" value="'.$mysql_charset.'" />
                 <input type="hidden" name="act" value="convert" />
                 <input type="hidden" name="table_name" value="'.$tables_keys[0].'" />';
-                showmessage("数据表 {$table} 转换完成，正在进入下一个数据表", '?step=start', 'form', $extra );
+                showmessage("数据表 {$table} 转换完成，正在进入下一个数据表", '?step=start', 'form', $extra);
             }
         } else {
             $next_start = $start + $rpp;
             $extra = '
-            <input type="hidden" name="ecshop_charset" value="'. $ecshop_charset .'" />
-            <input type="hidden" name="mysql_charset" value="'. $mysql_charset .'" />
+            <input type="hidden" name="ecshop_charset" value="'.$ecshop_charset.'" />
+            <input type="hidden" name="mysql_charset" value="'.$mysql_charset.'" />
             <input type="hidden" name="act" value="convert" />
             <input type="hidden" name="start" value="'.$next_start.'" />
             <input type="hidden" name="count" value="'.$count.'" />
             <input type="hidden" name="table_name" value="'.$tables_keys[0].'" />';
-            showmessage("正在转换数据表 $table 的第 $start - ".((($start+$rpp) > $count) ? $count : ($start+$rpp))." 条数据", '?step=start', 'form', $extra );
+            showmessage("正在转换数据表 $table 的第 $start - ".((($start + $rpp) > $count) ? $count : ($start + $rpp)).' 条数据', '?step=start', 'form', $extra);
         }
     }
 }

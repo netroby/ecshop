@@ -10,9 +10,8 @@
  * 使用；不允许对程序代码以任何形式任何目的的再发布。
  * ============================================================================
  * $Author: liubo $
- * $Id: integrate.php 17217 2011-01-19 06:29:08Z liubo $
-*/
-
+ * $Id: integrate.php 17217 2011-01-19 06:29:08Z liubo $.
+ */
 $_LANG['integrate_name'] = '名称';
 $_LANG['integrate_version'] = '版本';
 $_LANG['integrate_author'] = '作者';
@@ -52,8 +51,8 @@ $_LANG['lable_db_pass'] = '数据库密码：';
 $_LANG['lable_prefix'] = '数据表前缀：';
 $_LANG['lable_url'] = '被整合系统的完整 URL：';
 /* 表单相关语言项(discus5x) */
-$_LANG['cookie_prefix']          = 'COOKIE前缀：';
-$_LANG['cookie_salt']          = 'COOKIE加密串：';
+$_LANG['cookie_prefix'] = 'COOKIE前缀：';
+$_LANG['cookie_salt'] = 'COOKIE加密串：';
 $_LANG['button_next'] = '下一步';
 $_LANG['button_force_save_config'] = '直接保存配置信息';
 $_LANG['save_confirm'] = '您确定要直接保存配置信息吗？';
@@ -103,7 +102,6 @@ $_LANG['ignore_user'] = '需要保留的商城用户';
 $_LANG['submit_modify'] = '保存本页变更';
 $_LANG['button_confirm_next'] = '开始整合';
 
-
 /* 用户同步 */
 $_LANG['user_sync'] = '同步商城数据到论坛，并完成整合';
 $_LANG['button_pre'] = '上一步';
@@ -120,7 +118,6 @@ $_LANG['start_task'] = '开始任务';
 $_LANG['sync_status'] = '已经同步 %s / %s';
 $_LANG['sync_size'] = '每次处理用户数量';
 $_LANG['sync_ok'] = '恭喜您。整合成功';
-
 
 $_LANG['save_ok'] = '保存成功';
 
@@ -205,5 +202,3 @@ $_LANG['uc_lang']['credits'][0][1] = '';
 $_LANG['uc_lang']['credits'][1][0] = '消费积分';
 $_LANG['uc_lang']['credits'][1][1] = '';
 $_LANG['uc_lang']['exchange'] = 'UCenter积分兑换';
-
-?>

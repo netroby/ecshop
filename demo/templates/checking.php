@@ -10,25 +10,25 @@
 <script type="text/javascript" src="js/check.js"></script>
 <script type="text/javascript">
 var $_LANG = {};
-<?php foreach($lang['js_languages'] as $key => $item): ?>
+<?php foreach ($lang['js_languages'] as $key => $item): ?>
 $_LANG["<?php echo $key;?>"] = "<?php echo $item;?>";
 <?php endforeach; ?>
 </script>
 </head>
 <body id="checking">
-<?php include ROOT_PATH . 'demo/templates/header.php';?>
+<?php include ROOT_PATH.'demo/templates/header.php';?>
 <form method="post">
 <table border="0" cellpadding="0" cellspacing="0" style="margin:0 auto;">
 <tr>
 <td valign="top"><div id="wrapper">
         <h3><?php echo $lang['basic_config'];?></h3>
-        <div class="list"> <?php foreach($config_info as $config_item): ?>
+        <div class="list"> <?php foreach ($config_info as $config_item): ?>
           <?php echo $config_item[0];?>...........................................................................................
                 <span style="color:green;"><?php echo $config_item[1];?></span><br />
          <?php endforeach;?>
         </div>
         <h3><?php echo $lang['dir_priv_checking'];?></h3>
-        <div class="list"> <?php foreach($dir_checking as $checking_item): ?>
+        <div class="list"> <?php foreach ($dir_checking as $checking_item): ?>
           <?php echo $checking_item[0];?>...........................................................................................
               <?php if ($checking_item[1] == $lang['can_write']):?>
                     <span style="color:green;"><?php echo $checking_item[1];?></span>
@@ -40,8 +40,8 @@ $_LANG["<?php echo $key;?>"] = "<?php echo $item;?>";
 
         <h3><?php echo $lang['template_writable_checking'];?></h3>
         <div class="list">
-         <?php if ($has_unwritable_tpl == "yes"):?>
-              <?php foreach($template_checking as $checking_item): ?>
+         <?php if ($has_unwritable_tpl == 'yes'):?>
+              <?php foreach ($template_checking as $checking_item): ?>
                             <span style="color:red;"><?php echo $checking_item;?></span><br />
               <?php endforeach; ?>
           <?php else:?>
@@ -50,7 +50,7 @@ $_LANG["<?php echo $key;?>"] = "<?php echo $item;?>";
         <?php if (!empty($rename_priv)) :?>
         <h3><?php echo $lang['rename_priv_checking']; ?></h3>
         <div class="list">
-          <?php foreach($rename_priv as $checking_item): ?>
+          <?php foreach ($rename_priv as $checking_item): ?>
           <span style="color:red;"><?php echo $checking_item;?></span><br />
           <?php endforeach; ?>
         </div>
@@ -81,7 +81,7 @@ $_LANG["<?php echo $key;?>"] = "<?php echo $item;?>";
 </table>
 <div id="copyright">
     <div id="copyright-inside">
-      <?php include ROOT_PATH . 'demo/templates/copyright.php';?></div>
+      <?php include ROOT_PATH.'demo/templates/copyright.php';?></div>
 </div>
 </form>
 </body>

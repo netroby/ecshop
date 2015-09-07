@@ -10,11 +10,10 @@
  * 使用；不允許對程序代碼以任何形式任何目的的再發佈。
  * ============================================================================
  * $Author: liubo $
- * $Id: yto.php 17217 2011-01-19 06:29:08Z liubo $
-*/
-
-$_LANG['yto']          = '圓通速遞';
-$_LANG['yto_desc']     = '上海圓通物流（速遞）有限公司經過多年的網絡快速發展，在中國速遞行業中一直處於領先地位。為了能更好的發展國際快件市場，加快與國際市場的接軌，強化圓通的整體實力，圓通已在東南亞、歐美、中東、北美洲、非洲等許多城市運作國際快件業務';
+ * $Id: yto.php 17217 2011-01-19 06:29:08Z liubo $.
+ */
+$_LANG['yto'] = '圓通速遞';
+$_LANG['yto_desc'] = '上海圓通物流（速遞）有限公司經過多年的網絡快速發展，在中國速遞行業中一直處於領先地位。為了能更好的發展國際快件市場，加快與國際市場的接軌，強化圓通的整體實力，圓通已在東南亞、歐美、中東、北美洲、非洲等許多城市運作國際快件業務';
 $_LANG['base_fee'] = '首重費用';
 $_LANG['step_fee'] = '續重費用';
 $_LANG['item_fee'] = '單件商品費用：';
@@ -123,5 +122,3 @@ $_LANG['shipping_print'] = '<table border="0" cellspacing="0" cellpadding="0" st
     </td>
   </tr>
 </table>';
-
-?>

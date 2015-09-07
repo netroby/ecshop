@@ -10,11 +10,9 @@
  * 使用；不允许对程序代码以任何形式任何目的的再发布。
  * ============================================================================
  * $Author: liubo $
- * $Id: lib_template.php 17217 2011-01-19 06:29:08Z liubo $
-*/
-
-if (!defined('IN_ECS'))
-{
+ * $Id: lib_template.php 17217 2011-01-19 06:29:08Z liubo $.
+ */
+if (!defined('IN_ECS')) {
     die('Hacking attempt');
 }
 
@@ -107,7 +105,7 @@ $page_libs = array(
         '/library/brands.lbi' => 3,
         '/library/promotion_info.lbi' => 0,
         '/library/cart.lbi' => 0,
-        '/library/vote_list.lbi' => 0
+        '/library/vote_list.lbi' => 0,
     ),
     'compare' => array(
         '/library/ur_here.lbi' => 0,
@@ -136,7 +134,7 @@ $page_libs = array(
         '/library/cart.lbi' => 0,
         '/library/order_query.lbi' => 0,
         '/library/email_list.lbi' => 0,
-        '/library/vote_list.lbi' => 0
+        '/library/vote_list.lbi' => 0,
     ),
     'goods' => array(
         '/library/ur_here.lbi' => 0,
@@ -282,108 +280,94 @@ $dyna_libs = array(
 //}
 
 /**
- * 获得模版的信息
+ * 获得模版的信息.
  *
- * @access  private
- * @param   string      $template_name      模版名
- * @param   string      $template_style     模版风格名
- * @return  array
+ * @param string $template_name  模版名
+ * @param string $template_style 模版风格名
+ *
+ * @return array
  */
-function get_template_info($template_name, $template_style='')
+function get_template_info($template_name, $template_style = '')
 {
-    if (empty($template_style) || $template_style == '')
-    {
+    if (empty($template_style) || $template_style == '') {
         $template_style = '';
     }
 
     $info = array();
-    $ext  = array('png', 'gif', 'jpg', 'jpeg');
+    $ext = array('png', 'gif', 'jpg', 'jpeg');
 
-    $info['code']       = $template_name;
+    $info['code'] = $template_name;
     $info['screenshot'] = '';
     $info['stylename'] = $template_style;
 
-    if ($template_style == '')
-    {
-        foreach ($ext AS $val)
-        {
-            if (file_exists('../themes/' . $template_name . "/images/screenshot.$val"))
-            {
-                $info['screenshot'] = '../themes/' . $template_name . "/images/screenshot.$val";
+    if ($template_style == '') {
+        foreach ($ext as $val) {
+            if (file_exists('../themes/'.$template_name."/images/screenshot.$val")) {
+                $info['screenshot'] = '../themes/'.$template_name."/images/screenshot.$val";
 
                 break;
             }
         }
-    }
-    else
-    {
-        foreach ($ext AS $val)
-        {
-            if (file_exists('../themes/' . $template_name . "/images/screenshot_$template_style.$val"))
-            {
-                $info['screenshot'] = '../themes/' . $template_name . "/images/screenshot_$template_style.$val";
+    } else {
+        foreach ($ext as $val) {
+            if (file_exists('../themes/'.$template_name."/images/screenshot_$template_style.$val")) {
+                $info['screenshot'] = '../themes/'.$template_name."/images/screenshot_$template_style.$val";
 
                 break;
             }
         }
     }
 
-    $css_path = '../themes/' . $template_name . '/style.css';
-    if ($template_style != '')
-    {
-        $css_path = '../themes/' . $template_name . "/style_$template_style.css";
+    $css_path = '../themes/'.$template_name.'/style.css';
+    if ($template_style != '') {
+        $css_path = '../themes/'.$template_name."/style_$template_style.css";
     }
-    if (file_exists($css_path) && !empty($template_name))
-    {
+    if (file_exists($css_path) && !empty($template_name)) {
         $arr = array_slice(file($css_path), 0, 10);
 
-        $template_name      = explode(': ', $arr[1]);
-        $template_uri       = explode(': ', $arr[2]);
-        $template_desc      = explode(': ', $arr[3]);
-        $template_version   = explode(': ', $arr[4]);
-        $template_author    = explode(': ', $arr[5]);
-        $author_uri         = explode(': ', $arr[6]);
-        $logo_filename      = explode(': ', $arr[7]);
-        $template_type      = explode(': ', $arr[8]);
+        $template_name = explode(': ', $arr[1]);
+        $template_uri = explode(': ', $arr[2]);
+        $template_desc = explode(': ', $arr[3]);
+        $template_version = explode(': ', $arr[4]);
+        $template_author = explode(': ', $arr[5]);
+        $author_uri = explode(': ', $arr[6]);
+        $logo_filename = explode(': ', $arr[7]);
+        $template_type = explode(': ', $arr[8]);
 
-
-        $info['name']       = isset($template_name[1]) ? trim($template_name[1]) : '';
-        $info['uri']        = isset($template_uri[1]) ? trim($template_uri[1]) : '';
-        $info['desc']       = isset($template_desc[1]) ? trim($template_desc[1]) : '';
-        $info['version']    = isset($template_version[1]) ? trim($template_version[1]) : '';
-        $info['author']     = isset($template_author[1]) ? trim($template_author[1]) : '';
+        $info['name'] = isset($template_name[1]) ? trim($template_name[1]) : '';
+        $info['uri'] = isset($template_uri[1]) ? trim($template_uri[1]) : '';
+        $info['desc'] = isset($template_desc[1]) ? trim($template_desc[1]) : '';
+        $info['version'] = isset($template_version[1]) ? trim($template_version[1]) : '';
+        $info['author'] = isset($template_author[1]) ? trim($template_author[1]) : '';
         $info['author_uri'] = isset($author_uri[1]) ? trim($author_uri[1]) : '';
-        $info['logo']       = isset($logo_filename[1]) ? trim($logo_filename[1]) : '';
-        $info['type']       = isset($template_type[1]) ? trim($template_type[1]) : '';
-
-    }
-    else
-    {
-        $info['name']       = '';
-        $info['uri']        = '';
-        $info['desc']       = '';
-        $info['version']    = '';
-        $info['author']     = '';
+        $info['logo'] = isset($logo_filename[1]) ? trim($logo_filename[1]) : '';
+        $info['type'] = isset($template_type[1]) ? trim($template_type[1]) : '';
+    } else {
+        $info['name'] = '';
+        $info['uri'] = '';
+        $info['desc'] = '';
+        $info['version'] = '';
+        $info['author'] = '';
         $info['author_uri'] = '';
-        $info['logo']       = '';
+        $info['logo'] = '';
     }
 
     return $info;
 }
 
 /**
- * 获得模版文件中的编辑区域及其内容
+ * 获得模版文件中的编辑区域及其内容.
  *
- * @access  public
- * @param   string  $tmp_name   模版名称
- * @param   string  $tmp_file   模版文件名称
- * @return  array
+ * @param string $tmp_name 模版名称
+ * @param string $tmp_file 模版文件名称
+ *
+ * @return array
  */
-function get_template_region($tmp_name, $tmp_file, $lib=true)
+function get_template_region($tmp_name, $tmp_file, $lib = true)
 {
     global $dyna_libs;
 
-    $file = '../themes/' . $tmp_name . '/' . $tmp_file;
+    $file = '../themes/'.$tmp_name.'/'.$tmp_file;
 
     /* 将模版文件的内容读入内存 */
     $content = file_get_contents($file);
@@ -391,53 +375,42 @@ function get_template_region($tmp_name, $tmp_file, $lib=true)
     /* 获得所有编辑区域 */
     static $regions = array();
 
-    if (empty($regions))
-    {
+    if (empty($regions)) {
         $matches = array();
-        $result  = preg_match_all('/(<!--\\s*TemplateBeginEditable\\sname=")([^"]+)("\\s*-->)/', $content, $matches, PREG_SET_ORDER);
+        $result = preg_match_all('/(<!--\\s*TemplateBeginEditable\\sname=")([^"]+)("\\s*-->)/', $content, $matches, PREG_SET_ORDER);
 
-        if ($result && $result > 0)
-        {
-            foreach ($matches AS $key => $val)
-            {
-                if ($val[2] != 'doctitle' && $val[2] != 'head')
-                {
+        if ($result && $result > 0) {
+            foreach ($matches as $key => $val) {
+                if ($val[2] != 'doctitle' && $val[2] != 'head') {
                     $regions[] = $val[2];
                 }
             }
         }
-
     }
 
-    if (!$lib)
-    {
+    if (!$lib) {
         return $regions;
     }
 
     $libs = array();
     /* 遍历所有编辑区 */
-    foreach ($regions AS $key => $val)
-    {
+    foreach ($regions as $key => $val) {
         $matches = array();
         $pattern = '/(<!--\\s*TemplateBeginEditable\\sname="%s"\\s*-->)(.*?)(<!--\\s*TemplateEndEditable\\s*-->)/s';
 
-        if (preg_match(sprintf($pattern, $val), $content, $matches))
-        {
+        if (preg_match(sprintf($pattern, $val), $content, $matches)) {
             /* 找出该编辑区域内所有库项目 */
             $lib_matches = array();
 
-            $result      = preg_match_all('/([\s|\S]{0,20})(<!--\\s#BeginLibraryItem\\s")([^"]+)("\\s-->)/',
+            $result = preg_match_all('/([\s|\S]{0,20})(<!--\\s#BeginLibraryItem\\s")([^"]+)("\\s-->)/',
                                           $matches[2], $lib_matches, PREG_SET_ORDER);
             $i = 0;
-            if ($result && $result > 0)
-            {
-                foreach ($lib_matches AS $k => $v)
-                {
-                    $v[3]   = strtolower($v[3]);
-                    $libs[] = array('library' => $v[3], 'region' => $val, 'lib'=>basename(substr($v[3], 0, strpos($v[3], '.'))), 'sort_order' => $i);
-                    $i++;
+            if ($result && $result > 0) {
+                foreach ($lib_matches as $k => $v) {
+                    $v[3] = strtolower($v[3]);
+                    $libs[] = array('library' => $v[3], 'region' => $val, 'lib' => basename(substr($v[3], 0, strpos($v[3], '.'))), 'sort_order' => $i);
+                    ++$i;
                 }
-
             }
         }
     }
@@ -446,53 +419,46 @@ function get_template_region($tmp_name, $tmp_file, $lib=true)
 }
 
 /**
- * 将插件library从默认模板中移动到指定模板中
+ * 将插件library从默认模板中移动到指定模板中.
  *
- * @access  public
- * @param   string  $tmp_name   模版名称
- * @param   string  $msg        如果出错，保存错误信息，否则为空
- * @return  Boolen
+ * @param string $tmp_name 模版名称
+ * @param string $msg      如果出错，保存错误信息，否则为空
+ *
+ * @return Boolen
  */
 function move_plugin_library($tmp_name, &$msg)
 {
-    $sql = 'SELECT code, library FROM ' . $GLOBALS['ecs']->table('plugins') . " WHERE library > ''";
+    $sql = 'SELECT code, library FROM '.$GLOBALS['ecs']->table('plugins')." WHERE library > ''";
     $rec = $GLOBALS['db']->query($sql);
     $return_value = true;
-    $target_dir = ROOT_PATH . 'themes/' . $tmp_name;
-    $source_dir = ROOT_PATH . 'themes/' . $GLOBALS['_CFG']['template'];
-    while ($row = $GLOBALS['db']->fetchRow($rec))
-    {
+    $target_dir = ROOT_PATH.'themes/'.$tmp_name;
+    $source_dir = ROOT_PATH.'themes/'.$GLOBALS['_CFG']['template'];
+    while ($row = $GLOBALS['db']->fetchRow($rec)) {
         //先移动，移动失败试则拷贝
-        if (!@rename($source_dir . $row['library'], $target_dir . $row['library']))
-        {
-            if (!@copy(ROOT_PATH . 'plugins/' . $row['code'] . '/temp' . $row['library'], $target_dir . $row['library']))
-            {
+        if (!@rename($source_dir.$row['library'], $target_dir.$row['library'])) {
+            if (!@copy(ROOT_PATH.'plugins/'.$row['code'].'/temp'.$row['library'], $target_dir.$row['library'])) {
                 $return_value = false;
-                $msg .= "\n moving " . $row['library'] . ' failed';
+                $msg .= "\n moving ".$row['library'].' failed';
             }
         }
     }
 }
 
 /**
- * 获得指定库项目在模板中的设置内容
+ * 获得指定库项目在模板中的设置内容.
  *
- * @access  public
- * @param   string  $lib    库项目
- * @param   array   $libs    包含设定内容的数组
- * @return  void
+ * @param string $lib  库项目
+ * @param array  $libs 包含设定内容的数组
  */
 function get_setted($lib, &$arr)
 {
     $options = array('region' => '', 'sort_order' => 0, 'display' => 0);
 
-    foreach ($arr AS $key => $val)
-    {
-        if ($lib == $val['library'])
-        {
-            $options['region']     = $val['region'];
+    foreach ($arr as $key => $val) {
+        if ($lib == $val['library']) {
+            $options['region'] = $val['region'];
             $options['sort_order'] = $val['sort_order'];
-            $options['display']    = 1;
+            $options['display'] = 1;
 
             break;
         }
@@ -502,12 +468,12 @@ function get_setted($lib, &$arr)
 }
 
 /**
- * 从相应模板xml文件中获得指定模板文件中的可编辑区信息
+ * 从相应模板xml文件中获得指定模板文件中的可编辑区信息.
  *
- * @access  public
- * @param   string  $curr_template    当前模板文件名
- * @param   array   $curr_page_libs   缺少xml文件时的默认编辑区信息数组
- * @return  array   $edit_libs        返回可编辑的库文件数组
+ * @param string $curr_template  当前模板文件名
+ * @param array  $curr_page_libs 缺少xml文件时的默认编辑区信息数组
+ *
+ * @return array $edit_libs        返回可编辑的库文件数组
  */
 function get_editable_libs($curr_template, $curr_page_libs)
 {
@@ -515,29 +481,26 @@ function get_editable_libs($curr_template, $curr_page_libs)
     $vals = array();
     $edit_libs = array();
 
-    if ($xml_content = @file_get_contents(ROOT_PATH . 'themes/' . $_CFG['template'] . '/libs.xml'))
-    {
+    if ($xml_content = @file_get_contents(ROOT_PATH.'themes/'.$_CFG['template'].'/libs.xml')) {
         $p = xml_parser_create();                                                   //把xml解析到数组
-        xml_parse_into_struct($p,$xml_content,$vals,$index);
+        xml_parse_into_struct($p, $xml_content, $vals, $index);
         xml_parser_free($p);
 
         $i = 0;
-        for (; $i < sizeof($vals); $i++)                                      //找到相应模板文件的位置
-        {
-            if ($vals[$i]['tag'] == 'FILE' && isset($vals[$i]['attributes']))
-            {
-                if ($vals[$i]['attributes']['NAME'] == $curr_template . '.dwt')
-                {
+        for (; $i < sizeof($vals); ++$i) {
+            //找到相应模板文件的位置
+
+            if ($vals[$i]['tag'] == 'FILE' && isset($vals[$i]['attributes'])) {
+                if ($vals[$i]['attributes']['NAME'] == $curr_template.'.dwt') {
                     break;
                 }
             }
-
         }
 
-        while ($vals[++$i]['tag'] != 'FILE' || !isset($vals[$i]['attributes']))     //读出可编辑区库文件名称，放到一个数组中
-        {
-            if ($vals[$i]['tag'] == 'LIB')
-            {
+        while ($vals[++$i]['tag'] != 'FILE' || !isset($vals[$i]['attributes'])) {
+            //读出可编辑区库文件名称，放到一个数组中
+
+            if ($vals[$i]['tag'] == 'LIB') {
                 $edit_libs[] = $vals[$i]['value'];
             }
         }
@@ -545,4 +508,3 @@ function get_editable_libs($curr_template, $curr_page_libs)
 
     return $edit_libs;
 }
-?>

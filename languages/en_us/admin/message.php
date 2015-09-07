@@ -12,8 +12,8 @@
  * commercial purposes.
  * ============================================================================
  * $Author: liubo $
- * $Id: message.php 17217 2011-01-19 06:29:08Z liubo $
-*/
+ * $Id: message.php 17217 2011-01-19 06:29:08Z liubo $.
+ */
 /* Information */
 $_LANG['sender_id'] = 'Sender ID';
 $_LANG['receiver_id'] = 'Receiver ID';
@@ -54,5 +54,3 @@ $_LANG['drop_msg'] = 'Delete selected';
 
 $_LANG['batch_drop_success'] = 'Delete %d records successfully!';
 $_LANG['no_select_msg'] = 'You have no message now.';
-
-?>

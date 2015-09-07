@@ -10,9 +10,8 @@
  * 使用；不允許對程序代碼以任何形式任何目的的再發佈。
  * ============================================================================
  * $Author: liubo $
- * $Id: shipping.php 17217 2011-01-19 06:29:08Z liubo $
-*/
-
+ * $Id: shipping.php 17217 2011-01-19 06:29:08Z liubo $.
+ */
 $_LANG['shipping_name'] = '配送方式名稱';
 $_LANG['shipping_version'] = '插件版本';
 $_LANG['shipping_desc'] = '配送方式描述';
@@ -77,10 +76,9 @@ $_LANG['js_languages']['lang_removeconfirm'] = '您確定要卸載該配送方式嗎？';
 $_LANG['js_languages']['shipping_area'] = '設置區域';
 $_LANG['js_languages']['upload_falid'] = '錯誤：文件類型不正確。請上傳“%s”類型的文件！';
 $_LANG['js_languages']['upload_del_falid'] = '錯誤：刪除失敗！';
-$_LANG['js_languages']['upload_del_confirm'] = "提示：您確認刪除打印單圖片嗎？";
-$_LANG['js_languages']['no_select_upload'] = "錯誤：您還沒有選擇打印單圖片。請使用“瀏覽...”按鈕選擇！";
-$_LANG['js_languages']['no_select_lable'] = "操作終止！您未選擇任何標簽。";
-$_LANG['js_languages']['no_add_repeat_lable'] = "操作失敗！不允許添加重復標簽。";
-$_LANG['js_languages']['no_select_lable_del'] = "刪除失敗！您沒有選中任何標簽。";
-$_LANG['js_languages']['recovery_default_suer'] = "您確認恢復默認嗎？恢復默認后將顯示安裝時的內容。";
-?>
+$_LANG['js_languages']['upload_del_confirm'] = '提示：您確認刪除打印單圖片嗎？';
+$_LANG['js_languages']['no_select_upload'] = '錯誤：您還沒有選擇打印單圖片。請使用“瀏覽...”按鈕選擇！';
+$_LANG['js_languages']['no_select_lable'] = '操作終止！您未選擇任何標簽。';
+$_LANG['js_languages']['no_add_repeat_lable'] = '操作失敗！不允許添加重復標簽。';
+$_LANG['js_languages']['no_select_lable_del'] = '刪除失敗！您沒有選中任何標簽。';
+$_LANG['js_languages']['recovery_default_suer'] = '您確認恢復默認嗎？恢復默認后將顯示安裝時的內容。';

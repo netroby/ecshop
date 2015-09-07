@@ -10,72 +10,58 @@
  * 使用；不允许对程序代码以任何形式任何目的的再发布。
  * ============================================================================
  * $Author: liubo $
- * $Id: respond.php 17217 2011-01-19 06:29:08Z liubo $
+ * $Id: respond.php 17217 2011-01-19 06:29:08Z liubo $.
  */
-
 define('IN_ECS', true);
 
-require(dirname(__FILE__) . '/includes/init.php');
-require(ROOT_PATH . 'includes/lib_payment.php');
-require(ROOT_PATH . 'includes/lib_order.php');
+require dirname(__FILE__).'/includes/init.php';
+require ROOT_PATH.'includes/lib_payment.php';
+require ROOT_PATH.'includes/lib_order.php';
 /* 支付方式代码 */
 $pay_code = !empty($_REQUEST['code']) ? trim($_REQUEST['code']) : '';
 
 //获取首信支付方式
-if (empty($pay_code) && !empty($_REQUEST['v_pmode']) && !empty($_REQUEST['v_pstring']))
-{
+if (empty($pay_code) && !empty($_REQUEST['v_pmode']) && !empty($_REQUEST['v_pstring'])) {
     $pay_code = 'cappay';
 }
 
 //获取快钱神州行支付方式
-if (empty($pay_code) && ($_REQUEST['ext1'] == 'shenzhou') && ($_REQUEST['ext2'] == 'ecshop'))
-{
+if (empty($pay_code) && ($_REQUEST['ext1'] == 'shenzhou') && ($_REQUEST['ext2'] == 'ecshop')) {
     $pay_code = 'shenzhou';
 }
 
 /* 参数是否为空 */
-if (empty($pay_code))
-{
-    
-    mobile_error ('返回首页','index.php','未找到对应的支付方式');
-}
-else
-{
+if (empty($pay_code)) {
+    mobile_error('返回首页', 'index.php', '未找到对应的支付方式');
+} else {
     /* 检查code里面有没有问号 */
-    if (strpos($pay_code, '?') !== false)
-    {
+    if (strpos($pay_code, '?') !== false) {
         $arr1 = explode('?', $pay_code);
         $arr2 = explode('=', $arr1[1]);
 
-        $_REQUEST['code']   = $arr1[0];
+        $_REQUEST['code'] = $arr1[0];
         $_REQUEST[$arr2[0]] = $arr2[1];
-        $_GET['code']       = $arr1[0];
-        $_GET[$arr2[0]]     = $arr2[1];
-        $pay_code           = $arr1[0];
+        $_GET['code'] = $arr1[0];
+        $_GET[$arr2[0]] = $arr2[1];
+        $pay_code = $arr1[0];
     }
 
     /* 判断是否启用 */
-    $sql = "SELECT COUNT(*) FROM " . $ecs->table('mobile_payment') . " WHERE pay_code = '$pay_code' AND enabled = 1";
-    if ($db->getOne($sql) == 0)
-    {
-         mobile_error ('返回首页','index.php','未找到对应的支付方式');
-    }
-    else
-    {
-        $plugin_file = ROOT_PATH .'mobile/includes/modules/payment/' . $pay_code . '.php';
+    $sql = 'SELECT COUNT(*) FROM '.$ecs->table('mobile_payment')." WHERE pay_code = '$pay_code' AND enabled = 1";
+    if ($db->getOne($sql) == 0) {
+        mobile_error('返回首页', 'index.php', '未找到对应的支付方式');
+    } else {
+        $plugin_file = ROOT_PATH.'mobile/includes/modules/payment/'.$pay_code.'.php';
 
         /* 检查插件文件是否存在，如果存在则验证支付是否成功，否则则返回失败信息 */
-        if (file_exists($plugin_file))
-        {
+        if (file_exists($plugin_file)) {
             /* 根据支付方式代码创建支付类的对象并调用其响应操作方法 */
-            include_once($plugin_file);
+            include_once $plugin_file;
 
             $payment = new $pay_code();
-            $msg     = (@$payment->respond()) ? $_LANG['pay_success'] : $_LANG['pay_fail'];
-        }
-        else
-        {
-            mobile_error ('返回首页','index.php','没有这样的支付方式');
+            $msg = (@$payment->respond()) ? $_LANG['pay_success'] : $_LANG['pay_fail'];
+        } else {
+            mobile_error('返回首页', 'index.php', '没有这样的支付方式');
         }
     }
 }
@@ -92,5 +78,4 @@ else
 //$smarty->assign('shop_url',   $ecs->url());
 
 //$smarty->display('respond.dwt');
-
-?>
+;

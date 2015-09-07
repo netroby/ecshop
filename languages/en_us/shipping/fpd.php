@@ -12,9 +12,7 @@
  * commercial purposes.
  * ============================================================================
  * $Author: liubo $
- * $Id: fpd.php 17217 2011-01-19 06:29:08Z liubo $
-*/
-
-$_LANG['fpd']          = 'Freight forward';
-$_LANG['fpd_desc']     = 'Payment after the product arrived';
-?>
+ * $Id: fpd.php 17217 2011-01-19 06:29:08Z liubo $.
+ */
+$_LANG['fpd'] = 'Freight forward';
+$_LANG['fpd_desc'] = 'Payment after the product arrived';

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * ECSHOP 商品類型管理語言文件
  * ============================================================================
@@ -9,8 +10,8 @@
  * 使用；不允許對程序代碼以任何形式任何目的的再發佈。
  * ============================================================================
  * $Author: liubo $
- * $Id: attribute.php 17217 2011-01-19 06:29:08Z liubo $
-*/
+ * $Id: attribute.php 17217 2011-01-19 06:29:08Z liubo $.
+ */
 
 /* 列表 */
 $_LANG['by_goods_type'] = '按商品類型顯示：';
@@ -50,7 +51,6 @@ $_LANG['attr_type_values'][0] = '唯一屬性';
 $_LANG['attr_type_values'][1] = '單選屬性';
 $_LANG['attr_type_values'][2] = '復選屬性';
 
-
 $_LANG['add_next'] = '添加下一個屬性';
 $_LANG['back_list'] = '返回屬性列表';
 
@@ -69,5 +69,3 @@ $_LANG['drop_ok'] = '成功刪除了 %d 條商品屬性';
 $_LANG['js_languages']['name_not_null'] = '請您輸入屬性名稱。';
 $_LANG['js_languages']['values_not_null'] = '請您輸入該屬性的可選值。';
 $_LANG['js_languages']['cat_id_not_null'] = '請您選擇該屬性所屬的商品類型。';
-
-?>

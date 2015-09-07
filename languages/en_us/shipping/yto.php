@@ -12,9 +12,8 @@
  * commercial purposes.
  * ============================================================================
  * $Author: liubo $
- * $Id: yto.php 17217 2011-01-19 06:29:08Z liubo $
-*/
-
+ * $Id: yto.php 17217 2011-01-19 06:29:08Z liubo $.
+ */
 $_LANG['yto'] = 'YTO Express';
 $_LANG['yto_desc'] = 'Shanghai Yuantong Express Co., Ltd. established on May 28th, 2000, is a private-owned enterprise that combines express and logistics. Through 6 years\' development, the company now has ranked the front place among the logistics and express industry in China.';
 $_LANG['item_fee'] = 'Single commodity costs:';
@@ -125,5 +124,3 @@ $_LANG['shipping_print'] = '<table border="0" cellspacing="0" cellpadding="0" st
     </td>
   </tr>
 </table>';
-
-?>

@@ -12,9 +12,8 @@
  * commercial purposes.
  * ============================================================================
  * $Author: liubo $
- * $Id: repay.php 17217 2011-01-19 06:29:08Z liubo $
-*/
-
+ * $Id: repay.php 17217 2011-01-19 06:29:08Z liubo $.
+ */
 $_LANG['back_list'] = 'Return to list';
 $_LANG['dispose_succed'] = 'Successfully';
 
@@ -48,5 +47,3 @@ $_LANG['undispose_repay'] = 'Unprocess application of refundment';
 $_LANG['list_all'] = 'All application of refundment';
 
 $_LANG['js_languages']['no_action_note'] = 'Please enter disposal remark.';
-
-?>

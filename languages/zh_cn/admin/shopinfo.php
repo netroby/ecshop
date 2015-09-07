@@ -10,9 +10,8 @@
  * 使用；不允许对程序代码以任何形式任何目的的再发布。
  * ============================================================================
  * $Author: liubo $
- * $Id: shopinfo.php 17217 2011-01-19 06:29:08Z liubo $
-*/
-
+ * $Id: shopinfo.php 17217 2011-01-19 06:29:08Z liubo $.
+ */
 $_LANG['id'] = '编号';
 $_LANG['title'] = '文章标题';
 $_LANG['add_time'] = '添加时间';
@@ -21,7 +20,7 @@ $_LANG['shopinfo_list'] = '文章列表';
 
 $_LANG['back_list'] = '返回列表';
 $_LANG['continue_add'] = '继续添加';
-$_LANG['articleadd_succeed']= '添加成功';
+$_LANG['articleadd_succeed'] = '添加成功';
 
 /* 提示信息 */
 $_LANG['title_exist'] = '文章名 %s 已经存在';
@@ -34,5 +33,3 @@ $_LANG['title_empty'] = '文章标题不能为空！';
 /*JS 语言项*/
 $_LANG['js_languages']['no_title'] = '没有文章标题';
 $_LANG['js_languages']['remove_confirm'] = '你确定要删除这条记录吗？';
-
-?>

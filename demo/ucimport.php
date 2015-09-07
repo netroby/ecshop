@@ -2,7 +2,7 @@
 
 /* 初始化变量定义 */
 $charset = 'utf-8';
-$tools_version = "v1.0";
+$tools_version = 'v1.0';
 $mysql_version = '';
 $ecshop_version = '';
 $mysql_charset = '';
@@ -15,10 +15,10 @@ $rpp = 500; // 每次处理的记录数
 define('ROOT_PATH', str_replace('\\', '/', substr(__FILE__, 0, -20)));
 define('IN_ECS', true);
 
-require(ROOT_PATH . 'data/config.php');
-require(ROOT_PATH . 'includes/cls_ecshop.php');
-require(ROOT_PATH . 'includes/cls_mysql.php');
-require(ROOT_PATH . 'includes/lib_common.php');
+require ROOT_PATH.'data/config.php';
+require ROOT_PATH.'includes/cls_ecshop.php';
+require ROOT_PATH.'includes/cls_mysql.php';
+require ROOT_PATH.'includes/lib_common.php';
 
 /* 未升级前，该常量不存在 */
 if (defined('EC_CHARSET')) {
@@ -38,19 +38,17 @@ $step = empty($step) ? 1 : $step;
 if ($ecshop_version < '2.6.0') {
     $step = 'halt';
 }
-if (!defined('UC_DBUSER') && !defined('UC_DBPW') && !defined('UC_DBNAME'))
-{
+if (!defined('UC_DBUSER') && !defined('UC_DBPW') && !defined('UC_DBNAME')) {
     $uc_config = $db->getOne("SELECT value FROM {$prefix}shop_config WHERE code='integrate_config'");
     $uc_config = unserialize($uc_config);
-    if (!empty($uc_config['db_user']) && !empty($uc_config['db_pass']) && !empty($uc_config['db_name']))
-    {
+    if (!empty($uc_config['db_user']) && !empty($uc_config['db_pass']) && !empty($uc_config['db_name'])) {
         define('UC_CONNECT', $uc_config['uc_connect']);
         define('UC_DBHOST', $uc_config['db_host']);
         define('UC_DBUSER', $uc_config['db_user']);
         define('UC_DBPW', $uc_config['db_pass']);
         define('UC_DBNAME', $uc_config['db_name']);
         define('UC_DBCHARSET', $uc_config['db_charset']);
-        define('UC_DBTABLEPRE', '`' . $uc_config['db_name'] . '`.' . $uc_config['db_pre']);
+        define('UC_DBTABLEPRE', '`'.$uc_config['db_name'].'`.'.$uc_config['db_pre']);
         define('UC_DBCONNECT', '0');
         define('UC_KEY', $uc_config['uc_key']);
         define('UC_API', $uc_config['uc_url']);
@@ -58,9 +56,7 @@ if (!defined('UC_DBUSER') && !defined('UC_DBPW') && !defined('UC_DBNAME'))
         define('UC_IP', $uc_config['uc_ip']);
         define('UC_APPID', $uc_config['uc_id']);
         define('UC_PPP', '20');
-    }
-    else
-    {
+    } else {
         $step = 'halt';
     }
 }
@@ -113,10 +109,10 @@ EOT;
         $limit = 0;
     }
     $uc_db = new cls_mysql(UC_DBHOST, UC_DBUSER, UC_DBPW, UC_DBNAME, UC_DBCHARSET, 0, 1);
-    $total_members = $uc_db->getOne("SELECT COUNT(*) FROM ". UC_DBTABLEPRE ."members");
-    $sql = "SELECT uid, username, password, email, salt FROM ". UC_DBTABLEPRE ."members ORDER BY uid ASC LIMIT $limit, $item_num";
+    $total_members = $uc_db->getOne('SELECT COUNT(*) FROM '.UC_DBTABLEPRE.'members');
+    $sql = 'SELECT uid, username, password, email, salt FROM '.UC_DBTABLEPRE."members ORDER BY uid ASC LIMIT $limit, $item_num";
     $uc_query = $uc_db->query($sql);
-    while($member = $uc_db->fetch_array($uc_query)){
+    while ($member = $uc_db->fetch_array($uc_query)) {
         $user_exists = $db->getOne("SELECT COUNT(*) FROM {$prefix}users WHERE `user_name`='{$member['username']}'");
         if (!$user_exists) {
             $sql = "INSERT INTO {$prefix}users (`email`, `user_name`, `password`, `salt`) VALUES('{$member['email']}', '{$member['username']}', '{$member['password']}', '2{$member['salt']}')";
@@ -132,7 +128,7 @@ EOT;
             ++$statistics['error'];
         }
     }
-    if (($limit+$item_num) > $total_members) {
+    if (($limit + $item_num) > $total_members) {
         $update += $statistics['update'];
         $insert += $statistics['insert'];
         $success += $statistics['success'];
@@ -144,7 +140,7 @@ EOT;
         $insert += $statistics['insert'];
         $success += $statistics['success'];
         $error += $statistics['error'];
-        $total_item = $limit+$item_num;
+        $total_item = $limit + $item_num;
         $extra = '<input type="hidden" name="update" value="'.$update.'" /><input type="hidden" name="insert" value="'.$insert.'" /><input type="hidden" name="success" value="'.$success.'" /><input type="hidden" name="error" value="'.$error.'" /><input type="hidden" name="limit" value="'.$total_item.'" />';
         $message = "<p>共有 <strong>$total_members</strong> 个会员数据</p><p>当前在导入 $limit - $total_item 的会员数据</p><p><ul><li>更新的用户数据：$update 条</li><li>新增的用户数据：$insert 条</li><li>成功的用户数据：$success 条</li><li>出错的用户数据：$error 条</li></ul></p>";
         showmessage($message, '?step=start', 'form', $extra);
@@ -152,13 +148,14 @@ EOT;
 }
 ob_end_flush();
 
-function instheader() {
+function instheader()
+{
     global $charset, $tools_version;
 
-    echo "<html><head>".
+    echo '<html><head>'.
         "<meta http-equiv=\"Content-Type\" content=\"text/html; charset=$charset\">".
         "<title>UCenter 会员数据导入工具$tools_version</title>".
-        "<style type=\"text/css\">
+        '<style type="text/css">
         a {
             color: #3A4273;
             text-decoration: none
@@ -233,7 +230,7 @@ function instheader() {
             height:30px;
         }
         </style>
-        <script type=\"text/javascript\">
+        <script type="text/javascript">
         function redirect(url) {
             window.location=url;
         }
@@ -241,37 +238,39 @@ function instheader() {
             return document.getElementById(id);
         }
         </script>
-        </head>".
-        "<body bgcolor=\"#298296\" text=\"#000000\"><div id=\"append_parent\"></div>".
-        "<table width=\"95%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" bgcolor=\"#FFFFFF\" align=\"center\"><tr><td>".
-              "<table width=\"98%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" align=\"center\"><tr>".
+        </head>'.
+        '<body bgcolor="#298296" text="#000000"><div id="append_parent"></div>'.
+        '<table width="95%" border="0" cellspacing="0" cellpadding="0" bgcolor="#FFFFFF" align="center"><tr><td>'.
+              '<table width="98%" border="0" cellspacing="0" cellpadding="0" align="center"><tr>'.
               "<td class=\"install\" height=\"30\" valign=\"bottom\"><font color=\"#FF0000\">&gt;&gt;</font> UCenter 会员数据导入工具$tools_version".
-              "</td></tr><tr><td><hr noshade align=\"center\" width=\"100%\" size=\"1\"></td></tr><tr><td colspan=\"2\">";
+              '</td></tr><tr><td><hr noshade align="center" width="100%" size="1"></td></tr><tr><td colspan="2">';
 }
 
-function instfooter() {
-    echo "</td></tr><tr><td><hr noshade align=\"center\" width=\"100%\" size=\"1\"></td></tr>".
-            "<tr><td align=\"center\">".
-                "<b style=\"font-size: 11px\">Powered by <a href=\"http://www.ecshop.com\" target=\"_blank\"><span style=\"color:#FF6100\">ECShop</span>".
-              "</a></b>&nbsp; &copy; 2005-2011 上海商派网络科技有限公司。<br /><br />".
-              "</td></tr></table></td></tr></table>".
-        "</body></html>";
+function instfooter()
+{
+    echo '</td></tr><tr><td><hr noshade align="center" width="100%" size="1"></td></tr>'.
+            '<tr><td align="center">'.
+                '<b style="font-size: 11px">Powered by <a href="http://www.ecshop.com" target="_blank"><span style="color:#FF6100">ECShop</span>'.
+              '</a></b>&nbsp; &copy; 2005-2011 上海商派网络科技有限公司。<br /><br />'.
+              '</td></tr></table></td></tr></table>'.
+        '</body></html>';
 }
 
-function showmessage($message, $url_forward = '', $msgtype = 'message', $extra = '', $delaymsec = 1000) {
+function showmessage($message, $url_forward = '', $msgtype = 'message', $extra = '', $delaymsec = 1000)
+{
     //以表单的形式显示信息
-    if($msgtype == 'form') {
+    if ($msgtype == 'form') {
         $message = "<form method=\"post\" action=\"$url_forward\" name=\"hidden_form\">".
         "<br><p class=\"p_indent\">$message</p>\n $extra</form><br>".
         '<script type="text/javascript">
-            setTimeout("document.forms[\'hidden_form\'].submit()", '. $delaymsec .');
+            setTimeout("document.forms[\'hidden_form\'].submit()", '.$delaymsec.');
         </script>';
     } else {
-        if($url_forward) {
+        if ($url_forward) {
             $message .= "<script>setTimeout(\"redirect('$url_forward');\", $delaymsec);</script>";
             $message .= "<br><div align=\"right\">[<a href=\"$script_name\" style=\"color:red\">停止运行</a>]<br><br><a href=\"$url_forward\">如果您的浏览器长时间没有自动跳转，请点击这里！</a></div>";
         } else {
-            $message .= "<br /><br /><br />";
+            $message .= '<br /><br /><br />';
         }
         $message = "<br>$message$extra<br><br>";
     }
@@ -281,14 +280,15 @@ function showmessage($message, $url_forward = '', $msgtype = 'message', $extra =
     exit;
 }
 
-function get_mysql_charset() {
+function get_mysql_charset()
+{
     global $db, $prefix;
     $tmp_charset = '';
     $query = $db->query("SHOW CREATE TABLE `{$prefix}users`", 'SILENT');
     if ($query) {
         $tablestruct = $db->fetch_array($query, MYSQL_NUM);
         preg_match("/CHARSET=(\w+)/", $tablestruct[1], $m);
-        if (!empty($m)){
+        if (!empty($m)) {
             if (strpos($m[1], 'utf') === 0) {
                 $tmp_charset = str_replace('utf', 'utf-', $m[1]);
             } else {
@@ -296,15 +296,18 @@ function get_mysql_charset() {
             }
         }
     }
+
     return $tmp_charset;
 }
 
-function getgpc($k, $var='G') {
-    switch($var) {
+function getgpc($k, $var = 'G')
+{
+    switch ($var) {
         case 'G': $var = &$_GET; break;
         case 'P': $var = &$_POST; break;
         case 'C': $var = &$_COOKIE; break;
         case 'R': $var = &$_REQUEST; break;
     }
-    return isset($var[$k]) ? $var[$k] : NULL;
+
+    return isset($var[$k]) ? $var[$k] : null;
 }

@@ -10,9 +10,8 @@
  * 使用；不允許對程序代碼以任何形式任何目的的再發佈。
  * ==========================================================
  * $Author: liubo $
- * $Id: attention_list.php 17217 2011-01-19 06:29:08Z liubo $
+ * $Id: attention_list.php 17217 2011-01-19 06:29:08Z liubo $.
  */
-
 $_LANG['goods_name'] = '商品名稱';
 $_LANG['goods_last_update'] = '最新更新日期';
 $_LANG['attention_addtolist'] = '插入發送隊列';
@@ -24,4 +23,3 @@ $_LANG['finish_list'] = '已經插入 %s 條記錄,請稍後~';
 $_LANG['finishing'] = '正在生成請稍後';
 $_LANG['edit_ok'] = '操作成功！';
 $_LANG['batch_note'] = '將此日期後更新的商品全部插入發送隊列：';
-?>

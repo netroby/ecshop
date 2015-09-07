@@ -12,9 +12,8 @@
  * commercial purposes.
  * ============================================================================
  * $Author: liubo $
- * $Id: shipping_area.php 17217 2011-01-19 06:29:08Z liubo $
-*/
-
+ * $Id: shipping_area.php 17217 2011-01-19 06:29:08Z liubo $.
+ */
 $_LANG['shipping_area_name'] = 'Shipping area name';
 $_LANG['shipping_area_districts'] = 'Area list';
 $_LANG['shipping_area_regions'] = 'Region';
@@ -63,4 +62,3 @@ $_LANG['js_languages']['lang_setup'] = 'Setup';
 $_LANG['js_languages']['lang_region'] = 'Region';
 $_LANG['js_languages']['lang_shipping'] = 'Shipping method';
 $_LANG['js_languages']['region_exists'] = 'The region already exists.';
-?>

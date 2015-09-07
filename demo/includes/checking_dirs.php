@@ -22,7 +22,5 @@ $checking_dirs = array(
                     'temp/compiled/admin',
                     'temp/query_caches/',
                     'temp/static_caches/',
-                    'themes'
+                    'themes',
                     );
-
-?>

@@ -12,8 +12,8 @@
  * commercial purposes.
  * ============================================================================
  * $Author: liubo $
- * $Id: group_buy.php 17217 2011-01-19 06:29:08Z liubo $
-*/
+ * $Id: group_buy.php 17217 2011-01-19 06:29:08Z liubo $.
+ */
 
 /* Current page title and useable link name */
 $_LANG['group_buy_list'] = 'Associates list';
@@ -46,7 +46,7 @@ $_LANG['label_end_date'] = 'Deadline:';
 $_LANG['notice_datetime'] = '(Year Month Day - Hour)';
 $_LANG['label_deposit'] = 'Insurance:';
 $_LANG['label_restrict_amount'] = 'Limit quantity:';
-$_LANG['notice_restrict_amount']= 'Reach the quantity, associates stop automatically. 0 means no limit quantity.';
+$_LANG['notice_restrict_amount'] = 'Reach the quantity, associates stop automatically. 0 means no limit quantity.';
 $_LANG['label_gift_integral'] = 'Present points:';
 $_LANG['label_price_ladder'] = 'Price step:';
 $_LANG['notice_ladder_amount'] = 'Reach quantity';
@@ -104,5 +104,3 @@ $_LANG['no_select_group_buy'] = 'Events do not buy your records!';
 
 /* Operation logs */
 $_LANG['log_action']['group_buy'] = 'Associates product';
-
-?>

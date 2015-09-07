@@ -10,8 +10,8 @@
  * 使用；不允许对程序代码以任何形式任何目的的再发布。
  * ============================================================================
  * $Author: liubo $
- * $Id: group_buy.php 17217 2011-01-19 06:29:08Z liubo $
-*/
+ * $Id: group_buy.php 17217 2011-01-19 06:29:08Z liubo $.
+ */
 
 /* 当前页面标题及可用链接名称 */
 $_LANG['group_buy_list'] = '团购活动列表';
@@ -44,7 +44,7 @@ $_LANG['label_end_date'] = '活动结束时间：';
 $_LANG['notice_datetime'] = '（年月日－时）';
 $_LANG['label_deposit'] = '保证金：';
 $_LANG['label_restrict_amount'] = '限购数量：';
-$_LANG['notice_restrict_amount']= '达到此数量，团购活动自动结束。0表示没有数量限制。';
+$_LANG['notice_restrict_amount'] = '达到此数量，团购活动自动结束。0表示没有数量限制。';
 $_LANG['label_gift_integral'] = '赠送积分数：';
 $_LANG['label_price_ladder'] = '价格阶梯：';
 $_LANG['notice_ladder_amount'] = '数量达到';
@@ -102,5 +102,3 @@ $_LANG['no_select_group_buy'] = '您现在没有团购活动记录！';
 
 /* 操作日志 */
 $_LANG['log_action']['group_buy'] = '团购商品';
-
-?>

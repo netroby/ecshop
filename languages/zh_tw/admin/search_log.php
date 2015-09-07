@@ -10,14 +10,11 @@
  * 使用；不允許對程序代碼以任何形式任何目的的再發佈。
  * ==========================================================
  * $Author: liubo $
- * $Id: search_log.php 17217 2011-01-19 06:29:08Z liubo $
+ * $Id: search_log.php 17217 2011-01-19 06:29:08Z liubo $.
  */
-
 $_LANG['keywords'] = '關鍵字';
 $_LANG['date'] = '日期';
 $_LANG['hits'] = '搜索次數';
 $_LANG['start_date'] = '開始日期';
 $_LANG['end_date'] = '結束日期';
 $_LANG['query'] = '查詢';
-
-?>

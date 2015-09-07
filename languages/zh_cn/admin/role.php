@@ -10,8 +10,8 @@
  * 使用；不允许对程序代码以任何形式任何目的的再发布。
  * ============================================================================
  * $Author: sunxiaodong $
- * $Id: privilege.php 15587 2009-02-10 07:02:30Z sunxiaodong $
-*/
+ * $Id: privilege.php 15587 2009-02-10 07:02:30Z sunxiaodong $.
+ */
 
 /* 字段信息 */
 $_LANG['user_id'] = '编号';
@@ -91,4 +91,3 @@ $_LANG['label_captcha'] = '验证码：';
 $_LANG['click_for_another'] = '看不清？点击更换另一个验证码。';
 $_LANG['signin_now'] = '进入管理中心';
 $_LANG['remember'] = '请保存我这次的登录信息。';
-?>

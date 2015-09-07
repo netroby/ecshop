@@ -10,9 +10,8 @@
  * 使用；不允许对程序代码以任何形式任何目的的再发布。
  * ==========================================================
  * $Author: liubo $
- * $Id: magazine_list.php 17217 2011-01-19 06:29:08Z liubo $
+ * $Id: magazine_list.php 17217 2011-01-19 06:29:08Z liubo $.
  */
-
 $_LANG['add_new'] = '添加新杂志';
 $_LANG['magazine_name'] = '杂志标题';
 $_LANG['magazine_edit'] = '编辑';
@@ -31,5 +30,3 @@ $_LANG['go_list'] = '返回列表';
 $_LANG['edit_ok'] = '操作成功！';
 $_LANG['email_user'] = '邮件订阅用户';
 $_LANG['user_list'] = '全体会员';
-
-?>

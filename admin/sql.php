@@ -10,17 +10,15 @@
  * 使用；不允许对程序代码以任何形式任何目的的再发布。
  * ============================================================================
  * $Author: liubo $
- * $Id: sql.php 17217 2011-01-19 06:29:08Z liubo $
-*/
-
+ * $Id: sql.php 17217 2011-01-19 06:29:08Z liubo $.
+ */
 define('IN_ECS', true);
 
-require(dirname(__FILE__) . '/includes/init.php');
+require dirname(__FILE__).'/includes/init.php';
 
 $_POST['sql'] = !empty($_POST['sql']) ? trim($_POST['sql']) : '';
 
-if (!$_POST['sql'])
-{
+if (!$_POST['sql']) {
     $_REQUEST['act'] = 'main';
 }
 
@@ -28,8 +26,7 @@ if (!$_POST['sql'])
 //-- 用户帐号列表
 /*------------------------------------------------------ */
 
-if ($_REQUEST['act'] == 'main')
-{
+if ($_REQUEST['act'] == 'main') {
     admin_priv('sql_query');
     assign_query_info();
     $smarty->assign('type',    -1);
@@ -38,8 +35,7 @@ if ($_REQUEST['act'] == 'main')
     $smarty->display('sql.htm');
 }
 
-if ($_REQUEST['act'] == 'query')
-{
+if ($_REQUEST['act'] == 'query') {
     admin_priv('sql_query');
     assign_sql($_POST['sql']);
     assign_query_info();
@@ -49,12 +45,7 @@ if ($_REQUEST['act'] == 'query')
 }
 
 /**
- *
- *
- * @access  public
  * @param
- *
- * @return void
  */
 function assign_sql($sql)
 {
@@ -66,79 +57,59 @@ function assign_sql($sql)
     /* 解析查询项 */
     $sql = str_replace("\r", '', $sql);
     $query_items = explode(";\n", $sql);
-    foreach ($query_items as $key=>$value)
-    {
-        if (empty($value))
-        {
+    foreach ($query_items as $key => $value) {
+        if (empty($value)) {
             unset($query_items[$key]);
         }
     }
     /* 如果是多条语句，拆开来执行 */
-    if (count($query_items) > 1)
-    {
-        foreach ($query_items as $key=>$value)
-        {
-            if ($db->query($value, 'SILENT'))
-            {
+    if (count($query_items) > 1) {
+        foreach ($query_items as $key => $value) {
+            if ($db->query($value, 'SILENT')) {
                 $smarty->assign('type',  1);
-            }
-            else
-            {
+            } else {
                 $smarty->assign('type',  0);
                 $smarty->assign('error', $db->error());
+
                 return;
             }
         }
+
         return; //退出函数
     }
 
     /* 单独一条sql语句处理 */
-    if (preg_match("/^(?:UPDATE|DELETE|TRUNCATE|ALTER|DROP|FLUSH|INSERT|REPLACE|SET|CREATE)\\s+/i", $sql))
-    {
-        if ($db->query($sql, 'SILENT'))
-        {
+    if (preg_match('/^(?:UPDATE|DELETE|TRUNCATE|ALTER|DROP|FLUSH|INSERT|REPLACE|SET|CREATE)\\s+/i', $sql)) {
+        if ($db->query($sql, 'SILENT')) {
             $smarty->assign('type',  1);
-        }
-        else
-        {
+        } else {
             $smarty->assign('type',  0);
             $smarty->assign('error', $db->error());
         }
-    }
-    else
-    {
+    } else {
         $data = $db->GetAll($sql);
-        if ($data === false)
-        {
+        if ($data === false) {
             $smarty->assign('type',  0);
             $smarty->assign('error', $db->error());
-        }
-        else
-        {
+        } else {
             $result = '';
-            if (is_array($data) && isset($data[0]) === true)
-            {
+            if (is_array($data) && isset($data[0]) === true) {
                 $result = "<table> \n <tr>";
                 $keys = array_keys($data[0]);
-                for ($i = 0, $num = count($keys); $i < $num; $i++)
-                {
-                    $result .= "<th>" . $keys[$i] . "</th>\n";
+                for ($i = 0, $num = count($keys); $i < $num; ++$i) {
+                    $result .= '<th>'.$keys[$i]."</th>\n";
                 }
                 $result .= "</tr> \n";
-                foreach ($data AS $data1)
-                {
+                foreach ($data as $data1) {
                     $result .= "<tr>\n";
-                    foreach ($data1 AS $value)
-                    {
-                        $result .= "<td>" . $value . "</td>";
+                    foreach ($data1 as $value) {
+                        $result .= '<td>'.$value.'</td>';
                     }
                     $result .= "</tr>\n";
                 }
                 $result .= "</table>\n";
-            }
-            else
-            {
-                $result ="<center><h3>" . $_LANG['no_data'] . "</h3></center>";
+            } else {
+                $result = '<center><h3>'.$_LANG['no_data'].'</h3></center>';
             }
 
             $smarty->assign('type',   2);
@@ -146,5 +117,3 @@ function assign_sql($sql)
         }
     }
 }
-
-?>

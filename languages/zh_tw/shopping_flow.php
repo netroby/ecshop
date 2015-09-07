@@ -10,9 +10,8 @@
  * 使用；不允許對程序代碼以任何形式任何目的的再發佈。
  * ============================================================================
  * $Author: liubo $
- * $Id: shopping_flow.php 17217 2011-01-19 06:29:08Z liubo $
-*/
-
+ * $Id: shopping_flow.php 17217 2011-01-19 06:29:08Z liubo $.
+ */
 $_LANG['flow_login_register']['username_not_null'] = '請您輸入用戶名。';
 $_LANG['flow_login_register']['username_invalid'] = '您輸入了一個無效的用戶名。';
 $_LANG['flow_login_register']['password_not_null'] = '請您輸入密碼。';
@@ -21,7 +20,7 @@ $_LANG['flow_login_register']['email_invalid'] = '您輸入的電子郵件不正確。';
 $_LANG['flow_login_register']['password_not_same'] = '您輸入的密碼和確認密碼不一致。';
 $_LANG['flow_login_register']['password_lt_six'] = '密碼不能小於6個字符。';
 
-$_LANG['regist_success'] = "恭喜您，%s 賬號註冊成功!";
+$_LANG['regist_success'] = '恭喜您，%s 賬號註冊成功!';
 $_LANG['login_success'] = '恭喜！您已經成功登陸本站！';
 
 /* 購物車 */
@@ -39,8 +38,8 @@ $_LANG['username_exists'] = '您輸入的用戶名已存在，請換一個試試。';
 $_LANG['email_exists'] = '您輸入的電子郵件已存在，請換一個試試。';
 $_LANG['surplus_not_enough'] = '您使用的餘額不能超過您現有的餘額。';
 $_LANG['integral_not_enough'] = '您使用的積分不能超過您現有的積分。';
-$_LANG['integral_too_much'] = "您使用的積分不能超過%d";
-$_LANG['invalid_bonus'] = "您選擇的紅包並不存在。";
+$_LANG['integral_too_much'] = '您使用的積分不能超過%d';
+$_LANG['invalid_bonus'] = '您選擇的紅包並不存在。';
 $_LANG['no_goods_in_cart'] = '您的購物車中沒有商品！';
 $_LANG['not_submit_order'] = '您參與本次團購商品的訂單已提交，請勿重複操作！';
 $_LANG['pay_success'] = '本次支付已經成功，我們將盡快為您發貨。';
@@ -155,7 +154,7 @@ $_LANG['back_home'] = '<a href="index.php">返回首頁</a>';
 $_LANG['goto_user_center'] = '<a href="user.php">用戶中心</a>';
 $_LANG['order_submit_back'] = '您可以 %s 或去 %s';
 
-$_LANG['order_placed_sms'] = "您有新訂單.收貨人:%s 電話:%s";
+$_LANG['order_placed_sms'] = '您有新訂單.收貨人:%s 電話:%s';
 $_LANG['sms_paid'] = '已付款';
 
 $_LANG['notice_gb_order_amount'] = '（備註：團購如果有保證金，第一次只需支付保證金和相應的支付費用）';
@@ -168,8 +167,6 @@ $_LANG['bonus_sn_error'] = '該紅包序列號不正確';
 $_LANG['bonus_min_amount_error'] = '訂單商品金額沒有達到使用該紅包的最低金額 %s';
 $_LANG['bonus_is_ok'] = '該紅包序列號可以使用，可以抵扣 %s';
 
-
 $_LANG['shopping_myship'] = '我的配送';
 $_LANG['shopping_activity'] = '活動列表';
 $_LANG['shopping_package'] = '超值禮包列表';
-?>

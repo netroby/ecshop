@@ -12,14 +12,11 @@
  * commercial purposes.
  * ============================================================================
  * $Author: liubo $
- * $Id: bank.php 17217 2011-01-19 06:29:08Z liubo $
+ * $Id: bank.php 17217 2011-01-19 06:29:08Z liubo $.
  */
-
 global $_LANG;
 
-$_LANG['bank']      = 'Bank transfer/Virement';
-$_LANG['bank_desc'] = 'Bank' . chr(13) .
-                        'Payee\'s information: Name ¡Á¡Á¡Á : Account number or address ¡Á¡Á¡Á : Bank of deposit ¡Á¡Á¡Á.' . chr(13) .
+$_LANG['bank'] = 'Bank transfer/Virement';
+$_LANG['bank_desc'] = 'Bank'.chr(13).
+                        'Payee\'s information: Name ¡Á¡Á¡Á : Account number or address ¡Á¡Á¡Á : Bank of deposit ¡Á¡Á¡Á.'.chr(13).
                         'Announcements: If telegraphic money order, please note your order number in "appropriation of remittance".';
-
-?>

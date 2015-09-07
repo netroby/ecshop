@@ -12,8 +12,8 @@
  * commercial purposes.
  * ============================================================================
  * $Author: liubo $
- * $Id: virtual_card.php 17217 2011-01-19 06:29:08Z liubo $
-*/
+ * $Id: virtual_card.php 17217 2011-01-19 06:29:08Z liubo $.
+ */
 
 /*------------------------------------------------------ */
 //-- Card information
@@ -32,7 +32,7 @@ $_LANG['action_fail'] = 'Operation fail';
 $_LANG['card'] = 'Card list';
 
 $_LANG['batch_card_add'] = 'Batch add products';
-$_LANG['download_file'] ='Download batch CSV files.';
+$_LANG['download_file'] = 'Download batch CSV files.';
 $_LANG['separator'] = 'Separating character';
 $_LANG['uploadfile'] = 'Upload file';
 $_LANG['sql_error'] = 'NO. %s information was wrong:<br /> ';
@@ -53,14 +53,12 @@ $_LANG['js_languages']['no_card_sn'] = 'Card NO. or Card Password is blank.';
 $_LANG['js_languages']['separator_not_null'] = 'Separating character can\'t be blank.';
 $_LANG['js_languages']['uploadfile_not_null'] = 'Please select upload file.';
 
-
-
-$_LANG['use_help'] = 'Help:' .
-        '<ol>' .
-          '<li>Upload file should be CSV file<br />' .
+$_LANG['use_help'] = 'Help:'.
+        '<ol>'.
+          '<li>Upload file should be CSV file<br />'.
               'Sequential fill in every row by card ID, password, deadline, these item set off by \',\' or \';\' . But nonsupport \'blank\'<br />'.
           '<li>Password and deadline can be blank, deadline format should be \'2006-11-6\' or \'2006/11/6\''.
-          '<li>You had better not use chinese in the file to avoid junk.</li>' .
+          '<li>You had better not use chinese in the file to avoid junk.</li>'.
         '</ol>';
 
 /*------------------------------------------------------ */
@@ -68,11 +66,11 @@ $_LANG['use_help'] = 'Help:' .
 /*------------------------------------------------------ */
 
 $_LANG['virtual_card_change'] = 'Change encrypt string';
-$_LANG['user_guide'] = 'Direction:' .
-        '<ol>' .
-          '<li>Encrypt string use for ID and passwrod of encrypt virtual card</li>' .
-          '<li>Encrypt string saved in data/config.php, corresponding constants is AUTH_KEY</li>' .
-          '<li>If you want to change encrypt string, enter old encrypt string and new encrypt string in the textbox, check \'Confirm\' push the button</li>' .
+$_LANG['user_guide'] = 'Direction:'.
+        '<ol>'.
+          '<li>Encrypt string use for ID and passwrod of encrypt virtual card</li>'.
+          '<li>Encrypt string saved in data/config.php, corresponding constants is AUTH_KEY</li>'.
+          '<li>If you want to change encrypt string, enter old encrypt string and new encrypt string in the textbox, check \'Confirm\' push the button</li>'.
         '</ol>';
 $_LANG['label_old_string'] = 'Old encrypt string';
 $_LANG['label_new_string'] = 'New encrypt string';
@@ -88,4 +86,3 @@ $_LANG['new_stat'] = '<strong>Update success</strong>, now %s records are encryp
 $_LANG['update_error'] = 'Update was wrong: %s';
 $_LANG['js_languages']['updating_info'] = '<strong>Updating</strong>(Each 100 records)';
 $_LANG['js_languages']['updated_info'] = '<strong>Updated</strong> <span id=\"updated\">0</span> records.';
-?>

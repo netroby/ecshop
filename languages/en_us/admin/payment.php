@@ -12,9 +12,8 @@
  * commercial purposes.
  * ============================================================================
  * $Author: liubo $
- * $Id: payment.php 17217 2011-01-19 06:29:08Z liubo $
-*/
-
+ * $Id: payment.php 17217 2011-01-19 06:29:08Z liubo $.
+ */
 $_LANG['payment'] = 'Payment mothod';
 $_LANG['payment_name'] = 'Name';
 $_LANG['version'] = 'Version';
@@ -41,9 +40,8 @@ $_LANG['payment_not_available'] = 'The payment plug-in don\'t exist or have not 
 
 $_LANG['js_languages']['lang_removeconfirm'] = 'Are you sure remove the payment method?';
 
-$_LANG['ctenpay']           = 'Choi pay immediately Merchant Registration No.';
-$_LANG['ctenpay_url']       = 'http://union.tenpay.com/mch/mch_register_b2c.shtml?sp_suggestuser=542554970';
-$_LANG['ctenpayc2c_url']    = 'https://www.tenpay.com/mchhelper/mch_register_c2c.shtml?sp_suggestuser=542554970';
-$_LANG['tenpay']  = 'tenpay';
+$_LANG['ctenpay'] = 'Choi pay immediately Merchant Registration No.';
+$_LANG['ctenpay_url'] = 'http://union.tenpay.com/mch/mch_register_b2c.shtml?sp_suggestuser=542554970';
+$_LANG['ctenpayc2c_url'] = 'https://www.tenpay.com/mchhelper/mch_register_c2c.shtml?sp_suggestuser=542554970';
+$_LANG['tenpay'] = 'tenpay';
 $_LANG['tenpayc2c'] = 'Intermediary security';
-?>

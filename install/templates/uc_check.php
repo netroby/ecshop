@@ -10,13 +10,13 @@
 <script type="text/javascript" src="js/draggable.js"></script>
 <script type="text/javascript">
 var $_LANG = {};
-<?php foreach($lang['js_languages'] as $key => $item): ?>
+<?php foreach ($lang['js_languages'] as $key => $item): ?>
 $_LANG["<?php echo $key;?>"] = "<?php echo $item;?>";
 <?php endforeach; ?>
 </script>
 </head>
 <body id="checking">
-<?php include ROOT_PATH . 'install/templates/header.php';?>
+<?php include ROOT_PATH.'install/templates/header.php';?>
 <form id="js-setup" method="post">
 <table border="0" cellpadding="0" cellspacing="0" style="margin:0 auto;">
 <tr>
@@ -73,7 +73,7 @@ $_LANG["<?php echo $key;?>"] = "<?php echo $item;?>";
 <div id="copyright">
     <div id="copyright-inside">
 
-      <?php include ROOT_PATH . 'install/templates/copyright.php';?></div>
+      <?php include ROOT_PATH.'install/templates/copyright.php';?></div>
 </div>
 </form>
 

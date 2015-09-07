@@ -10,13 +10,13 @@
 <script type="text/javascript" src="js/setting.js"></script>
 <script type="text/javascript">
 var $_LANG = {};
-<?php foreach($lang['js_languages'] as $key => $item): ?>
+<?php foreach ($lang['js_languages'] as $key => $item): ?>
 $_LANG["<?php echo $key;?>"] = "<?php echo $item;?>";
 <?php endforeach; ?>
 </script>
 </head>
 <body id="checking">
-<?php include ROOT_PATH . 'install/templates/header.php';?>
+<?php include ROOT_PATH.'install/templates/header.php';?>
 <div id="content">
 <p style="font-size:30px;text-align: center;margin-top:50px;">
 <?php echo $lang['loading'];?>
@@ -26,7 +26,7 @@ $_LANG["<?php echo $key;?>"] = "<?php echo $item;?>";
 <div id="copyright">
     <div id="copyright-inside">
 
-      <?php include ROOT_PATH . 'install/templates/copyright.php';?></div>
+      <?php include ROOT_PATH.'install/templates/copyright.php';?></div>
 </div>
 <script type="text/javascript">
 Ajax.call('cloud.php?step=setting_ui','', setting_ui_api, 'GET', 'TEXT','FLASE');

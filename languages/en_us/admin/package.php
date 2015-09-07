@@ -10,9 +10,8 @@
  * 使用；不允许对程序代码以任何形式任何目的的再发布。
  * ============================================================================
  * $Author $
- * $Id $
-*/
-
+ * $Id $.
+ */
 $_LANG['package_id'] = 'id';
 $_LANG['package_name'] = 'name';
 $_LANG['goodsid'] = 'Events related merchandise';
@@ -53,5 +52,3 @@ $_LANG['js_languages']['invalid_endtime'] = 'Enter the time format is not the en
 $_LANG['js_languages']['invalid_gt'] = 'Enter the end time should be greater than start date';
 $_LANG['js_languages']['search_is_null'] = 'No english to any merchandise, please re-english';
 $_LANG['js_languages']['invalid_package_price'] = 'Package price is empty or is not a figure';
-
-?>

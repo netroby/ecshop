@@ -12,8 +12,8 @@
  * commercial purposes.
  * ============================================================================
  * $Author: liubo $
- * $Id: admin_logs.php 17217 2011-01-19 06:29:08Z liubo $
-*/
+ * $Id: admin_logs.php 17217 2011-01-19 06:29:08Z liubo $.
+ */
 /* Field information */
 $_LANG['log_id'] = 'NO.';
 $_LANG['log_time'] = 'Time';
@@ -41,5 +41,3 @@ $_LANG['js_languages']['select_date_value'] = 'If you will delete the log, pleas
 /* Prompting message */
 $_LANG['drop_sueeccud'] = 'Successfully!';
 $_LANG['batch_drop_success'] = 'Delete %d records successfully.';
-
-?>

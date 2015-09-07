@@ -10,9 +10,8 @@
  * 使用；不允许对程序代码以任何形式任何目的的再发布。
  * ============================================================================
  * $Author: testyang $
- * $Id: filecheck.php 15013 2008-10-23 09:31:42Z testyang $
-*/
-
+ * $Id: filecheck.php 15013 2008-10-23 09:31:42Z testyang $.
+ */
 $_LANG['filecheck_verifying'] = 'Check files in progress, please wait......';
 $_LANG['filecheck_tips_step1'] = 'ECSHOP check documents for the official release of the documents as the basis for cross-checking, click the button below to start checking。';
 $_LANG['filecheck_start'] = 'Start';
@@ -37,4 +36,3 @@ $_LANG['filename'] = 'File Name';
 $_LANG['filesize'] = 'File size';
 $_LANG['filemtime'] = 'Last modified';
 $_LANG['filecheck_nofound_md5file'] = 'Check file does not exist and can not do this';
-?>

@@ -12,9 +12,8 @@
  * commercial purposes.
  * ============================================================================
  * $Author: liubo $
- * $Id: shipping.php 17217 2011-01-19 06:29:08Z liubo $
-*/
-
+ * $Id: shipping.php 17217 2011-01-19 06:29:08Z liubo $.
+ */
 $_LANG['shipping_name'] = 'Name';
 $_LANG['shipping_version'] = 'Version';
 $_LANG['shipping_desc'] = 'Description';
@@ -79,10 +78,9 @@ $_LANG['js_languages']['lang_removeconfirm'] = 'Are you sure uninstall the shipp
 $_LANG['js_languages']['shipping_area'] = 'Config area';
 $_LANG['js_languages']['upload_falid'] = 'Error: file type is not correct. Please upload "%s" type of file!';
 $_LANG['js_languages']['upload_del_falid'] = 'Error: Delete failed!';
-$_LANG['js_languages']['upload_del_confirm'] = "Tip: Do you confirm the deletion to print a single image?";
+$_LANG['js_languages']['upload_del_confirm'] = 'Tip: Do you confirm the deletion to print a single image?';
 $_LANG['js_languages']['no_select_upload'] = "Error: You do not choose to print a single image. Please use the 'Browse ...' button to select!";
-$_LANG['js_languages']['no_select_lable'] = "Operation terminated! You did not choose any label.";
-$_LANG['js_languages']['no_add_repeat_lable'] = "Operation failed! Not allowed to add a duplicate label.";
-$_LANG['js_languages']['no_select_lable_del'] = "Delete Failed! You do not select any label.";
-$_LANG['js_languages']['recovery_default_suer'] = "To restore the default do you confirm? Restore Default will display the contents of the installation.";
-?>
+$_LANG['js_languages']['no_select_lable'] = 'Operation terminated! You did not choose any label.';
+$_LANG['js_languages']['no_add_repeat_lable'] = 'Operation failed! Not allowed to add a duplicate label.';
+$_LANG['js_languages']['no_select_lable_del'] = 'Delete Failed! You do not select any label.';
+$_LANG['js_languages']['recovery_default_suer'] = 'To restore the default do you confirm? Restore Default will display the contents of the installation.';

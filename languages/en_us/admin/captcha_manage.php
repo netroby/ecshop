@@ -10,9 +10,8 @@
  * 使用；不允许对程序代码以任何形式任何目的的再发布。
  * ============================================================================
  * $Author: liubo $
- * $Id: captcha_manage.php 17217 2011-01-19 06:29:08Z liubo $
-*/
-
+ * $Id: captcha_manage.php 17217 2011-01-19 06:29:08Z liubo $.
+ */
 $_LANG['captcha_manage'] = 'Verification Code Set';
 $_LANG['captcha_note'] = 'Open Verification Code required GD library server support, and your server does not install the GD library.';
 
@@ -37,4 +36,3 @@ $_LANG['js_languages']['proper_height'] = 'The height of the picture must betwee
 
 $_LANG['save_ok'] = 'Set up to preserve the success of';
 $_LANG['captcha_message'] = 'Message Board Guest Book';
-?>

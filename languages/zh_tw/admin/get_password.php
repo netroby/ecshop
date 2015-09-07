@@ -10,8 +10,8 @@
  * 使用；不允許對程序代碼以任何形式任何目的的再發佈。
  * ============================================================================
  * $Author: liubo $
- * $Id: get_password.php 17217 2011-01-19 06:29:08Z liubo $
-*/
+ * $Id: get_password.php 17217 2011-01-19 06:29:08Z liubo $.
+ */
 
 /* 字段信息 */
 $_LANG['user_name'] = '管理員用戶名';
@@ -39,5 +39,3 @@ $_LANG['code_param_error'] = '您執行了一個不合法的請求，請返回！';
 $_LANG['send_success'] = '重置密碼的郵件已經發到您的郵箱：';
 $_LANG['update_pwd_success'] = '您的新密碼已修改成功！';
 $_LANG['update_pwd_failed'] = '修改新密碼失敗！';
-
-?>

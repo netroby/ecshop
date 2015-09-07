@@ -10,9 +10,8 @@
  * 使用；不允許對程序代碼以任何形式任何目的的再發佈。
  * ==========================================================
  * $Author: liubo $
- * $Id: navigator.php 17217 2011-01-19 06:29:08Z liubo $
+ * $Id: navigator.php 17217 2011-01-19 06:29:08Z liubo $.
  */
-
 $_LANG['add_new'] = '添加導航';
 $_LANG['system_main'] = '系統內容';
 $_LANG['item_name'] = '名稱';
@@ -45,5 +44,3 @@ $_LANG['namecannotnull'] = '請輸入導航欄名稱！';
 $_LANG['linkcannotnull'] = '請輸入鏈接地址！';
 
 $_LANG['notice_url'] = '如果是本站的網址，可縮寫為與商城根目錄相對地址，如index.php；<br>其他情況都應該輸入完整的網址，如http://www.ecshop.com/';
-
-?>

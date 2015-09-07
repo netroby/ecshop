@@ -10,10 +10,9 @@
  * 使用；不允許對程序代碼以任何形式任何目的的再發佈。
  * ============================================================================
  * $Author: liubo $
- * $Id: picture_batch.php 17217 2011-01-19 06:29:08Z liubo $
-*/
-
-$_LANG['notes'] = "圖片批量處理允許您重新生成商品的縮略圖以及重新添加水印。<br />該處理過程可能會比較慢，請您耐心等候。";
+ * $Id: picture_batch.php 17217 2011-01-19 06:29:08Z liubo $.
+ */
+$_LANG['notes'] = '圖片批量處理允許您重新生成商品的縮略圖以及重新添加水印。<br />該處理過程可能會比較慢，請您耐心等候。';
 $_LANG['change_link'] = '為處理後圖片生成新鏈接';
 $_LANG['yes_change'] = '新生成圖片使用新名稱，並刪除舊圖片';
 $_LANG['do_album'] = '處理商品相冊';
@@ -41,5 +40,3 @@ $_LANG['js_languages']['no_action'] = '你沒選擇任何操作';
 
 $_LANG['silent'] = '出錯時忽略錯誤,繼續執行程序';
 $_LANG['no_silent'] = '出錯時立即提示，並中止程序';
-
-?>

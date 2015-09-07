@@ -10,9 +10,8 @@
  * 使用；不允許對程序代碼以任何形式任何目的的再發佈。
  * ============================================================================
  * $Author: liubo $
- * $Id: goods.php 17217 2011-01-19 06:29:08Z liubo $
+ * $Id: goods.php 17217 2011-01-19 06:29:08Z liubo $.
  */
-
 $_LANG['edit_goods'] = '編輯商品信息';
 $_LANG['copy_goods'] = '複製商品信息';
 $_LANG['continue_add_goods'] = '繼續添加新商品';
@@ -181,10 +180,10 @@ $_LANG['volume_price'] = '優惠價格';
 $_LANG['notice_volume_price'] = '購買數量達到優惠數量時享受的優惠價格';
 $_LANG['volume_number_continuous'] = '優惠數量重複！';
 
-$_LANG['label_suppliers']          = '選擇供貨商：';
-$_LANG['suppliers_no']             = '不指定供貨商屬于本店商品';
-$_LANG['suppliers_move_to']        = '轉移到供貨商';
-$_LANG['lab_to_shopex']         = '轉移到網店';
+$_LANG['label_suppliers'] = '選擇供貨商：';
+$_LANG['suppliers_no'] = '不指定供貨商屬于本店商品';
+$_LANG['suppliers_move_to'] = '轉移到供貨商';
+$_LANG['lab_to_shopex'] = '轉移到網店';
 
 /*------------------------------------------------------ */
 //-- 關聯商品
@@ -288,4 +287,3 @@ $_LANG['exist_same_goods_attr'] = '貨品規格屬性重復';
 $_LANG['cannot_goods_number'] = '此商品存在貨品，不能修改商品庫存';
 $_LANG['not_exist_goods_attr'] = '此商品不存在規格，請為其添加規格';
 $_LANG['goods_sn_exists'] = '您输入的货号已存在，请换一个';
-?>

@@ -10,30 +10,27 @@
  * 进行修改、使用和再发布。
  * ============================================================================
  * $Author: liubo $
- * $Id: ecshop.php 17217 2011-01-19 06:29:08Z liubo $
+ * $Id: ecshop.php 17217 2011-01-19 06:29:08Z liubo $.
  */
-
-if (!defined('IN_ECS'))
-{
+if (!defined('IN_ECS')) {
     die('Hacking attempt');
 }
 
 /* 模块的基本信息 */
-if (isset($set_modules) && $set_modules == TRUE)
-{
+if (isset($set_modules) && $set_modules == true) {
     $i = (isset($modules)) ? count($modules) : 0;
 
     /* 会员数据整合插件的代码必须和文件名保持一致 */
-    $modules[$i]['code']    = 'ecshop';
+    $modules[$i]['code'] = 'ecshop';
 
     /* 被整合的第三方程序的名称 */
-    $modules[$i]['name']    = 'ECSHOP';
+    $modules[$i]['name'] = 'ECSHOP';
 
     /* 被整合的第三方程序的版本 */
     $modules[$i]['version'] = '2.0';
 
     /* 插件的作者 */
-    $modules[$i]['author']  = 'ECSHOP R&D TEAM';
+    $modules[$i]['author'] = 'ECSHOP R&D TEAM';
 
     /* 插件作者的官方网站 */
     $modules[$i]['website'] = 'http://www.ecshop.com';
@@ -41,25 +38,20 @@ if (isset($set_modules) && $set_modules == TRUE)
     return;
 }
 
-require_once(ROOT_PATH . 'includes/modules/integrates/integrate.php');
+require_once ROOT_PATH.'includes/modules/integrates/integrate.php';
 class ecshop extends integrate
 {
-    var $is_ecshop = 1;
+    public $is_ecshop = 1;
 
-    function __construct($cfg)
+    public function __construct($cfg)
     {
         $this->ecshop($cfg);
     }
 
     /**
-     *
-     *
-     * @access  public
      * @param
-     *
-     * @return void
      */
-    function ecshop($cfg)
+    public function ecshop($cfg)
     {
         parent::integrate(array());
         $this->user_table = 'users';
@@ -75,76 +67,59 @@ class ecshop extends integrate
         $this->is_ecshop = 1;
     }
 
-
     /**
-     *  检查指定用户是否存在及密码是否正确(重载基类check_user函数，支持zc加密方法)
+     *  检查指定用户是否存在及密码是否正确(重载基类check_user函数，支持zc加密方法).
      *
-     * @access  public
-     * @param   string  $username   用户名
+     * @param string $username 用户名
      *
-     * @return  int
+     * @return int
      */
-    function check_user($username, $password = null)
+    public function check_user($username, $password = null)
     {
-        if ($this->charset != 'UTF8')
-        {
+        if ($this->charset != 'UTF8') {
             $post_username = ecs_iconv('UTF8', $this->charset, $username);
-        }
-        else
-        {
+        } else {
             $post_username = $username;
         }
 
-        if ($password === null)
-        {
-            $sql = "SELECT " . $this->field_id .
-                   " FROM " . $this->table($this->user_table).
-                   " WHERE " . $this->field_name . "='" . $post_username . "'";
+        if ($password === null) {
+            $sql = 'SELECT '.$this->field_id.
+                   ' FROM '.$this->table($this->user_table).
+                   ' WHERE '.$this->field_name."='".$post_username."'";
 
             return $this->db->getOne($sql);
-        }
-        else
-        {
-            $sql = "SELECT user_id, password, salt,ec_salt " .
-                   " FROM " . $this->table($this->user_table).
+        } else {
+            $sql = 'SELECT user_id, password, salt,ec_salt '.
+                   ' FROM '.$this->table($this->user_table).
                    " WHERE user_name='$post_username'";
             $row = $this->db->getRow($sql);
-			$ec_salt=$row['ec_salt'];
-            if (empty($row))
-            {
+            $ec_salt = $row['ec_salt'];
+            if (empty($row)) {
                 return 0;
             }
 
-            if (empty($row['salt']))
-            {
-                if ($row['password'] != $this->compile_password(array('password'=>$password,'ec_salt'=>$ec_salt)))
-                {
+            if (empty($row['salt'])) {
+                if ($row['password'] != $this->compile_password(array('password' => $password, 'ec_salt' => $ec_salt))) {
                     return 0;
-                }
-                else
-                {
-					if(empty($ec_salt))
-				    {
-						$ec_salt=rand(1,9999);
-						$new_password=md5(md5($password).$ec_salt);
-					    $sql = "UPDATE ".$this->table($this->user_table)."SET password= '" .$new_password."',ec_salt='".$ec_salt."'".
+                } else {
+                    if (empty($ec_salt)) {
+                        $ec_salt = rand(1, 9999);
+                        $new_password = md5(md5($password).$ec_salt);
+                        $sql = 'UPDATE '.$this->table($this->user_table)."SET password= '".$new_password."',ec_salt='".$ec_salt."'".
                    " WHERE user_name='$post_username'";
-                         $this->db->query($sql);
+                        $this->db->query($sql);
+                    }
 
-					}
                     return $row['user_id'];
                 }
-            }
-            else
-            {
+            } else {
                 /* 如果salt存在，使用salt方式加密验证，验证通过洗白用户密码 */
                 $encrypt_type = substr($row['salt'], 0, 1);
                 $encrypt_salt = substr($row['salt'], 1);
 
                 /* 计算加密后密码 */
                 $encrypt_password = '';
-                switch ($encrypt_type)
-                {
+                switch ($encrypt_type) {
                     case ENCRYPT_ZC :
                         $encrypt_password = md5($encrypt_salt.$password);
                         break;
@@ -161,13 +136,12 @@ class ecshop extends integrate
 
                 }
 
-                if ($row['password'] != $encrypt_password)
-                {
+                if ($row['password'] != $encrypt_password) {
                     return 0;
                 }
 
-                $sql = "UPDATE " . $this->table($this->user_table) .
-                       " SET password = '".  $this->compile_password(array('password'=>$password)) . "', salt=''".
+                $sql = 'UPDATE '.$this->table($this->user_table).
+                       " SET password = '".$this->compile_password(array('password' => $password))."', salt=''".
                        " WHERE user_id = '$row[user_id]'";
                 $this->db->query($sql);
 
@@ -175,8 +149,4 @@ class ecshop extends integrate
             }
         }
     }
-
-
 }
-
-?>

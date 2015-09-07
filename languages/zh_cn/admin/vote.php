@@ -10,8 +10,8 @@
  * 使用；不允许对程序代码以任何形式任何目的的再发布。
  * ============================================================================
  * $Author: liubo $
- * $Id: vote.php 17217 2011-01-19 06:29:08Z liubo $
-*/
+ * $Id: vote.php 17217 2011-01-19 06:29:08Z liubo $.
+ */
 
 /* 在线调查字段 */
 $_LANG['vote_id'] = '编号';
@@ -41,7 +41,6 @@ $_LANG['continue_add_option'] = '继续添加调查选项';
 $_LANG['continue_add_vote'] = '继续添加调查';
 $_LANG['edit_option_order'] = '修改调查选项排序';
 
-
 /* 提示信息 */
 $_LANG['vote_name_exist'] = '此调查主题已经存在!';
 $_LANG['vote_option_exist'] = '此调查选项已经存在!';
@@ -60,5 +59,3 @@ $_LANG['option_name'] = '调查选项';
 $_LANG['vote_count'] = '投票数';
 $_LANG['option_order'] = '选项排序';
 $_LANG['option_name_empty'] = '调查选项不能为空！';
-
-?>

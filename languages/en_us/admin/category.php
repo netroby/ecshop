@@ -12,8 +12,8 @@
  * commercial purposes.
  * ============================================================================
  * $Author: liubo $
- * $Id: category.php 17217 2011-01-19 06:29:08Z liubo $
-*/
+ * $Id: category.php 17217 2011-01-19 06:29:08Z liubo $.
+ */
 
 /* Commodity category field information */
 $_LANG['cat_id'] = 'ID';
@@ -52,10 +52,10 @@ $_LANG['notice_style'] = 'You can for each classification of merchandise to spec
 /* Prompting message */
 $_LANG['catname_empty'] = 'Please enter a category name!';
 $_LANG['catname_exist'] = 'The category name already exists.';
-$_LANG["parent_isleaf"] = 'The category can\'t be the bottom class category!';
-$_LANG["cat_isleaf"] = 'The category can\'t be deleted, because it isn\'t the bottom class category or some product already exists.';
-$_LANG["cat_noleaf"] ='There are still subcategories, so you can\'t modify category for the bottom class!';
-$_LANG["is_leaf_error"] ='The selected higher category can\'t be lower category of current category!';
+$_LANG['parent_isleaf'] = 'The category can\'t be the bottom class category!';
+$_LANG['cat_isleaf'] = 'The category can\'t be deleted, because it isn\'t the bottom class category or some product already exists.';
+$_LANG['cat_noleaf'] = 'There are still subcategories, so you can\'t modify category for the bottom class!';
+$_LANG['is_leaf_error'] = 'The selected higher category can\'t be lower category of current category!';
 $_LANG['grade_error'] = 'Quantity price classification can only be an integer within 0-10';
 
 $_LANG['catadd_succed'] = 'Add new category successfully!';
@@ -83,9 +83,7 @@ $_LANG['filter_attr_not_repeated'] = 'Filter property can`t be repeated';
 /*JS language item*/
 $_LANG['js_languages']['catname_empty'] = 'Category name can\'t be blank!';
 $_LANG['js_languages']['unit_empyt'] = 'Unit of quantity can\'t be blank!';
-$_LANG['js_languages']['is_leafcat'] ="You selected category is a bottom class category. \\nThe higher category of new category can\'t be a bottom class category.";
-$_LANG['js_languages']['not_leafcat'] =" You selected category isn\'t a bottom class category. \\nThe category of product transfer can just be operated between the bottom class categories.";
+$_LANG['js_languages']['is_leafcat'] = "You selected category is a bottom class category. \\nThe higher category of new category can\'t be a bottom class category.";
+$_LANG['js_languages']['not_leafcat'] = " You selected category isn\'t a bottom class category. \\nThe category of product transfer can just be operated between the bottom class categories.";
 $_LANG['js_languages']['filter_attr_not_repeated'] = 'Filter property can`t be repeated';
 $_LANG['js_languages']['filter_attr_not_selected'] = 'Please select a filter property';
-
-?>

@@ -12,8 +12,8 @@
  * commercial purposes.
  * ============================================================================
  * $Author: liubo $
- * $Id: vote.php 17217 2011-01-19 06:29:08Z liubo $
-*/
+ * $Id: vote.php 17217 2011-01-19 06:29:08Z liubo $.
+ */
 
 /* to survey field */
 $_LANG['vote_id'] = 'ID';
@@ -43,7 +43,6 @@ $_LANG['continue_add_option'] = 'Continue add vote option.';
 $_LANG['continue_add_vote'] = 'Continue add vote';
 $_LANG['edit_option_order'] = 'edit the order of options';
 
-
 /* prompting message */
 $_LANG['vote_name_exist'] = 'Vote name is existed!';
 $_LANG['vote_option_exist'] = 'Vote option is existed!';
@@ -62,5 +61,3 @@ $_LANG['option_name'] = 'Vote option';
 $_LANG['vote_count'] = 'Total votes';
 $_LANG['option_order'] = 'Options Order';
 $_LANG['option_name_empty'] = 'Vote option can\'t be blank!';
-
-?>

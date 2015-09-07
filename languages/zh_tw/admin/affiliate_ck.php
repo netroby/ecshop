@@ -10,10 +10,8 @@
  * 使用；不允許對程序代碼以任何形式任何目的的再發佈。
  * ==========================================================
  * $Author: liubo $
- * $Id: affiliate_ck.php 17217 2011-01-19 06:29:08Z liubo $
+ * $Id: affiliate_ck.php 17217 2011-01-19 06:29:08Z liubo $.
  */
-
-
 $_LANG['order_id'] = '訂單號';
 $_LANG['affiliate_separate'] = '分成';
 $_LANG['affiliate_cancel'] = '取消';
@@ -54,4 +52,3 @@ $_LANG['separate_by'][-2] = '推薦訂單分成';
 
 $_LANG['show_affiliate_orders'] = '此列表顯示此用戶推薦的訂單信息。';
 $_LANG['back_note'] = '返回會員編輯頁面';
-?>

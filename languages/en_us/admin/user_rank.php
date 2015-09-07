@@ -12,9 +12,8 @@
  * commercial purposes.
  * ============================================================================
  * $Author: liubo $
- * $Id: user_rank.php 17217 2011-01-19 06:29:08Z liubo $
-*/
-
+ * $Id: user_rank.php 17217 2011-01-19 06:29:08Z liubo $.
+ */
 $_LANG['rank_name'] = 'Rank name';
 $_LANG['integral_min'] = 'Min points';
 $_LANG['integral_max'] = 'Max points';
@@ -41,4 +40,3 @@ $_LANG['js_languages']['integral_max_invalid'] = 'Please enter a max limit of po
 $_LANG['js_languages']['discount_invalid'] = 'Please enter a discount rate, and the number must be more than 100.';
 $_LANG['js_languages']['integral_max_small'] = 'The max limit points must be more than min limit.';
 $_LANG['js_languages']['lang_remove'] = 'Remove';
-?>

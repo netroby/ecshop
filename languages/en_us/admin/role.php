@@ -12,8 +12,8 @@
  * commercial purposes.
  * ============================================================================
  * $Author: sxc_shop $
- * $Id: privilege.php 16320 2009-06-23 09:42:41Z sxc_shop $
-*/
+ * $Id: privilege.php 16320 2009-06-23 09:42:41Z sxc_shop $.
+ */
 
 /* Field information */
 $_LANG['user_id'] = 'ID';
@@ -93,4 +93,3 @@ $_LANG['label_captcha'] = 'Verification Code:';
 $_LANG['click_for_another'] = 'Invisibility? Replace an image.';
 $_LANG['signin_now'] = 'Enter';
 $_LANG['remember'] = 'Remember my login information.';
-?>

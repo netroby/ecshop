@@ -10,63 +10,47 @@
  * 使用；不允许对程序代码以任何形式任何目的的再发布。
  * ============================================================================
  * $Author: liuhui $
- * $Id: index.php 15013 2010-03-25 09:31:42Z liuhui $
-*/
-
+ * $Id: index.php 15013 2010-03-25 09:31:42Z liuhui $.
+ */
 define('IN_ECS', true);
 //define('ECS_ADMIN', true);
 
-require(dirname(__FILE__) . '/includes/init.php');
+require dirname(__FILE__).'/includes/init.php';
 
-
-if(isset($_GET['access']) && $_GET['access']=='computer')
-{
+if (isset($_GET['access']) && $_GET['access'] == 'computer') {
     $Loaction = '../index.php?access=computer';
-    if (!empty($Loaction))
-    {
+    if (!empty($Loaction)) {
         ecs_header("Location: $Loaction\n");
         exit;
     }
 }
 
-
-
-
-
 $smarty->assign('page_title',   $_CFG['shop_title']);    // 页面标题
 
-$sql="SELECT * FROM ".$ecs->table('mobile_ad');
-$result=$db->getAll($sql);
-$smarty->assign('playerdb' , $result);
+$sql = 'SELECT * FROM '.$ecs->table('mobile_ad');
+$result = $db->getAll($sql);
+$smarty->assign('playerdb', $result);
 mobile_common();
-
-
 
 /* 热门商品 */
 $hot_goods = get_recommend_goods('hot');
 $hot_num = count($hot_goods);
-$smarty->assign('hot_num' , $hot_num);
+$smarty->assign('hot_num', $hot_num);
 
-if ($hot_num > 0)
-{
+if ($hot_num > 0) {
     $i = 0;
-    foreach  ($hot_goods as $key => $hot_data)
-    {
+    foreach ($hot_goods as $key => $hot_data) {
         $hot_goods[$key]['shop_price'] = encode_output($hot_data['shop_price']);
         $hot_goods[$key]['name'] = encode_output($hot_data['name']);
         /*if ($i > 2)
         {
             break;
         }*/
-        $i++;
+        ++$i;
     }
-    $smarty->assign('hot_goods' , $hot_goods);
+    $smarty->assign('hot_goods', $hot_goods);
 }
-
-
 
 $smarty->assign('wap_logo', $_CFG['wap_logo']);
 $smarty->assign('footer', get_footer());
-$smarty->display("index.dwt");
-
-?>
+$smarty->display('index.dwt');

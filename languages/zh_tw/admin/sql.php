@@ -10,9 +10,8 @@
  * 使用；不允許對程序代碼以任何形式任何目的的再發佈。
  * ============================================================================
  * $Author: liubo $
- * $Id: sql.php 17217 2011-01-19 06:29:08Z liubo $
-*/
-
+ * $Id: sql.php 17217 2011-01-19 06:29:08Z liubo $.
+ */
 $_LANG['title'] = '運行 SQL 查詢';
 $_LANG['error'] = '出錯了';
 $_LANG['succeed'] = 'SQL 語句已成功運行';
@@ -23,5 +22,3 @@ $_LANG['no_data'] = '返回結果為空';
 
 /*JS 語言項*/
 $_LANG['js_languages']['sql_not_null'] = 'SQL語句為空';
-
-?>

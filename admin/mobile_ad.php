@@ -10,30 +10,26 @@
  * 使用；不允许对程序代码以任何形式任何目的的再发布。
  * ==========================================================
  * $Author: liubo $
- * $Id: flashplay.php 17217 2011-01-19 06:29:08Z liubo $
+ * $Id: flashplay.php 17217 2011-01-19 06:29:08Z liubo $.
  */
-
 define('IN_ECS', true);
 
-require(dirname(__FILE__) . '/includes/init.php');
+require dirname(__FILE__).'/includes/init.php';
 $uri = $ecs->url();
 $allow_suffix = array('gif', 'jpg', 'png', 'jpeg', 'bmp');
 
 /*------------------------------------------------------ */
 //-- 系统
 /*------------------------------------------------------ */
-if ($_REQUEST['act']== 'list')
-{
+if ($_REQUEST['act'] == 'list') {
     admin_priv('mobile_manage');
-    $sql="SELECT * FROM ".$ecs->table('mobile_ad');
-    $playerdb=$db->getAll($sql);
+    $sql = 'SELECT * FROM '.$ecs->table('mobile_ad');
+    $playerdb = $db->getAll($sql);
     /* 标签初始化 */
     $group_list = array(
         'sys' => array('text' => $_LANG['system_set'], 'url' => ''),
-        'cus' => array('text' => $_LANG['custom_set'], 'url' => 'mobile_ad.php?act=custom_list')
+        'cus' => array('text' => $_LANG['custom_set'], 'url' => 'mobile_ad.php?act=custom_list'),
                        );
-
-
 
     $smarty->assign('current', 'sys');
     $smarty->assign('group_list', $group_list);
@@ -44,17 +40,14 @@ if ($_REQUEST['act']== 'list')
 
     $smarty->assign('playerdb', $playerdb);
     $smarty->display('mobile_ad_list.htm');
-}
-elseif ($_REQUEST['act'] == 'add')
-{
+} elseif ($_REQUEST['act'] == 'add') {
     admin_priv('mobile_manage');
 
-    if (empty($_POST['step']))
-    {
+    if (empty($_POST['step'])) {
         $url = isset($_GET['url']) ? $_GET['url'] : 'http://';
         $src = isset($_GET['src']) ? $_GET['src'] : '';
         $sort = 0;
-        $rt = array('act'=>'add','img_url'=>$url,'img_src'=>$src, 'img_sort'=>$sort);
+        $rt = array('act' => 'add','img_url' => $url,'img_src' => $src, 'img_sort' => $sort);
 
 //        $width_height = get_width_height();
 //        assign_query_info();
@@ -67,78 +60,60 @@ elseif ($_REQUEST['act'] == 'add')
         $smarty->assign('rt', $rt);
         $smarty->assign('ur_here', $_LANG['add_picad']);
         $smarty->display('mobile_ad_add.htm');
-    }
-    elseif ($_POST['step'] == 2)
-    {
-        if (!empty($_FILES['img_file_src']['name']))
-        {
-            if(!get_file_suffix($_FILES['img_file_src']['name'], $allow_suffix))
-            {
+    } elseif ($_POST['step'] == 2) {
+        if (!empty($_FILES['img_file_src']['name'])) {
+            if (!get_file_suffix($_FILES['img_file_src']['name'], $allow_suffix)) {
                 sys_msg($_LANG['invalid_type']);
             }
             $name = date('Ymd');
-            for ($i = 0; $i < 6; $i++)
-            {
+            for ($i = 0; $i < 6; ++$i) {
                 $name .= chr(mt_rand(97, 122));
             }
-            $name .= '.' . end(explode('.', $_FILES['img_file_src']['name']));
-            $target = ROOT_PATH . DATA_DIR . '/afficheimg/' . $name;
-            if (move_upload_file($_FILES['img_file_src']['tmp_name'], $target))
-            {
-                $src = DATA_DIR . '/afficheimg/' . $name;
+            $name .= '.'.end(explode('.', $_FILES['img_file_src']['name']));
+            $target = ROOT_PATH.DATA_DIR.'/afficheimg/'.$name;
+            if (move_upload_file($_FILES['img_file_src']['tmp_name'], $target)) {
+                $src = DATA_DIR.'/afficheimg/'.$name;
             }
-        }
-        elseif (!empty($_POST['img_src']))
-        {
+        } elseif (!empty($_POST['img_src'])) {
             $src = $_POST['img_src'];
 
-            if(strstr($src, 'http') && !strstr($src, $_SERVER['SERVER_NAME']))
-            {
+            if (strstr($src, 'http') && !strstr($src, $_SERVER['SERVER_NAME'])) {
                 $src = get_url_image($src);
             }
-        }
-        else
-        {
+        } else {
             $links[] = array('text' => $_LANG['add_new'], 'href' => 'mobile_ad.php?act=add');
             sys_msg($_LANG['src_empty'], 0, $links);
         }
 
-        if (empty($_POST['img_url']))
-        {
+        if (empty($_POST['img_url'])) {
             $links[] = array('text' => $_LANG['add_new'], 'href' => 'mobile_ad.php?act=add');
             sys_msg($_LANG['link_empty'], 0, $links);
         }
-        $img_url=$_POST['img_url'];
-        $img_sort=intval($_POST['img_sort']);
-        $explain=$_POST['img_text'];
-        $sql="INSERT INTO ".$ecs->table('mobile_ad')."(`http_url`,`order_id`,`image_url`,`explain`) VALUES  ('$img_url','$img_sort','$src','$explain')";
+        $img_url = $_POST['img_url'];
+        $img_sort = intval($_POST['img_sort']);
+        $explain = $_POST['img_text'];
+        $sql = 'INSERT INTO '.$ecs->table('mobile_ad')."(`http_url`,`order_id`,`image_url`,`explain`) VALUES  ('$img_url','$img_sort','$src','$explain')";
         $db->query($sql);
 
         $links[] = array('text' => $_LANG['go_url'], 'href' => 'mobile_ad.php?act=list');
         sys_msg($_LANG['edit_ok'], 0, $links);
     }
-}
-elseif ($_REQUEST['act'] == 'edit')
-{
+} elseif ($_REQUEST['act'] == 'edit') {
     admin_priv('mobile_manage');
 
-    $id = (int)$_REQUEST['id']; //取得id
+    $id = (int) $_REQUEST['id']; //取得id
 
-    $sql="SELECT * FROM ".$ecs->table('mobile_ad')." WHERE `id`='$id'";
+    $sql = 'SELECT * FROM '.$ecs->table('mobile_ad')." WHERE `id`='$id'";
 
     $rt = $db->getRow($sql); //取得数据
 
-    if (isset($rt['id']))
-    {
-    }
-    else
-    {
+    if (isset($rt['id'])) {
+    } else {
         $links[] = array('text' => $_LANG['go_url'], 'href' => 'mobile_ad.php?act=list');
         sys_msg($_LANG['id_error'], 0, $links);
     }
 
-    if (empty($_POST['step']))
-    {
+    if (empty($_POST['step'])) {
         $rt['act'] = 'edit';
         $rt['img_url'] = $rt['http_url'];
         $rt['img_src'] = $rt['image_url'];
@@ -150,94 +125,58 @@ elseif ($_REQUEST['act'] == 'edit')
         $smarty->assign('rt', $rt);
         $smarty->assign('ur_here', $_LANG['edit_picad']);
         $smarty->display('mobile_ad_add.htm');
-    }
-
-
-    elseif ($_POST['step'] == 2)
-    {
-        if (empty($_POST['img_url']))
-        {
+    } elseif ($_POST['step'] == 2) {
+        if (empty($_POST['img_url'])) {
             //若链接地址为空
-            $links[] = array('text' => $_LANG['return_edit'], 'href' => 'flashplay.php?act=edit&id=' . $id);
+            $links[] = array('text' => $_LANG['return_edit'], 'href' => 'flashplay.php?act=edit&id='.$id);
             sys_msg($_LANG['link_empty'], 0, $links);
         }
 
-
-        if (!empty($_FILES['img_file_src']['name']))
-        {
-            if(!get_file_suffix($_FILES['img_file_src']['name'], $allow_suffix))
-            {
+        if (!empty($_FILES['img_file_src']['name'])) {
+            if (!get_file_suffix($_FILES['img_file_src']['name'], $allow_suffix)) {
                 sys_msg($_LANG['invalid_type']);
             }
             //有上传
             $name = date('Ymd');
-            for ($i = 0; $i < 6; $i++)
-            {
+            for ($i = 0; $i < 6; ++$i) {
                 $name .= chr(mt_rand(97, 122));
             }
-            $name .= '.' . end(explode('.', $_FILES['img_file_src']['name']));
-            $target = ROOT_PATH . DATA_DIR . '/afficheimg/' . $name;
+            $name .= '.'.end(explode('.', $_FILES['img_file_src']['name']));
+            $target = ROOT_PATH.DATA_DIR.'/afficheimg/'.$name;
 
-            if (move_upload_file($_FILES['img_file_src']['tmp_name'], $target))
-            {
-                $src = DATA_DIR . '/afficheimg/' . $name;
+            if (move_upload_file($_FILES['img_file_src']['tmp_name'], $target)) {
+                $src = DATA_DIR.'/afficheimg/'.$name;
             }
-        }
-        else if (!empty($_POST['img_src']))
-        {
-            $src =$_POST['img_src'];
+        } elseif (!empty($_POST['img_src'])) {
+            $src = $_POST['img_src'];
 
-            if(strstr($src, 'http') && !strstr($src, $_SERVER['SERVER_NAME']))
-            {
+            if (strstr($src, 'http') && !strstr($src, $_SERVER['SERVER_NAME'])) {
                 $src = get_url_image($src);
             }
-        }
-        else
-        {
-            $links[] = array('text' => $_LANG['return_edit'], 'href' => 'mobile_ad.php?act=edit&id=' . $id);
+        } else {
+            $links[] = array('text' => $_LANG['return_edit'], 'href' => 'mobile_ad.php?act=edit&id='.$id);
             sys_msg($_LANG['src_empty'], 0, $links);
         }
 
-        if (strpos($rt['src'], 'http') === false && $rt['src'] != $src)
-        {
-            @unlink(ROOT_PATH . $rt['src']);
+        if (strpos($rt['src'], 'http') === false && $rt['src'] != $src) {
+            @unlink(ROOT_PATH.$rt['src']);
         }
 
-        $img_url=$_POST['img_url'];
-        $img_sort=intval($_POST['img_sort']);
-        $explain=$_POST['img_text'];
+        $img_url = $_POST['img_url'];
+        $img_sort = intval($_POST['img_sort']);
+        $explain = $_POST['img_text'];
 
-        $sql="UPDATE ".$ecs->table('mobile_ad'). " SET `http_url`='$img_url',`order_id`='$img_sort',`image_url`='$src',`explain`='$explain' WHERE `id`='$id'";
+        $sql = 'UPDATE '.$ecs->table('mobile_ad')." SET `http_url`='$img_url',`order_id`='$img_sort',`image_url`='$src',`explain`='$explain' WHERE `id`='$id'";
         $db->query($sql);
         $links[] = array('text' => $_LANG['go_url'], 'href' => 'mobile_ad.php?act=list');
         sys_msg($_LANG['edit_ok'], 0, $links);
     }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-elseif($_REQUEST['act']== 'del')
-{
+} elseif ($_REQUEST['act'] == 'del') {
     admin_priv('mobile_manage');
 
-    $id = (int)$_GET['id'];
-    $sql="DELETE FROM ".$ecs->table('mobile_ad')." WHERE `id`='$id'";
+    $id = (int) $_GET['id'];
+    $sql = 'DELETE FROM '.$ecs->table('mobile_ad')." WHERE `id`='$id'";
     $db->query($sql);
     ecs_header("Location: mobile_ad.php?act=list\n");
     exit;
 }
-
-
-
-
-
-?>

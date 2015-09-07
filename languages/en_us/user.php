@@ -12,13 +12,12 @@
  * commercial purposes.
  * ============================================================================
  * $Author: liubo $
- * $Id: user.php 17217 2011-01-19 06:29:08Z liubo $
-*/
-
+ * $Id: user.php 17217 2011-01-19 06:29:08Z liubo $.
+ */
 $_LANG['require_login'] = 'Illegal entry.<br />You can\'t finish the operation until login.';
 
 $_LANG['no_records'] = 'No record';
-$_LANG['shot_message'] = "Short message";
+$_LANG['shot_message'] = 'Short message';
 
 /* 用户菜单 */
 $_LANG['label_welcome'] = 'Welcome';
@@ -316,10 +315,10 @@ $_LANG['confirm_received'] = 'Are you sure you have received the products?';
 
 /* 合并订单及订单详情 */
 $_LANG['merge_order_success'] = 'Combine orders successfully!';
-$_LANG['merge_order_failed']  = 'Combine orders has failed! Please type it again!';
+$_LANG['merge_order_failed'] = 'Combine orders has failed! Please type it again!';
 $_LANG['order_sn_not_null'] = 'Please enter orders NO. that you want to combine.';
 $_LANG['two_order_sn_same'] = 'The two NO. that you want to combine must be different.';
-$_LANG['order_not_exist'] = "The order %s is nonexistent";
+$_LANG['order_not_exist'] = 'The order %s is nonexistent';
 $_LANG['os_not_unconfirmed_or_confirmed'] = " %s order status isn\'t [Unconfirmed] or [Confirmed].";
 $_LANG['ps_not_unpayed'] = "The payment status of %s isn\'t [Unpaid].";
 $_LANG['ss_not_unshipped'] = "The shipping status of %s isn\'t [Unshipped].";
@@ -420,7 +419,7 @@ $_LANG['username_exist'] = '%s already exists';
 $_LANG['username_not_allow'] = 'Username %s not allow';
 $_LANG['confirm_register'] = 'Submit';
 
-$_LANG['agreement'] = "I have read and agree with《<a href=\"article.php?cat_id=-1\" style=\"color:blue\">User agreement</a>》";
+$_LANG['agreement'] = 'I have read and agree with《<a href="article.php?cat_id=-1" style="color:blue">User agreement</a>》';
 
 $_LANG['email_empty'] = 'Email is blank';
 $_LANG['email_invalid'] = '%s is invalid email address.';
@@ -505,7 +504,6 @@ $_LANG['passport_js']['msg_email_format'] = '* Email address is invalid';
 $_LANG['passport_js']['msg_blank'] = 'is blank';
 $_LANG['passport_js']['no_select_question'] = '- You have not finished the password question operation';
 $_LANG['passport_js']['passwd_balnk'] = '- The password entered can`t have blank';
-
 
 /* user_clips.dwt js 语言文件 */
 $_LANG['clips_js']['msg_title_empty'] = 'Title message is blank.';
@@ -614,7 +612,6 @@ $_LANG['change_payment'] = 'Change to other online payment mode';
 
 $_LANG['copy_to_clipboard'] = 'Copy to clipboard。';
 
-
 $_LANG['expire_unit']['hour'] = 'Hour';
 $_LANG['expire_unit']['day'] = 'Day';
 $_LANG['expire_unit']['week'] = 'Week';
@@ -673,13 +670,11 @@ $_LANG['add_bonus'] = 'Add Bouns';
 
 /* 密码找回问题 */
 $_LANG['passwd_questions']['friend_birthday'] = 'My Best Friend\'s Birthday';
-$_LANG['passwd_questions']['old_address']     = 'My childhood place of residence address';
-$_LANG['passwd_questions']['motto']           = 'My motto';
-$_LANG['passwd_questions']['favorite_movie']  = 'My favorite movies';
-$_LANG['passwd_questions']['favorite_song']   = 'My favorite song';
-$_LANG['passwd_questions']['favorite_food']   = 'My favorite food';
-$_LANG['passwd_questions']['interest']        = 'My best interest';
-$_LANG['passwd_questions']['favorite_novel']  = 'My favorite novel';
+$_LANG['passwd_questions']['old_address'] = 'My childhood place of residence address';
+$_LANG['passwd_questions']['motto'] = 'My motto';
+$_LANG['passwd_questions']['favorite_movie'] = 'My favorite movies';
+$_LANG['passwd_questions']['favorite_song'] = 'My favorite song';
+$_LANG['passwd_questions']['favorite_food'] = 'My favorite food';
+$_LANG['passwd_questions']['interest'] = 'My best interest';
+$_LANG['passwd_questions']['favorite_novel'] = 'My favorite novel';
 $_LANG['passwd_questions']['favorite_equipe'] = 'My favorite sports team';
-
-?>

@@ -12,8 +12,8 @@
  * commercial purposes.
  * ============================================================================
  * $Author: liubo $
- * $Id: calendar.php 14481 2008-07-20 11:23:01Z apachen$
-*/
+ * $Id: calendar.php 14481 2008-07-20 11:23:01Z apachen$.
+ */
 
 /* Ê±¼äJSÓïÑÔÏî */
 $_LANG['calendar_lang']['Sunday'] = 'Sunday';
@@ -59,10 +59,10 @@ $_LANG['calendar_lang']['calendar_about1'] = 'Select date:\\r\\n- click \\xab, \
 $_LANG['calendar_lang']['calendar_about2'] = ' click to select month \\r\\n- press the above button for long can rapidly select year or month';
 $_LANG['calendar_lang']['calendar_about_time'] = '\\r\\n\\r\\n select time:\\r\\n- click Hour or Minute to add one\\r\\n- press Shift and click Hour or Minute to minus one \\r\\n- click and drag the mouse for rapid selection';
 $_LANG['calendar_lang']['prev_year'] = 'Previous year(press for menu)';
-$_LANG['calendar_lang']['prev_month'] ='Previous month(press for menu)';
+$_LANG['calendar_lang']['prev_month'] = 'Previous month(press for menu)';
 $_LANG['calendar_lang']['go_today'] = 'Go to today';
 $_LANG['calendar_lang']['next_month'] = 'Next month(press for menu)';
-$_LANG['calendar_lang']['next_year'] ='Next year(press for menu)';
+$_LANG['calendar_lang']['next_year'] = 'Next year(press for menu)';
 $_LANG['calendar_lang']['sel_date'] = 'Select date';
 $_LANG['calendar_lang']['drag_to_move'] = 'Drag to move';
 $_LANG['calendar_lang']['part_today'] = '(Today)';
@@ -71,7 +71,5 @@ $_LANG['calendar_lang']['calendar_close'] = 'Close';
 $_LANG['calendar_lang']['calendar_today'] = 'Today';
 $_LANG['calendar_lang']['time_part'] = '(Shift-)click or drag the mouse to change';
 $_LANG['calendar_lang']['calendar_wk'] = 'W';
-$_LANG['calendar_lang']['calendar_day'] ='D';
+$_LANG['calendar_lang']['calendar_day'] = 'D';
 $_LANG['calendar_lang']['calendar_time'] = 'T';
-
-?>

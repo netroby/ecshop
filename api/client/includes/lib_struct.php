@@ -1,17 +1,16 @@
 <?php
 
 /**
- * 通用消息结构声明
+ * 通用消息结构声明.
  */
 $common_message = array(
     'Result' => false,
     'MessageCode' => 1,
     'MessageString' => 'Nothing',
-    'InsertID' => 0
+    'InsertID' => 0,
 );
 
-
-/**
+/*
  * 返回信息语言包
  */
 $_ALANG = array(
@@ -59,7 +58,5 @@ $_ALANG = array(
     221 => '商品数量已经超过限制',
     230 => '把商品放入回收站时发生错误',
     240 => '该商品已经不存在，编辑失败',
-    'undefined' => '未定义信息'
+    'undefined' => '未定义信息',
 );
-
-?>

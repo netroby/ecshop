@@ -1,4 +1,5 @@
 <?php
+
 /**
  * ECSHOP
  * ============================================================================
@@ -11,8 +12,8 @@
  * commercial purposes.
  * ============================================================================
  * $Author: liubo $
- * $Id: attribute.php 17217 2011-01-19 06:29:08Z liubo $
-*/
+ * $Id: attribute.php 17217 2011-01-19 06:29:08Z liubo $.
+ */
 
 /* List */
 $_LANG['by_goods_type'] = 'Display by product type:';
@@ -52,7 +53,6 @@ $_LANG['attr_type_values'][0] = 'The only property';
 $_LANG['attr_type_values'][1] = 'Radio property';
 $_LANG['attr_type_values'][2] = 'Check property';
 
-
 $_LANG['add_next'] = 'Add next attribute';
 $_LANG['back_list'] = 'Return to attribute list';
 
@@ -71,5 +71,3 @@ $_LANG['drop_ok'] = 'Delete %d products attribute successfully.';
 $_LANG['js_languages']['name_not_null'] = 'Please enter attribute name.';
 $_LANG['js_languages']['values_not_null'] = 'Please enter the attribute\'s value.';
 $_LANG['js_languages']['cat_id_not_null'] = 'Please select the attribute of product type.';
-
-?>

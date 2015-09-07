@@ -10,11 +10,9 @@
  * 使用；不允许对程序代码以任何形式任何目的的再发布。
  * ============================================================================
  * $Author: liubo $
- * $Id: inc_constant.php 17217 2011-01-19 06:29:08Z liubo $
-*/
-
-if (!defined('IN_ECS'))
-{
+ * $Id: inc_constant.php 17217 2011-01-19 06:29:08Z liubo $.
+ */
+if (!defined('IN_ECS')) {
     die('Hacking attempt');
 }
 
@@ -237,5 +235,3 @@ define('LICENSE_VERSION', '1.0');
 
 /* 配送方式 */
 define('SHIP_LIST', 'cac|city_express|ems|flat|fpd|post_express|post_mail|presswork|sf_express|sto_express|yto|zto');
-
-?>

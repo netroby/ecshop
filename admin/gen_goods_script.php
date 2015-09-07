@@ -1,4 +1,5 @@
 <?php
+
 /**
  * ECSHOP 生成显示商品的js代码
  * ============================================================================
@@ -9,27 +10,25 @@
  * 使用；不允许对程序代码以任何形式任何目的的再发布。
  * ============================================================================
  * $Author: liubo $
- * $Id: gen_goods_script.php 17217 2011-01-19 06:29:08Z liubo $
+ * $Id: gen_goods_script.php 17217 2011-01-19 06:29:08Z liubo $.
  */
-
 define('IN_ECS', true);
 
-require(dirname(__FILE__) . '/includes/init.php');
+require dirname(__FILE__).'/includes/init.php';
 
 /*------------------------------------------------------ */
 //-- 生成代码
 /*------------------------------------------------------ */
 
-if ($_REQUEST['act'] == 'setup')
-{
+if ($_REQUEST['act'] == 'setup') {
     /* 检查权限 */
     admin_priv('gen_goods_script');
 
     /* 编码 */
     $lang_list = array(
-        'UTF8'   => $_LANG['charset']['utf8'],
+        'UTF8' => $_LANG['charset']['utf8'],
         'GB2312' => $_LANG['charset']['zh_cn'],
-        'BIG5'   => $_LANG['charset']['zh_tw'],
+        'BIG5' => $_LANG['charset']['zh_tw'],
     );
 
     /* 参数赋值 */
@@ -45,5 +44,3 @@ if ($_REQUEST['act'] == 'setup')
     assign_query_info();
     $smarty->display('gen_goods_script.htm');
 }
-
-?>

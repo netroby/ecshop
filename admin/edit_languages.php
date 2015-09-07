@@ -10,20 +10,16 @@
  * 使用；不允许对程序代码以任何形式任何目的的再发布。
  * ============================================================================
  * $Author: liubo $
- * $Id: edit_languages.php 17217 2011-01-19 06:29:08Z liubo $
+ * $Id: edit_languages.php 17217 2011-01-19 06:29:08Z liubo $.
  */
-
 define('IN_ECS', true);
 
-require(dirname(__FILE__) . '/includes/init.php');
+require dirname(__FILE__).'/includes/init.php';
 
 /* act操作项的初始化 */
-if (empty($_REQUEST['act']))
-{
+if (empty($_REQUEST['act'])) {
     $_REQUEST['act'] = 'list';
-}
-else
-{
+} else {
     $_REQUEST['act'] = trim($_REQUEST['act']);
 }
 
@@ -32,19 +28,16 @@ admin_priv('lang_edit');
 /*------------------------------------------------------ */
 //-- 列表编辑 ?act=list
 /*------------------------------------------------------ */
-if ($_REQUEST['act'] == 'list')
-{
+if ($_REQUEST['act'] == 'list') {
     //从languages目录下获取语言项文件
-    $lang_arr    = array();
-    $lang_path   = '../languages/' .$_CFG['lang'];
-    $lang_dir    = @opendir($lang_path);
+    $lang_arr = array();
+    $lang_path = '../languages/'.$_CFG['lang'];
+    $lang_dir = @opendir($lang_path);
 
-    while ($file = @readdir($lang_dir))
-    {
-        if (substr($file, -3) == "php")
-        {
+    while ($file = @readdir($lang_dir)) {
+        if (substr($file, -3) == 'php') {
             $filename = substr($file, 0, -4);
-            $lang_arr[$filename] = $file. ' - ' .@$_LANG['language_files'][$filename];
+            $lang_arr[$filename] = $file.' - '.@$_LANG['language_files'][$filename];
         }
     }
 
@@ -53,23 +46,17 @@ if ($_REQUEST['act'] == 'list')
 
     /* 获得需要操作的语言包文件 */
     $lang_file = isset($_POST['lang_file']) ? trim($_POST['lang_file']) : '';
-    if ($lang_file == 'common')
-    {
+    if ($lang_file == 'common') {
         $file_path = '../languages/'.$_CFG['lang'].'/common.php';
-    }
-    elseif ($lang_file == 'shopping_flow')
-    {
+    } elseif ($lang_file == 'shopping_flow') {
         $file_path = '../languages/'.$_CFG['lang'].'/shopping_flow.php';
-    }
-    else
-    {
+    } else {
         $file_path = '../languages/'.$_CFG['lang'].'/user.php';
     }
 
     $file_attr = '';
-    if (file_mode_info($file_path) < 7)
-    {
-        $file_attr = $lang_file .'.php：'. $_LANG['file_attribute'];
+    if (file_mode_info($file_path) < 7) {
+        $file_attr = $lang_file.'.php：'.$_LANG['file_attribute'];
     }
 
     /* 搜索的关键字 */
@@ -95,8 +82,7 @@ if ($_REQUEST['act'] == 'list')
 /*------------------------------------------------------ */
 //-- 编辑语言项
 /*------------------------------------------------------ */
-elseif ($_REQUEST['act'] == 'edit')
-{
+elseif ($_REQUEST['act'] == 'edit') {
     /* 语言项的路径 */
     $lang_file = isset($_POST['file_path']) ? trim($_POST['file_path']) : '';
 
@@ -107,31 +93,24 @@ elseif ($_REQUEST['act'] == 'edit')
     $dst_items = array();
     $_POST['item_id'] = stripslashes_deep($_POST['item_id']);
 
-    for ($i = 0; $i < count($_POST['item_id']); $i++)
-    {
+    for ($i = 0; $i < count($_POST['item_id']); ++$i) {
         /* 语言项内容如果为空，不修改 */
-        if (trim($_POST['item_content'][$i]) == '')
-        {
+        if (trim($_POST['item_content'][$i]) == '') {
             unset($src_items[$i]);
-        }
-        else
-        {
+        } else {
             $_POST['item_content'][$i] = str_replace('\\\\n', '\\n', $_POST['item_content'][$i]);
-            $dst_items[$i] = $_POST['item_id'][$i] .' = '. '"' .$_POST['item_content'][$i]. '";';
+            $dst_items[$i] = $_POST['item_id'][$i].' = '.'"'.$_POST['item_content'][$i].'";';
         }
     }
 
     /* 调用函数编辑语言项 */
     $result = set_language_items($lang_file, $src_items, $dst_items);
 
-    if ($result === false)
-    {
+    if ($result === false) {
         /* 修改失败提示信息 */
         $link[] = array('text' => $_LANG['back_list'], 'href' => 'javascript:history.back(-1)');
         sys_msg($_LANG['edit_languages_false'], 0, $link);
-    }
-    else
-    {
+    } else {
         /* 记录管理员操作 */
         admin_log('', 'edit', 'languages');
 
@@ -149,108 +128,89 @@ elseif ($_REQUEST['act'] == 'edit')
 /*------------------------------------------------------ */
 
 /**
- * 获得语言项列表
- * @access  public
+ * 获得语言项列表.
+ *
  * @exception           如果语言项中包含换行符，将发生异常。
- * @param   string      $file_path   存放语言项列表的文件的绝对路径
- * @param   string      $keyword    搜索时指定的关键字
- * @return  array       正确返回语言项列表，错误返回false
+ *
+ * @param string $file_path 存放语言项列表的文件的绝对路径
+ * @param string $keyword   搜索时指定的关键字
+ *
+ * @return array 正确返回语言项列表，错误返回false
  */
 function get_language_item_list($file_path, $keyword)
 {
-    if (empty($keyword))
-    {
+    if (empty($keyword)) {
         return array();
     }
 
     /* 获取文件内容 */
     $line_array = file($file_path);
-    if (!$line_array)
-    {
+    if (!$line_array) {
         return false;
-    }
-    else
-    {
+    } else {
         /* 防止用户输入敏感字符造成正则引擎失败 */
         $keyword = preg_quote($keyword, '/');
 
-        $matches    = array();
-        $pattern    = '/\\[[\'|"](.*?)'.$keyword.'(.*?)[\'|"]\\]\\s|=\\s?[\'|"](.*?)'.$keyword.'(.*?)[\'|"];/';
-        $regx       = '/(?P<item>(?P<item_id>\\$_LANG\\[[\'|"].*[\'|"]\\])\\s*?=\\s*?[\'|"](?P<item_content>.*)[\'|"];)/';
+        $matches = array();
+        $pattern = '/\\[[\'|"](.*?)'.$keyword.'(.*?)[\'|"]\\]\\s|=\\s?[\'|"](.*?)'.$keyword.'(.*?)[\'|"];/';
+        $regx = '/(?P<item>(?P<item_id>\\$_LANG\\[[\'|"].*[\'|"]\\])\\s*?=\\s*?[\'|"](?P<item_content>.*)[\'|"];)/';
 
-        foreach ($line_array AS $lang)
-        {
-            if (preg_match($pattern, $lang))
-            {
+        foreach ($line_array as $lang) {
+            if (preg_match($pattern, $lang)) {
                 $out = array();
 
-                if (preg_match($regx, $lang, $out))
-                {
+                if (preg_match($regx, $lang, $out)) {
                     $matches[] = $out;
                 }
             }
         }
 
         return $matches;
-   }
+    }
 }
 
 /**
- * 设置语言项
- * @access  public
- * @param   string      $file_path     存放语言项列表的文件的绝对路径
- * @param   array       $src_items     替换前的语言项
- * @param   array       $dst_items     替换后的语言项
- * @return  void        成功就把结果写入文件，失败返回false
+ * 设置语言项.
+ *
+ * @param string $file_path 存放语言项列表的文件的绝对路径
+ * @param array  $src_items 替换前的语言项
+ * @param array  $dst_items 替换后的语言项
  */
 function set_language_items($file_path, $src_items, $dst_items)
 {
     /* 检查文件是否可写（修改） */
-    if (file_mode_info($file_path) < 2)
-    {
+    if (file_mode_info($file_path) < 2) {
         return false;
     }
 
     /* 获取文件内容 */
     $line_array = file($file_path);
-    if (!$line_array)
-    {
+    if (!$line_array) {
         return false;
-    }
-    else
-    {
+    } else {
         $file_content = implode('', $line_array);
     }
 
     $snum = count($src_items);
     $dnum = count($dst_items);
-    if ($snum != $dnum)
-    {
+    if ($snum != $dnum) {
         return false;
     }
     /* 对索引进行排序，防止错位替换 */
     ksort($src_items);
     ksort($dst_items);
-    for ($i = 0; $i < $snum; $i++)
-    {
+    for ($i = 0; $i < $snum; ++$i) {
         $file_content = str_replace($src_items[$i], $dst_items[$i], $file_content);
-
     }
 
     /* 写入修改后的语言项 */
     $f = fopen($file_path, 'wb');
-    if (!$f)
-    {
+    if (!$f) {
         return false;
     }
-    if (!fwrite($f, $file_content))
-    {
+    if (!fwrite($f, $file_content)) {
         return false;
-    }
-    else
-    {
+    } else {
         return true;
     }
 }
-
-?>

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * ECSHOP Upgrade program language file
  * ============================================================================
@@ -12,11 +13,11 @@
  * ============================================================================
  * $Author: liubo $
  * $Date: 2009-06-26 18:00:04 +0800 (星期五, 2009-06-26) $
- * $Id: en_us.php 15163 2009-06-26 10:51:04Z liubo $
-*/
+ * $Id: en_us.php 15163 2009-06-26 10:51:04Z liubo $.
+ */
 $_LANG['prev_step'] = 'Previous:';
 $_LANG['next_step'] = 'Next:';
-$_LANG['select_language_title']='ECSHOP upgrade program, the 1 step / 3 steps, Select language and charset';
+$_LANG['select_language_title'] = 'ECSHOP upgrade program, the 1 step / 3 steps, Select language and charset';
 $_LANG['readme_title'] = 'ECSHOP upgrade program, the 2 step / 3 steps, readme page';
 $_LANG['checking_title'] = 'ECShop upgrade program, the 3 step / 3steps, check environment';
 $_LANG['check_system_environment'] = 'Check system environment';
@@ -32,11 +33,11 @@ $_LANG['usage3'] = 'Upload ECSHOP %s all files to your server;';
 $_LANG['usage4'] = 'Upload the program to ECSHOP higher directory;';
 $_LANG['usage5'] = 'Execute this program, until appear upgrade finished.';
 
-$_LANG['usage6']  = 'Run this procedure until you are prompted to upgrade completed.';
-$_LANG['method']  = 'Upgrading Method';
-$_LANG['charset']  = 'Confirm Charset';
+$_LANG['usage6'] = 'Run this procedure until you are prompted to upgrade completed.';
+$_LANG['method'] = 'Upgrading Method';
+$_LANG['charset'] = 'Confirm Charset';
 
-$_LANG['faq']  = 'FAQ';
+$_LANG['faq'] = 'FAQ';
 
 $_LANG['basic_config'] = 'Basic config information';
 $_LANG['config_path'] = 'Config file path';
@@ -44,7 +45,7 @@ $_LANG['db_host'] = 'Database host';
 $_LANG['db_name'] = 'Database name';
 $_LANG['db_user'] = 'Username';
 $_LANG['db_pass'] = 'Password';
-$_LANG['db_prefix']  = 'Table prefixion';
+$_LANG['db_prefix'] = 'Table prefixion';
 $_LANG['timezone'] = 'Config timezone';
 $_LANG['cookie_path'] = 'COOKIE path';
 $_LANG['admin_dir'] = 'Control center root path';
@@ -70,13 +71,13 @@ $_LANG['monitor_title'] = 'Upgrade program monitor';
 $_LANG['wait_please'] = 'UPgrading, please wait...';
 $_LANG['js_error'] = 'Client JavaScript error.';
 $_LANG['create_ver_failed'] = 'Create version object failed';
-$_LANG['goto_charset_convert']  = 'goto:database charset convert';
-$_LANG['goto_members_import']  = 'goto:Import members data form UCenter';
+$_LANG['goto_charset_convert'] = 'goto:database charset convert';
+$_LANG['goto_members_import'] = 'goto:Import members data form UCenter';
 
 /* Client JS language item */
 $_LANG['js_languages']['display_detail'] = 'Display details';
 $_LANG['js_languages']['hide_detail'] = 'Conceal details';
-$_LANG['js_languages']['exception']                   = 'Exception';
+$_LANG['js_languages']['exception'] = 'Exception';
 $_LANG['js_languages']['suspension_points'] = '...';
 $_LANG['js_languages']['initialize'] = 'Initialize';
 $_LANG['js_languages']['wait_please'] = 'Upgrading, please wait...';
@@ -130,15 +131,12 @@ $_LANG['lang_desc']['desc1'] = 'Make sure ECShop\'s language and charset are sam
 $_LANG['lang_desc']['desc2'] = 'If your database\'s charset is different with ECShop program\'s charset,please covert database \'s charset first';
 $_LANG['lang_desc']['desc3'] = '<font color="red">If you upgrade from ECShop v2.6.0 version, and select ECShop interface mode, first import the data to members, or former member will not be able to login.</font>';
 
-
 /* 用户接口插件语言项 */
 $_LANG['ui_title'] = 'Please select the user interface plug-ins of ECShop';
 $_LANG['ui_ecshop'] = 'ECShop type';
 $_LANG['ui_ucenter'] = 'UCenter type';
 
-
 /* 升级文件使用中文的语言项 */
 $_LANG['update_v250']['zh_cn'] = array('帐户冲值', '帐户提款', '购买商品', '订单退款', 'init' => '初始化');
 $_LANG['update_v250']['zh_tw'] = array('帳戶沖值', '帳戶提款', '購買商品', '訂單退款', 'init' => '初始化');
 $_LANG['update_v250']['en_us'] = array('saving', 'drawing', 'buying', 'refundment',  'init' => 'initialize');
-?>

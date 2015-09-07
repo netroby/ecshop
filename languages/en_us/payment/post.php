@@ -12,13 +12,10 @@
  * commercial purposes.
  * ============================================================================
  * $Author: liubo $
- * $Id: post.php 17217 2011-01-19 06:29:08Z liubo $
+ * $Id: post.php 17217 2011-01-19 06:29:08Z liubo $.
  */
-
 global $_LANG;
 
-$_LANG['post']      = 'Remittance';
-$_LANG['post_desc'] = 'Payee\'s information: Name ¡Á¡Á¡Á : Address ¡Á¡Á¡Á: Postalcode ¡Á¡Á¡Á .' . chr(13) .
+$_LANG['post'] = 'Remittance';
+$_LANG['post_desc'] = 'Payee\'s information: Name ¡Á¡Á¡Á : Address ¡Á¡Á¡Á: Postalcode ¡Á¡Á¡Á .'.chr(13).
                         'Announcements: Please note your order number in postscript at the back of cash remittance, only fill the last 6 locations.';
-
-?>

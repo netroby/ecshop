@@ -10,9 +10,8 @@
  * 使用；不允许对程序代码以任何形式任何目的的再发布。
  * ============================================================================
  * $Author: liubo $
- * $Id: alipay.php 17217 2011-01-19 06:29:08Z liubo $
+ * $Id: alipay.php 17217 2011-01-19 06:29:08Z liubo $.
  */
-
 global $_LANG;
 
 $_LANG['alipay'] = '支付宝';
@@ -47,4 +46,3 @@ $_LANG['alipay_pay_method_desc'] = '请选择您最后一次跟支付宝签订的协议里面说明的
 $_LANG['alipay_pay_method_range'][0] = '使用标准双接口';
 $_LANG['alipay_pay_method_range'][1] = '使用担保交易接口';
 $_LANG['alipay_pay_method_range'][2] = '使用即时到帐交易接口';
-?>

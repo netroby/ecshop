@@ -10,12 +10,12 @@
  * republish the program code, on the premise of that your behavior is not for commercial purposes.
  * ============================================================================
  * $Author: liubo $
- * $Id: common.php 17217 2011-01-19 06:29:08Z liubo $
-*/
+ * $Id: common.php 17217 2011-01-19 06:29:08Z liubo $.
+ */
 
 /* 用户登录语言项 */
 $_LANG['empty_username_password'] = 'Please enter username and password.';
-$_LANG['shot_message'] = "Short message";
+$_LANG['shot_message'] = 'Short message';
 
 /* 公共语言项 */
 $_LANG['sys_msg'] = 'System Message';
@@ -29,15 +29,15 @@ $_LANG['js_languages']['process_request'] = 'Please waiting...';
 $_LANG['process_request'] = 'Please waiting...';
 $_LANG['please_waiting'] = 'Please waiting...';
 $_LANG['icp_number'] = 'ICP';
-$_LANG['plugins_not_found'] = "Plug-in %s not found";
-$_LANG['home']  = 'Home';
+$_LANG['plugins_not_found'] = 'Plug-in %s not found';
+$_LANG['home'] = 'Home';
 $_LANG['back_up_page'] = 'Previous';
 $_LANG['close_window'] = 'superman wear the underwear out of the trousers';
 $_LANG['back_home'] = 'Home';
 $_LANG['ur_here'] = 'Your Position:';
 $_LANG['all_goods'] = 'All products';
-$_LANG['all_recommend'] = "All recommend";
-$_LANG['all_attribute'] = "All";
+$_LANG['all_recommend'] = 'All recommend';
+$_LANG['all_attribute'] = 'All';
 $_LANG['promotion_goods'] = 'Promotion products';
 $_LANG['best_goods'] = 'Best';
 $_LANG['new_goods'] = 'New';
@@ -150,11 +150,11 @@ $_LANG['bonus'] = 'Bonus:';
 $_LANG['no_comments'] = 'No comment';
 $_LANG['give_comments_rank'] = 'Give comment';
 $_LANG['comments_rank'] = 'Comment';
-$_LANG['comment_num'] = "%d comments";
+$_LANG['comment_num'] = '%d comments';
 $_LANG['login_please'] = 'You can\'t shopping until login.';
 $_LANG['collect_existed'] = 'Collected in your favorite.';
 $_LANG['collect_success'] = 'Collected in your favorite successfully.';
-$_LANG['copyright'] = "&copy; 2005-%s %s Copyright, All Rights Reserved.";
+$_LANG['copyright'] = '&copy; 2005-%s %s Copyright, All Rights Reserved.';
 $_LANG['no_ads_id'] = 'No appoint ID of advertisement and a jump URL address!';
 $_LANG['remove_collection_confirm'] = 'Are you sure delete the product from your favorite?';
 $_LANG['err_change_attr'] = 'No such product or no attribute is found.';
@@ -182,13 +182,13 @@ $_LANG['invalid_number'] = 'Please enter a valid number.';
 $_LANG['not_on_sale'] = 'Sorry, the sales have been overdue.';
 $_LANG['no_basic_goods'] = 'Sorry, there is no basic goods for this product in the cart.';
 $_LANG['cannt_alone_sale'] = 'Sorry, the product is tie-in-sale.';
-$_LANG['shortage'] = "Sorry, Out-of-stock and stop sales. Would you want to book in now and reserve the product?";
-$_LANG['shortage_little'] = "Out-of-stock. The system has edited the quantity for %d. Would you check the cart now?";
+$_LANG['shortage'] = 'Sorry, Out-of-stock and stop sales. Would you want to book in now and reserve the product?';
+$_LANG['shortage_little'] = 'Out-of-stock. The system has edited the quantity for %d. Would you check the cart now?';
 $_LANG['oos_tips'] = 'Out-of-stock. Would you want to register stock?';
 
 $_LANG['addto_cart_success_1'] = 'Add to the cart successfully, would you shopping continue? \n If you want to check out, please click "Yes". \n If you want to continue shopping, please click "No".';
 $_LANG['addto_cart_success_2'] = 'Add to the cart successfully, would you shopping continue? \n If you want to continue shopping, please click "Yes". \n If you want to check out, please click "No". ';
-$_LANG['no_keywords'] = "Please enter keywords!";
+$_LANG['no_keywords'] = 'Please enter keywords!';
 
 /* 分页排序 */
 $_LANG['exchange_sort']['goods_id'] = 'Sort by time';
@@ -370,8 +370,8 @@ $_LANG['virtual_goods_ship_fail'] = 'Shipping is failed automatically, please co
 
 /* 选购中心 */
 $_LANG['pick_out'] = 'Shopping Center';
-$_LANG['fit_count'] = "There is(are) %s product(s) match condition.";
-$_LANG['goods_type'] = "Product type";
+$_LANG['fit_count'] = 'There is(are) %s product(s) match condition.';
+$_LANG['goods_type'] = 'Product type';
 $_LANG['remove_all'] = 'Remove all';
 $_LANG['advanced_search'] = 'Advanced ';
 $_LANG['activity'] = 'This product is in some activities as ';
@@ -588,7 +588,6 @@ $_LANG['btn_add_to_collect'] = 'Add to collect';
 
 $_LANG['stock_up'] = 'Out of stock';
 
-
 $_LANG['hot_search'] = 'Hot search';
 
 $_LANG['please_select_attr'] = 'There are differnt type of cart goods to choose, jump to goods attibutes?';
@@ -602,16 +601,16 @@ $_LANG['wholesale_promotion'] = '[Wholesale]';
 $_LANG['package_promotion'] = '[Package]';
 
 /* feed推送 */
-$_LANG['feed_user_buy'] = "Feeds of user buy";
-$_LANG['feed_user_comment'] = "feeds of user commented";
-$_LANG['feed_goods_price'] = "Feeds of goods price";
-$_LANG['feed_goods_desc'] = "Feeds of goods description";
+$_LANG['feed_user_buy'] = 'Feeds of user buy';
+$_LANG['feed_user_comment'] = 'feeds of user commented';
+$_LANG['feed_goods_price'] = 'Feeds of goods price';
+$_LANG['feed_goods_desc'] = 'Feeds of goods description';
 
 /* 留言板 */
 $_LANG['shopman_comment'] = 'Goods comment';
 $_LANG['message_ping'] = 'Comment';
-$_LANG['message_board'] = "Message Board";
-$_LANG['post_message'] = "Post Message";
+$_LANG['message_board'] = 'Message Board';
+$_LANG['post_message'] = 'Post Message';
 $_LANG['message_title'] = 'Theme';
 $_LANG['message_time'] = 'Date';
 $_LANG['reply_time'] = 'Replay Date';
@@ -634,18 +633,17 @@ $_LANG['message_board_js']['msg_captcha_empty'] = 'Captcha Empty';
 $_LANG['message_board_js']['msg_title_limit'] = 'Title of the message can not be more than 200 words';
 $_LANG['message_submit_wait'] = 'Your message has been successfully delivered, please wait for the administrator\'s review!';
 $_LANG['message_submit_done'] = 'Message delivered successfully';
-$_LANG['message_board_close'] = "Message board suspended function";
+$_LANG['message_board_close'] = 'Message board suspended function';
 $_LANG['upload_file_limit'] = 'File size exceeds the limit %dKB';
 $_LANG['message_list_lnk'] = 'Guest Book return a list of';
 
 /* 报价单 */
-$_LANG['quotation'] = "Quotation";
-$_LANG['print_quotation'] = "Quotation Print";
-$_LANG['goods_inventory'] = "Inventory";
-$_LANG['goods_category'] = "Goods category";
+$_LANG['quotation'] = 'Quotation';
+$_LANG['print_quotation'] = 'Quotation Print';
+$_LANG['goods_inventory'] = 'Inventory';
+$_LANG['goods_category'] = 'Goods category';
 $_LANG['shopman_reply'] = 'Admin Replay';
 $_LANG['specifications'] = 'products';
-
 
 /* 相册JS语言项 */
 $_LANG['gallery_js']['close_window'] = 'Close Window';
@@ -727,4 +725,3 @@ $_LANG['label_collection'] = 'my collection';
 $_LANG['article_list'] = 'article list';
 $_LANG['Preferences_price'] = 'Preferences price';
 $_LANG['divided_into'] = 'Into rules';
-?>

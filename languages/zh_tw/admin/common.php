@@ -10,9 +10,8 @@
  * 使用；不允許對程序代碼以任何形式任何目的的再發佈。
  * ============================================================================
  * $Author: liubo $
- * $Id: common.php 17217 2011-01-19 06:29:08Z liubo $
-*/
-
+ * $Id: common.php 17217 2011-01-19 06:29:08Z liubo $.
+ */
 $_LANG['app_name'] = 'ECSHOP';
 $_LANG['cp_home'] = 'ECSHOP 管理中心';
 $_LANG['copyright'] = '版權所有 &copy; 2005-2012 上海商派網絡科技有限公司，並保留所有權利。';
@@ -342,4 +341,3 @@ $_LANG['brand_name_exist'] = '已存在相同的品牌名稱!';
 
 $_LANG['alipay_login'] = '<a href="https://www.alipay.com/user/login.htm?goto=https%3A%2F%2Fwww.alipay.com%2Fhimalayas%2Fpracticality_profile_edit.htm%3Fmarket_type%3Dfrom_agent_contract%26customer_external_id%3D%2BC4335319945672464113" target="_blank">立即免費申請支付接口權限</a>';
 $_LANG['alipay_look'] = '<a href=\"https://www.alipay.com/himalayas/practicality.htm\" target=\"_blank\">請申請成功後登錄支付寶賬戶查看</a>';
-?>

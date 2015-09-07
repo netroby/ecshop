@@ -10,9 +10,8 @@
  * 使用；不允許對程序代碼以任何形式任何目的的再發佈。
  * ============================================================================
  * $Author: liubo $
- * $Id: goods_booking.php 17217 2011-01-19 06:29:08Z liubo $
-*/
-
+ * $Id: goods_booking.php 17217 2011-01-19 06:29:08Z liubo $.
+ */
 $_LANG['list_all'] = '全部缺貨登記信息';
 
 $_LANG['booking'] = '訂購信息';
@@ -51,5 +50,3 @@ $_LANG['dispose_succeed'] = '處理成功';
 
 $_LANG['mail_send_fail'] = '郵件發送失敗，請檢查郵件服務器設置后重新發送郵件';
 $_LANG['remail'] = '重發郵件';
-
-?>

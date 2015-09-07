@@ -10,9 +10,8 @@
  * 使用；不允许对程序代码以任何形式任何目的的再发布。
  * ============================================================================
  * $Author: liubo $
- * $Id: plugins.php 17217 2011-01-19 06:29:08Z liubo $
-*/
-
+ * $Id: plugins.php 17217 2011-01-19 06:29:08Z liubo $.
+ */
 $_LANG['plugin_name'] = '名称';
 $_LANG['plugin_desc'] = '描述';
 $_LANG['plugin_version'] = '版本';
@@ -30,5 +29,3 @@ $_LANG['install_success'] = '指定的插件已经安装成功。';
 $_LANG['upgrade_success'] = '指定的插件已经升级成功。';
 $_LANG['plugin_not_exists'] = '没有找到指定的插件文件，请确认该插件是否确实存在。';
 $_LANG['class_not_exists'] = '没有找到指定的插件类，该插件可能已经被损坏。';
-
-?>

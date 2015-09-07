@@ -12,10 +12,9 @@
  * commercial purposes.
  * ============================================================================
  * $Author: liubo $
- * $Id: template.php 17217 2011-01-19 06:29:08Z liubo $
-*/
-
-$_LANG['template_manage']='Template Management';
+ * $Id: template.php 17217 2011-01-19 06:29:08Z liubo $.
+ */
+$_LANG['template_manage'] = 'Template Management';
 $_LANG['current_template'] = 'Current Template';
 $_LANG['available_templates'] = 'Available Templates';
 $_LANG['select_template'] = 'Please select a template:';
@@ -47,7 +46,7 @@ $_LANG['template_files']['article_cat'] = 'Article category template';
 $_LANG['template_files']['brand'] = 'Brand area';
 //$_LANG['template_files']['catalog']='All categories pages';
 $_LANG['template_files']['category'] = 'Products category page template';
-$_LANG['template_files']['flow']='Shopping process template';
+$_LANG['template_files']['flow'] = 'Shopping process template';
 $_LANG['template_files']['goods'] = 'Product information template';
 $_LANG['template_files']['group_buy_goods'] = 'Associates products detail template';
 $_LANG['template_files']['group_buy_list'] = 'Associates products list template';
@@ -139,12 +138,10 @@ $_LANG['del_backup_ok'] = 'Delete backup success';
 $_LANG['restore_backup_ok'] = 'The success of the restoration of the backup';
 
 /* JS language item */
-$_LANG['js_languages']['setupConfirm'] = "Enable new template and disable old template. \\nAre you sure enable the new template?";
+$_LANG['js_languages']['setupConfirm'] = 'Enable new template and disable old template. \\nAre you sure enable the new template?';
 $_LANG['js_languages']['reinstall'] = 'Reinstall current template';
-$_LANG['backup'] =  'Back-up current template';
+$_LANG['backup'] = 'Back-up current template';
 $_LANG['js_languages']['selectPlease'] = 'Please select...';
 $_LANG['js_languages']['removeConfirm'] = 'Are you sure delete the selected contents?';
 $_LANG['js_languages']['empty_content'] = 'Sorry, library content can\'t be blank.';
 $_LANG['js_languages']['save_confirm'] = 'You have edit template, are you sure don\'t save it?';
-
-?>

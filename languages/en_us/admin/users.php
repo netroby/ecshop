@@ -12,8 +12,8 @@
  * commercial purposes.
  * ============================================================================
  * $Author: liubo $
- * $Id: users.php 17217 2011-01-19 06:29:08Z liubo $
-*/
+ * $Id: users.php 17217 2011-01-19 06:29:08Z liubo $.
+ */
 /* List page */
 $_LANG['label_user_name'] = 'Username:';
 $_LANG['label_pay_points_gt'] = 'Points more than:';
@@ -50,7 +50,7 @@ $_LANG['frozen_money'] = 'Frozen money';
 $_LANG['credit_line'] = 'Credit line';
 $_LANG['user_rank'] = 'Rank';
 $_LANG['not_special_rank'] = 'Nonspecial rank';
-$_LANG['view_detail_account']='View details.';
+$_LANG['view_detail_account'] = 'View details.';
 $_LANG['parent_user'] = 'Recommend people';
 $_LANG['parent_remove'] = 'From relations recommend';
 $_LANG['affiliate_user'] = 'Recommended Member';
@@ -118,4 +118,3 @@ $_LANG['js_languages']['password_not_same'] = 'the password and the confirm pass
 $_LANG['js_languages']['invalid_pay_points'] = 'The points of payment must be an integer.';
 $_LANG['js_languages']['invalid_rank_points'] = 'The points of rank must be an integer.';
 $_LANG['js_languages']['password_len_err'] = 'New Password and Confirm Password should not less than the length of 6';
-?>

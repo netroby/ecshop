@@ -10,7 +10,7 @@
  * 使用；不允許對程序代碼以任何形式任何目的的再發佈。
  * ============================================================================
  * $Author: liubo $
- * $Id: order.php 17217 2011-01-19 06:29:08Z liubo $
+ * $Id: order.php 17217 2011-01-19 06:29:08Z liubo $.
  */
 
 /* 訂單搜索 */
@@ -312,8 +312,8 @@ $_LANG['select_card'] = '選擇賀卡';
 $_LANG['select_shipping'] = '請先選擇配送方式';
 $_LANG['want_insure'] = '我要保價';
 $_LANG['update_goods'] = '更新商品';
-$_LANG['notice_user'] = '<strong>注意：</strong>搜索結果只顯示前20條記錄，如果沒有找到相' .
-        '應會員，請更精確地查找。另外，如果該會員是從論壇註冊的且沒有在商城登錄過，' .
+$_LANG['notice_user'] = '<strong>注意：</strong>搜索結果只顯示前20條記錄，如果沒有找到相'.
+        '應會員，請更精確地查找。另外，如果該會員是從論壇註冊的且沒有在商城登錄過，'.
         '也無法找到，需要先在商城登錄。';
 $_LANG['amount_increase'] = '由於您修改了訂單，導致訂單總金額增加，需要再次付款';
 $_LANG['amount_decrease'] = '由於您修改了訂單，導致訂單總金額減少，需要退款';
@@ -400,4 +400,3 @@ $_LANG['label_return_time'] = '退貨時間';
 $_LANG['tips_back_del'] = '退貨單刪除成功！';
 
 $_LANG['goods_num_err'] = '庫存不足，請重新選擇！';
-?>

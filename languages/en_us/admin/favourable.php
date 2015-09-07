@@ -12,8 +12,8 @@
  * commercial purposes.
  * ============================================================================
  * $Author: liubo $
- * $Id: favourable.php 17217 2011-01-19 06:29:08Z liubo $
-*/
+ * $Id: favourable.php 17217 2011-01-19 06:29:08Z liubo $.
+ */
 
 /* menu */
 $_LANG['favourable_list'] = 'Offers a list of Events';
@@ -56,8 +56,8 @@ $_LANG['label_min_amount'] = 'The amount of the minimum:';
 $_LANG['label_max_amount'] = 'The upper limit:';
 $_LANG['notice_max_amount'] = '0 that there is no upper limit';
 $_LANG['label_act_type'] = 'Discount method:';
-$_LANG['notice_act_type'] = 'When the concession for the "enjoyment of gifts (for ex-gratia goods)", please enter the permit buyers to choose gift (ex-gratia goods) the maximum quantity, quantity to 0 express an unlimited number;' .
-        'When the concession for the \"enjoyment of cash for relief\", enter the amount of cash relief;' .
+$_LANG['notice_act_type'] = 'When the concession for the "enjoyment of gifts (for ex-gratia goods)", please enter the permit buyers to choose gift (ex-gratia goods) the maximum quantity, quantity to 0 express an unlimited number;'.
+        'When the concession for the \"enjoyment of cash for relief\", enter the amount of cash relief;'.
         'When the concession for the \"enjoyment of price discounts\", please enter the discount (1-99), such as: playing 9 packs, on the input 90.';
 $_LANG['fat_goods'] = 'Enjoy the gift (for ex-gratia goods)';
 $_LANG['fat_price'] = 'Enjoy cash relief';
@@ -84,8 +84,5 @@ $_LANG['act_name_exists'] = 'Activity name of the discount already exists, pleas
 
 $_LANG['nolimit'] = 'There is no limit';
 
-
 $_LANG['favourable_desc'] = 'favourable_desc';
-$_LANG['favourable_image'] ='favourable_image';
-
-?>
+$_LANG['favourable_image'] = 'favourable_image';

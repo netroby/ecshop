@@ -12,10 +12,8 @@
  * commercial purposes.
  * ============================================================================
  * $Author: liubo $
- * $Id: city_express.php 17217 2011-01-19 06:29:08Z liubo $
-*/
-
-$_LANG['city_express']        = 'Inter-city shipping';
-$_LANG['city_express_desc']   = 'Cost of shipping is fixed ';
-$_LANG['base_fee']      = 'Basic expenditure:';
-?>
+ * $Id: city_express.php 17217 2011-01-19 06:29:08Z liubo $.
+ */
+$_LANG['city_express'] = 'Inter-city shipping';
+$_LANG['city_express_desc'] = 'Cost of shipping is fixed ';
+$_LANG['base_fee'] = 'Basic expenditure:';

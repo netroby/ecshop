@@ -10,9 +10,8 @@
  * 使用；不允许对程序代码以任何形式任何目的的再发布。
  * ============================================================================
  * $Author: liubo $
- * $Id: payment.php 17217 2011-01-19 06:29:08Z liubo $
-*/
-
+ * $Id: payment.php 17217 2011-01-19 06:29:08Z liubo $.
+ */
 $_LANG['payment'] = '支付方式';
 $_LANG['payment_name'] = '支付方式名称';
 $_LANG['version'] = '插件版本';
@@ -39,9 +38,8 @@ $_LANG['payment_not_available'] = '该支付插件不存在或尚未安装';
 
 $_LANG['js_languages']['lang_removeconfirm'] = '您确定要卸载该支付方式吗？';
 
-$_LANG['ctenpay']           = '立即注册财付通商户号';
-$_LANG['ctenpay_url']       = 'http://union.tenpay.com/mch/mch_register_b2c.shtml?sp_suggestuser=542554970';
-$_LANG['ctenpayc2c_url']    = 'https://www.tenpay.com/mchhelper/mch_register_c2c.shtml?sp_suggestuser=542554970';
-$_LANG['tenpay']  = '即时到账';
+$_LANG['ctenpay'] = '立即注册财付通商户号';
+$_LANG['ctenpay_url'] = 'http://union.tenpay.com/mch/mch_register_b2c.shtml?sp_suggestuser=542554970';
+$_LANG['ctenpayc2c_url'] = 'https://www.tenpay.com/mchhelper/mch_register_c2c.shtml?sp_suggestuser=542554970';
+$_LANG['tenpay'] = '即时到账';
 $_LANG['tenpayc2c'] = '中介担保';
-?>

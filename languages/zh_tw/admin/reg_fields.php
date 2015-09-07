@@ -10,9 +10,8 @@
  * 使用；不允许对程序代码以任何形式任何目的的再发布。
  * ============================================================================
  * $Author: testyang $
- * $Id: reg_fields.php 15053 2008-10-25 03:07:46Z testyang $
-*/
-
+ * $Id: reg_fields.php 15053 2008-10-25 03:07:46Z testyang $.
+ */
 $_LANG['field_name'] = '會員註冊項名稱';
 $_LANG['field_order'] = '排序權值';
 $_LANG['field_display'] = '是否顯示';
@@ -31,5 +30,3 @@ $_LANG['no_remove'] = '系統保留不可刪除';
 
 /* JS 语言 */
 $_LANG['js_languages']['field_name_empty'] = '您沒有輸入會員註冊字段名稱。';
-
-?>

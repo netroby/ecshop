@@ -12,10 +12,9 @@
  * commercial purposes.
  * ============================================================================
  * $Author: liubo $
- * $Id: picture_batch.php 17217 2011-01-19 06:29:08Z liubo $
-*/
-
-$_LANG['notes'] = "Image batch processing allow you to re-create thumbnail and watermark.<br/> Please wait for processing.";
+ * $Id: picture_batch.php 17217 2011-01-19 06:29:08Z liubo $.
+ */
+$_LANG['notes'] = 'Image batch processing allow you to re-create thumbnail and watermark.<br/> Please wait for processing.';
 $_LANG['change_link'] = 'After the picture for the deal to generate a new link';
 $_LANG['yes_change'] = 'New image new name and delete old image';
 $_LANG['do_album'] = 'Merchandise album deal';
@@ -43,5 +42,3 @@ $_LANG['js_languages']['no_action'] = 'Please select operation.';
 
 $_LANG['silent'] = 'Error when ignoring the error, continue to implement procedures';
 $_LANG['no_silent'] = 'Immediately prompted an error and stay of proceedings';
-
-?>

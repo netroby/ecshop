@@ -10,9 +10,8 @@
  * 使用；不允許對程序代碼以任何形式任何目的的再發佈。
  * ============================================================================
  * $Author: liubo $
- * $Id: goods_type.php 17217 2011-01-19 06:29:08Z liubo $
-*/
-
+ * $Id: goods_type.php 17217 2011-01-19 06:29:08Z liubo $.
+ */
 $_LANG['goods_type_list'] = '商品類型列表';
 $_LANG['edit_goods_type'] = '編輯商品類型';
 $_LANG['attr_groups'] = '屬性分組';
@@ -34,7 +33,7 @@ $_LANG['add_goodstype_failed'] = '新建商品類型失敗。';
 $_LANG['edit_goodstype_success'] = '編輯商品類型成功。';
 $_LANG['edit_goodstype_failed'] = '編輯商品類型失敗。';
 $_LANG['remove_failed'] = '移除商品類型失敗。';
-$_LANG['remove_confirm'] = "刪除商品類型將會清除該類型下的所有屬性。\\n您確定要刪除選定的商品類型嗎？";
+$_LANG['remove_confirm'] = '刪除商品類型將會清除該類型下的所有屬性。\\n您確定要刪除選定的商品類型嗎？';
 $_LANG['repeat_type_name'] = '已經存在一個同名的商品類型。';
 $_LANG['cannot_found_goodstype'] = '沒有找到指定的商品類型。';
 
@@ -43,5 +42,3 @@ $_LANG['js_languages']['lang_remove'] = '移除';
 $_LANG['js_languages']['attribute'] = '屬性';
 $_LANG['js_languages']['remove_confirm'] = "刪除商品類型將會清除該類型下的所有屬性。\\\n您確定要刪除選定的商品類型嗎？";
 $_LANG['js_languages']['type_name_empty'] = '商品類型名稱不能為空！';
-
-?>

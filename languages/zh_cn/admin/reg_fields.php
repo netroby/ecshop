@@ -10,9 +10,8 @@
  * 使用；不允许对程序代码以任何形式任何目的的再发布。
  * ============================================================================
  * $Author: testyang $
- * $Id: reg_fields.php 15053 2008-10-25 03:07:46Z testyang $
-*/
-
+ * $Id: reg_fields.php 15053 2008-10-25 03:07:46Z testyang $.
+ */
 $_LANG['field_name'] = '会员注册项名称';
 $_LANG['field_order'] = '排序权值';
 $_LANG['field_display'] = '是否显示';
@@ -29,7 +28,5 @@ $_LANG['order_not_num'] = '输入的排序权值不是有效的数字。';
 $_LANG['no_edit'] = '系统保留不可修改';
 $_LANG['no_remove'] = '系统保留不可删除';
 
-
 /* JS 语言 */
 $_LANG['js_languages']['field_name_empty'] = '您没有输入会员注册字段名称。';
-?>

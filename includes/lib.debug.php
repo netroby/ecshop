@@ -96,7 +96,9 @@
 **   - print_a($array, '_MyLabel') draws a frame with a label around the output
 ************************************************/
 
-if (!defined('USE_DEBUGLIB')) define('USE_DEBUGLIB', true);
+if (!defined('USE_DEBUGLIB')) {
+    define('USE_DEBUGLIB', true);
+}
 
 if (USE_DEBUGLIB) {
 
@@ -117,31 +119,34 @@ if (USE_DEBUGLIB) {
     ** Stephan Pirson (Saibot)
     ************************************************/
 
-    class Print_a_class {
-
+    class Print_a_class
+    {
         # this can be changed to true if you want
-        var $look_for_leading_tabs = false;
+        public $look_for_leading_tabs = false;
 
-        var $output;
-        var $iterations;
-        var $key_bg_color = '1E32C8';
-        var $value_bg_color = 'DDDDEE';
-        var $fontsize = '8pt';
-        var $keyalign = 'left';
-        var $fontfamily = 'Verdana';
-        var $show_object_vars;
-        var $limit;
+        public $output;
+        public $iterations;
+        public $key_bg_color = '1E32C8';
+        public $value_bg_color = 'DDDDEE';
+        public $fontsize = '8pt';
+        public $keyalign = 'left';
+        public $fontfamily = 'Verdana';
+        public $show_object_vars;
+        public $limit;
 
         // function Print_a_class() {}
 
         # recursive function!
 
         /* this internal function looks if the given array has only numeric values as  */
-        function _only_numeric_keys( $array ) {
+        public function _only_numeric_keys($array)
+        {
             $test = true;
             if (is_array($array)) {
-                foreach ( array_keys( $array ) as $key ) {
-                    if( !is_numeric( $key ) )   $test = false; /* #TODO# */
+                foreach (array_keys($array) as $key) {
+                    if (!is_numeric($key)) {
+                        $test = false;
+                    } /* #TODO# */
                 }
 
                 return $test;
@@ -150,7 +155,8 @@ if (USE_DEBUGLIB) {
             }
         }
 
-        function _handle_whitespace( $string ) {
+        public function _handle_whitespace($string)
+        {
             $string = str_replace(' ', '&nbsp;', $string);
             $string = preg_replace(array('/&nbsp;$/', '/^&nbsp;/'), '<span style="color:red;">_</span>', $string); /* replace spaces at the start/end of the STRING with red underscores */
             $string = preg_replace('/\t/', '&nbsp;&nbsp;<span style="border-bottom:#'.$this->value_bg_color.' solid 1px;">&nbsp;</span>', $string); /* replace tabulators with '_ _' */
@@ -158,41 +164,45 @@ if (USE_DEBUGLIB) {
             return $string;
         }
 
-        function print_a($array, $iteration = false, $key_bg_color = false) {
+        public function print_a($array, $iteration = false, $key_bg_color = false)
+        {
             $key_bg_color or $key_bg_color = $this->key_bg_color;
 
             # lighten up the background color for the key td's =)
-            if( $iteration ) {
-                for ($i=0; $i<6; $i+=2) {
-                    $c = substr( $key_bg_color, $i, 2 );
-                    $c = hexdec( $c );
-                    ( $c += 15 ) > 255 and $c = 255;
+            if ($iteration) {
+                for ($i = 0; $i < 6; $i += 2) {
+                    $c = substr($key_bg_color, $i, 2);
+                    $c = hexdec($c);
+                    ($c += 15) > 255 and $c = 255;
                     isset($tmp_key_bg_color) or $tmp_key_bg_color = '';
-                    $tmp_key_bg_color .= sprintf( "%02X", $c );
+                    $tmp_key_bg_color .= sprintf('%02X', $c);
                 }
                 $key_bg_color = $tmp_key_bg_color;
             }
 
             # build a single table ... may be nested
             $this->output .= '<table style="border:none;" cellspacing="1">';
-            $only_numeric_keys = ($this->_only_numeric_keys( $array ) || count( $array ) > 50);
+            $only_numeric_keys = ($this->_only_numeric_keys($array) || count($array) > 50);
             $i = 0;
-            foreach ($array as $key => $value)
-            {
-                if( $only_numeric_keys && $this->limit && $this->limit == $i++ ) break; /* if print_a() was called with a fourth parameter #TODO# */
+            foreach ($array as $key => $value) {
+                if ($only_numeric_keys && $this->limit && $this->limit == $i++) {
+                    break;
+                } /* if print_a() was called with a fourth parameter #TODO# */
 
                 $value_style_box = 'color:black;';
                 $key_style = 'color:white;';
 
-                $type = gettype( $value );
+                $type = gettype($value);
                 # print $type.'<br />';
 
                 # change the color and format of the value and set the values title
                 $type_title = $type;
                 $value_style_content = '';
-                switch( $type ) {
+                switch ($type) {
                     case 'array':
-                        if( empty( $value ) ) $type_title = 'empty array';
+                        if (empty($value)) {
+                            $type_title = 'empty array';
+                        }
                         break;
 
                     case 'object':
@@ -208,7 +218,7 @@ if (USE_DEBUGLIB) {
                         break;
 
                     case 'boolean':
-                        if( $value == true ) {
+                        if ($value == true) {
                             $value_style_box = 'color:#D90081;';
                         } else {
                             $value_style_box = 'color:#84009F;';
@@ -220,57 +230,55 @@ if (USE_DEBUGLIB) {
                         break;
 
                     case 'string':
-                        if( $value == '' ) {
-
+                        if ($value == '') {
                             $value_style_box = 'color:darkorange;';
                             $value = "''";
                             $type_title = 'empty string';
-
                         } else {
-
                             $value_style_box = 'color:black;';
-                            $value = htmlspecialchars( $value );
-                            if( $this->look_for_leading_tabs && _check_for_leading_tabs( $value ) ) {
-                                $value = _remove_exessive_leading_tabs( $value );
+                            $value = htmlspecialchars($value);
+                            if ($this->look_for_leading_tabs && _check_for_leading_tabs($value)) {
+                                $value = _remove_exessive_leading_tabs($value);
                             }
-                            $value = $this->_handle_whitespace( $value );
+                            $value = $this->_handle_whitespace($value);
                             $value = nl2br($value);
 
                             /* use different color for string background */
-                            if(strstr($value, "\n")) $value_style_content = 'background:#ECEDFE;';
-
+                            if (strstr($value, "\n")) {
+                                $value_style_content = 'background:#ECEDFE;';
+                            }
                         }
                         break;
                 }
 
                 $this->output .= '<tr>';
-                $this->output .= '<td nowrap="nowrap" align="'.$this->keyalign.'" style="padding:0px 3px 0px 3px;background-color:#'.$key_bg_color.';'.$key_style.';font:bold '.$this->fontsize.' '.$this->fontfamily.';" title="'.gettype( $key ).'['.$type_title.']">';
-                $this->output .= $this->_handle_whitespace( $key );
+                $this->output .= '<td nowrap="nowrap" align="'.$this->keyalign.'" style="padding:0px 3px 0px 3px;background-color:#'.$key_bg_color.';'.$key_style.';font:bold '.$this->fontsize.' '.$this->fontfamily.';" title="'.gettype($key).'['.$type_title.']">';
+                $this->output .= $this->_handle_whitespace($key);
                 $this->output .= '</td>';
                 $this->output .= '<td nowrap="nowrap" style="background-color:#'.$this->value_bg_color.';font: '.$this->fontsize.' '.$this->fontfamily.'; color:black;">';
 
                 # value output
-                if($type == 'array' && preg_match('/#RAS/', $key) ) { /* only used for special recursive array constructs which i use sometimes */
+                if ($type == 'array' && preg_match('/#RAS/', $key)) { /* only used for special recursive array constructs which i use sometimes */
                     $this->output .= '<div style="'.$value_style_box.'">recursion!</div>';
-                } elseif($type == 'array') {
-                    if( ! empty( $value ) ) {
-                        $this->print_a( $value, true, $key_bg_color );
+                } elseif ($type == 'array') {
+                    if (!empty($value)) {
+                        $this->print_a($value, true, $key_bg_color);
                     } else {
                         $this->output .= '<span style="color:darkorange;">[]</span>';
                     }
-                } elseif($type == 'object') {
-                    if( $this->show_object_vars ) {
+                } elseif ($type == 'object') {
+                    if ($this->show_object_vars) {
                         $objects_class = get_class($value);
-                        $this->print_a( array('CLASS_NAME' => $objects_class), true, '204FB8' );
-                        $this->print_a( array('CLASS_VARS' => get_class_vars( $objects_class )), true, '2066B8' );
-                        $this->print_a( array('CLASS_METHODS' => get_class_methods( $objects_class )), true, '2067EB8' );
-                        $this->print_a( array('OBJECT_VARS' => get_object_vars( $value )), true, '2095B8' );
+                        $this->print_a(array('CLASS_NAME' => $objects_class), true, '204FB8');
+                        $this->print_a(array('CLASS_VARS' => get_class_vars($objects_class)), true, '2066B8');
+                        $this->print_a(array('CLASS_METHODS' => get_class_methods($objects_class)), true, '2067EB8');
+                        $this->print_a(array('OBJECT_VARS' => get_object_vars($value)), true, '2095B8');
                     } else {
                         $this->output .= '<div style="'.$value_style_box.'">OBJECT</div>';
                     }
-                } elseif($type == 'boolean') {
+                } elseif ($type == 'boolean') {
                     $this->output .= '<div style="'.$value_style_box.'" title="'.$type.'">'.($value ? 'true' : 'false').'</div>';
-                } elseif($type == 'NULL') {
+                } elseif ($type == 'NULL') {
                     $this->output .= '<div style="'.$value_style_box.'" title="'.$type.'">NULL</div>';
                 } else {
                     $this->output .= '<div style="'.$value_style_box.'" title="'.$type.'"><span style="'.$value_style_content.'">'.$value.'</span></div>';
@@ -280,10 +288,10 @@ if (USE_DEBUGLIB) {
                 $this->output .= '</tr>';
             }
 
-            $entry_count = count( $array );
+            $entry_count = count($array);
             $skipped_count = $entry_count - $this->limit;
 
-            if( $only_numeric_keys && $this->limit && count($array) > $this->limit) {
+            if ($only_numeric_keys && $this->limit && count($array) > $this->limit) {
                 $this->output .= '<tr title="showing '.$this->limit.' of '.$entry_count.' entries in this array"><td style="text-align:right;color:darkgray;background-color:#'.$key_bg_color.';font:bold '.$this->fontsize.' '.$this->fontfamily.';">...</td><td style="background-color:#'.$this->value_bg_color.';font:'.$this->fontsize.' '.$this->fontfamily.';color:darkgray;">['.$skipped_count.' skipped]</td></tr>';
             }
             $this->output .= '</table>';
@@ -291,65 +299,64 @@ if (USE_DEBUGLIB) {
     }
 
     # helper function.. calls print_a() inside the print_a_class
-    function print_a( $array, $mode = 0, $show_object_vars = false, $limit = false ) {
+    function print_a($array, $mode = 0, $show_object_vars = false, $limit = false)
+    {
         $output = '';
 
-        if( is_array( $array ) or is_object( $array ) ) {
-
-            if( empty( $array ) ) {
+        if (is_array($array) or is_object($array)) {
+            if (empty($array)) {
                 $output .= '<span style="color:red;font-size:small;">print_a( empty array )</span>';
             }
 
-            $pa = &new Print_a_class;
+            $pa = &new Print_a_class();
             $show_object_vars and $pa->show_object_vars = true;
-            if( $limit ) {
+            if ($limit) {
                 $pa->limit = $limit;
                 // $output .= '<span style="color:red;">showing only '.$limit.' entries for arrays with numeric keys</span>';
             }
 
-            if ( is_object($array) ) {
-
-              $pa->print_a( get_object_vars($array) );
-
+            if (is_object($array)) {
+                $pa->print_a(get_object_vars($array));
             } else {
-
-              $pa->print_a( $array );
+                $pa->print_a($array);
             }
 
             # $output = $pa->output; unset($pa);
             $output .= $pa->output;
-        } elseif( gettype($array) == 'boolean') {
+        } elseif (gettype($array) == 'boolean') {
             $output .= '<span style="color:red;font-size:small;">print_a( '.($array === true ? 'true' : 'false').' )</span>';
         } else {
-            $output .= '<span style="color:red;font-size:small;">print_a( '.gettype( $array ).' )</span>';
+            $output .= '<span style="color:red;font-size:small;">print_a( '.gettype($array).' )</span>';
         }
 
-        if($mode === 0 || $mode == NULL || $mode == false) {
+        if ($mode === 0 || $mode == null || $mode == false) {
             print $output;
+
             return true;
         }
 
-        if($mode == 1) {
+        if ($mode == 1) {
             return $output;
         }
 
-        if(is_string($mode) || $mode == 2 ) {
-            $debugwindow_origin = $_SERVER["HTTP_HOST"].$_SERVER["REQUEST_URI"];
+        if (is_string($mode) || $mode == 2) {
+            $debugwindow_origin = $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 
-            if(preg_match('/(.+)::(.+)/', $mode, $matches)) {
+            if (preg_match('/(.+)::(.+)/', $mode, $matches)) {
                 $mode = $matches[1];
                 $remote_addr = gethostbyname($matches[2]);
-                if($_SERVER['REMOTE_ADDR'] != $remote_addr) return;
+                if ($_SERVER['REMOTE_ADDR'] != $remote_addr) {
+                    return;
+                }
             }
 
-            if(preg_match('/^_(.*)/', $mode, $matches)) {
+            if (preg_match('/^_(.*)/', $mode, $matches)) {
                 #$output = "<table style=\"border:1px solid black;\" cellpadding=\"0\" cellspcing=\"0\"><tr><td style=\"background:#1E2B9E;color:white;font-weight:bold;padding:2px;\">{$matches[1]}</td></tr><tr><td>$output</td></tr></table>";
                 $output = "<fieldset style=\"width:100px;padding:2px;border:1px solid #666666;\"><legend>{$matches[1]}</legend>$output</fieldset><br />";
 
                 print $output;
             } else {
-
-                        print '
+                print '
                 <script type="text/javascript" language="JavaScript">
                 var debugwindow;
                 debugwindow = window.open("", "T_'.md5($_SERVER['HTTP_HOST']).(is_string($mode)  ? $mode : '').'", "menubar=no,scrollbars=yes,resizable=yes,width=640,height=480");
@@ -363,32 +370,35 @@ if (USE_DEBUGLIB) {
             }
         }
 
-        if($mode == 3) {
+        if ($mode == 3) {
             print '
                 <script type="text/javascript" language="JavaScript">
                     var debugwindow;
                     debugwindow = window.open("", "S_'.md5($_SERVER['HTTP_HOST']).'", "menubar=yes,scrollbars=yes,resizable=yes,width=640,height=480");
                     debugwindow.document.open();
-                    debugwindow.document.write("unserialize(\''.str_replace("'", "\\'", addslashes( str_replace(array("\r\n", "\n", "\r"), '\n', serialize($array) ) ) ).'\');");
+                    debugwindow.document.write("unserialize(\''.str_replace("'", "\\'", addslashes(str_replace(array("\r\n", "\n", "\r"), '\n', serialize($array)))).'\');");
                     debugwindow.document.close();
                     debugwindow.document.title = "Debugwindow for : http://'.$debugwindow_origin.'";
                     debugwindow.focus();
                 </script>
             ';
         }
-
     }
 
     // shows mysql-result as a table.. # not ready yet :(
-    function print_result($RESULT) {
+    function print_result($RESULT)
+    {
+        if (!$RESULT) {
+            return;
+        }
 
-        if(!$RESULT) return;
-
-        if(mysql_num_rows($RESULT) < 1) return;
+        if (mysql_num_rows($RESULT) < 1) {
+            return;
+        }
         $fieldcount = mysql_num_fields($RESULT);
 
-        for ($i=0; $i<$fieldcount; $i++) {
-            $tables[mysql_field_table($RESULT, $i)]++;
+        for ($i = 0; $i < $fieldcount; ++$i) {
+            ++$tables[mysql_field_table($RESULT, $i)];
         }
 
         print '
@@ -435,7 +445,7 @@ if (USE_DEBUGLIB) {
         print '</tr>';
 
         print '<tr>';
-        for ($i=0;$i < mysql_num_fields($RESULT);$i++) {
+        for ($i = 0;$i < mysql_num_fields($RESULT);++$i) {
             $FIELD = mysql_field_name($RESULT, $i);
             $col == '0054A6' ? $col = '003471' : $col = '0054A6';
             print '<td align="center" bgcolor="#'.$col.'" class="rs_f_th">'.$FIELD.'</td>';
@@ -445,13 +455,13 @@ if (USE_DEBUGLIB) {
         mysql_data_seek($RESULT, 0);
 
         while ($DB_ROW = mysql_fetch_array($RESULT, MYSQL_NUM)) {
-            $pointer++;
-            if($toggle) {
-                $col1 = "E6E6E6";
-                $col2 = "DADADA";
+            ++$pointer;
+            if ($toggle) {
+                $col1 = 'E6E6E6';
+                $col2 = 'DADADA';
             } else {
-                $col1 = "E1F0FF";
-                $col2 = "DAE8F7";
+                $col1 = 'E1F0FF';
+                $col2 = 'DAE8F7';
             }
             $toggle = !$toggle;
             print '<tr id="ROW'.$pointer.'" onMouseDown="highlight(\'ROW'.$pointer.'\');">';
@@ -468,31 +478,34 @@ if (USE_DEBUGLIB) {
     ######################
     # reset the millisec timer
     #
-    function reset_script_runtime() {
+    function reset_script_runtime()
+    {
         $GLOBALS['MICROTIME_START'] = microtime();
     }
 
     ######################
     # function returns the milliseconds passed
     #
-    function script_runtime() {
-        $MICROTIME_END      = microtime();
-        $MICROTIME_START    = explode(' ', $GLOBALS['MICROTIME_START']);
-        $MICROTIME_END      = explode(' ', $MICROTIME_END);
-        $GENERATIONSEC      = $MICROTIME_END[1] - $MICROTIME_START[1];
+    function script_runtime()
+    {
+        $MICROTIME_END = microtime();
+        $MICROTIME_START = explode(' ', $GLOBALS['MICROTIME_START']);
+        $MICROTIME_END = explode(' ', $MICROTIME_END);
+        $GENERATIONSEC = $MICROTIME_END[1] - $MICROTIME_START[1];
         $GENERATIONMSEC = $MICROTIME_END[0] - $MICROTIME_START[0];
         $GENERATIONTIME = substr($GENERATIONSEC + $GENERATIONMSEC, 0, 8);
 
         return (float) $GENERATIONTIME;
     }
 
-    function _script_globals() {
+    function _script_globals()
+    {
         global $GLOBALS_initial_count;
 
         $varcount = 0;
 
         foreach ($GLOBALS as $GLOBALS_current_key => $GLOBALS_current_value) {
-            if(++$varcount > $GLOBALS_initial_count) {
+            if (++$varcount > $GLOBALS_initial_count) {
                 /* die wollen wir nicht! */
                 if ($GLOBALS_current_key != 'HTTP_SESSION_VARS' && $GLOBALS_current_key != '_SESSION') {
                     $script_GLOBALS[$GLOBALS_current_key] = $GLOBALS_current_value;
@@ -501,6 +514,7 @@ if (USE_DEBUGLIB) {
         }
 
         unset($script_GLOBALS['GLOBALS_initial_count']);
+
         return $script_GLOBALS;
     }
 
@@ -510,10 +524,15 @@ if (USE_DEBUGLIB) {
     # show_vars(1) shows all
     # show_vars(#,1) shows object properties in addition
     #
-    function show_vars($show_all_vars = false, $show_object_vars = false, $limit = 5) {
-        if($limit === 0) $limit = false;
+    function show_vars($show_all_vars = false, $show_object_vars = false, $limit = 5)
+    {
+        if ($limit === 0) {
+            $limit = false;
+        }
 
-        if(isset($GLOBALS['no_vars'])) return;
+        if (isset($GLOBALS['no_vars'])) {
+            return;
+        }
 
         $script_globals = _script_globals();
         print '
@@ -556,16 +575,18 @@ if (USE_DEBUGLIB) {
         $vars_arr['_SESSION'] = array('$_SESSION', '#FCDB26');
         $vars_arr['_COOKIE'] = array('$_COOKIE', '#A67C52');
 
-        if($show_all_vars) {
-            $vars_arr['_SERVER'] =  array('SERVER', '#A186BE');
-            $vars_arr['_ENV'] =  array('ENV', '#7ACCC8');
+        if ($show_all_vars) {
+            $vars_arr['_SERVER'] = array('SERVER', '#A186BE');
+            $vars_arr['_ENV'] = array('ENV', '#7ACCC8');
         }
 
         foreach ($vars_arr as $vars_name => $vars_data) {
-            if($vars_name != 'script_globals') global $$vars_name;
-            if($$vars_name) {
+            if ($vars_name != 'script_globals') {
+                global $$vars_name;
+            }
+            if ($$vars_name) {
                 print '<div class="vars-container" style="background-color:'.$vars_data[1].';"><span class="varsname">'.$vars_data[0].'</span><br />';
-                print_a($$vars_name, NULL, $show_object_vars, $limit);
+                print_a($$vars_name, null, $show_object_vars, $limit);
                 print '</div>';
             }
         }
@@ -575,24 +596,27 @@ if (USE_DEBUGLIB) {
     ######################
     # function prints/returns strings wrapped between <pre></pre>
     #
-    function pre( $string, $return_mode = false, $tabwidth = 3 ) {
+    function pre($string, $return_mode = false, $tabwidth = 3)
+    {
         $tab = str_repeat('&nbsp;', $tabwidth);
         $string = preg_replace('/\t+/em', "str_repeat( ' ', strlen('\\0') * $tabwidth );", $string); /* replace all tabs with spaces */
 
         $out = '<pre>'.$string."</pre>\n";
 
-        if($return_mode) {
+        if ($return_mode) {
             return $out;
         } else {
             print $out;
         }
     }
 
-    function _check_for_leading_tabs( $string ) {
+    function _check_for_leading_tabs($string)
+    {
         return preg_match('/^\t/m', $string);
     }
 
-    function _remove_exessive_leading_tabs( $string ) {
+    function _remove_exessive_leading_tabs($string)
+    {
         /* remove whitespace lines at start of the string */
         $string = preg_replace('/^\s*\n/', '', $string);
         /* remove whitespace at end of the string */
@@ -612,12 +636,23 @@ if (USE_DEBUGLIB) {
 // Define no-op functions in case debug functions were accidentally left
 // in the live system.
 else {
-    function print_a() {}
-    function print_result() {}
-    function reset_script_runtime() {}
-    function script_runtime() {}
-    function show_vars() {}
-    function pre() {}
+    function print_a()
+    {
+    }
+    function print_result()
+    {
+    }
+    function reset_script_runtime()
+    {
+    }
+    function script_runtime()
+    {
+    }
+    function show_vars()
+    {
+    }
+    function pre()
+    {
+    }
 } // don't use debuglib
-
-?>
+;

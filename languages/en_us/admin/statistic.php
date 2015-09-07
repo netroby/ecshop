@@ -12,8 +12,8 @@
  * commercial purposes.
  * ============================================================================
  * $Author: liubo $
- * $Id: statistic.php 17217 2011-01-19 06:29:08Z liubo $
-*/
+ * $Id: statistic.php 17217 2011-01-19 06:29:08Z liubo $.
+ */
 
 /* Count of visitor statistics */
 $_LANG['stats_off'] = 'Web site traffic statistics have been closed. <BR>If necessary go to: System Setup -> Configuration -> Basic to open the site traffic statistics service.';
@@ -57,19 +57,19 @@ $_LANG['period'] = 'period';
 $_LANG['order_amount_trend'] = 'Turnover(monetary unit:yuan)';
 $_LANG['order_status'] = 'Order status';
 $_LANG['turnover_status'] = 'Turnover status';
-$_LANG['sales_statistics']= 'Sales statistics';
-$_LANG['down_sales_stats']= 'Download sales status report';
+$_LANG['sales_statistics'] = 'Sales statistics';
+$_LANG['down_sales_stats'] = 'Download sales status report';
 
 /* Orders\' statistics */
 $_LANG['overall_sum'] = 'Total';
 $_LANG['overall_choose'] = ', Clicks sum';
 $_LANG['kilo_buy_amount'] = ', Orders quantity every 1000 clicks.';
 $_LANG['kilo_buy_sum'] = ', Shopping quantum every 1000 clicks.';
-$_LANG["pay_type"] = "Payment mode";
-$_LANG["succeed"] = "Succeed";
-$_LANG["confirmed"] = "Confirmed";
-$_LANG["unconfirmed"] = "Unconfirmed";
-$_LANG["invalid"] = "Invalid";
+$_LANG['pay_type'] = 'Payment mode';
+$_LANG['succeed'] = 'Succeed';
+$_LANG['confirmed'] = 'Confirmed';
+$_LANG['unconfirmed'] = 'Unconfirmed';
+$_LANG['invalid'] = 'Invalid';
 $_LANG['order_circs'] = 'Order profile';
 $_LANG['shipping_method'] = 'Shipping method';
 $_LANG['pay_method'] = 'Payment method';
@@ -81,24 +81,24 @@ $_LANG['goods_name'] = 'Name';
 $_LANG['sell_amount'] = 'Sales';
 $_LANG['sell_sum'] = 'Saleroom';
 $_LANG['percent_count'] = 'Average price';
-$_LANG["to"] = 'to';
+$_LANG['to'] = 'to';
 $_LANG['order_by_goodsnum'] = 'Sort by sales quantity';
-$_LANG["order_by_money"] = 'Sort by sales money';
-$_LANG["download_sale_sort"] = "Download sale sort report";
+$_LANG['order_by_money'] = 'Sort by sales money';
+$_LANG['download_sale_sort'] = 'Download sale sort report';
 
 /* Clients\' statistics */
-$_LANG['guest_order_sum'] ='Anonymous member average order sum.';
-$_LANG['member_count'] ='Members quantity';
-$_LANG['member_order_count'] ='Member orders quantity';
-$_LANG['guest_member_ordercount']='Anonymous member order total quantity.';
-$_LANG['guest_member_orderamount']='Anonymous member shopping total quantity.';
-$_LANG['percent_buy_member'] ='Purchase rate';
-$_LANG['buy_member_formula'] ='(Member purchase rate = Members with orders ¡Â Total members)';
-$_LANG['member_order_amount'] ='(Orders every member = Total member order ¡Â Total members)';
-$_LANG['member_buy_amount'] ='(Shopping sum every member = Total members shopping sum ¡Â Total members)';
-$_LANG["order_turnover_peruser"]="Average orders and shopping sum every member";
-$_LANG["order_turnover_percus"]="Anonymous member average order sum and total shopping sum";
-$_LANG['guest_all_ordercount'] ='(Anonymous member average order sum = Total anonymous member shopping sum ¡Â Total anonymous member orders)';
+$_LANG['guest_order_sum'] = 'Anonymous member average order sum.';
+$_LANG['member_count'] = 'Members quantity';
+$_LANG['member_order_count'] = 'Member orders quantity';
+$_LANG['guest_member_ordercount'] = 'Anonymous member order total quantity.';
+$_LANG['guest_member_orderamount'] = 'Anonymous member shopping total quantity.';
+$_LANG['percent_buy_member'] = 'Purchase rate';
+$_LANG['buy_member_formula'] = '(Member purchase rate = Members with orders ¡Â Total members)';
+$_LANG['member_order_amount'] = '(Orders every member = Total member order ¡Â Total members)';
+$_LANG['member_buy_amount'] = '(Shopping sum every member = Total members shopping sum ¡Â Total members)';
+$_LANG['order_turnover_peruser'] = 'Average orders and shopping sum every member';
+$_LANG['order_turnover_percus'] = 'Anonymous member average order sum and total shopping sum';
+$_LANG['guest_all_ordercount'] = '(Anonymous member average order sum = Total anonymous member shopping sum ¡Â Total anonymous member orders)';
 
 $_LANG['average_member_order'] = 'Orders quantity every member';
 $_LANG['member_order_sum'] = 'Shopping quantum every member';
@@ -108,8 +108,8 @@ $_LANG['member_sum'] = 'Total shopping quantum of members';
 $_LANG['order_all_amount'] = 'Oreders quantity';
 $_LANG['order_all_turnover'] = 'Total turnover';
 
-$_LANG['down_guest_stats']= 'Customers download statistics';
-$_LANG['guest_statistics']= 'Client statistics';
+$_LANG['down_guest_stats'] = 'Customers download statistics';
+$_LANG['guest_statistics'] = 'Client statistics';
 
 /* Member ranking */
 $_LANG['show_num'] = 'Display';
@@ -135,7 +135,7 @@ $_LANG['sales_list'] = 'Sales list';
 /* Visit and purchase proportion */
 $_LANG['fav_exponential'] = 'Favorite exponential';
 $_LANG['buy_times'] = 'Time';
-$_LANG['visit_buy'] ='Purchase rate';
+$_LANG['visit_buy'] = 'Purchase rate';
 $_LANG['download_visit_buy'] = 'Download visit purchase rate statements';
 
 $_LANG['goods_cat'] = 'Category';
@@ -147,5 +147,3 @@ $_LANG['tab_keywords'] = 'Keyword Statistics';
 $_LANG['keywords'] = 'Keyword';
 $_LANG['date'] = 'Date';
 $_LANG['hits'] = 'Search Views';
-
-?>

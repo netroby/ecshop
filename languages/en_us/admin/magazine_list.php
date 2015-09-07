@@ -12,9 +12,8 @@
  * commercial purposes.
  * ============================================================================
  * $Author: liubo $
- * $Id: magazine_list.php 17217 2011-01-19 06:29:08Z liubo $
-*/
-
+ * $Id: magazine_list.php 17217 2011-01-19 06:29:08Z liubo $.
+ */
 $_LANG['add_new'] = 'Add a new magazine';
 $_LANG['magazine_name'] = 'Magazine name';
 $_LANG['magazine_edit'] = 'edit';
@@ -33,5 +32,3 @@ $_LANG['go_list'] = 'Return list';
 $_LANG['edit_ok'] = 'Operation successful!';
 $_LANG['email_user'] = 'E-mail subscribers';
 $_LANG['user_list'] = 'All Member';
-
-?>

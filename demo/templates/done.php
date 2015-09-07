@@ -6,7 +6,7 @@
 </head>
 
 <body style="background:#DDEEF2">
-<?php include ROOT_PATH . 'demo/templates/header.php';?>
+<?php include ROOT_PATH.'demo/templates/header.php';?>
 
 <div style="margin:10px;padding:20px;border: 1px solid #BBDDE5; background: #F4FAFB; ">
 
@@ -20,6 +20,6 @@
 
 </div>
 
-<?php include ROOT_PATH . 'demo/templates/copyright.php';?>
+<?php include ROOT_PATH.'demo/templates/copyright.php';?>
 </body>
 </html>

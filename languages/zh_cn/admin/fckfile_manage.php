@@ -1,4 +1,5 @@
 <?php
+
 /**
  * ECSHOP 程序说明
  * ===========================================================
@@ -9,7 +10,7 @@
  * 使用；不允许对程序代码以任何形式任何目的的再发布。
  * ==========================================================
  * $Author: testyang $
- * $Id: fckfile_manage.php 14481 2008-04-18 11:23:01Z testyang $
+ * $Id: fckfile_manage.php 14481 2008-04-18 11:23:01Z testyang $.
  */
 $_LANG['fckfile_manage'] = 'Fck上传文件管理';
 $_LANG['file_manage'] = '文件目录管理';
@@ -37,4 +38,3 @@ $_LANG['namecannotnull'] = '请输入导航栏名称！';
 $_LANG['linkcannotnull'] = '请输入链接地址！';
 
 $_LANG['notice_url'] = '如果是本站的网址，可缩写为与商城根目录相对地址，如index.php；<br>其他情况都应该输入完整的网址，如http://www.ecshop.com/';
-?>

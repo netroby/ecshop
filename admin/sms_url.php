@@ -10,20 +10,14 @@
  * 使用；不允许对程序代码以任何形式任何目的的再发布。
  * ============================================================================
  * $Author: liuhui $
- * $Id: sms_url.php 16654 2009-09-09 10:29:24Z liuhui $
+ * $Id: sms_url.php 16654 2009-09-09 10:29:24Z liuhui $.
  */
-
 $url = '';
-if(isset($GLOBALS['_CFG']['certificate_id']))
-{
-
-    if($GLOBALS['_CFG']['certificate_id']  == '')
-    {
-        $certi_id='error';
-    }
-    else
-    {
-        $certi_id=$GLOBALS['_CFG']['certificate_id'];
+if (isset($GLOBALS['_CFG']['certificate_id'])) {
+    if ($GLOBALS['_CFG']['certificate_id']  == '') {
+        $certi_id = 'error';
+    } else {
+        $certi_id = $GLOBALS['_CFG']['certificate_id'];
     }
 
     $sess_id = $GLOBALS['sess']->get_session_id();
@@ -32,5 +26,3 @@ if(isset($GLOBALS['_CFG']['certificate_id']))
     $ac = md5($certi_id.'SHOPEX_SMS'.$auth);
     $url = 'http://service.shopex.cn/sms/index.php?certificate_id='.$certi_id.'&sess_id='.$sess_id.'&auth='.$auth.'&ac='.$ac;
 }
-
-?>

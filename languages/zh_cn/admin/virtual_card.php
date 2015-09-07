@@ -10,8 +10,8 @@
  * Ê¹ÓÃ£»²»ÔÊÐí¶Ô³ÌÐò´úÂëÒÔÈÎºÎÐÎÊ½ÈÎºÎÄ¿µÄµÄÔÙ·¢²¼¡£
  * ============================================================================
  * $Author: liubo $
- * $Id: virtual_card.php 17217 2011-01-19 06:29:08Z liubo $
-*/
+ * $Id: virtual_card.php 17217 2011-01-19 06:29:08Z liubo $.
+ */
 
 /*------------------------------------------------------ */
 //-- ¿¨Æ¬ÐÅÏ¢
@@ -51,13 +51,13 @@ $_LANG['js_languages']['no_card_sn'] = '¿¨Æ¬ÐòºÅºÍ¿¨Æ¬ÃÜÂë²»ÄÜ¶¼Îª¿Õ¡£';
 $_LANG['js_languages']['separator_not_null'] = '·Ö¸ô·ûºÅ²»ÄÜÎª¿Õ¡£';
 $_LANG['js_languages']['uploadfile_not_null'] = 'ÇëÑ¡ÔñÒªÉÏ´«µÄÎÄ¼þ¡£';
 
-$_LANG['use_help'] = 'Ê¹ÓÃËµÃ÷£º' .
-        '<ol>' .
-          '<li>ÉÏ´«ÎÄ¼þÓ¦ÎªCSVÎÄ¼þ<br />' .
+$_LANG['use_help'] = 'Ê¹ÓÃËµÃ÷£º'.
+        '<ol>'.
+          '<li>ÉÏ´«ÎÄ¼þÓ¦ÎªCSVÎÄ¼þ<br />'.
               'CSVÎÄ¼þµÚÒ»ÁÐÎª¿¨Æ¬ÐòºÅ£»µÚ¶þÁÐÎª¿¨Æ¬ÃÜÂë£»µÚÈýÁÐÎªÊ¹ÓÃ½ØÖÁÈÕÆÚ¡£<br />'.
               '(ÓÃEXCEL´´½¨csvÎÄ¼þ·½·¨£ºÔÚEXCELÖÐ°´¿¨ºÅ¡¢¿¨Æ¬ÃÜÂë¡¢½ØÖÁÈÕÆÚµÄË³ÐòÌîÐ´Êý¾Ý£¬Íê³ÉºóÖ±½Ó±£´æÎªcsvÎÄ¼þ¼´¿É)'.
           '<li>ÃÜÂë£¬ºÍ½ØÖÁÈÕÆÚ¿ÉÒÔÎª¿Õ£¬½ØÖÁÈÕÆÚ¸ñÊ½Îª2006-11-6»ò2006/11/6'.
-          '<li>¿¨ºÅ¡¢¿¨Æ¬ÃÜÂë¡¢½ØÖÁÈÕÆÚÖÐ²»ÒªÊ¹ÓÃÖÐÎÄ</li>' .
+          '<li>¿¨ºÅ¡¢¿¨Æ¬ÃÜÂë¡¢½ØÖÁÈÕÆÚÖÐ²»ÒªÊ¹ÓÃÖÐÎÄ</li>'.
         '</ol>';
 
 /*------------------------------------------------------ */
@@ -65,11 +65,11 @@ $_LANG['use_help'] = 'Ê¹ÓÃËµÃ÷£º' .
 /*------------------------------------------------------ */
 
 $_LANG['virtual_card_change'] = '¸ü¸Ä¼ÓÃÜ´®';
-$_LANG['user_guide'] = 'Ê¹ÓÃËµÃ÷£º' .
-        '<ol>' .
-          '<li>¼ÓÃÜ´®ÊÇÔÚ¼ÓÃÜÐéÄâ¿¨ÀàÉÌÆ·µÄ¿¨ºÅºÍÃÜÂëÊ±Ê¹ÓÃµÄ</li>' .
-          '<li>¼ÓÃÜ´®±£´æÔÚÎÄ¼þ data/config.php ÖÐ£¬¶ÔÓ¦µÄ³£Á¿ÊÇ AUTH_KEY</li>' .
-          '<li>Èç¹ûÒª¸ü¸Ä¼ÓÃÜ´®ÔÚÏÂÃæµÄÎÄ±¾¿òÖÐÊäÈëÔ­¼ÓÃÜ´®ºÍÐÂ¼ÓÃÜ´®£¬µã\'È·¶¨\'°´Å¥ºó¼´¿É</li>' .
+$_LANG['user_guide'] = 'Ê¹ÓÃËµÃ÷£º'.
+        '<ol>'.
+          '<li>¼ÓÃÜ´®ÊÇÔÚ¼ÓÃÜÐéÄâ¿¨ÀàÉÌÆ·µÄ¿¨ºÅºÍÃÜÂëÊ±Ê¹ÓÃµÄ</li>'.
+          '<li>¼ÓÃÜ´®±£´æÔÚÎÄ¼þ data/config.php ÖÐ£¬¶ÔÓ¦µÄ³£Á¿ÊÇ AUTH_KEY</li>'.
+          '<li>Èç¹ûÒª¸ü¸Ä¼ÓÃÜ´®ÔÚÏÂÃæµÄÎÄ±¾¿òÖÐÊäÈëÔ­¼ÓÃÜ´®ºÍÐÂ¼ÓÃÜ´®£¬µã\'È·¶¨\'°´Å¥ºó¼´¿É</li>'.
         '</ol>';
 $_LANG['label_old_string'] = 'Ô­¼ÓÃÜ´®';
 $_LANG['label_new_string'] = 'ÐÂ¼ÓÃÜ´®';
@@ -85,4 +85,3 @@ $_LANG['new_stat'] = '<strong>¸üÐÂÍê±Ï</strong>£¬ÏÖÔÚÊ¹ÓÃÐÂ´®¼ÓÃÜµÄ¼ÇÂ¼ÓÐ %s Ìõ£
 $_LANG['update_error'] = '¸üÐÂ¹ý³ÌÖÐ³ö´í£º%s';
 $_LANG['js_languages']['updating_info'] = '<strong>ÕýÔÚ¸üÐÂ</strong>£¨Ã¿´Î 100 Ìõ¼ÇÂ¼£©';
 $_LANG['js_languages']['updated_info'] = '<strong>ÒÑ¸üÐÂ</strong> <span id=\"updated\">0</span> Ìõ¼ÇÂ¼¡£';
-?>

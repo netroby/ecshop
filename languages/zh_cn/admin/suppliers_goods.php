@@ -10,9 +10,8 @@
  * 使用；不允许对程序代码以任何形式任何目的的再发布。
  * ============================================================================
  * $Author: sxc_shop $
- * $Id: goods.php 16154 2009-06-03 06:29:03Z sxc_shop $
-*/
-
+ * $Id: goods.php 16154 2009-06-03 06:29:03Z sxc_shop $.
+ */
 $_LANG['edit_goods'] = '编辑商品信息';
 $_LANG['copy_goods'] = '复制商品信息';
 $_LANG['continue_add_goods'] = '继续添加新商品';
@@ -170,10 +169,10 @@ $_LANG['category_manage'] = '分类管理';
 $_LANG['brand_manage'] = '品牌管理';
 $_LANG['hide'] = '隐藏';
 
-$_LANG['lab_volume_price']         = '商品优惠价格：';
-$_LANG['volume_number']            = '优惠数量';
-$_LANG['volume_price']             = '优惠价格';
-$_LANG['notice_volume_price']      = '购买数量达到优惠数量时享受的优惠价格';
+$_LANG['lab_volume_price'] = '商品优惠价格：';
+$_LANG['volume_number'] = '优惠数量';
+$_LANG['volume_price'] = '优惠价格';
+$_LANG['notice_volume_price'] = '购买数量达到优惠数量时享受的优惠价格';
 $_LANG['volume_number_continuous'] = '优惠数量重复！';
 
 /*------------------------------------------------------ */
@@ -248,5 +247,3 @@ $_LANG['batch_card_add'] = '批量补货';
 $_LANG['add_replenish'] = '添加虚拟卡卡密';
 
 $_LANG['goods_number_error'] = '商品库存数量错误';
-
-?>

@@ -10,9 +10,8 @@
  * 使用；不允许对程序代码以任何形式任何目的的再发布。
  * ==========================================================
  * $Author: liubo $
- * $Id: navigator.php 17217 2011-01-19 06:29:08Z liubo $
+ * $Id: navigator.php 17217 2011-01-19 06:29:08Z liubo $.
  */
-
 $_LANG['add_new'] = 'Add navigation';
 $_LANG['system_main'] = 'System Properties';
 $_LANG['item_name'] = 'Name';
@@ -45,5 +44,3 @@ $_LANG['namecannotnull'] = 'Please enter the name of the navigation bar!';
 $_LANG['linkcannotnull'] = 'Please enter the link!';
 
 $_LANG['notice_url'] = 'If this site are the Web site can be abbreviated as the root directory with the city relative addresses, such asindex.php；<br>Other circumstances should enter the full URL, such ashttp://www.ecshop.com/';
-
-?>

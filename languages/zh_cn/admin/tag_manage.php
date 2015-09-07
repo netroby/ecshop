@@ -10,9 +10,8 @@
  * 使用；不允许对程序代码以任何形式任何目的的再发布。
  * ============================================================================
  * $Author: liubo $
- * $Id: tag_manage.php 17217 2011-01-19 06:29:08Z liubo $
-*/
-
+ * $Id: tag_manage.php 17217 2011-01-19 06:29:08Z liubo $.
+ */
 $_LANG['tag_manage'] = '标签管理';
 $_LANG['tag_id'] = '编号';
 $_LANG['tag_words'] = '标签名称';
@@ -37,5 +36,3 @@ $_LANG['back_list'] = '返回标签列表';
 $_LANG['drop_confirm'] = '您确定要删除这条记录吗?';
 
 $_LANG['js_languages']['tag_name_not_empty'] = '标签名称不能为空！';
-
-?>

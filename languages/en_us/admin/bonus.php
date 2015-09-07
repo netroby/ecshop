@@ -12,8 +12,8 @@
  * commercial purposes.
  * ============================================================================
  * $Author: liubo $
- * $Id: bonus.php 17217 2011-01-19 06:29:08Z liubo $
-*/
+ * $Id: bonus.php 17217 2011-01-19 06:29:08Z liubo $.
+ */
 /* Bonus type feild information */
 $_LANG['bonus_type'] = 'Bonus Type';
 $_LANG['bonus_list'] = 'Bonus List';
@@ -58,10 +58,10 @@ $_LANG['send_bouns_goods'] = 'Provide the type bonus product';
 $_LANG['remove_bouns'] = 'Remove bonus';
 $_LANG['all_remove_bouns'] = 'All remove';
 $_LANG['goods_already_bouns'] = 'The product has provided for other type bonus!';
-$_LANG['send_user_empty']='You have no select member whom needs to issue bonus, please return!';
+$_LANG['send_user_empty'] = 'You have no select member whom needs to issue bonus, please return!';
 $_LANG['batch_drop_success'] = ' %d bonuses has be deleted.';
 $_LANG['sendbonus_count'] = 'Total provide %d bonuses.';
-$_LANG['send_bouns_error'] ='Send out member bonus inaccurate, please try it again!';
+$_LANG['send_bouns_error'] = 'Send out member bonus inaccurate, please try it again!';
 $_LANG['no_select_bonus'] = 'You have no choice need to remove users bonus.';
 $_LANG['bonustype_edit'] = 'Edit bonus type';
 $_LANG['bonustype_view'] = 'View details';
@@ -123,12 +123,11 @@ $_LANG['sendtouser'] = 'Provide bonus for appointed user';
 $_LANG['senduserrank'] = 'Provide bonus by user rank ';
 $_LANG['userrank'] = 'User rank';
 $_LANG['select_rank'] = 'All users...';
-$_LANG['keywords'] ='Keywords: ';
-$_LANG['userlist'] ='User list: ';
-$_LANG['search_users'] ='Search user';
-$_LANG['confirm_send_bonus'] ='Submit';
+$_LANG['keywords'] = 'Keywords: ';
+$_LANG['userlist'] = 'User list: ';
+$_LANG['search_users'] = 'Search user';
+$_LANG['confirm_send_bonus'] = 'Submit';
 $_LANG['bonus_not_exist'] = 'The bonus is nonexistent.';
 $_LANG['success_send_mail'] = 'Send %d mails successfully.';
 $_LANG['send_continue'] = 'Continue to send bonus.';
 $_LANG['send_to_user'] = 'Disseminate the red envelope to the following users.';
-?>

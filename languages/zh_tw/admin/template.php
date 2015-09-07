@@ -10,9 +10,8 @@
  * 使用；不允許對程序代碼以任何形式任何目的的再發佈。
  * ============================================================================
  * $Author: liubo $
- * $Id: template.php 17217 2011-01-19 06:29:08Z liubo $
-*/
-
+ * $Id: template.php 17217 2011-01-19 06:29:08Z liubo $.
+ */
 $_LANG['template_manage'] = '模板管理';
 $_LANG['current_template'] = '當前模板';
 $_LANG['available_templates'] = '可用模板';
@@ -144,5 +143,3 @@ $_LANG['js_languages']['selectPlease'] = '請選擇...';
 $_LANG['js_languages']['removeConfirm'] = '您確定要刪除選定的內容嗎？';
 $_LANG['js_languages']['empty_content'] = '對不起，庫項目的內容不能為空。';
 $_LANG['js_languages']['save_confirm'] = '您已經修改了模板內容，您確定不保存麼？';
-
-?>

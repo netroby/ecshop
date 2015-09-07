@@ -10,8 +10,8 @@
  * 使用；不允許對程序代碼以任何形式任何目的的再發佈。
  * ============================================================================
  * $Author: liubo $
- * $Id: friend_link.php 17217 2011-01-19 06:29:08Z liubo $
-*/
+ * $Id: friend_link.php 17217 2011-01-19 06:29:08Z liubo $.
+ */
 
 /* 友情鏈接字段信息 */
 $_LANG['link_id'] = '編號';
@@ -54,5 +54,3 @@ $_LANG['enter_int'] = '顯示順序的類型必須為數字!';
 /* 幫助信息 */
 $_LANG['url_logo_value'] = '在指定遠程LOGO圖片時, LOGO圖片的URL網址必須為http:// 或 https://開頭的正確URL格式!';
 $_LANG['link_name_desc'] = '當你添加文字鏈接時, 鏈接LOGO為你的鏈接名稱.';
-
-?>

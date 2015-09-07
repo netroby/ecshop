@@ -12,8 +12,8 @@
  * commercial purposes.
  * ============================================================================
  * $Author: liubo $
- * $Id: log_action.php 17217 2011-01-19 06:29:08Z liubo $
-*/
+ * $Id: log_action.php 17217 2011-01-19 06:29:08Z liubo $.
+ */
 
 /*------------------------------------------------------ */
 //-- Operation type
@@ -90,5 +90,3 @@ $_LANG['log_action']['exchange_goods'] = 'Integral convertible goods';
 $_LANG['log_action']['suppliers'] = 'Suppliers';
 
 $_LANG['log_action']['reg_fields'] = 'User register options';
-
-?>

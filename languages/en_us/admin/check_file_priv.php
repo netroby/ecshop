@@ -12,9 +12,8 @@
  * commercial purposes.
  * ============================================================================
  * $Author: liubo $
- * $Id: check_file_priv.php 17217 2011-01-19 06:29:08Z liubo $
-*/
-
+ * $Id: check_file_priv.php 17217 2011-01-19 06:29:08Z liubo $.
+ */
 $_LANG['item'] = 'Item';
 $_LANG['read'] = 'Readable';
 $_LANG['write'] = 'Writable';
@@ -29,4 +28,3 @@ $_LANG['unwrite'] = 'Unwritable';
 $_LANG['unmodify'] = 'Unrevisable';
 
 $_LANG['unrename'] = 'Directory need to run rename authorization.';
-?>

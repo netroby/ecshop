@@ -12,8 +12,8 @@
  * commercial purposes.
  * ============================================================================
  * $Author: liubo $
- * $Id: ads.php 17217 2011-01-19 06:29:08Z liubo $
-*/
+ * $Id: ads.php 17217 2011-01-19 06:29:08Z liubo $.
+ */
 /* AD-position field information */
 $_LANG['position_name'] = 'Name';
 $_LANG['ad_width'] = 'Width';
@@ -133,5 +133,3 @@ $_LANG['ad_name_exist'] = 'The AD name has existed!';
 $_LANG['ad_name_notic'] = 'The AD name only discriminate other ADs, and conceal in the AD.';
 $_LANG['ad_code_img'] = 'Upload the AD image file, or appoint a remote URL address.';
 $_LANG['ad_code_flash'] = 'Upload the AD Flash file, or appoint a remote URL address.';
-
-?>

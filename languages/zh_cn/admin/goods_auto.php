@@ -10,7 +10,7 @@
  * 使用；不允许对程序代码以任何形式任何目的的再发布。
  * ==========================================================
  * $Author: liubo $
- * $Id: goods_auto.php 17217 2011-01-19 06:29:08Z liubo $
+ * $Id: goods_auto.php 17217 2011-01-19 06:29:08Z liubo $.
  */
 $_LANG['id'] = '编号';
 
@@ -32,4 +32,3 @@ $_LANG['batch_start_succeed'] = '批量上架成功';
 $_LANG['batch_end_succeed'] = '批量下架成功';
 
 $_LANG['back_list'] = '返回商品自动上下架';
-?>

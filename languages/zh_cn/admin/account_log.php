@@ -10,7 +10,7 @@
  * 使用；不允许对程序代码以任何形式任何目的的再发布。
  * ============================================================================
  * $Author: liubo $
- * $Id: account_log.php 17217 2011-01-19 06:29:08Z liubo $
+ * $Id: account_log.php 17217 2011-01-19 06:29:08Z liubo $.
  */
 
 /* 菜单 */
@@ -45,5 +45,3 @@ $_LANG['js_languages']['user_money_not_number'] = '可用资金不是数值';
 $_LANG['js_languages']['frozen_money_not_number'] = '冻结资金不是数值';
 $_LANG['js_languages']['rank_points_not_int'] = '等级积分不是整数';
 $_LANG['js_languages']['pay_points_not_int'] = '消费积分不是整数';
-
-?>

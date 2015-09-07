@@ -10,8 +10,8 @@
  * 使用；不允許對程序代碼以任何形式任何目的的再發佈。
  * ============================================================================
  * $Author: liubo $
- * $Id: ads.php 17217 2011-01-19 06:29:08Z liubo $
-*/
+ * $Id: ads.php 17217 2011-01-19 06:29:08Z liubo $.
+ */
 /* 廣告位置字段信息 */
 $_LANG['position_name'] = '廣告位名稱';
 $_LANG['ad_width'] = '廣告位寬度';
@@ -132,5 +132,3 @@ $_LANG['ad_name_exist'] = '該廣告名稱已經存在!';
 $_LANG['ad_name_notic'] = '廣告名稱只是作為辨別多個廣告條目之用，並不顯示在廣告中';
 $_LANG['ad_code_img'] = '上傳該廣告的圖片文件,或者你也可以指定一個遠程URL地址為廣告的圖片';
 $_LANG['ad_code_flash'] = '上傳該廣告的Flash文件,或者你也可以指定一個遠程的Flash文件';
-
-?>

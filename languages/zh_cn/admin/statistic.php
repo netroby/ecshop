@@ -10,8 +10,8 @@
  * 使用；不允许对程序代码以任何形式任何目的的再发布。
  * ============================================================================
  * $Author: liubo $
- * $Id: statistic.php 17217 2011-01-19 06:29:08Z liubo $
-*/
+ * $Id: statistic.php 17217 2011-01-19 06:29:08Z liubo $.
+ */
 
 /* 流量统计 */
 $_LANG['stats_off'] = '网站流量统计已被关闭。<BR>如有需要请到: 系统设置->商店设置->基本设置 开启站点流量统计服务。';
@@ -54,19 +54,19 @@ $_LANG['period'] = '时间段';
 $_LANG['order_amount_trend'] = '营业额(单位:元)';
 $_LANG['order_status'] = '订单走势';
 $_LANG['turnover_status'] = '销售额走势';
-$_LANG['sales_statistics']= '销售统计';
-$_LANG['down_sales_stats']= '销售概况报表下载';
+$_LANG['sales_statistics'] = '销售统计';
+$_LANG['down_sales_stats'] = '销售概况报表下载';
 
 /* 订单统计 */
 $_LANG['overall_sum'] = '有效订单总金额';
 $_LANG['overall_choose'] = '总点击数';
 $_LANG['kilo_buy_amount'] = '每千点击订单数';
 $_LANG['kilo_buy_sum'] = '每千点击购物额';
-$_LANG["pay_type"] = "支付方式";
-$_LANG["succeed"] = "已成交";
-$_LANG["confirmed"] = "已确认";
-$_LANG["unconfirmed"] = "未确认";
-$_LANG["invalid"] = "无效或已取消";
+$_LANG['pay_type'] = '支付方式';
+$_LANG['succeed'] = '已成交';
+$_LANG['confirmed'] = '已确认';
+$_LANG['unconfirmed'] = '未确认';
+$_LANG['invalid'] = '无效或已取消';
 $_LANG['order_circs'] = '订单概况';
 $_LANG['shipping_method'] = '配送方式';
 $_LANG['pay_method'] = '支付方式 ';
@@ -78,10 +78,10 @@ $_LANG['goods_name'] = '商品名称';
 $_LANG['sell_amount'] = '销售量';
 $_LANG['sell_sum'] = '销售额';
 $_LANG['percent_count'] = '均价';
-$_LANG["to"] = '至';
+$_LANG['to'] = '至';
 $_LANG['order_by_goodsnum'] = '按销售量排序';
-$_LANG["order_by_money"] = '按销售额排序';
-$_LANG["download_sale_sort"] = "销售排行报表下载";
+$_LANG['order_by_money'] = '按销售额排序';
+$_LANG['download_sale_sort'] = '销售排行报表下载';
 
 /* 客户统计 */
 $_LANG['guest_order_sum'] = '匿名会员平均订单额';
@@ -93,8 +93,8 @@ $_LANG['percent_buy_member'] = '会员购买率 ';
 $_LANG['buy_member_formula'] = '（会员购买率 = 有订单会员数 ÷ 会员总数）';
 $_LANG['member_order_amount'] = '（每会员订单数 = 会员订单总数 ÷ 会员总数）';
 $_LANG['member_buy_amount'] = '（每会员购物额 = 会员购物总额 ÷ 会员总数）';
-$_LANG["order_turnover_peruser"] = "每会员平均订单数及购物额";
-$_LANG["order_turnover_percus"] = "匿名会员平均订单额及购物总额";
+$_LANG['order_turnover_peruser'] = '每会员平均订单数及购物额';
+$_LANG['order_turnover_percus'] = '匿名会员平均订单额及购物总额';
 $_LANG['guest_all_ordercount'] = '（匿名会员平均订单额 =  匿名会员购物总额 ÷ 匿名会员订单总数）';
 
 $_LANG['average_member_order'] = '每会员订单数';
@@ -105,8 +105,8 @@ $_LANG['member_sum'] = '会员购物总额';
 $_LANG['order_all_amount'] = '订单总数';
 $_LANG['order_all_turnover'] = '总购物额';
 
-$_LANG['down_guest_stats']= '客户统计报表下载';
-$_LANG['guest_statistics']= '客户统计报表';
+$_LANG['down_guest_stats'] = '客户统计报表下载';
+$_LANG['guest_statistics'] = '客户统计报表';
 
 /* 会员排行 */
 $_LANG['show_num'] = '显示数量';
@@ -144,5 +144,3 @@ $_LANG['tab_keywords'] = '关键字统计';
 $_LANG['keywords'] = '关键字';
 $_LANG['date'] = '日期';
 $_LANG['hits'] = '搜索次数';
-
-?>

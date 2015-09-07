@@ -12,14 +12,13 @@
  * commercial purposes.
  * ============================================================================
  * $Author: liubo $
- * $Id: goods_export.php 17217 2011-01-19 06:29:08Z liubo $
-*/
-
+ * $Id: goods_export.php 17217 2011-01-19 06:29:08Z liubo $.
+ */
 $_LANG['user_guide'] =
-        '<br/>Help:' .
-        '<ol>' .
-          '<li>Use the search conditions permit only english eligible merchandise 50.</li>' .
-          '<li>If the user required to export certain categories of merchandise all under the conditions choose to triage, no click search, the direct choice of data formats and encoding can be derived.</li>' .
+        '<br/>Help:'.
+        '<ol>'.
+          '<li>Use the search conditions permit only english eligible merchandise 50.</li>'.
+          '<li>If the user required to export certain categories of merchandise all under the conditions choose to triage, no click search, the direct choice of data formats and encoding can be derived.</li>'.
         '</ol>';
 $_LANG['export_taobao'] = 'Export Taobao Assistant Supporting data formats';
 $_LANG['export_taobao_v43'] = 'Export Taobao AssistantV4.3 upporting data formats';
@@ -38,7 +37,6 @@ $_LANG['notice_goods_class'] = 'ID for the baby section Taobao classification ID
 $_LANG['post_express_not_null'] = 'Ordinary price must be greater than 0';
 $_LANG['express_not_null'] = 'Express the price must be greater than 0';
 $_LANG['ems_not_null'] = 'EMS price must be greater than 0';
-
 
 /* 淘宝 */
 $_LANG['taobao']['goods_name'] = '宝贝名称';
@@ -162,7 +160,6 @@ $_LANG['paipai']['pic_height'] = 'pic_height';
 $_LANG['paipai']['skin'] = 'skin';
 $_LANG['paipai']['prop'] = 'prop';
 
-
 $_LANG['export_paipai4'] = 'Export to patted Assistant Supporting 3.0 data formats';
 $_LANG['paipai4']['id'] = 'id';
 $_LANG['paipai4']['goods_name'] = '商品名称';
@@ -258,5 +255,3 @@ $_LANG['custom_goods_field_not_null'] = 'Output data out of the merchandise shou
 $_LANG['export_condition'] = 'Export volume of goods data';
 $_LANG['export_condition_search'] = 'Search';
 $_LANG['export_format'] = 'Data Format';
-
-?>

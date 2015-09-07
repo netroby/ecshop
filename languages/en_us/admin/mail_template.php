@@ -1,4 +1,5 @@
 <?php
+
 /**
  * ECSHOP Control panel mail template manage language file
  * ============================================================================
@@ -11,9 +12,8 @@
  * commercial purposes.
  * ============================================================================
  * $Author: liubo $
- * $Id: mail_template.php 17217 2011-01-19 06:29:08Z liubo $
-*/
-
+ * $Id: mail_template.php 17217 2011-01-19 06:29:08Z liubo $.
+ */
 $_LANG['select_template'] = 'Please select mail template:';
 $_LANG['update_success'] = 'Saved template content successfully.';
 $_LANG['update_failed'] = 'Saved template content failed.';
@@ -41,5 +41,3 @@ $_LANG['subject_empty'] = 'Sorry, mail subject can\'t be blank.';
 $_LANG['content_empty'] = 'Sorry, mail content can\'t be blank.';
 
 $_LANG['js_languages']['save_confirm'] = 'You have modified template content, are you sure don\'t save it?';
-
-?>

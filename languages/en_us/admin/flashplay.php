@@ -10,9 +10,8 @@
  * 使用；不允许对程序代码以任何形式任何目的的再发布。
  * ==========================================================
  * $Author: liubo $
- * $Id: flashplay.php 17217 2011-01-19 06:29:08Z liubo $
+ * $Id: flashplay.php 17217 2011-01-19 06:29:08Z liubo $.
  */
-
 $_LANG['schp_imgsrc'] = 'Carousel picture Address';
 $_LANG['schp_imgurl'] = 'Carousel Picture Link';
 $_LANG['schp_imgdesc'] = 'Photo Caption';
@@ -59,7 +58,6 @@ $_LANG['ad_flash'] = 'Flash';
 $_LANG['ad_html'] = 'Code';
 $_LANG['ad_text'] = 'Character';
 
-
 /* 内容页标签 */
 $_LANG['lable_flash_name'] = 'AD Name:';
 $_LANG['lable_flash_type'] = 'AD Type:';
@@ -75,4 +73,3 @@ $_LANG['custom_set'] = 'Custom AD';
 
 /* JS 语言项 */
 $_LANG['js_languages']['setupConfirm'] = 'The opening of the new Flash style will cover the original style. \n Are you sure you want to enable the selected style it?';
-?>

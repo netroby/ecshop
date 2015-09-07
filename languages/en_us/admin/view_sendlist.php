@@ -12,9 +12,8 @@
  * commercial purposes.
  * ============================================================================
  * $Author: liubo $
- * $Id: view_sendlist.php 17217 2011-01-19 06:29:08Z liubo $
-*/
-
+ * $Id: view_sendlist.php 17217 2011-01-19 06:29:08Z liubo $.
+ */
 $_LANG['email_val'] = 'E-mail address';
 $_LANG['email_error'] = 'Error Hits';
 $_LANG['email_subject'] = 'Message headers';
@@ -35,4 +34,3 @@ $_LANG['all_send'] = 'All sent';
 $_LANG['mailsend_null'] = 'E-mail list empty!';
 $_LANG['mailsend_finished'] = 'All e-mail to complete!';
 $_LANG['send_end'] = 'Choice of e-mail to complete!';
-?>

@@ -10,8 +10,8 @@
  * 使用；不允许对程序代码以任何形式任何目的的再发布。
  * ============================================================================
  * $Author: liubo $
- * $Id: category.php 17217 2011-01-19 06:29:08Z liubo $
-*/
+ * $Id: category.php 17217 2011-01-19 06:29:08Z liubo $.
+ */
 
 /* 商品分类字段信息 */
 $_LANG['cat_id'] = '编号';
@@ -50,10 +50,10 @@ $_LANG['notice_style'] = '您可以为每一个商品分类指定一个样式表文件。例如文件存放
 /* 操作提示信息 */
 $_LANG['catname_empty'] = '分类名称不能为空!';
 $_LANG['catname_exist'] = '已存在相同的分类名称!';
-$_LANG["parent_isleaf"] = '所选分类不能是末级分类!';
-$_LANG["cat_isleaf"] = '不是末级分类或者此分类下还存在有商品,您不能删除!';
-$_LANG["cat_noleaf"] = '底下还有其它子分类,不能修改为末级分类!';
-$_LANG["is_leaf_error"] = '所选择的上级分类不能是当前分类或者当前分类的下级分类!';
+$_LANG['parent_isleaf'] = '所选分类不能是末级分类!';
+$_LANG['cat_isleaf'] = '不是末级分类或者此分类下还存在有商品,您不能删除!';
+$_LANG['cat_noleaf'] = '底下还有其它子分类,不能修改为末级分类!';
+$_LANG['is_leaf_error'] = '所选择的上级分类不能是当前分类或者当前分类的下级分类!';
 $_LANG['grade_error'] = '价格分级数量只能是0-10之内的整数';
 
 $_LANG['catadd_succed'] = '新商品分类添加成功!';
@@ -85,5 +85,3 @@ $_LANG['js_languages']['is_leafcat'] = '您选定的分类是一个末级分类。\r\n新分类的
 $_LANG['js_languages']['not_leafcat'] = '您选定的分类不是一个末级分类。\r\n商品的分类转移只能在末级分类之间才可以操作。';
 $_LANG['js_languages']['filter_attr_not_repeated'] = '筛选属性不可重复';
 $_LANG['js_languages']['filter_attr_not_selected'] = '请选择筛选属性';
-
-?>

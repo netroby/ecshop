@@ -10,9 +10,8 @@
  * 使用；不允許對程序代碼以任何形式任何目的的再發佈。
  * ============================================================================
  * $Author: liubo $
- * $Id: user_rank.php 17217 2011-01-19 06:29:08Z liubo $
-*/
-
+ * $Id: user_rank.php 17217 2011-01-19 06:29:08Z liubo $.
+ */
 $_LANG['rank_name'] = '會員等級名稱';
 $_LANG['integral_min'] = '積分下限';
 $_LANG['integral_max'] = '積分上限';
@@ -39,4 +38,3 @@ $_LANG['js_languages']['integral_max_invalid'] = '您沒有輸入積分上限或者積分上限
 $_LANG['js_languages']['discount_invalid'] = '您沒有輸入折扣率或者折扣率無效。';
 $_LANG['js_languages']['integral_max_small'] = '積分上限必須大於積分下限。';
 $_LANG['js_languages']['lang_remove'] = '移除';
-?>

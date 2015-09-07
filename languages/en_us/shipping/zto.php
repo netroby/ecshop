@@ -12,11 +12,10 @@
  * commercial purposes.
  * ============================================================================
  * $Author: liubo $
- * $Id: zto.php 17217 2011-01-19 06:29:08Z liubo $
-*/
-
-$_LANG['zto']          = 'ZTO express';
-$_LANG['zto_desc']     = "Qualcomm's Medium Express instructions. Prices in accordance with the declared value charges 2% of pay, but the price fee of not less than 100 yuan, and protect the price shall not exceed the amount of 10,000 won, and protect the price of the amount of more than 10,000 yuan, more than some invalid";
+ * $Id: zto.php 17217 2011-01-19 06:29:08Z liubo $.
+ */
+$_LANG['zto'] = 'ZTO express';
+$_LANG['zto_desc'] = "Qualcomm's Medium Express instructions. Prices in accordance with the declared value charges 2% of pay, but the price fee of not less than 100 yuan, and protect the price shall not exceed the amount of 10,000 won, and protect the price of the amount of more than 10,000 yuan, more than some invalid";
 $_LANG['item_fee'] = 'Single commodity costs:';
 $_LANG['base_fee'] = 'Cost less than 1000g';
 $_LANG['step_fee'] = 'Every less than or equal to 1000g:';
@@ -82,5 +81,3 @@ $_LANG['shipping_print'] = '<table style="width:18.2cm" border="0" cellspacing="
     <td style="height:4.2cm;">&nbsp;</td>
   </tr>
 </table>';
-
-?>

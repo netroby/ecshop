@@ -12,9 +12,8 @@
  * commercial purposes.
  * ============================================================================
  * $Author: liubo $
- * $Id: goods_type.php 17217 2011-01-19 06:29:08Z liubo $
-*/
-
+ * $Id: goods_type.php 17217 2011-01-19 06:29:08Z liubo $.
+ */
 $_LANG['goods_type_list'] = 'List the type of merchandise';
 $_LANG['edit_goods_type'] = 'Edit the type of merchandise';
 $_LANG['attr_groups'] = 'Property division';
@@ -36,14 +35,12 @@ $_LANG['add_goodstype_failed'] = 'Failure of new types of merchandise.';
 $_LANG['edit_goodstype_success'] = 'Edit the type of merchandise success.';
 $_LANG['edit_goodstype_failed'] = 'Edit the type of merchandise failure.';
 $_LANG['remove_failed'] = 'Removew product type failure.';
-$_LANG['remove_confirm'] = "All attributes will be deleted if you delete the product type. \\nAre you sure delete the product type?";
+$_LANG['remove_confirm'] = 'All attributes will be deleted if you delete the product type. \\nAre you sure delete the product type?';
 $_LANG['repeat_type_name'] = 'The product type already exists.';
 $_LANG['cannot_found_goodstype'] = 'Did not find the specified types of merchandise.';
 
 $_LANG['js_languages']['lang_enabled'] = 'Enabled';
 $_LANG['js_languages']['lang_remove'] = 'Remove';
 $_LANG['js_languages']['attribute'] = 'Attribute';
-$_LANG['js_languages']['remove_confirm'] = "All attributes will be deleted if you delete the product type. \\nAre you sure delete the product type?";
+$_LANG['js_languages']['remove_confirm'] = 'All attributes will be deleted if you delete the product type. \\nAre you sure delete the product type?';
 $_LANG['js_languages']['type_name_empty'] = 'Merchandise type name should not be empty!';
-
-?>

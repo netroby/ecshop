@@ -12,8 +12,8 @@
  * commercial purposes.
  * ============================================================================
  * $Author: liubo $
- * $Id: area_manage.php 17217 2011-01-19 06:29:08Z liubo $
-*/
+ * $Id: area_manage.php 17217 2011-01-19 06:29:08Z liubo $.
+ */
 
 /* Field information */
 $_LANG['region_id'] = 'Region id';
@@ -51,5 +51,3 @@ $_LANG['region_name_exist'] = 'The region name already exists.';
 $_LANG['parent_id_exist'] = 'You can\'t delete it, because the region contains subregions!';
 $_LANG['form_notic'] = 'View subregion';
 $_LANG['area_drop_confirm'] = 'If the default order or the user mode using the following distribution areas, where information will be displayed as empty. Are you sure you want to delete this record?';
-
-?>

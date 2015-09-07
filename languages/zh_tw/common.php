@@ -10,12 +10,12 @@
  * 使用；不允許對程序代碼以任何形式任何目的的再發佈。
  * ============================================================================
  * $Author: liubo $
- * $Id: common.php 17217 2011-01-19 06:29:08Z liubo $
-*/
+ * $Id: common.php 17217 2011-01-19 06:29:08Z liubo $.
+ */
 
 /* 用戶登錄語言項 */
 $_LANG['empty_username_password'] = '對不起，您必須完整填寫用戶名和密碼。';
-$_LANG['shot_message'] = "短消息";
+$_LANG['shot_message'] = '短消息';
 
 /* 公共語言項 */
 $_LANG['sys_msg'] = '系統提示';
@@ -24,20 +24,20 @@ $_LANG['please_view_order_detail'] = '商品已發貨，詳情請到用戶中心訂單詳情查看';
 $_LANG['user_center'] = '用戶中心';
 $_LANG['shop_closed'] = '本店盤點中，請您稍後再來...';
 $_LANG['shop_register_closed'] = '該網店暫停註冊';
-$_LANG['shop_upgrade'] = "本店升級中，管理員從 <a href=\"admin/\">管理中心</a> 登錄後，系統會自動完成升級";
+$_LANG['shop_upgrade'] = '本店升級中，管理員從 <a href="admin/">管理中心</a> 登錄後，系統會自動完成升級';
 $_LANG['js_languages']['process_request'] = '正在處理您的請求...';
 $_LANG['process_request'] = '正在處理您的請求...';
 $_LANG['please_waiting'] = '請稍等, 正在載入中...';
 $_LANG['icp_number'] = 'ICP備案證書號';
-$_LANG['plugins_not_found'] = "插件 %s 無法定位";
+$_LANG['plugins_not_found'] = '插件 %s 無法定位';
 $_LANG['home'] = '首頁';
 $_LANG['back_up_page'] = '返回上一頁';
 $_LANG['close_window'] = '關閉窗口';
 $_LANG['back_home'] = '返回首頁';
 $_LANG['ur_here'] = '當前位置:';
 $_LANG['all_goods'] = '全部商品';
-$_LANG['all_recommend'] = "全部推薦";
-$_LANG['all_attribute'] = "全部";
+$_LANG['all_recommend'] = '全部推薦';
+$_LANG['all_attribute'] = '全部';
 $_LANG['promotion_goods'] = '促銷商品';
 $_LANG['best_goods'] = '精品推薦';
 $_LANG['new_goods'] = '新品上市';
@@ -46,7 +46,7 @@ $_LANG['view_cart'] = '查看購物車';
 $_LANG['catalog'] = '所有分類';
 $_LANG['regist_login'] = '註冊/登錄';
 $_LANG['profile'] = '個人資料';
-$_LANG['query_info'] = "共執行 %d 個查詢，用時 %f 秒，在線 %d 人";
+$_LANG['query_info'] = '共執行 %d 個查詢，用時 %f 秒，在線 %d 人';
 $_LANG['gzip_enabled'] = '，Gzip 已啟用';
 $_LANG['gzip_disabled'] = '，Gzip 已禁用';
 $_LANG['memory_info'] = '，佔用內存 %0.3f MB';
@@ -61,7 +61,7 @@ $_LANG['shop_price'] = '本店售價：';
 $_LANG['market_price'] = '市場價格：';
 $_LANG['goods_brief'] = '商品描述：';
 $_LANG['goods_album'] = '商品相冊';
-$_LANG['promote_price'] = "促銷價：";
+$_LANG['promote_price'] = '促銷價：';
 $_LANG['fittings_price'] = '配件價格：';
 $_LANG['collect'] = '加入收藏夾';
 $_LANG['add_to_cart'] = '加入購物車';
@@ -150,11 +150,11 @@ $_LANG['bonus'] = '優惠券：';
 $_LANG['no_comments'] = '暫時還沒有任何用戶評論';
 $_LANG['give_comments_rank'] = '給出';
 $_LANG['comments_rank'] = '評價';
-$_LANG['comment_num'] = "用戶評論 %d 條記錄";
+$_LANG['comment_num'] = '用戶評論 %d 條記錄';
 $_LANG['login_please'] = '由於您還沒有登錄，因此您還不能使用該功能。';
 $_LANG['collect_existed'] = '該商品已經存在於您的收藏夾中。';
 $_LANG['collect_success'] = '該商品已經成功地加入了您的收藏夾。';
-$_LANG['copyright'] = "&copy; 2005-%s %s 版權所有，並保留所有權利。";
+$_LANG['copyright'] = '&copy; 2005-%s %s 版權所有，並保留所有權利。';
 $_LANG['no_ads_id'] = '沒有指定廣告的ID以及跳轉的URL地址!';
 $_LANG['remove_collection_confirm'] = '您確定要從收藏夾中刪除選定的商品嗎？';
 $_LANG['err_change_attr'] = '沒有找到指定的商品或者沒有找到指定的商品屬性。';
@@ -188,7 +188,7 @@ $_LANG['oos_tips'] = '該商品已經庫存不足。您現在要進行缺貨登記嗎？';
 
 $_LANG['addto_cart_success_1'] = "該商品已添加到購物車，您現在還需要繼續購物嗎？\n如果您希望馬上結算，請點擊「確定」按鈕。\n如果您希望繼續購物，請點擊「取消」按鈕。";
 $_LANG['addto_cart_success_2'] = "該商品已添加到購物車，您現在還需要繼續購物嗎？\n如果您希望繼續購物，請點擊「確定」按鈕。\n如果您希望馬上結算，請點擊「取消」按鈕。";
-$_LANG['no_keywords'] = "請輸入搜索關鍵字！";
+$_LANG['no_keywords'] = '請輸入搜索關鍵字！';
 
 /* 分頁排序 */
 $_LANG['exchange_sort']['goods_id'] = '按上架時間排序';
@@ -218,7 +218,7 @@ $_LANG['vote_success'] = '恭喜你，投票成功';
 
 /* 評論 */
 $_LANG['cmt_submit_done'] = '您的評論已成功發表, 感謝您的參與!';
-$_LANG['cmt_submit_wait'] = "您的評論已成功發表, 請等待管理員的審核!";
+$_LANG['cmt_submit_wait'] = '您的評論已成功發表, 請等待管理員的審核!';
 $_LANG['cmt_lang']['cmt_empty_username'] = '請輸入您的用戶名稱';
 $_LANG['cmt_lang']['cmt_empty_email'] = '請輸入您的電子郵件地址';
 $_LANG['cmt_lang']['cmt_error_email'] = '電子郵件地址格式不正確';
@@ -228,7 +228,7 @@ $_LANG['cmt_lang']['captcha_not_null'] = '驗證碼不能為空!';
 $_LANG['cmt_lang']['cmt_invalid_comments'] = '無效的評論內容!';
 $_LANG['invalid_comments'] = '無效的評論內容!';
 $_LANG['error_email'] = '電子郵件地址格式不正確!';
-$_LANG['admin_username'] = "管理員：";
+$_LANG['admin_username'] = '管理員：';
 $_LANG['reply_comment'] = '回復';
 $_LANG['comment_captcha'] = '驗證碼';
 $_LANG['comment_login'] = '只有註冊會員才能發表評論，請您登錄後再發表評論';
@@ -370,12 +370,12 @@ $_LANG['virtual_goods_ship_fail'] = '自動發貨失敗，請盡快聯繫商家重新發貨';
 
 /* 選購中心 */
 $_LANG['pick_out'] = '選購中心';
-$_LANG['fit_count'] = "共有 %s 件商品符合條件";
-$_LANG['goods_type'] = "商品類型";
+$_LANG['fit_count'] = '共有 %s 件商品符合條件';
+$_LANG['goods_type'] = '商品類型';
 $_LANG['remove_all'] = '移除所有';
 $_LANG['advanced_search'] = '高級搜索';
 $_LANG['activity'] = '本商品正在進行';
-$_LANG['order_not_exists'] = "非常抱歉，沒有找到指定的訂單。請和網站管理員聯繫。";
+$_LANG['order_not_exists'] = '非常抱歉，沒有找到指定的訂單。請和網站管理員聯繫。';
 
 $_LANG['promotion_time'] = '的時間為%s到%s，趕快來搶吧！';
 
@@ -533,7 +533,7 @@ $_LANG['smtp_setting_error'] = '郵件服務器設置信息不完整';
 $_LANG['smtp_connect_failure'] = '無法連接到郵件服務器 %s';
 $_LANG['smtp_login_failure'] = '郵件服務器驗證帳號或密碼不正確';
 $_LANG['smtp_refuse'] = '服務器拒絕發送該郵件';
-$_LANG['sendemail_false'] = "郵件發送失敗，請與網站管理員聯繫！";
+$_LANG['sendemail_false'] = '郵件發送失敗，請與網站管理員聯繫！';
 $_LANG['disabled_fsockopen'] = 'fsockopen函數被禁用';
 
 $_LANG['topic_goods_empty'] = '當前沒有專題商品';
@@ -587,7 +587,6 @@ $_LANG['btn_add_to_collect'] = '添加收藏';
 
 $_LANG['stock_up'] = '缺貨';
 
-
 $_LANG['hot_search'] = '熱門搜索';
 
 $_LANG['please_select_attr'] = '你加入購物車的商品有不同型號可選，你是否要立即跳轉到商品詳情選擇型號？';
@@ -601,16 +600,16 @@ $_LANG['wholesale_promotion'] = '[批發]';
 $_LANG['package_promotion'] = '[禮包]';
 
 /* feed推送 */
-$_LANG['feed_user_buy'] = "購買了";
-$_LANG['feed_user_comment'] = "評論了";
-$_LANG['feed_goods_price'] = "商品價格";
-$_LANG['feed_goods_desc'] = "商品描述";
+$_LANG['feed_user_buy'] = '購買了';
+$_LANG['feed_user_comment'] = '評論了';
+$_LANG['feed_goods_price'] = '商品價格';
+$_LANG['feed_goods_desc'] = '商品描述';
 
 /* 留言板 */
 $_LANG['shopman_comment'] = '商品評論';
 $_LANG['message_ping'] = '評';
-$_LANG['message_board'] = "留言板";
-$_LANG['post_message'] = "我要留言";
+$_LANG['message_board'] = '留言板';
+$_LANG['post_message'] = '我要留言';
 $_LANG['message_title'] = '主題';
 $_LANG['message_time'] = '留言時間';
 $_LANG['reply_time'] = '回復時間';
@@ -633,18 +632,17 @@ $_LANG['message_board_js']['msg_captcha_empty'] = '驗證碼為空';
 $_LANG['message_board_js']['msg_title_limit'] = '留言標題不能超過200個字';
 $_LANG['message_submit_wait'] = '您的留言已成功發表,請等待管理員的審核!';
 $_LANG['message_submit_done'] = '發表留言成功';
-$_LANG['message_board_close'] = "暫停留言板功能";
+$_LANG['message_board_close'] = '暫停留言板功能';
 $_LANG['upload_file_limit'] = '文件大小超過了限制 %dKB';
 $_LANG['message_list_lnk'] = '返回留言列表';
 
 /* 報價單 */
-$_LANG['quotation'] = "報價單";
-$_LANG['print_quotation'] = "打印報價單";
-$_LANG['goods_inventory'] = "庫存";
-$_LANG['goods_category'] = "商品分類";
+$_LANG['quotation'] = '報價單';
+$_LANG['print_quotation'] = '打印報價單';
+$_LANG['goods_inventory'] = '庫存';
+$_LANG['goods_category'] = '商品分類';
 $_LANG['shopman_reply'] = '管理員回復';
 $_LANG['specifications'] = '规格';
-
 
 /* 相冊JS語言項 */
 $_LANG['gallery_js']['close_window'] = '您是否關閉當前窗口';
@@ -726,4 +724,3 @@ $_LANG['label_collection'] = '我的收藏';
 $_LANG['article_list'] = '文章列表';
 $_LANG['Preferences_price'] = '優惠價格';
 $_LANG['divided_into'] = '分成規則';
-?>

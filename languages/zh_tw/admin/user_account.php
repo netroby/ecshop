@@ -10,9 +10,8 @@
  * 使用；不允許對程序代碼以任何形式任何目的的再發佈。
  * ============================================================================
  * $Author: liubo $
- * $Id: user_account.php 17217 2011-01-19 06:29:08Z liubo $
-*/
-
+ * $Id: user_account.php 17217 2011-01-19 06:29:08Z liubo $.
+ */
 $_LANG['user_surplus'] = '預付款';
 $_LANG['surplus_id'] = '編號';
 $_LANG['user_id'] = '會員名稱';
@@ -59,5 +58,3 @@ $_LANG['js_languages']['deposit_amount_error'] = '請按正確的格式輸入充值的金額！
 $_LANG['js_languages']['deposit_type_empty'] = '請填寫類型！';
 $_LANG['js_languages']['deposit_notic_empty'] = '請填寫管理員備註！';
 $_LANG['js_languages']['deposit_desc_empty'] = '請填寫會員描述！';
-
-?>

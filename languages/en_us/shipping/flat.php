@@ -12,10 +12,8 @@
  * commercial purposes.
  * ============================================================================
  * $Author: liubo $
- * $Id: flat.php 17217 2011-01-19 06:29:08Z liubo $
-*/
-
-$_LANG['flat']          = 'Intra-city shipping';
-$_LANG['flat_desc']     = 'Payment method contents of cost is fixed ';
-$_LANG['base_fee']      = 'Basic expenditure:';
-?>
+ * $Id: flat.php 17217 2011-01-19 06:29:08Z liubo $.
+ */
+$_LANG['flat'] = 'Intra-city shipping';
+$_LANG['flat_desc'] = 'Payment method contents of cost is fixed ';
+$_LANG['base_fee'] = 'Basic expenditure:';

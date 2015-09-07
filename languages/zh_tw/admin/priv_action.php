@@ -10,8 +10,8 @@
  * 使用；不允許對程序代碼以任何形式任何目的的再發佈。
  * ============================================================================
  * $Author: liubo $
- * $Id: priv_action.php 17217 2011-01-19 06:29:08Z liubo $
-*/
+ * $Id: priv_action.php 17217 2011-01-19 06:29:08Z liubo $.
+ */
 /* 權限管理的一級分組 */
 $_LANG['goods'] = '商品管理';
 $_LANG['cms_manage'] = '文章管理';
@@ -129,24 +129,22 @@ $_LANG['view_sendlist'] = '郵件隊列管理';
 
 //模板管理
 $_LANG['template_select'] = '模板選擇';
-$_LANG['template_setup']  = '模板設置';
-$_LANG['library_manage']  = '庫項目管理';
-$_LANG['lang_edit']       = '語言項編輯';
-$_LANG['backup_setting']  = '模板設置備份';
-$_LANG['mail_template']  = '郵件模板管理';
+$_LANG['template_setup'] = '模板設置';
+$_LANG['library_manage'] = '庫項目管理';
+$_LANG['lang_edit'] = '語言項編輯';
+$_LANG['backup_setting'] = '模板設置備份';
+$_LANG['mail_template'] = '郵件模板管理';
 
 //數據庫管理
-$_LANG['db_backup']    = '數據備份';
-$_LANG['db_renew']     = '數據恢復';
-$_LANG['db_optimize']  = '數據表優化';
-$_LANG['sql_query']    = ' SQL查詢';
-$_LANG['convert']      = '轉換數據';
+$_LANG['db_backup'] = '數據備份';
+$_LANG['db_renew'] = '數據恢復';
+$_LANG['db_optimize'] = '數據表優化';
+$_LANG['sql_query'] = ' SQL查詢';
+$_LANG['convert'] = '轉換數據';
 
 //短信管理
-$_LANG['my_info']         = '賬號信息';
-$_LANG['sms_send']        = '發送短信';
-$_LANG['sms_charge']      = '短信充值';
-$_LANG['send_history']    = '發送記錄';
-$_LANG['charge_history']  = '充值記錄 ';
-
-?>
+$_LANG['my_info'] = '賬號信息';
+$_LANG['sms_send'] = '發送短信';
+$_LANG['sms_charge'] = '短信充值';
+$_LANG['send_history'] = '發送記錄';
+$_LANG['charge_history'] = '充值記錄 ';

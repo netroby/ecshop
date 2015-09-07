@@ -12,8 +12,8 @@
  * commercial purposes.
  * ============================================================================
  * $Author: liubo $
- * $Id: shophelp.php 17217 2011-01-19 06:29:08Z liubo $
-*/
+ * $Id: shophelp.php 17217 2011-01-19 06:29:08Z liubo $.
+ */
 $_LANG['shophelp_add'] = 'Add new help';
 $_LANG['cat_add'] = 'Add new category';
 $_LANG['cat_name'] = 'Category name';
@@ -62,5 +62,3 @@ $_LANG['js_languages']['remove_confirm'] = 'Are you sure delete the record?';
 $_LANG['js_languages']['no_title'] = 'Please enter article\'s title.';
 $_LANG['js_languages']['no_cat'] = 'Please select the help article\'s category.';
 $_LANG['js_languages']['chap'] = 'Chapter';
-
-?>

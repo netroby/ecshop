@@ -10,7 +10,7 @@
  * 使用；不允許對程序代碼以任何形式任何目的的再發佈。
  * ============================================================================
  * $Author: testyang $
- * $Id: agency.php 15086 2008-10-27 06:21:49Z testyang $
+ * $Id: agency.php 15086 2008-10-27 06:21:49Z testyang $.
  */
 
 /* 菜單 */
@@ -42,4 +42,3 @@ $_LANG['no_record_selected'] = '没有选择任何记录';
 
 /* JS提示 */
 $_LANG['js_languages']['no_suppliers_name'] = '沒有填供貨商名稱';
-?>

@@ -10,9 +10,8 @@
  * 使用；不允许对程序代码以任何形式任何目的的再发布。
  * ==========================================================
  * $Author: liubo $
- * $Id: attention_list.php 17217 2011-01-19 06:29:08Z liubo $
+ * $Id: attention_list.php 17217 2011-01-19 06:29:08Z liubo $.
  */
-
 $_LANG['goods_name'] = 'Trade names';
 $_LANG['goods_last_update'] = 'Last updated';
 $_LANG['attention_addtolist'] = 'Insert Send Queue';
@@ -24,4 +23,3 @@ $_LANG['finish_list'] = 'Has been inserted into %s records, please later ~';
 $_LANG['finishing'] = 'Are generated later';
 $_LANG['edit_ok'] = 'Operation successful!';
 $_LANG['batch_note'] = 'After the date of this update all merchandise insert send queue:';
-?>

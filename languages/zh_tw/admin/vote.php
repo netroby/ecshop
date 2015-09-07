@@ -10,8 +10,8 @@
  * 使用；不允許對程序代碼以任何形式任何目的的再發佈。
  * ============================================================================
  * $Author: liubo $
- * $Id: vote.php 17217 2011-01-19 06:29:08Z liubo $
-*/
+ * $Id: vote.php 17217 2011-01-19 06:29:08Z liubo $.
+ */
 
 /* 在線調查字段 */
 $_LANG['vote_id'] = '編號';
@@ -41,7 +41,6 @@ $_LANG['continue_add_option'] = '繼續添加調查選項';
 $_LANG['continue_add_vote'] = '繼續添加調查';
 $_LANG['edit_option_order'] = '修改調查選項排序';
 
-
 /* 提示信息 */
 $_LANG['vote_name_exist'] = '此調查主題已經存在!';
 $_LANG['vote_option_exist'] = '此調查選項已經存在!';
@@ -60,5 +59,3 @@ $_LANG['option_name'] = '調查選項';
 $_LANG['vote_count'] = '投票數';
 $_LANG['option_order'] = '選項排序';
 $_LANG['option_name_empty'] = '調查選項不能為空！';
-
-?>

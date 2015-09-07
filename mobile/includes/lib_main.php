@@ -10,24 +10,22 @@
  * 使用；不允许对程序代码以任何形式任何目的的再发布。
  * ============================================================================
  * $Author: testyang $
- * $Id: lib_main.php 15013 2008-10-23 09:31:42Z testyang $
-*/
-
-if (!defined('IN_ECS'))
-{
+ * $Id: lib_main.php 15013 2008-10-23 09:31:42Z testyang $.
+ */
+if (!defined('IN_ECS')) {
     die('Hacking attempt');
 }
 
 /**
- * 对输出编码
+ * 对输出编码.
  *
- * @access  public
- * @param   string   $str
- * @return  string
+ * @param string $str
+ *
+ * @return string
  */
 function encode_output($str)
 {
-//    if (EC_CHARSET != 'utf-8')
+    //    if (EC_CHARSET != 'utf-8')
 //    {
 //        $str = ecs_iconv(EC_CHARSET, 'utf-8', $str);
 //    }
@@ -35,34 +33,30 @@ function encode_output($str)
 }
 
 /**
- * wap分页函数
+ * wap分页函数.
  *
- * @access      public
- * @param       int     $num        总记录数
- * @param       int     $perpage    每页记录数
- * @param       int     $curr_page  当前页数
- * @param       string  $mpurl      传入的连接地址
- * @param       string  $pvar       分页变量
+ * @param int    $num       总记录数
+ * @param int    $perpage   每页记录数
+ * @param int    $curr_page 当前页数
+ * @param string $mpurl     传入的连接地址
+ * @param string $pvar      分页变量
  */
-function get_wap_pager($num, $perpage, $curr_page, $mpurl,$pvar)
+function get_wap_pager($num, $perpage, $curr_page, $mpurl, $pvar)
 {
     $multipage = '';
-    if($num > $perpage)
-    {
+    if ($num > $perpage) {
         $page = 2;
         $offset = 1;
         $pages = ceil($num / $perpage);
         $all_pages = $pages;
         $tmp_page = $curr_page;
-        $setp = strpos($mpurl, '?') === false ? "?" : '&amp;';
-        if($curr_page > 1)
-        {
-            $multipage .= "<a href=\"$mpurl${setp}${pvar}=".($curr_page-1)."\">上一页</a>";
+        $setp = strpos($mpurl, '?') === false ? '?' : '&amp;';
+        if ($curr_page > 1) {
+            $multipage .= "<a href=\"$mpurl${setp}${pvar}=".($curr_page - 1).'">上一页</a>';
         }
-        $multipage .= $curr_page."/".$pages;
-        if(($curr_page++) < $pages)
-        {
-            $multipage .= "<a href=\"$mpurl${setp}${pvar}=".$curr_page++."\">下一页</a><br/>";
+        $multipage .= $curr_page.'/'.$pages;
+        if (($curr_page++) < $pages) {
+            $multipage .= "<a href=\"$mpurl${setp}${pvar}=".$curr_page++.'">下一页</a><br/>';
         }
         //$multipage .= $pages > $page ? " ... <a href=\"$mpurl&amp;$pvar=$pages\"> [$pages] &gt;&gt;</a>" : " 页/".$all_pages."页";
         //$url_array = explode("?" , $mpurl);
@@ -82,84 +76,65 @@ function get_wap_pager($num, $perpage, $curr_page, $mpurl,$pvar)
         //$multipage .= "跳转到第<input type='text' name='pageno' format='*N' size='4' value='' maxlength='2' emptyok='true' />页<anchor>[GO]<go href='{$url_array[0]}' method='get'>{$field_str}<postfield name='".$pvar."' value='$(pageno)'/></go></anchor>";
         //<postfield name='snid' value='".session_id()."'/>
     }
+
     return $multipage;
 }
 
 /**
- * 返回尾文件
+ * 返回尾文件.
  *
- * @return  string
+ * @return string
  */
 function get_footer()
 {
-    if ($_SESSION['user_id'] > 0)
-    {
+    if ($_SESSION['user_id'] > 0) {
         $footer = "<br/><a href='user.php?act=user_center'>用户中心</a>|<a href='user.php?act=logout'>退出</a>|<a href='javascript:scroll(0,0)' hidefocus='true'>回到顶部</a><br/>Copyright 2009<br/>Powered by ECShop v2.7.2";
-    }
-    else
-    {
+    } else {
         $footer = "<br/><a href='user.php?act=login'>登陆</a>|<a href='user.php?act=register'>免费注册</a>|<a href='javascript:scroll(0,0)' hidefocus='true'>回到顶部</a><br/>Copyright 2009<br/>Powered by ECShop v2.7.2";
     }
 
     return $footer;
 }
 
-
-
-
-
 function mobile_common()
 {
     $GLOBALS['smarty']->assign('mobile_navigator',        get_mobile_navigator());  //自定义导航栏
 }
 
-
 function get_mobile_navigator()
 {
-    $sql="SELECT * FROM " . $GLOBALS['ecs']->table('mobile_nav') ." WHERE `ifshow`=1 ORDER BY `vieworder`  LIMIT 0,3";
-    $result=$GLOBALS['db']->getAll($sql);
+    $sql = 'SELECT * FROM '.$GLOBALS['ecs']->table('mobile_nav').' WHERE `ifshow`=1 ORDER BY `vieworder`  LIMIT 0,3';
+    $result = $GLOBALS['db']->getAll($sql);
+
     return $result;
 }
 
-
-function mobile_json($content,$flag)
+function mobile_json($content, $flag)
 {
-
-    if(EC_CHARSET != 'utf-8')
-    {
-         $content=ecs_iconv(EC_CHARSET,'utf-8',  $content);
+    if (EC_CHARSET != 'utf-8') {
+        $content = ecs_iconv(EC_CHARSET, 'utf-8',  $content);
     }
-    $josn=array();
-    $josn['success']=$content;
-    $josn['flag']=$flag;
+    $josn = array();
+    $josn['success'] = $content;
+    $josn['flag'] = $flag;
     echo json_encode($josn);
     exit;
-
 }
 
-
-function mobile_error ($act,$url='',$name='')
+function mobile_error($act, $url = '', $name = '')
 {
-    $mobile_error=array();
-    if(empty($url))
-    {
-        if(isset($_SERVER['HTTP_REFERER']) && !empty($_SERVER['HTTP_REFERER']))
-        {
-               $url=$_SERVER['HTTP_REFERER'];
-        }
-        else
-        {
-               $url='index.php';
+    $mobile_error = array();
+    if (empty($url)) {
+        if (isset($_SERVER['HTTP_REFERER']) && !empty($_SERVER['HTTP_REFERER'])) {
+            $url = $_SERVER['HTTP_REFERER'];
+        } else {
+            $url = 'index.php';
         }
     }
-    $mobile_error['act']=$act;
-    $mobile_error['url']=$url;
-    $mobile_error['name']=$name;
+    $mobile_error['act'] = $act;
+    $mobile_error['url'] = $url;
+    $mobile_error['name'] = $name;
     $GLOBALS['smarty']->assign('mobile_error',        $mobile_error);
     $GLOBALS['smarty']->display('mobile_error.dwt');
     exit;
 }
-
-
-
-?>

@@ -10,9 +10,8 @@
  * 使用；不允許對程序代碼以任何形式任何目的的再發佈。
  * ============================================================================
  * $Author: liubo $
- * $Id: flow_stats.php 17217 2011-01-19 06:29:08Z liubo $
-*/
-
+ * $Id: flow_stats.php 17217 2011-01-19 06:29:08Z liubo $.
+ */
 $_LANG['tab_general'] = '綜合訪問量';
 $_LANG['tab_area'] = '地區分佈';
 $_LANG['tab_from'] = '來源網站';
@@ -34,5 +33,3 @@ $_LANG['end_date'] = '結束日期';
 
 $_LANG['down_flow_stats'] = '流量分析報表下載';
 $_LANG['flow_statistics'] = '流量分析報表';
-
-?>

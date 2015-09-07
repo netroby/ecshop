@@ -12,26 +12,25 @@
  * commercial purposes.
  * ============================================================================
  * $Author: liubo $
- * $Id: integrate.php 17217 2011-01-19 06:29:08Z liubo $
-*/
-
-$_LANG['integrate_name'] ='Name';
-$_LANG['integrate_version'] ='Version';
-$_LANG['integrate_author'] ='Author';
+ * $Id: integrate.php 17217 2011-01-19 06:29:08Z liubo $.
+ */
+$_LANG['integrate_name'] = 'Name';
+$_LANG['integrate_version'] = 'Version';
+$_LANG['integrate_author'] = 'Author';
 
 /* Hint an information*/
-$_LANG['update_success'] ='Member data integration plug-in is configed successfully.';
-$_LANG['install_confirm'] ="Please don\'t edit integration plug-in in use. \nMember data will be cleared if you switch integration plug-in, and include:\n member information, member account datails, member address of receipt, member bonus, order information, cart. \r\n Are you sure install the member data integration plug-in?";
+$_LANG['update_success'] = 'Member data integration plug-in is configed successfully.';
+$_LANG['install_confirm'] = "Please don\'t edit integration plug-in in use. \nMember data will be cleared if you switch integration plug-in, and include:\n member information, member account datails, member address of receipt, member bonus, order information, cart. \r\n Are you sure install the member data integration plug-in?";
 $_LANG['need_not_setup'] = 'You needn\`t set wehn you use ECSHOP systerm';
-$_LANG['neednot_sync'] ='You needn\'t synchronous operation, beacuse the ECSHOP member system is in use now.';
-$_LANG['different_domain'] ='The integration object and ECSHOP of[with] your setup is not under same area.<Br/>you member\'s data that can share that system, but can\'t carry out to register in the meantime.';
+$_LANG['neednot_sync'] = 'You needn\'t synchronous operation, beacuse the ECSHOP member system is in use now.';
+$_LANG['different_domain'] = 'The integration object and ECSHOP of[with] your setup is not under same area.<Br/>you member\'s data that can share that system, but can\'t carry out to register in the meantime.';
 $_LANG['points_set'] = 'Redeem settings';
 $_LANG['view_user_list'] = 'View Forum User';
 $_LANG['view_install_log'] = 'See the installation log';
 
-$_LANG['integrate_setup'] ='Setup member data integration plug-in.';
-$_LANG['continue_sync'] ='Continue synchronous member\'s data.';
-$_LANG['go_userslist'] ='Return list of member number.';
+$_LANG['integrate_setup'] = 'Setup member data integration plug-in.';
+$_LANG['continue_sync'] = 'Continue synchronous member\'s data.';
+$_LANG['go_userslist'] = 'Return list of member number.';
 $_LANG['user_help'] = '<pre>
 Usage:
      1:If the users need to integrate other systems, you can install the appropriate plug-ins to integrate the version number.
@@ -47,17 +46,17 @@ $_LANG['empty_install_log'] = 'Installation log is empty';
 /* The form related language item*/
 $_LANG['db_notice'] = 'Click“<font color="#000000">Next</font>”Will guide you to the mall user data will be synchronized to the integration of the Forum。If no synchronous data please click“<font color="#000000">Save configuration information directly</font>”';
 
-$_LANG['lable_db_host'] ='Database server host:';
-$_LANG['lable_db_name'] ='Database:';
-$_LANG['lable_db_chartset'] ='The database character list gather:';
+$_LANG['lable_db_host'] = 'Database server host:';
+$_LANG['lable_db_name'] = 'Database:';
+$_LANG['lable_db_chartset'] = 'The database character list gather:';
 $_LANG['lable_is_latin1'] = 'Whether to latin1 encoding';
-$_LANG['lable_db_user'] ='Database account number:';
-$_LANG['lable_db_pass'] ='Database password:';
-$_LANG['lable_prefix'] ='Datasheet prefixion:';
-$_LANG['lable_url'] ='Complete URL of the integrated system:';
+$_LANG['lable_db_user'] = 'Database account number:';
+$_LANG['lable_db_pass'] = 'Database password:';
+$_LANG['lable_prefix'] = 'Datasheet prefixion:';
+$_LANG['lable_url'] = 'Complete URL of the integrated system:';
 /* The form related labguage item(discus5x) */
-$_LANG['cookie_prefix']          = 'COOKIE prefix:';
-$_LANG['cookie_salt']          = 'COOKIE Encrypted string：';
+$_LANG['cookie_prefix'] = 'COOKIE prefix:';
+$_LANG['cookie_salt'] = 'COOKIE Encrypted string：';
 $_LANG['button_next'] = 'next';
 $_LANG['button_force_save_config'] = 'Save configuration information directly';
 $_LANG['save_confirm'] = 'Are you sure you want to configure the direct preservation of information?';
@@ -107,7 +106,6 @@ $_LANG['ignore_user'] = 'Users need to retain the Mall';
 $_LANG['submit_modify'] = 'Save this page changes';
 $_LANG['button_confirm_next'] = 'The beginning of the integration';
 
-
 /* 用户同步 */
 $_LANG['user_sync'] = 'Synchronization data to the Forum Shopping Mall, and complete integration';
 $_LANG['button_pre'] = 'Previous';
@@ -138,14 +136,14 @@ $_LANG['rule_name'] = 'Exchange rules';
 $_LANG['rule_rate'] = 'Exchange ratio';
 
 /* JS language item */
-$_LANG['js_languages']['no_host'] ='The database server host can\'t be blank.';
-$_LANG['js_languages']['no_user'] ='The database account number can\'t be blank.';
-$_LANG['js_languages']['no_name'] ='The database can\'t be blank.';
-$_LANG['js_languages']['no_integrate_url']='Please enter complete URL of conformity object.';
-$_LANG['js_languages']['install_confirm']="Please don\'t optional replace conformity objectt in the system. \\nAre you sure install the member data conformity plug-in?";
-$_LANG['js_languages']['num_invalid'] ='The synchronous data record a number isn\'t an integer';
-$_LANG['js_languages']['start_invalid'] ='The start position of the synchronous data isn\'t an integer';
-$_LANG['js_languages']['sync_confirm'] ="Synchronize member\'s data will rebuild the target data table. \\nPlease backup your data before carrying out synchronize. \\nAre you sure start to synchronize member\'s data?";
+$_LANG['js_languages']['no_host'] = 'The database server host can\'t be blank.';
+$_LANG['js_languages']['no_user'] = 'The database account number can\'t be blank.';
+$_LANG['js_languages']['no_name'] = 'The database can\'t be blank.';
+$_LANG['js_languages']['no_integrate_url'] = 'Please enter complete URL of conformity object.';
+$_LANG['js_languages']['install_confirm'] = "Please don\'t optional replace conformity objectt in the system. \\nAre you sure install the member data conformity plug-in?";
+$_LANG['js_languages']['num_invalid'] = 'The synchronous data record a number isn\'t an integer';
+$_LANG['js_languages']['start_invalid'] = 'The start position of the synchronous data isn\'t an integer';
+$_LANG['js_languages']['sync_confirm'] = "Synchronize member\'s data will rebuild the target data table. \\nPlease backup your data before carrying out synchronize. \\nAre you sure start to synchronize member\'s data?";
 
 $_LANG['cookie_prefix_notice'] = 'UTF8 version of the cookie prefix is xnW_，GB2312/GBK version of the cookie prefix is KD9_。';
 
@@ -208,5 +206,3 @@ $_LANG['uc_lang']['credits'][0][1] = '';
 $_LANG['uc_lang']['credits'][1][0] = 'Consumption points';
 $_LANG['uc_lang']['credits'][1][1] = '';
 $_LANG['uc_lang']['exchange'] = 'UCenterRedeem';
-
-?>

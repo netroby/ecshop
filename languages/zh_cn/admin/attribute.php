@@ -1,4 +1,5 @@
 <?php
+
 /**
  * ECSHOP 商品类型管理语言文件
  * ============================================================================
@@ -9,8 +10,8 @@
  * 使用；不允许对程序代码以任何形式任何目的的再发布。
  * ============================================================================
  * $Author: liubo $
- * $Id: attribute.php 17217 2011-01-19 06:29:08Z liubo $
-*/
+ * $Id: attribute.php 17217 2011-01-19 06:29:08Z liubo $.
+ */
 
 /* 列表 */
 $_LANG['by_goods_type'] = '按商品类型显示：';
@@ -50,7 +51,6 @@ $_LANG['attr_type_values'][0] = '唯一属性';
 $_LANG['attr_type_values'][1] = '单选属性';
 $_LANG['attr_type_values'][2] = '复选属性';
 
-
 $_LANG['add_next'] = '添加下一个属性';
 $_LANG['back_list'] = '返回属性列表';
 
@@ -69,5 +69,3 @@ $_LANG['drop_ok'] = '成功删除了 %d 条商品属性';
 $_LANG['js_languages']['name_not_null'] = '请您输入属性名称。';
 $_LANG['js_languages']['values_not_null'] = '请您输入该属性的可选值。';
 $_LANG['js_languages']['cat_id_not_null'] = '请您选择该属性所属的商品类型。';
-
-?>

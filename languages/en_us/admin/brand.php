@@ -12,9 +12,8 @@
  * commercial purposes.
  * ============================================================================
  * $Author: liubo $
- * $Id: brand.php 17217 2011-01-19 06:29:08Z liubo $
-*/
-
+ * $Id: brand.php 17217 2011-01-19 06:29:08Z liubo $.
+ */
 $_LANG['brand_name'] = 'Brand';
 $_LANG['site_url'] = 'Website';
 $_LANG['brand_desc'] = 'Description';
@@ -25,7 +24,7 @@ $_LANG['drop_brand_logo'] = 'Delete the logo';
 $_LANG['confirm_drop_logo'] = 'Are you sure delete the logo?';
 $_LANG['drop_brand_logo_success'] = 'Delete the logo successfully!';
 
-$_LANG['brand_edit_lnk']='Re-edit that brand';
+$_LANG['brand_edit_lnk'] = 'Re-edit that brand';
 $_LANG['brand_list_lnk'] = 'Return to the list page';
 
 /*Help information*/
@@ -49,13 +48,11 @@ $_LANG['enter_int'] = 'Please enter an integer!';
 $_LANG['back_list'] = 'Return to brand list';
 $_LANG['continue_add'] = 'Continue add new brand';
 
-$_LANG['upfile_type_error'] = "The uploaded image type must be jpg,gif or png.";
+$_LANG['upfile_type_error'] = 'The uploaded image type must be jpg,gif or png.';
 $_LANG['upfile_error'] = "Wrong, please ensure files\' writability of data directory!";
 
 $_LANG['visibility_notes'] = 'When brand merchandise under no time and the breakdown of home pages of the brand areas will not be displayed to the brand.';
 
 /*JS language item*/
 $_LANG['js_languages']['no_brandname'] = 'Please enter brand name!';
-$_LANG['js_languages']['require_num']='The sort ordinal number must be a figure.';
-
-?>
+$_LANG['js_languages']['require_num'] = 'The sort ordinal number must be a figure.';

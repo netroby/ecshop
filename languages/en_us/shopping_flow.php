@@ -12,9 +12,8 @@
  * commercial purposes.
  * ============================================================================
  * $Author: liubo $
- * $Id: shopping_flow.php 17217 2011-01-19 06:29:08Z liubo $
-*/
-
+ * $Id: shopping_flow.php 17217 2011-01-19 06:29:08Z liubo $.
+ */
 $_LANG['flow_login_register']['username_not_null'] = 'Please enter username.';
 $_LANG['flow_login_register']['username_invalid'] = 'Please enter a valid username.';
 $_LANG['flow_login_register']['password_not_null'] = 'Please enter password.';
@@ -23,7 +22,7 @@ $_LANG['flow_login_register']['email_invalid'] = 'Please enter a valid email add
 $_LANG['flow_login_register']['password_not_same'] = 'Re-enter password.';
 $_LANG['flow_login_register']['password_lt_six'] = 'Please enter password more than six charactor.';
 
-$_LANG['regist_success'] = "Congratulations! %s register successfully!";
+$_LANG['regist_success'] = 'Congratulations! %s register successfully!';
 $_LANG['login_success'] = 'Congratulations! Login successfully!';
 
 /* ¹ºÎï³µ */
@@ -42,7 +41,7 @@ $_LANG['email_exists'] = 'The email address already exists, please enter another
 $_LANG['surplus_not_enough'] = 'Your balance is not enough.';
 $_LANG['integral_not_enough'] = 'Your points is not enough.';
 $_LANG['integral_too_much'] = "The points of your used can\'t more than %d.";
-$_LANG['invalid_bonus'] = "he bonus is nonexistent.";
+$_LANG['invalid_bonus'] = 'he bonus is nonexistent.';
 $_LANG['no_goods_in_cart'] = 'There is blank in your cart!';
 $_LANG['not_submit_order'] = 'The order of associates have submitted, please don\'t do it again!';
 $_LANG['pay_success'] = 'Paid successfully, it is imperative that we make a quick shipping for you.';
@@ -157,7 +156,7 @@ $_LANG['back_home'] = '<a href="index.php">Back to home</a>';
 $_LANG['goto_user_center'] = '<a href="user.php">Member center</a>';
 $_LANG['order_submit_back'] = 'You can %s or go to %s';
 
-$_LANG['order_placed_sms'] = "You has a new order.Consignee:%s Phone:%s";
+$_LANG['order_placed_sms'] = 'You has a new order.Consignee:%s Phone:%s';
 $_LANG['sms_paid'] = 'Paid';
 
 $_LANG['notice_gb_order_amount'] = '£¨(Remarks: If associates with insurance, the insurance and corresponding pay need to be paid in first payment.)';
@@ -170,8 +169,6 @@ $_LANG['bonus_sn_error'] = 'Please enter valid bonus No.';
 $_LANG['bonus_min_amount_error'] = 'Order amount is less than the minimum amount of bonus %s';
 $_LANG['bonus_is_ok'] = 'Bonus No. is avaible, can be used as %s';
 
-
 $_LANG['shopping_myship'] = 'My shipping';
 $_LANG['shopping_activity'] = 'Activity list';
 $_LANG['shopping_package'] = 'Package list';
-?>

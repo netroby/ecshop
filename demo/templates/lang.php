@@ -12,7 +12,7 @@
 </head>
 
 <body>
-<?php include ROOT_PATH . 'demo/templates/header.php';?>
+<?php include ROOT_PATH.'demo/templates/header.php';?>
 
 <div id="wrapper" style="text-align:left;">
 <form target="_parent" action="" method="post">
@@ -20,15 +20,19 @@
     <legend dir="ltr"><?php echo $lang['lang_title']; ?></legend>
     <select dir="ltr" onchange="this.form.submit();" name="lang" style="width:300px;">
     <?php
-        foreach($lang['lang_charset'] as $key => $val) {
+        foreach ($lang['lang_charset'] as $key => $val) {
             if ($updater_lang.'_'.$ec_charset == $key) {
                 $lang_selected = 'selected="selected" ';
             } else {
                 $lang_selected = '';
             }
-    ?>
-        <option <?php echo $lang_selected; ?>value="<?php echo $key; ?>"><?php echo $val; ?></option>
+            ?>
+        <option <?php echo $lang_selected;
+            ?>value="<?php echo $key;
+            ?>"><?php echo $val;
+            ?></option>
     <?php
+
         }
     ?>
     </select>
@@ -44,10 +48,12 @@
     <legend><?php echo $lang['lang_description']; ?></legend>
     <ul>
         <?php
-        foreach($lang['lang_desc'] as $desc) {
-        ?>
-        <li><?php echo $desc; ?></li>
+        foreach ($lang['lang_desc'] as $desc) {
+            ?>
+        <li><?php echo $desc;
+            ?></li>
         <?php
+
         }
         ?>
     </ul>
@@ -61,6 +67,6 @@
 
 </div>
 
-<?php include ROOT_PATH . 'demo/templates/copyright.php';?>
+<?php include ROOT_PATH.'demo/templates/copyright.php';?>
 </body>
 </html>

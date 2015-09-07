@@ -1,4 +1,5 @@
 <?php
+
 /**
  * ECSHOP 程序说明
  * ===========================================================
@@ -9,7 +10,7 @@
  * 使用；不允许对程序代码以任何形式任何目的的再发布。
  * ==========================================================
  * $Author: liubo $
- * $Id: fckfile_manage.php 17217 2011-01-19 06:29:08Z liubo $
+ * $Id: fckfile_manage.php 17217 2011-01-19 06:29:08Z liubo $.
  */
 $_LANG['fckfile_manage'] = 'Fck From document management';
 $_LANG['file_manage'] = 'File directory management';
@@ -37,4 +38,3 @@ $_LANG['namecannotnull'] = 'Please enter the name of the navigation bar!';
 $_LANG['linkcannotnull'] = 'Please enter the link!';
 
 $_LANG['notice_url'] = 'If this site are the Web site may be the initials for the root directory of the relative address Shopping Mall，Such as index.php；<br>Other circumstances should enter the full URL, such as http://www.ecshop.com/';
-?>
